@@ -19,6 +19,7 @@
 #include <QMainWindow>
 #include <QToolBar>
 #include "Automate.h"
+#include "Simulateur.h"
 
 class Autocell : public QWidget {
     Q_OBJECT
