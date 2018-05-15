@@ -8,7 +8,7 @@
 
 class Etat;
 class Automate;
-class Simulateur;
+template<class T1, class T2> class Simulateur;
 class AutomateException;
 
 short unsigned int NumBitToNum(const std::string& num);

@@ -10,25 +10,25 @@
 
 class Etat;
 class Automate;
-class Simulateur;
+template<class T1, class T2> class Simulateur;
 class AutomateException;
 
-class Simulateur{
-    const Automate & m_automate;
-    std::vector<Etat *> m_etats;
-    const Etat * m_depart;
+template<class T1, class T2> class Simulateur{
+    const T1 & m_automate;
+    std::vector<T2 *> m_etats;
+    const T2 * m_depart;
     unsigned int m_nbMaxEtats;
     unsigned int m_rang=0;
     void build(unsigned int c);// elle manipule le tableau etats (allocation de l'espace mémoire)
     Simulateur(const Simulateur&) = delete;
     Simulateur& operator=(const Simulateur&);
 public:
-    Simulateur (const Automate & a,unsigned int buffer=2);
-    Simulateur (const Automate & a, const Etat & dep, unsigned int buffer=2 );
-    void setEtatDepart(const Etat & e);
+    Simulateur (const T1 & a,unsigned int buffer=2);
+    Simulateur (const T1 & a, const T2 & dep, unsigned int buffer=2 );
+    void setEtatDepart(const T2 & e);
     void run (unsigned int nb);//génère les n prochains états
     void next(); // génère le prochain état
-    const Etat & dernier() const;
+    const T2 & dernier() const;
     unsigned int getRangDernier() const {return m_rang;}
     void reset();//revenir à l'état de départ
     ~Simulateur();
@@ -45,7 +45,7 @@ public:
                 if (i == -1 && sim->m_rang >= sim->m_nbMaxEtats) i = sim->m_nbMaxEtats - 1;
                 return *this;
             }
-            Etat& operator*() const {
+            T2& operator*() const {
                 return *sim->m_etats[i%sim->m_nbMaxEtats];
             }
             bool operator!=(iterator it) const { return sim != it.sim || i != it.i; }
@@ -67,7 +67,7 @@ public:
                 if (i == -1 && sim->m_rang >= sim->m_nbMaxEtats) i = sim->m_nbMaxEtats - 1;
                 return *this;
             }
-            const Etat& operator*() const {
+            const T2& operator*() const {
                 return *sim->m_etats[i%sim->m_nbMaxEtats];
             }
             bool operator!=(const_iterator it) const { return sim != it.sim || i != it.i; }
