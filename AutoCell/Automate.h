@@ -66,8 +66,8 @@ class Simulateur{
 	unsigned int m_nbMaxEtats;
 	unsigned int m_rang=0;
 	void build(unsigned int c);// elle manipule le tableau etats (allocation de l'espace mémoire)
-  Simulateur(const Simulateur&) = delete;
-  Simulateur& operator=(const Simulateur&);
+    Simulateur(const Simulateur&) = delete;
+    Simulateur& operator=(const Simulateur&);
 public:
 	Simulateur (const Automate & a,unsigned int buffer=2);
 	Simulateur (const Automate & a, const Etat & dep, unsigned int buffer=2 );
