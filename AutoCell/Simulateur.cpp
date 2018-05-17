@@ -1,5 +1,5 @@
 #include "Simulateur.h"
-#include "Automate.h"
+#include "Automate1D.h"
 #include <iostream>
 using namespace std;
 
@@ -43,4 +43,4 @@ template<class T1, class T2> Simulateur<T1,T2>::~Simulateur(){
     delete m_etats[i];
 }
 
-template class Simulateur<Automate,Etat>;
+template class Simulateur<Automate1D,Etat>;

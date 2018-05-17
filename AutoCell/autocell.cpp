@@ -34,7 +34,7 @@ void Autocell::runSim(bool){
             e.setCellule(i,true);
         }
     }
-    Simulateur<Automate,Etat> s(aM.getAutomate(num->value()), e);
+    Simulateur<Automate1D,Etat> s(aM.getAutomate(num->value()), e);
     if (etats == nullptr){
         etats = new QTableWidget(nb,dimension,this);
         etats->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
