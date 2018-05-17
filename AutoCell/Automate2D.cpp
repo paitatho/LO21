@@ -16,8 +16,39 @@ int Automate2D::nbCellule(unsigned int i,unsigned int j, Etat2D const& etat, uns
 }
 
 void Automate2D::appliquerTransition(const Etat2D& dep, Etat2D& dest) const{
+    int largeur =dep.getLargeur(), hauteur =dep.getHargeur(), nbRegle = m_regle.size(), i =0, nbCel=0;
+    bool sol = false;
 
+    for (int iC = 0;iC<hauteur;iC++){
+        for (int jC=0;jC<largeur;jC++){
+            while(i != nbRegle && sol == false){ // tant qu'il y a des règles et qu'on a pas trouvé de solution
+                if(dep.getCellule(iC,jC) == m_regle[i][0]){
+                    nbCel = nbCellule(iC,jC,dep,m_regle[i][1]);
 
+                    if(m_regle[i][2] == 0 ){
+                        if( m_regle[i][3]<= nbCel && nbCel <= m_regle[i][4] ){
+                            dep.setCellule(iC,jC,i);
+                            sol = true;
+                        }
+                    }
+                    else{
+                        if( m_regle[i][4]<= nbCel && nbCel <= m_regle[i][3] ){
+                            dep.setCellule(iC,jC,i);
+                            sol = true;
+                        }
+                    }
+                }
+                i++;
+            }
+            if(sol == false){
+                dest.setCellule(iC,jC,dep.getCellule(iC,jC));
+            }
+            else{
+                sol=false;
+            }
+            i=0;
+        }
+    }
 
 }
 
