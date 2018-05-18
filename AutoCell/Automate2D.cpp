@@ -25,14 +25,14 @@ void Automate2D::appliquerTransition(const Etat2D& dep, Etat2D& dest) const{
                 if(dep.getCellule(iC,jC) == m_regle[i][0]){
                     nbCel = nbCellule(iC,jC,dep,m_regle[i][1]);
 
-                    if(m_regle[i][2] == 0 ){
+                    if(m_regle[i][2] == 1 ){
                         if( m_regle[i][3]<= nbCel && nbCel <= m_regle[i][4] ){
                             dep.setCellule(iC,jC,i);
                             sol = true;
                         }
                     }
                     else{
-                        if( m_regle[i][4]<= nbCel && nbCel <= m_regle[i][3] ){
+                        if( m_regle[i][4]<= nbCel || nbCel <= m_regle[i][3] ){
                             dep.setCellule(iC,jC,i);
                             sol = true;
                         }
