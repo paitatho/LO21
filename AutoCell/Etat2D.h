@@ -9,7 +9,7 @@ protected:
     std::vector<std::vector<unsigned short int>> m_valeur;
     unsigned int m_hauteur;
 public:
-    Etat2D(unsigned int l, unsigned int h, unsigned int nbEtat=1): Etat(l,nbEtat),m_hauteur(h){
+    Etat2D(unsigned int l =0, unsigned int h =0, unsigned int nbEtat=1): Etat(l,nbEtat),m_hauteur(h){
         for(int i = 0; i<h ; i++){
             m_valeur.push_back(std::vector<unsigned short int>(m_nbCellule,0));
         }

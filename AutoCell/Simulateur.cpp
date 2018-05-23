@@ -1,5 +1,7 @@
 #include "Simulateur.h"
 #include "Automate1D.h"
+#include "Automate2D.h"
+#include "Etat2D.h"
 #include <iostream>
 using namespace std;
 
@@ -50,3 +52,4 @@ template<class T1, class T2> Simulateur<T1,T2>::~Simulateur(){
 }
 
 template class Simulateur<Automate1D,Etat1D>;
+template class Simulateur<Automate2D,Etat2D>;
