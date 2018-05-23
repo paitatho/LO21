@@ -29,7 +29,7 @@ private:
     std::vector< std::vector<unsigned short int> > m_regle;
 
 public:
-    Automate2D(std::vector< std::vector<unsigned short int> > regle = std::vector< std::vector<unsigned short int> >(), unsigned short int nbEtat = 1): Automate(nbEtat), m_regle(regle){}
+    Automate2D(std::vector< std::vector<unsigned short int> > regle = std::vector< std::vector<unsigned short int> >(), unsigned short int nbEtat = 2): Automate(nbEtat), m_regle(regle){}
     virtual ~Automate2D(){}
     std::vector< std::vector<unsigned short int> > getRegle() const {return this->m_regle;}
     void setRegle(std::vector< std::vector<unsigned short int> > const& newRegle){m_regle = newRegle;}

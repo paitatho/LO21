@@ -67,7 +67,7 @@ class Etat1D : public Etat
         std::vector<bool> m_tab;
 
     public:
-        Etat1D(unsigned int taille = 0,unsigned int nbEtat = 1);
+        Etat1D(unsigned int taille = 0,unsigned int nbEtat = 2);
         Etat1D(Etat1D const& etat);
         virtual ~Etat1D(){}
         unsigned int getDimension() const;
@@ -76,14 +76,14 @@ class Etat1D : public Etat
         void afficher() const;
         Etat1D& operator=(const Etat1D& etat);
         virtual unsigned int getHauteur() const{return 1;}
-        virtual unsigned int adjustEtat(){
+        virtual void adjustEtat(){
             int taille=m_tab.size();
-            if (taille < m_nbCellule){
-                for(int i =taille;i<m_nbCellule;i++)
+            if (taille < m_largeur){
+                for(int i =taille;i<m_largeur;i++)
                     m_tab.push_back(false);
             }
             else{
-                for(int i =taille;i>=m_nbCellule; i--)
+                for(int i =taille;i>=m_largeur; i--)
                     m_tab.pop_back();
             }
         }
