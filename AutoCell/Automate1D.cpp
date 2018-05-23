@@ -28,38 +28,36 @@ std::string NumToNumBit(short unsigned int num) {
 return numeroBit;
 }
 
-/*#############-Etat-###############################*/
+/*#############-Etat1D-###############################*/
 
 
 
-Etat::Etat(unsigned int taille) : m_nbCellule(taille){
+Etat1D::Etat1D(unsigned int taille,unsigned int nbEtat) : Etat(taille,nbEtat){
   for (int i=0;i<m_nbCellule;i++)
     m_tab.push_back(false);
 }
-Etat::Etat(Etat const& etat) : m_nbCellule(etat.m_nbCellule){
+Etat1D::Etat1D(Etat1D const& etat) : Etat(etat.getLargeur(),etat.getNbEtat()){
   for (int i=0;i<m_nbCellule;i++)
     m_tab.push_back(etat.m_tab[i]);
 }
 
-Etat::~Etat(){}
-
-unsigned int Etat::getDimension() const{
+unsigned int Etat1D::getDimension() const{
   return m_nbCellule;
 }
-bool Etat::getCellule(unsigned int i)const{
+bool Etat1D::getCellule(unsigned int i)const{
   if (i>=0 && i< m_nbCellule)
     return m_tab[i];
   else
     throw "truc";
 }
-void  Etat::setCellule(unsigned int i, bool val){
+void  Etat1D::setCellule(unsigned int i, bool val){
   if (i>=0 && i< m_nbCellule)
     m_tab[i] = val;
   else
     throw "truc";
 }
 
-ostream &operator<<(ostream& flux, const Etat& etat){
+ostream &operator<<(ostream& flux, const Etat1D& etat){
   int taille = etat.getDimension();
   for (int i = 0; i<taille;++i){
     if (etat.getCellule(i) == true) flux<< "X";
@@ -68,7 +66,7 @@ ostream &operator<<(ostream& flux, const Etat& etat){
   return flux;
 }
 
-Etat& Etat::operator=(const Etat& etat){
+Etat1D& Etat1D::operator=(const Etat1D& etat){
   if (m_nbCellule == etat.m_nbCellule){
     for (int i = 0; i<m_nbCellule;i++)
       m_tab[i]=etat.m_tab[i];
@@ -93,7 +91,7 @@ int Automate1D::getNumero() const{
 std::string Automate1D::getNumeroBit() const{
   return m_numeroBit;
 }
-void Automate1D::appliquerTransition(const Etat& dep, Etat& dest) const{
+void Automate1D::appliquerTransition(const Etat1D& dep, Etat1D& dest) const{
   if(dep.getDimension()!=dest.getDimension())
     dest=dep;
   for(unsigned int i=0;i<dep.getDimension();i++)
@@ -136,7 +134,7 @@ void AutomateManager::freeIstance(){
   delete AutomateManager::m_automateManager;
 }
 
-const Automate& AutomateManager::getAutomate(short unsigned int num){
+const Automate1D& AutomateManager::getAutomate(short unsigned int num){
   for (int i=0; i<m_tabAutomate.size();i++){
     if(m_tabAutomate[i]->getNumero()==num)
       return *m_tabAutomate[i];
@@ -145,7 +143,7 @@ const Automate& AutomateManager::getAutomate(short unsigned int num){
   m_tabAutomate.push_back(a);
   return *a;
 }
-const Automate& AutomateManager::getAutomate(const std::string& numbit){
+const Automate1D& AutomateManager::getAutomate(const std::string& numbit){
   for (int i=0; i<m_tabAutomate.size();i++){
     if(m_tabAutomate[i]->getNumeroBit()==numbit)
       return *m_tabAutomate[i];

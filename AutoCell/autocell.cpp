@@ -28,13 +28,13 @@ void Autocell::cellSelected(int a,int b){
 void Autocell::runSim(bool){
     unsigned int nb = nbSim->value();
     AutomateManager& aM = AutomateManager::getInstance();
-    Etat e(dimension);
+    Etat1D e(dimension);
     for (int i= 0; i<dimension;i++){
         if (depart->item(0,i)->backgroundColor() == *color){
             e.setCellule(i,true);
         }
     }
-    Simulateur<Automate1D,Etat> s(aM.getAutomate(num->value()), e);
+    Simulateur<Automate1D,Etat1D> s(aM.getAutomate(num->value()), e);
     if (etats == nullptr){
         etats = new QTableWidget(nb,dimension,this);
         etats->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);

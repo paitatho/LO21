@@ -8,8 +8,8 @@
 #include "Etat2D.h"
 /*
  *  l'automate 2D de base permettra de gérer des règles du type :
- *      -on passe à un état i si il y a entre X et Y cellule dans l'état j dans l'entourage de notre cellule
- *      -on passe à un état i si il n' y a pas entre X et Y cellule dans l'état j dans l'entourage de notre cellule
+ *      -on passe à un état i si il y a entre X et Y cellules dans l'état j dans l'entourage de notre cellule
+ *      -on passe à un état i si il n' y a pas entre X et Y cellules dans l'état j dans l'entourage de notre cellule
  *
  *  m_regle[i] stock la règle qui permet de passer à l'état i
  *  m_regle[i][0] stock l'état que doit avoir la cellule pour qu'on lui applique la règle

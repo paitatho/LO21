@@ -6,7 +6,8 @@
 #include <string>
 #include <vector>
 #include "Automate.h"
-class Etat;
+#include "Etat.h"
+class Etat1D;
 class Automate1D;
 template<class T>class Automate;
 template<class T1, class T2> class Simulateur;
@@ -14,24 +15,23 @@ class AutomateException;
 
 short unsigned int NumBitToNum(const std::string& num);
 std::string NumToNumBit(short unsigned int num);
-std::ostream &operator<<(std::ostream& flux, const Etat& etat);
+std::ostream &operator<<(std::ostream& flux, const Etat1D& etat);
 std::ostream &operator<<(std::ostream& flux, const Automate1D& automate);
 
-class Automate1D : public Automate<Etat>
+class Automate1D : public Automate<Etat1D>
 {
     friend class AutomateManager;
 private:
     short unsigned int m_numero;
     std::string m_numeroBit;
-    Automate1D(short unsigned int num,unsigned short int nbEtat=1);
-    Automate1D(const std::string& numBit,unsigned short int nbEtat=1);
+    Automate1D(short unsigned int num,unsigned short int nbEtat=2);
+    Automate1D(const std::string& numBit,unsigned short int nbEtat=2);
 
 public:
     int getNumero() const;
     std::string getNumeroBit() const;
-    void appliquerTransition(const Etat& dep, Etat& dest) const;
+    void appliquerTransition(const Etat1D& dep, Etat1D& dest) const;
     void afficher() const;
-
 };
 
 class AutomateManager
@@ -60,23 +60,33 @@ class AutomateException {
 };
 
 
-class Etat
+class Etat1D : public Etat
 {
     friend class Automate1D;
      protected:
-        unsigned int m_nbCellule;
         std::vector<bool> m_tab;
 
     public:
-        Etat(unsigned int taille = 0);
-        Etat(Etat const& etat);
-        virtual ~Etat();
+        Etat1D(unsigned int taille = 0,unsigned int nbEtat = 1);
+        Etat1D(Etat1D const& etat);
+        virtual ~Etat1D(){}
         unsigned int getDimension() const;
         bool getCellule(unsigned int i)const;
         void setCellule(unsigned int i, bool val);
         void afficher() const;
-        Etat& operator=(const Etat& etat);
-    private:
+        Etat1D& operator=(const Etat1D& etat);
+        virtual unsigned int getHauteur() const{return 1;}
+        virtual unsigned int adjustEtat(){
+            int taille=m_tab.size();
+            if (taille < m_nbCellule){
+                for(int i =taille;i<m_nbCellule;i++)
+                    m_tab.push_back(false);
+            }
+            else{
+                for(int i =taille;i>=m_nbCellule; i--)
+                    m_tab.pop_back();
+            }
+        }
 };
 
 

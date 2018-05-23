@@ -8,7 +8,7 @@
 #include <string>
 #include <vector>
 
-class Etat;
+class Etat1D;
 template<class T>class Automate;
 template<class T1, class T2> class Simulateur;
 class AutomateException;

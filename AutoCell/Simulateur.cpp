@@ -7,15 +7,21 @@ template<class T1, class T2> Simulateur<T1,T2>::Simulateur (const T1 & a,unsigne
   for (int i=0; i<m_nbMaxEtats;i++)
     m_etats.push_back(nullptr);
 }
-template<class T1, class T2> Simulateur<T1,T2>::Simulateur (const T1 & a, const T2 & dep, unsigned int buffer) : m_nbMaxEtats(buffer), m_automate(a), m_depart(&dep){
+template<class T1, class T2> Simulateur<T1,T2>::Simulateur (const T1& a, const T2 & dep, unsigned int buffer) : m_nbMaxEtats(buffer), m_automate(a),m_depart(&dep){
   for (int i=0; i<m_nbMaxEtats;i++)
     m_etats.push_back(nullptr);
+  if(a.getNbEtat() == dep.getNbEtat()){
+     // m_automate = a;
+     // m_depart = &dep;
+  }
   m_etats[0] = new T2(dep);
 }
 template<class T1, class T2> void Simulateur<T1,T2>::setEtatDepart(const T2 & e){
-  m_depart = &e;
-  m_etats[0] = new T2(e);
-  reset();
+  if (m_automate.getNbEtat() == e.getNbEtat()){
+      m_depart = &e;
+      m_etats[0] = new T2(e);
+      reset();
+  }
 }
 
 template<class T1, class T2> void Simulateur<T1,T2>::run (unsigned int nb){  //génère les n prochains états
@@ -43,4 +49,4 @@ template<class T1, class T2> Simulateur<T1,T2>::~Simulateur(){
     delete m_etats[i];
 }
 
-template class Simulateur<Automate1D,Etat>;
+template class Simulateur<Automate1D,Etat1D>;
