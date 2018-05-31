@@ -11,7 +11,7 @@ int main(int argc, char * argv[]) {
 
     MainWindow* window = new MainWindow();
     window->show();
-
+/*
     vector<vector<unsigned short int>> v;
     v.push_back(vector<unsigned short int>());
     v.push_back(vector<unsigned short int>());//[1,1,0,2,3] [0,1,1,3,3]
@@ -31,7 +31,7 @@ int main(int argc, char * argv[]) {
     Simulateur<Automate2D,Etat2D> s(a,e);
     s.dernier().afficher();
     for(int i=0;i<12;i++){
-    s.next(); s.dernier().afficher();}
+    s.next(); s.dernier().afficher();}*/
 
     return app.exec();
 }

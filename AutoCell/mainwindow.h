@@ -18,8 +18,12 @@ private:
     std::vector<QAction *> action;
     std::vector<QLabel *> label;
     QComboBox *choixSim;
+
     QGroupBox* boxDim;
     QGridLayout* layoutBoxDim;
+    QGroupBox* boxCel;
+    QGridLayout* layoutBoxCel;
+
     QWidget* option1D;
     QGridLayout* layout1D;
     QSpinBox* b;
@@ -34,7 +38,6 @@ private:
     QFrame* separator;
     static Autocell* auto1D;
 
-
     virtual void createToolBar();
     virtual void createDockOption();
     virtual void createMdiArea();
@@ -46,7 +49,7 @@ public:
 
 public slots:
     void changeNbCell(int a);
-    virtual void runSim();
+    virtual void openSim();
     void clearAuto1D();
     void setOption(const QString& automate);
     void chooseColor();
@@ -54,5 +57,15 @@ public slots:
     void changeSize();
 };
 
+
+class WSpacer : public QWidget
+{
+Q_OBJECT
+public :
+    WSpacer()
+    {
+    setSizePolicy(QSizePolicy::MinimumExpanding,QSizePolicy::MinimumExpanding);
+    }
+};
 
 #endif // MAINWINDOW_H

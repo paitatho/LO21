@@ -21,25 +21,34 @@ void MainWindow::createToolBar(){
     choixSim->addItem("Choix Automate"); choixSim->addItem("1D");choixSim->addItem("2D");
 
     toolBar = addToolBar("file");
-    icon.push_back(new QIcon(QCoreApplication::applicationDirPath() + "/s.jpg"));
-    icon.push_back(new QIcon(QCoreApplication::applicationDirPath() + "/play.jpeg"));
-    icon.push_back(new QIcon(QCoreApplication::applicationDirPath() + "/stop.png"));
-    icon.push_back(new QIcon(QCoreApplication::applicationDirPath() + "/help.jpeg"));
-    action.push_back(new QAction(*icon[0],"&Simulation Ctrl+S",this));
-    action.push_back(new QAction(*icon[1],"&Play",this));
-    action.push_back(new QAction(*icon[2],"&Stop",this));
-    action.push_back(new QAction(*icon[3],"&Help",this));
+    //icon récup dans /usr/share/icons/oxygen/22x22/actions
+    icon.push_back(new QIcon(QCoreApplication::applicationDirPath() + "/media-record.png"));
+    icon.push_back(new QIcon(QCoreApplication::applicationDirPath() + "/media-playback-start.png"));
+    icon.push_back(new QIcon(QCoreApplication::applicationDirPath() + "/media-playback-stop.png"));
+    icon.push_back(new QIcon(QCoreApplication::applicationDirPath() + "/document-save.png"));
+    icon.push_back(new QIcon(QCoreApplication::applicationDirPath() + "/document-open-folder.png"));
+    icon.push_back(new QIcon(QCoreApplication::applicationDirPath() + "/help-browser.png"));
+    action.push_back(new QAction(*icon[0],"&Lance Simulation Ctrl+S",this));
+    action.push_back(new QAction(*icon[1],"&StartSim",this));
+    action.push_back(new QAction(*icon[2],"&StopSim",this));
+    action.push_back(new QAction(*icon[3],"&SaveSim",this));
+    action.push_back(new QAction(*icon[4],"&OpenSim",this));
+    action.push_back(new QAction(*icon[5],"&Help",this));
     action[0]->setShortcut(QKeySequence("Ctrl+S"));
     action[0]->activate(QAction::Trigger);
     toolBar->addAction(action[0]);toolBar->addAction(action[1]);toolBar->addAction(action[2]);
     toolBar->addSeparator();
     toolBar->addWidget(choixSim);
+    toolBar->addSeparator();
     toolBar->addAction(action[3]);
+    toolBar->addAction(action[4]);
+    toolBar->addWidget(new WSpacer);
+    toolBar->addAction(action[5]);
     toolBar->setAllowedAreas(Qt::TopToolBarArea | Qt::BottomToolBarArea);
     toolBar->setFloatable(false);
     toolBar->setStyleSheet("QToolBar{border: 1px solid black;}");
 
-    connect(action[0],&QAction::triggered,this,&MainWindow::runSim);
+    connect(action[0],&QAction::triggered,this,&MainWindow::openSim);
     connect(choixSim,&QComboBox::currentTextChanged,this,&MainWindow::setOption);
 
 }
@@ -50,9 +59,10 @@ void MainWindow::createDockOption(){
     optionDock->setAllowedAreas(Qt::LeftDockWidgetArea | Qt::RightDockWidgetArea);
     //optionDock->setWidget(label[0]);
     optionDock->setMinimumWidth(100);
-    optionDock->setFeatures(QDockWidget::NoDockWidgetFeatures);optionDock->setFeatures(QDockWidget::DockWidgetClosable | QDockWidget::DockWidgetMovable);
+    optionDock->setFeatures(QDockWidget::NoDockWidgetFeatures);optionDock->setFeatures(/*QDockWidget::DockWidgetClosable | */QDockWidget::DockWidgetMovable);
     setCorner(Qt::TopLeftCorner, Qt::LeftDockWidgetArea);
     addDockWidget(Qt::LeftDockWidgetArea, optionDock);
+    optionDock->hide();
 }
 
 void MainWindow::createMdiArea(){
@@ -71,15 +81,16 @@ void MainWindow::createOption1D(){
     separator ->setFrameShape(QFrame::HLine);
     separator ->setFrameShadow(QFrame::Sunken);
     separator->setMaximumHeight(10);
-    boxDim = new QGroupBox(tr("Dimension"));
 
+    boxDim = new QGroupBox(tr("Dimension"));
     layoutBoxDim = new QGridLayout;
-    QLabel* a = new QLabel("Cell Number");
+    boxCel = new QGroupBox(tr("Cellule"));
+    layoutBoxCel =new QGridLayout;
+
     b = new QSpinBox;
     b->setRange(5,80);
     b->setValue(15);
 
-    QLabel* aa = new QLabel("Cell Color");
     QPushButton* bb=new QPushButton;
 
 
@@ -88,12 +99,21 @@ void MainWindow::createOption1D(){
     connect(color,SIGNAL(currentColorChanged(QColor)),this,SLOT(changeColor(QColor)));
     connect(b, SIGNAL(valueChanged(int)),this,SLOT(changeNbCell(int)));
 
-    layoutBoxDim->addWidget(a,0,0);
+    layoutBoxDim->addWidget(new QLabel("Largeur"),0,0);
     layoutBoxDim->addWidget(b,0,1);
-    layoutBoxDim->addWidget(aa,1,0);
-    layoutBoxDim->addWidget(bb,1,1);
+    layoutBoxDim->addWidget(new QLabel("Nombre Simu"),1,0);
+    layoutBoxDim->addWidget(new QSpinBox,1,1);
+
+    layoutBoxCel->addWidget(new QLabel("Couleur"), 0,0);
+    layoutBoxCel->addWidget(bb, 0,1);
+    layoutBoxCel->addWidget(new QLabel("Régle"), 1,0);
+    layoutBoxCel->addWidget(new QSpinBox, 1,1);
+
     boxDim->setLayout(layoutBoxDim);
     boxDim->setMaximumHeight(100);
+    boxCel->setLayout(layoutBoxCel);
+    boxCel->setMaximumHeight(100);
+
     label.push_back(new QLabel("Dimension"));
     label[0]->setStyleSheet("QLabel{font:bold;}");
 
@@ -101,7 +121,8 @@ void MainWindow::createOption1D(){
 
     layout1D->addWidget(separator,0,0);
     layout1D->addWidget(boxDim,1,0);
-    layout1D->addWidget(w,2,0);
+    layout1D->addWidget(boxCel,2,0);
+    layout1D->addWidget(w,3,0);
     option1D->setLayout(layout1D);
 }
 
@@ -111,7 +132,7 @@ void MainWindow::createOption2D(){
 
 /*##########################SLOT######################################*/
 
-void MainWindow::runSim(){
+void MainWindow::openSim(){
    if(choixSim->currentText() == "1D" && auto1D == nullptr){
        auto1D = new Autocell;
        subWin = central->addSubWindow(auto1D);
@@ -143,10 +164,15 @@ void MainWindow::clearAuto1D(){
 
 void MainWindow::setOption(const QString& automate){
     if (automate == "1D"){
+        optionDock->show();
         optionDock->setWidget(option1D);
     }
     else if (automate == "2D"){
+        optionDock->show();
         optionDock->setWidget(option2D);
+    }
+    else if (automate == "Choix Automate"){
+        optionDock->hide();
     }
 }
 
@@ -154,7 +180,6 @@ void MainWindow::changeNbCell(int a){
     if(auto1D != nullptr){
         auto1D->setDimension(a);
     }
-
 }
 
 void MainWindow::chooseColor(){
