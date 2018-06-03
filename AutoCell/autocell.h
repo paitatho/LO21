@@ -23,23 +23,16 @@
 
 class Autocell : public QWidget {
     Q_OBJECT
-    QSpinBox* num; // numéro
-    QLineEdit* numeroBit[8]; // un QLineEdit par bit
-    QLabel* numl;
-    QLabel* numeroBitl[8];
-    QVBoxLayout* numc;
-    QVBoxLayout* bitc[8];
-    QHBoxLayout* numeroc;
+    //QSpinBox* num; // numéro
     QIntValidator* zeroOneValidator;
     QGridLayout* layout;
     QTableWidget* depart;
-    QPushButton* simulation;
     QTableWidget* etats = nullptr;
-    QSpinBox* nbSim;
     QHBoxLayout* sim;
-    //QToolBar* option;
     QColor* color;
 
+    unsigned int regle=0;
+    int nbSim =20;
     int dimension = 15;
     int taille =20;
 
@@ -55,12 +48,16 @@ public:
     QColor getColor() const{
         return *color;
     }
+    void setNbSim(unsigned int nb){nbSim =nb;}
+    void setRegle(unsigned int r){regle=r;}
 
 private slots:
-    void synchronizeNumToNumBit(int i);
-    void synchronizeNumBitToNum(const QString& s);
+    /*void synchronizeNumToNumBit(int i);
+    void synchronizeNumBitToNum(const QString& s);*/
     void cellSelected(int a,int b);
-    void runSim(bool);
+
+public slots:
+    void runSim();
 
 signals:
     void endSim();

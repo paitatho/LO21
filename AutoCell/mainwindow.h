@@ -7,7 +7,7 @@
 #include <QtWidgets>
 #include <QMenu>
 #include "autocell.h"
-
+#include<iostream>
 
 
 class MainWindow : public QMainWindow
@@ -26,10 +26,12 @@ private:
 
     QWidget* option1D;
     QGridLayout* layout1D;
-    QSpinBox* b;
+    QSpinBox* larg1D;
     QWidget* option2D;
     QGridLayout* layout2D;
     QColorDialog* color;
+    QSpinBox* nbSim1D;
+    QSpinBox* regle1D;
 
     QMdiArea * central;
     QMdiSubWindow* subWin;
@@ -55,6 +57,9 @@ public slots:
     void chooseColor();
     void changeColor(QColor);
     void changeSize();
+    void changeNbSim(int a);
+    void changeRegle(int a);
+    void play();
 };
 
 

@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "autocell.h"
-
+#include <iostream>
 
 Autocell* MainWindow::auto1D = nullptr;
 
@@ -50,6 +50,7 @@ void MainWindow::createToolBar(){
 
     connect(action[0],&QAction::triggered,this,&MainWindow::openSim);
     connect(choixSim,&QComboBox::currentTextChanged,this,&MainWindow::setOption);
+    connect(action[1], SIGNAL(triggered()),this,SLOT(play()));
 
 }
 
@@ -87,27 +88,37 @@ void MainWindow::createOption1D(){
     boxCel = new QGroupBox(tr("Cellule"));
     layoutBoxCel =new QGridLayout;
 
-    b = new QSpinBox;
-    b->setRange(5,80);
-    b->setValue(15);
+    larg1D = new QSpinBox;
+    larg1D->setRange(5,80);
+    larg1D->setValue(15);
 
     QPushButton* bb=new QPushButton;
 
+    nbSim1D = new QSpinBox;
+    nbSim1D->setRange(5,40);
+    nbSim1D->setValue(20);
+
+    regle1D = new QSpinBox;
+    regle1D->setRange(0,255);
+    regle1D->setValue(0);
 
     color = new QColorDialog;
     connect(bb,SIGNAL(clicked(bool)),this,SLOT(chooseColor()));
     connect(color,SIGNAL(currentColorChanged(QColor)),this,SLOT(changeColor(QColor)));
-    connect(b, SIGNAL(valueChanged(int)),this,SLOT(changeNbCell(int)));
+    connect(larg1D, SIGNAL(valueChanged(int)),this,SLOT(changeNbCell(int)));
+    connect(nbSim1D, SIGNAL(valueChanged(int)),this,SLOT(changeNbSim(int)));
+    connect(regle1D, SIGNAL(valueChanged(int)),this,SLOT(changeRegle(int)));
+
 
     layoutBoxDim->addWidget(new QLabel("Largeur"),0,0);
-    layoutBoxDim->addWidget(b,0,1);
+    layoutBoxDim->addWidget(larg1D,0,1);
     layoutBoxDim->addWidget(new QLabel("Nombre Simu"),1,0);
-    layoutBoxDim->addWidget(new QSpinBox,1,1);
+    layoutBoxDim->addWidget(nbSim1D,1,1);
 
     layoutBoxCel->addWidget(new QLabel("Couleur"), 0,0);
     layoutBoxCel->addWidget(bb, 0,1);
     layoutBoxCel->addWidget(new QLabel("Régle"), 1,0);
-    layoutBoxCel->addWidget(new QSpinBox, 1,1);
+    layoutBoxCel->addWidget(regle1D, 1,1);
 
     boxDim->setLayout(layoutBoxDim);
     boxDim->setMaximumHeight(100);
@@ -135,6 +146,8 @@ void MainWindow::createOption2D(){
 void MainWindow::openSim(){
    if(choixSim->currentText() == "1D" && auto1D == nullptr){
        auto1D = new Autocell;
+       auto1D->setDimension(larg1D->value());
+       auto1D->setNbSim(nbSim1D->value());
        subWin = central->addSubWindow(auto1D);
        //subWin->setoptionDock(QMdiSubWindow::RubberBandMove);
        subWin->show();
@@ -142,6 +155,7 @@ void MainWindow::openSim(){
        subWin->setAttribute(Qt::WA_DeleteOnClose);
        connect(subWin,&QMdiSubWindow::destroyed,this,&MainWindow::clearAuto1D);
        connect(auto1D,SIGNAL(endSim()),this,SLOT(changeSize()));
+
        setCentralWidget(central);
        //central->setViewMode(QMdiArea::TabbedView);
    }
@@ -159,7 +173,9 @@ void MainWindow::openSim(){
 void MainWindow::clearAuto1D(){
     auto1D = nullptr;
     subWin = nullptr;
-    b->setValue(15);
+    larg1D->setValue(15);
+    nbSim1D->setValue(20);
+    regle1D->setValue(0);
 }
 
 void MainWindow::setOption(const QString& automate){
@@ -182,6 +198,17 @@ void MainWindow::changeNbCell(int a){
     }
 }
 
+void MainWindow::changeNbSim(int a){
+    if(auto1D != nullptr){
+        auto1D->setNbSim(a);
+    }
+}
+void MainWindow::changeRegle(int a){
+    if(auto1D != nullptr){
+        auto1D->setRegle(a);
+    }
+}
+
 void MainWindow::chooseColor(){
     color->show();
 }
@@ -195,4 +222,13 @@ void MainWindow::changeColor(QColor a){
 void MainWindow::changeSize(){
     if (subWin != nullptr)
         subWin->adjustSize();
+}
+
+void MainWindow::play(){
+    QMdiSubWindow* sub =central->currentSubWindow();
+    if(sub != nullptr){
+        Autocell* a = dynamic_cast<Autocell*>(sub->widget());
+        if (a!=nullptr)a->runSim();else std::cout<<"caca";
+    }
+
 }
