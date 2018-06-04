@@ -77,6 +77,7 @@ Etat1D& Etat1D::operator=(const Etat1D& etat){
     for (int i = 0; i<m_largeur;i++)
       m_tab.push_back(etat.m_tab[i]);
   }
+  return *this;
 }
 
 /*#############-Automate-###############################*/
