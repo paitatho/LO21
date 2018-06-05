@@ -6,6 +6,9 @@
 #include <QWidget>
 #include <QtWidgets>
 #include <QMenu>
+#include <QSettings>
+#include <QEvent>
+#include <QCloseEvent>
 #include "autocell.h"
 #include<iostream>
 
@@ -47,8 +50,8 @@ private:
     virtual void createOption2D();
 public:
     MainWindow();
-
-
+    void closeEvent(QCloseEvent *event);
+    void saveAppState();
 public slots:
     void changeNbCell(int a);
     virtual void openSim();
