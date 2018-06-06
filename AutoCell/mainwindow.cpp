@@ -327,3 +327,18 @@ void MainWindow::current(QMdiSubWindow *w){
         }
     }*/
 }
+
+void MainWindow::saveAppState(){
+    QSettings settings("Reyhan&Thomas", "AutoCell");
+    settings.setValue("typeAutomate", choixSim->currentText());
+    if(choixSim->currentText()=="1D"){
+        settings.setValue("larg1D", larg1D->value());
+        settings.setValue("nbSim1D", nbSim1D->value());
+        settings.setValue("regle1D", regle1D->value());
+    }
+}
+
+void MainWindow::closeEvent(QCloseEvent* event){
+    saveAppState();
+    event->accept();
+}
