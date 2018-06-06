@@ -10,7 +10,7 @@ int main(int argc, char * argv[]) {
     QApplication app(argc, argv);
 
     MainWindow* window = new MainWindow();
-    window->show();
+    window->showMaximized();
 /*
     vector<vector<unsigned short int>> v;
     v.push_back(vector<unsigned short int>());
@@ -29,7 +29,6 @@ int main(int argc, char * argv[]) {
     }
     Automate2D a(v);
     Simulateur<Automate2D,Etat2D> s(a,e);
-    s.dernier().afficher();
     for(int i=0;i<12;i++){
     s.next(); s.dernier().afficher();}*/
 

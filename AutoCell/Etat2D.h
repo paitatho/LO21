@@ -17,12 +17,22 @@ public:
     ~Etat2D(){}
     unsigned int getHauteur() const {return m_hauteur;}
     void setHauteur(unsigned int h) {m_hauteur =h; this->adjustEtat();}
-    unsigned short int getCellule(unsigned int i,unsigned j) const {return m_valeur[i][j];}
     void afficher() const;
     void setCellule(unsigned int i, unsigned int j, unsigned short int val){
         m_valeur[i][j] = val;
     }
+    unsigned short int getCellule(unsigned int i, unsigned int j) const {return m_valeur[i][j]; }
     virtual void adjustEtat();
+    bool operator==(const Etat2D& e){
+        bool sol=true;
+        for(int i=0;i<m_hauteur;i++){
+            for(int j=0;j<m_largeur;j++){
+                if(m_valeur[i][j] != e.m_valeur[i][j])sol =false;
+            }
+        }
+        return sol;
+    }
+
 };
 
 #endif // ETAT2D_H
