@@ -1,8 +1,10 @@
 #include "mainwindow.h"
 #include "autocell.h"
 #include <iostream>
+#include <typeinfo>
 
-Autocell* MainWindow::auto1D = nullptr;
+Autocell1D* MainWindow::auto1D = nullptr;
+Autocell2D* MainWindow::auto2D = nullptr;
 
 MainWindow::MainWindow(): QMainWindow(){
 
@@ -24,26 +26,28 @@ void MainWindow::createToolBar(){
     //icon récup dans /usr/share/icons/oxygen/22x22/actions
     icon.push_back(new QIcon(QCoreApplication::applicationDirPath() + "/media-record.png"));
     icon.push_back(new QIcon(QCoreApplication::applicationDirPath() + "/media-playback-start.png"));
+    icon.push_back(new QIcon(QCoreApplication::applicationDirPath() + "/media-playback-pause.png"));
     icon.push_back(new QIcon(QCoreApplication::applicationDirPath() + "/media-playback-stop.png"));
     icon.push_back(new QIcon(QCoreApplication::applicationDirPath() + "/document-save.png"));
     icon.push_back(new QIcon(QCoreApplication::applicationDirPath() + "/document-open-folder.png"));
     icon.push_back(new QIcon(QCoreApplication::applicationDirPath() + "/help-browser.png"));
     action.push_back(new QAction(*icon[0],"&Lance Simulation Ctrl+S",this));
     action.push_back(new QAction(*icon[1],"&StartSim",this));
-    action.push_back(new QAction(*icon[2],"&StopSim",this));
-    action.push_back(new QAction(*icon[3],"&SaveSim",this));
-    action.push_back(new QAction(*icon[4],"&OpenSim",this));
-    action.push_back(new QAction(*icon[5],"&Help",this));
+    action.push_back(new QAction(*icon[2],"&PauseSim",this));
+    action.push_back(new QAction(*icon[3],"&StopSim",this));
+    action.push_back(new QAction(*icon[4],"&SaveSim",this));
+    action.push_back(new QAction(*icon[5],"&OpenSim",this));
+    action.push_back(new QAction(*icon[6],"&Help",this));
     action[0]->setShortcut(QKeySequence("Ctrl+S"));
     action[0]->activate(QAction::Trigger);
-    toolBar->addAction(action[0]);toolBar->addAction(action[1]);toolBar->addAction(action[2]);
+    toolBar->addAction(action[0]);toolBar->addAction(action[1]);toolBar->addAction(action[2]);toolBar->addAction(action[3]);
     toolBar->addSeparator();
     toolBar->addWidget(choixSim);
     toolBar->addSeparator();
-    toolBar->addAction(action[3]);
     toolBar->addAction(action[4]);
-    toolBar->addWidget(new WSpacer);
     toolBar->addAction(action[5]);
+    toolBar->addWidget(new WSpacer);
+    toolBar->addAction(action[6]);
     toolBar->setAllowedAreas(Qt::TopToolBarArea | Qt::BottomToolBarArea);
     toolBar->setFloatable(false);
     toolBar->setStyleSheet("QToolBar{border: 1px solid black;}");
@@ -51,6 +55,8 @@ void MainWindow::createToolBar(){
     connect(action[0],&QAction::triggered,this,&MainWindow::openSim);
     connect(choixSim,&QComboBox::currentTextChanged,this,&MainWindow::setOption);
     connect(action[1], SIGNAL(triggered()),this,SLOT(play()));
+    connect(action[2], SIGNAL(triggered()),this,SLOT(pause()));
+    connect(action[3],SIGNAL(triggered()),this,SLOT(clear()));
 
 }
 
@@ -70,6 +76,7 @@ void MainWindow::createMdiArea(){
     central = new QMdiArea;
     central->setStyleSheet("QMdiArea::separator {background: black;width: 1px;height: 1px;}");
     setCentralWidget(central);
+    connect(central,SIGNAL(subWindowActivated(QMdiSubWindow*)),this,SLOT(current(QMdiSubWindow*)));
 }
 
 
@@ -139,15 +146,73 @@ void MainWindow::createOption1D(){
 
 void MainWindow::createOption2D(){
     option2D = new QWidget;
+    layout2D = new QGridLayout;
+
+    QPushButton* boutonCouleur=new QPushButton;
+    QPushButton* boutonRegle=new QPushButton;
+
+    boxDim2D = new QGroupBox(tr("Dimension"));
+    layoutBoxDim2D = new QGridLayout;
+    boxCel2D = new QGroupBox(tr("Cellule"));
+    layoutBoxCel2D =new QGridLayout;
+    boxParam2D = new QGroupBox(tr("Param"));
+    layoutBoxParam2D =new QGridLayout;
+
+    larg2D = new QSpinBox;
+    larg2D->setRange(5,80);
+    larg2D->setValue(30);
+    haut2D = new QSpinBox;
+    haut2D->setRange(5,80);
+    haut2D->setValue(30);
+    speed2D = new QSpinBox;
+    speed2D->setRange(1,1000);
+    speed2D->setValue(100);
+    mode2D = new QComboBox;
+    mode2D->addItem("Continu");mode2D->addItem("pas à pas");
+    layoutBoxDim2D->addWidget(new QLabel("Largeur"),0,0);
+    layoutBoxDim2D->addWidget(larg2D,0,1);
+    layoutBoxDim2D->addWidget(new QLabel("Hauteur"),1,0);
+    layoutBoxDim2D->addWidget(haut2D,1,1);
+
+    layoutBoxCel2D->addWidget(new QLabel("Couleur"), 0,0);
+    layoutBoxCel2D->addWidget(boutonCouleur, 0,1);
+    layoutBoxCel2D->addWidget(new QLabel("Régle"), 1,0);
+    layoutBoxCel2D->addWidget(boutonRegle, 1,1);
+
+    layoutBoxParam2D->addWidget(new QLabel("Speed(ms)"), 0,0);
+    layoutBoxParam2D->addWidget(speed2D, 0,1);
+    layoutBoxParam2D->addWidget(new QLabel("mode"), 1,0);
+    layoutBoxParam2D->addWidget(mode2D, 1,1);
+
+    boxDim->setLayout(layoutBoxDim);
+    boxDim->setMaximumHeight(100);
+    boxCel->setLayout(layoutBoxCel);
+    boxCel->setMaximumHeight(100);
+    boxParam2D->setLayout(layoutBoxParam2D);
+    boxParam2D->setMaximumHeight(100);
+
+    QWidget* w = new QWidget;
+    boxDim2D->setLayout(layoutBoxDim2D);
+    boxDim2D->setMaximumHeight(100);
+    boxCel2D->setLayout(layoutBoxCel2D);
+    boxCel2D->setMaximumHeight(100);
+    layout2D->addWidget(separator,0,0);
+    layout2D->addWidget(boxDim2D,1,0);
+    layout2D->addWidget(boxCel2D,2,0);
+    layout2D->addWidget(boxParam2D,3,0);
+    layout2D->addWidget(w,4,0);
+    option2D->setLayout(layout2D);
+
+
 }
 
 /*##########################SLOT######################################*/
 
 void MainWindow::openSim(){
    if(choixSim->currentText() == "1D" && auto1D == nullptr){
-       auto1D = new Autocell;
-       auto1D->setDimension(larg1D->value());
-       auto1D->setNbSim(nbSim1D->value());
+       auto1D = new Autocell1D;
+       auto1D->setLargeur(larg1D->value());
+       auto1D->setHauteur(nbSim1D->value());
        subWin = central->addSubWindow(auto1D);
        //subWin->setoptionDock(QMdiSubWindow::RubberBandMove);
        subWin->show();
@@ -155,28 +220,28 @@ void MainWindow::openSim(){
        subWin->setAttribute(Qt::WA_DeleteOnClose);
        connect(subWin,&QMdiSubWindow::destroyed,this,&MainWindow::clearAuto1D);
        connect(auto1D,SIGNAL(endSim()),this,SLOT(changeSize()));
-
+       connect(auto1D,SIGNAL(endSim()),this,SLOT(allow()));
        setCentralWidget(central);
        //central->setViewMode(QMdiArea::TabbedView);
    }
    else if(choixSim->currentText() == "Choix Automate"){
        QMessageBox::information(this,"information","Vous devez choisir un automate!");
    }
-   else if(choixSim->currentText() == "2D"){
-       QMessageBox::information(this,"information","l'automate 2D n'est pas encore implémenté!");
+   else if(choixSim->currentText() == "2D" && auto2D == nullptr){
+       auto2D =new Autocell2D;
+       auto2D->setNbEtat(4);
+       subWin2D = central->addSubWindow(auto2D);
+       auto2D->setAttribute(Qt::WA_DeleteOnClose);
+       subWin2D->setAttribute(Qt::WA_DeleteOnClose);
+       subWin2D->show();
+       connect(subWin2D,&QMdiSubWindow::destroyed,this,&MainWindow::clearAuto2D);
+       connect(auto2D,SIGNAL(endSim()),this,SLOT(allow()));
    }
    else{
        QMessageBox::information(this,"information","Vous ne pouvez pas créer 2 automates <strong>identiques</strong> en même temps");
    }
 }
 
-void MainWindow::clearAuto1D(){
-    auto1D = nullptr;
-    subWin = nullptr;
-    larg1D->setValue(15);
-    nbSim1D->setValue(20);
-    regle1D->setValue(0);
-}
 
 void MainWindow::setOption(const QString& automate){
     if (automate == "1D"){
@@ -194,43 +259,73 @@ void MainWindow::setOption(const QString& automate){
 
 void MainWindow::changeNbCell(int a){
     if(auto1D != nullptr){
-        auto1D->setDimension(a);
+        auto1D->setLargeur(a);
     }
 }
 
 void MainWindow::changeNbSim(int a){
     if(auto1D != nullptr){
-        auto1D->setNbSim(a);
+        auto1D->setHauteur(a);
     }
 }
 void MainWindow::changeRegle(int a){
-    if(auto1D != nullptr){
-        auto1D->setRegle(a);
-    }
+    if(auto1D != nullptr)auto1D->setRegle(a);
 }
 
-void MainWindow::chooseColor(){
-    color->show();
+void MainWindow::chooseColor() const{
+    if(color!=nullptr)color->show();
 }
 
 void MainWindow::changeColor(QColor a){
-    if(auto1D != nullptr){
-        auto1D->setColor(a);
-    }
+    if(auto1D != nullptr)auto1D->setColor(a);
 }
 
 void MainWindow::changeSize(){
-    if (subWin != nullptr)
-        subWin->adjustSize();
+    if (subWin != nullptr)subWin->adjustSize();
 }
 
 void MainWindow::play(){
     QMdiSubWindow* sub =central->currentSubWindow();
     if(sub != nullptr){
         Autocell* a = dynamic_cast<Autocell*>(sub->widget());
-        if (a!=nullptr)a->runSim();else std::cout<<"caca";
+        if (a!=nullptr){
+            if(a==auto2D && mode2D->currentText()=="Continu")a->setContinu(true);
+            else a->setContinu(false);
+            action[3]->setEnabled(false);
+            a->runSim();
+        }
+        else throw "erreur slot play()";
     }
+}
 
+void MainWindow::pause(){
+    QMdiSubWindow* sub =central->currentSubWindow();
+    if(sub != nullptr){
+        Autocell* a = dynamic_cast<Autocell*>(sub->widget());
+        if (a!=nullptr && a==auto2D)a->setContinu(false);
+    }
+}
+
+void MainWindow::clear(){
+    QMdiSubWindow* sub =central->currentSubWindow();
+    if(sub != nullptr){
+        Autocell* a = dynamic_cast<Autocell*>(sub->widget());
+        if (a!=nullptr){ a->setContinu(false), a->clear();}
+    }
+}
+
+void MainWindow::current(QMdiSubWindow *w){
+    /*if (w != nullptr){
+        Autocell* a = dynamic_cast<Autocell*>(w);
+        if(a == auto1D){
+            optionDock->show();
+            optionDock->setWidget(option1D);
+        }
+        else if (a==auto2D){
+            optionDock->show();
+            optionDock->setWidget(option2D);
+        }
+    }*/
 }
 
 void MainWindow::saveAppState(){
