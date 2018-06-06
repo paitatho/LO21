@@ -50,7 +50,17 @@ public:
     }
     void setNbSim(unsigned int nb){nbSim =nb;}
     void setRegle(unsigned int r){regle=r;}
-
+    QString& getStringDepart() const {
+        QString result="";
+        for(unsigned int i=0; i<dimension; i++){
+            if (depart->item(0,i)->backgroundColor() == *color){
+                result.append("1;");
+            }else{
+                result.append("0;");
+            }
+        }
+        return result;
+    }
 private slots:
     /*void synchronizeNumToNumBit(int i);
     void synchronizeNumBitToNum(const QString& s);*/

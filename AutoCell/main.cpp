@@ -10,6 +10,7 @@ int main(int argc, char * argv[]) {
     QApplication app(argc, argv);
 
     MainWindow* window = new MainWindow();
+    window->restoreAppState();
     window->show();
 /*
     vector<vector<unsigned short int>> v;
