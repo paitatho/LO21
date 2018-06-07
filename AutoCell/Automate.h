@@ -4,6 +4,11 @@
 #include <QMainWindow>
 #include <QObject>
 #include <QWidget>
+#include <QThread>
+#include<QTime>
+#include<iostream>
+#include <string>
+#include <vector>
 
 template<class T>class Automate     // classe abstraite
 {

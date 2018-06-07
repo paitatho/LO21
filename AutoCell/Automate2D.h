@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QObject>
 #include <QWidget>
+#include <QtWidgets>
 #include "Automate.h"
 #include "Etat2D.h"
 /*
@@ -37,6 +38,8 @@ public:
     int nbCellule(unsigned int i,unsigned int j, Etat2D const& etat, unsigned short int etatCel) const; // etatCel nous indique quel est l'état des cellules qu'on devra compter
 
 };
+
+
 
 
 #endif // AUTOMATE2D_H

@@ -292,6 +292,7 @@ void MainWindow::play(){
             if(a==auto2D && mode2D->currentText()=="Continu")a->setContinu(true);
             else a->setContinu(false);
             action[3]->setEnabled(false);
+            //action[1]->setEnabled(false);
             a->runSim();
         }
         else throw "erreur slot play()";
@@ -302,7 +303,7 @@ void MainWindow::pause(){
     QMdiSubWindow* sub =central->currentSubWindow();
     if(sub != nullptr){
         Autocell* a = dynamic_cast<Autocell*>(sub->widget());
-        if (a!=nullptr && a==auto2D)a->setContinu(false);
+        if (a!=nullptr/* && a==auto2D*/)a->setContinu(false);
     }
 }
 
