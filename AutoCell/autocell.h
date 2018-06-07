@@ -35,10 +35,10 @@ protected:
     int largeur = 15;
 public:
     Autocell(QWidget* parent = nullptr,unsigned int Etat=2): QWidget(parent),nbEtat(Etat){
-        couleur.push_back("green");
-        couleur.push_back("black");
-        couleur.push_back("red");
         couleur.push_back("white");
+        couleur.push_back("black");
+        couleur.push_back("blue");
+        couleur.push_back("red");
     }
     void setNbEtat(unsigned int e){nbEtat = e;}
     unsigned int getNbEtat() const {return nbEtat;}
@@ -56,8 +56,8 @@ public:
     virtual void setColor(QColor)=0;
     virtual void setContinu(bool a)=0;
     virtual void clear()=0;
+    virtual void setCouleur(std::vector<std::string> c){couleur.clear();couleur =c;}
  public slots:
-    //virtual ~Autocell()=default;
 
     virtual void cellSelected(int a,int b)=0;
 
@@ -125,6 +125,8 @@ public:
     }
     void setContinu(bool a){continu=a;}
     bool getContinu(){return continu;}
+    void setRegle(std::vector<std::vector<unsigned short int>> r){regle.clear();regle=r;setNbEtat(regle.size());}
+    const std::vector<std::vector<unsigned short int>>& getRegle() const {return regle;}
 
 
 public slots:
@@ -137,13 +139,16 @@ public slots:
 class Regle2D: public QWidget{
     Q_OBJECT
 private:
+    std::vector<std::vector<unsigned short int>> regle;
     QSpinBox* nbEtat;
     QComboBox* regleBase;
+    std::vector<QSpinBox*> etatCellulePourAppliquer;
     std::vector<QSpinBox*> celluleACCompter;
     std::vector<QComboBox*> interval;
     std::vector<QSpinBox*> borneInf;
     std::vector<QSpinBox*> borneSup;
     std::vector<QComboBox*> couleur;
+    std::vector<std::string> couleurNom;
     QGridLayout* layout;
 
 public:
@@ -151,8 +156,12 @@ public:
 public slots:
     void depart();
     void cacher();
+    void setRegle();
+    void setCouleur();
+    void sendRegle();
+    void reglePredefini(QString);
 signals:
-    void emitRegle(std::vector<std::vector<int>> v);
+    void envoiRegle(std::vector<std::vector<unsigned short int>>,std::vector<std::string>);
 
 };
 

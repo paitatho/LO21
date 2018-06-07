@@ -181,10 +181,6 @@ void Autocell2D::cellSelected(int a,int b){
         }
         i++;
     }
-    /*if (etats->item(a,b)->backgroundColor() == "white")
-         etats->item(a,b)->setBackgroundColor(couleur[1].c_str());
-    else
-         etats->item(a,b)->setBackgroundColor("white");*/
 }
 
 void Autocell2D::runSim(){
@@ -206,15 +202,15 @@ void Autocell2D::runSim(){
                 c=0;
             }
         }
-        std::vector<std::vector<unsigned short int>> v;
+        /*std::vector<std::vector<unsigned short int>> v;
         v.push_back(std::vector<unsigned short int>());
         v.push_back(std::vector<unsigned short int>());//[1,1,0,2,3] [0,1,1,3,3]
         v.push_back(std::vector<unsigned short int>());
         v[0].push_back(0);v[0].push_back(2);v[0].push_back(0);v[0].push_back(1);v[0].push_back(8);
         v[1].push_back(2);v[1].push_back(0);v[1].push_back(1);v[1].push_back(0);v[1].push_back(9);
         v[2].push_back(0);v[2].push_back(2);v[2].push_back(1);v[2].push_back(1);v[2].push_back(8);
-        v[3].push_back(3);v[3].push_back(0);v[3].push_back(1);v[3].push_back(0);v[3].push_back(9);
-        Automate2D a(v,nbEtat);
+        v[3].push_back(3);v[3].push_back(0);v[3].push_back(1);v[3].push_back(0);v[3].push_back(9);*/
+        Automate2D a(regle,nbEtat);
         Simulateur<Automate2D,Etat2D> s(a,e);
         s.next();
         if (etats == nullptr){
@@ -264,13 +260,17 @@ void Autocell2D::clear(){
 
 /*#####################################################---REGLE 2D----#######################################"*/
 
-Regle2D::Regle2D(QWidget* parent) : QWidget(parent){
+Regle2D::Regle2D(QWidget* parent) : QWidget(parent),regle (std::vector<std::vector<unsigned short int>>()){
    nbEtat = new QSpinBox;
    nbEtat->setRange(2,8);
    nbEtat->setValue(2);
+   regleBase = new QComboBox;regleBase->addItems((QStringList()<<"régles prédéfinies" << "JDLV"<< "Feu de Foret"));
+   connect(regleBase,SIGNAL(currentTextChanged(QString)),this,SLOT(reglePredefini(QString)));
    layout= new QGridLayout;
-   layout->addWidget(new QLabel("nombre d'état"),0,0);
-   layout->addWidget(nbEtat,0,1);
+   layout->addWidget(regleBase);
+   layout->addWidget(new QLabel("nombre d'état"),0,1);
+   layout->addWidget(nbEtat,0,2);
+   etatCellulePourAppliquer= std::vector<QSpinBox*>();
    celluleACCompter= std::vector<QSpinBox*>();
    interval= std::vector<QComboBox*>();
    borneInf= std::vector<QSpinBox*>();
@@ -284,36 +284,82 @@ Regle2D::Regle2D(QWidget* parent) : QWidget(parent){
 
 void Regle2D::depart(){
     for (int i=0;i<nbEtat->maximum();i++){
-            std::string label("Passage à l'état " + std::to_string(i) +" ");
+            std::string label("Pour passer à l'état " + std::to_string(i) +", ");
             QString labelBis= label.c_str();
             layout->addWidget(new QLabel(labelBis),i+1,0);
 
-            layout->addWidget(new QLabel(" Etat cellule à compter "),i+1,1);
-            celluleACCompter.push_back(new QSpinBox(this));celluleACCompter[i]->setRange(0,nbEtat->value());
-            layout->addWidget(celluleACCompter[i],i+1,2);
+            layout->addWidget(new QLabel("il faut être dans l'état"),i+1,1);
+            etatCellulePourAppliquer.push_back(new QSpinBox(this));etatCellulePourAppliquer[i]->setRange(0,nbEtat->value()-1);
+            layout->addWidget(etatCellulePourAppliquer[i],i+1,2);
+
+            layout->addWidget(new QLabel("compter les cellules alentours dans l'état"),i+1,3);
+            celluleACCompter.push_back(new QSpinBox(this));celluleACCompter[i]->setRange(0,nbEtat->value()-1);
+            layout->addWidget(celluleACCompter[i],i+1,4);
 
             interval.push_back(new QComboBox(this));interval[i]->addItem("Dans interval");interval[i]->addItem("hors interval");
-            layout->addWidget(interval[i],i+1,3);
+            layout->addWidget(interval[i],i+1,5);
 
 
-            layout->addWidget(new QLabel(" Interval "),i+1,4);
             borneInf.push_back(new QSpinBox(this));borneInf[i]->setRange(0,8);
-            layout->addWidget(borneInf[i],i+1,5);
+            layout->addWidget(borneInf[i],i+1,6);
 
 
             borneSup.push_back(new QSpinBox);borneSup[i]->setRange(0,8);
-            layout->addWidget(borneSup[i],i+1,6);
+            layout->addWidget(borneSup[i],i+1,7);
 
 
             couleur.push_back(new QComboBox(this)); couleur[i]->addItems((QStringList() << "white"<< "blue" << "red"<<"black"));
-            layout->addWidget(couleur[i],i+1,7);
+            layout->addWidget(couleur[i],i+1,8);
     }
+    QPushButton* bouton = new QPushButton("OK");
+    connect(bouton,SIGNAL(clicked()),this,SLOT(sendRegle()));
+    layout->addWidget(bouton,nbEtat->maximum()+1,8);
 }
 
 void Regle2D::cacher(){
     for (int i=nbEtat->value()+1;i<=nbEtat->maximum();i++){
-        for(int j=0;j<8;j++){
+        for(int j=0;j<9;j++){
             layout->itemAtPosition(i,j)->widget()->hide();
         }
+    }
+}
+
+void Regle2D::setRegle(){
+    regle.clear();
+    for(int i=0;i<nbEtat->value();++i){
+        regle.push_back(std::vector<unsigned short int>(5));
+        regle[i][0] = etatCellulePourAppliquer[i]->value();
+        regle[i][1] = celluleACCompter[i]->value();
+        if(interval[i]->currentText() == "Dans interval")regle[i][2] = 1;else regle[i][2]=0;
+        regle[i][3] = borneInf[i]->value();
+        regle[i][4] = borneSup[i]->value();
+    }
+}
+
+
+void Regle2D::setCouleur(){
+    couleurNom.clear();
+    for(int i=0;i<nbEtat->value();++i){
+        couleurNom.push_back(couleur[i]->currentText().toStdString());
+    }
+}
+
+void Regle2D::sendRegle(){
+    setRegle();
+    setCouleur();
+    emit envoiRegle(regle,couleurNom);
+    this->hide();
+}
+
+void Regle2D::reglePredefini(QString nom){
+    if (nom == "JDLV"){
+        nbEtat->setValue(2);
+        etatCellulePourAppliquer[0]->setValue(1);
+        celluleACCompter[0]->setValue(1); interval[0]->setCurrentIndex(1);
+        borneInf[0]->setValue(2);borneSup[0]->setValue(3);couleur[0]->setCurrentIndex(0);
+
+        etatCellulePourAppliquer[1]->setValue(0);
+        celluleACCompter[1]->setValue(1); interval[1]->setCurrentIndex(0);
+        borneInf[1]->setValue(3);borneSup[1]->setValue(3);couleur[1]->setCurrentIndex(3);
     }
 }

@@ -3,6 +3,7 @@
 #include <iostream>
 #include <typeinfo>
 
+
 Autocell1D* MainWindow::auto1D = nullptr;
 Autocell2D* MainWindow::auto2D = nullptr;
 
@@ -148,8 +149,7 @@ void MainWindow::createOption2D(){
     option2D = new QWidget;
     layout2D = new QGridLayout;
 
-    QPushButton* boutonCouleur=new QPushButton;
-    QPushButton* boutonRegle=new QPushButton;
+    QPushButton* boutonRegle=new QPushButton("Regle");
 
     boxDim2D = new QGroupBox(tr("Dimension"));
     layoutBoxDim2D = new QGridLayout;
@@ -174,10 +174,12 @@ void MainWindow::createOption2D(){
     layoutBoxDim2D->addWidget(new QLabel("Hauteur"),1,0);
     layoutBoxDim2D->addWidget(haut2D,1,1);
 
-    layoutBoxCel2D->addWidget(new QLabel("Couleur"), 0,0);
-    layoutBoxCel2D->addWidget(boutonCouleur, 0,1);
-    layoutBoxCel2D->addWidget(new QLabel("Régle"), 1,0);
-    layoutBoxCel2D->addWidget(boutonRegle, 1,1);
+    layoutBoxCel2D->addWidget(boutonRegle, 0,0,1,2);
+
+    fenetreRegle2D = new Regle2D;
+    fenetreRegle2D->hide();
+    connect(boutonRegle,SIGNAL(clicked()),this,SLOT(afficherRegle2D()));
+    connect(fenetreRegle2D,SIGNAL(envoiRegle(std::vector<std::vector<unsigned short int> >,std::vector<std::string>)),this,SLOT(regle2D(std::vector<std::vector<unsigned short int> >,std::vector<std::string>)));
 
     layoutBoxParam2D->addWidget(new QLabel("Speed(ms)"), 0,0);
     layoutBoxParam2D->addWidget(speed2D, 0,1);
@@ -229,7 +231,6 @@ void MainWindow::openSim(){
    }
    else if(choixSim->currentText() == "2D" && auto2D == nullptr){
        auto2D =new Autocell2D;
-       auto2D->setNbEtat(4);
        subWin2D = central->addSubWindow(auto2D);
        auto2D->setAttribute(Qt::WA_DeleteOnClose);
        subWin2D->setAttribute(Qt::WA_DeleteOnClose);
@@ -355,5 +356,13 @@ void MainWindow::restoreAppState(){
         regle1D->setValue(settings.value("regle1D").toInt());
         openSim();
         play();
+    }
+}
+
+void MainWindow::regle2D(std::vector<std::vector<unsigned short int>> r,std::vector<std::string> c){
+    if(auto2D != nullptr){
+        auto2D->setRegle(r);
+        auto2D->setCouleur(c);
+        auto2D->clear();
     }
 }

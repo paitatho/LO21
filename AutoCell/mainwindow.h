@@ -49,6 +49,7 @@ private:
     QMdiArea * central;
     QMdiSubWindow* subWin;
     QMdiSubWindow* subWin2D;
+    Regle2D* fenetreRegle2D;
 
     QDockWidget* optionDock;
     QFrame* separator;
@@ -86,7 +87,8 @@ public slots:
     void clear();
     void current(QMdiSubWindow *w);
     void allow(){action[3]->setEnabled(true);}
-    void regle2D(std::vector<std::vector<unsigned short int>>){}
+    void regle2D(std::vector<std::vector<unsigned short int>> r,std::vector<std::string> c);
+    void afficherRegle2D(){ fenetreRegle2D->show();}
 };
 
 
