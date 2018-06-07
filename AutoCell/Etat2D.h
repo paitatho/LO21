@@ -27,7 +27,7 @@ public:
         bool sol=true;
         for(int i=0;i<m_hauteur;i++){
             for(int j=0;j<m_largeur;j++){
-                if(m_valeur[i][j] != e.m_valeur[i][j])sol =false;
+                if(m_valeur[i][j] != e.m_valeur[i][j]) sol =false;
             }
         }
         return sol;

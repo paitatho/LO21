@@ -281,13 +281,13 @@ void MainWindow::changeColor(QColor a){
 }
 
 void MainWindow::changeSize(){
-    if (subWin != nullptr)subWin->adjustSize();
+    if (subWin != nullptr) subWin->adjustSize();
 }
 
 void MainWindow::play(){
     QMdiSubWindow* sub =central->currentSubWindow();
     if(sub != nullptr){
-        Autocell* a = dynamic_cast<Autocell*>(sub->widget());
+        Autocell* a = dynamic_cast<Autocell*> (sub->widget());
         if (a!=nullptr){
             if(a==auto2D && mode2D->currentText()=="Continu")a->setContinu(true);
             else a->setContinu(false);
@@ -336,7 +336,7 @@ void MainWindow::saveAppState(){
         settings.setValue("larg1D", larg1D->value());
         settings.setValue("nbSim1D", nbSim1D->value());
         settings.setValue("regle1D", regle1D->value());
-        //settings.setValue("etatDepart", auto1D->getStringDepart());
+
     }
 }
 
