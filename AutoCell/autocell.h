@@ -90,21 +90,14 @@ public:
     }
     void setHauteur(unsigned int nb){hauteur =nb;}
     void setRegle(unsigned int r){regle=r;}
-
     virtual void runSim();
     virtual void setContinu(bool a){}
     virtual void clear();
 public slots:
     virtual void cellSelected(int a,int b);
-
-
 private slots:
     /*void synchronizeNumToNumBit(int i);
     void synchronizeNumBitToNum(const QString& s);*/
-
-
-
-
 };
 
 /*####################################################################################*/

@@ -69,6 +69,7 @@ public:
     MainWindow();
     void closeEvent(QCloseEvent *event);
     void saveAppState();
+    void restoreAppState();
 public slots:
     void changeNbCell(int a);
     virtual void openSim();

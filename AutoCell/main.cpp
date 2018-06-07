@@ -10,6 +10,8 @@ int main(int argc, char * argv[]) {
     QApplication app(argc, argv);
 
     MainWindow* window = new MainWindow();
+    window->restoreAppState();
+    window->show();
     window->showMaximized();
     Regle2D* r= new Regle2D();
     r->show();
