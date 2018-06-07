@@ -69,7 +69,7 @@ signals:
 
 class Autocell1D: public Autocell {
     Q_OBJECT
-    //QSpinBox* num; // numéro
+protected:
     QGridLayout* layout;
     QTableWidget* depart;
     QTableWidget* etats = nullptr;
@@ -105,6 +105,7 @@ private slots:
 class Autocell2D:public Autocell{
     Q_OBJECT
 protected:
+    std::vector<std::vector<unsigned short int>> regle;
     unsigned int speed=100;
     QGridLayout* layout;
     QTableWidget* etats = nullptr;
@@ -130,6 +131,28 @@ public slots:
     void cellSelected(int a,int b);
     void clear();
     void runSim();
+
+};
+
+class Regle2D: public QWidget{
+    Q_OBJECT
+private:
+    QSpinBox* nbEtat;
+    QComboBox* regleBase;
+    std::vector<QSpinBox*> celluleACCompter;
+    std::vector<QComboBox*> interval;
+    std::vector<QSpinBox*> borneInf;
+    std::vector<QSpinBox*> borneSup;
+    std::vector<QComboBox*> couleur;
+    QGridLayout* layout;
+
+public:
+    Regle2D(QWidget* parent = nullptr);
+public slots:
+    void depart();
+    void cacher();
+signals:
+    void emitRegle(std::vector<std::vector<int>> v);
 
 };
 

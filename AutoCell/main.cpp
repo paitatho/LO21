@@ -13,6 +13,8 @@ int main(int argc, char * argv[]) {
     window->restoreAppState();
     window->show();
     window->showMaximized();
+    Regle2D* r= new Regle2D();
+    r->show();
 /*
     vector<vector<unsigned short int>> v;
     v.push_back(vector<unsigned short int>());

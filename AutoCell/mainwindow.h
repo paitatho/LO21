@@ -86,6 +86,7 @@ public slots:
     void clear();
     void current(QMdiSubWindow *w);
     void allow(){action[3]->setEnabled(true);}
+    void regle2D(std::vector<std::vector<unsigned short int>>){}
 };
 
 

@@ -1,26 +1,7 @@
  #include "autocell.h"
  #include "Automate2D.h"
  #include "Etat2D.h"
-    #include <QThread>
-#include<QTime>
-#include<iostream>
 
-/*void Autocell1D::synchronizeNumToNumBit(int i){
-    std::string numbit = NumToNumBit(i);
-    for (unsigned int i=0;i<numbit.size();i++){
-        numeroBit[i]->setText(QString(numbit[i]));
-    }
-}
-
-void Autocell1D::synchronizeNumBitToNum(const QString& s){
-    if (s=="") return;
-    std::string numBit;
-    for(unsigned int i=0;i<8;i++){
-        numBit += numeroBit[i]->text().toStdString();
-    }
-    int a = NumBitToNum(numBit);
-    //num->setValue(a);
-}*/
 
 void delay(int n)
 {
@@ -63,7 +44,6 @@ void Autocell1D::runSim(){
                 QTableWidgetItem* a = new QTableWidgetItem ("");
                 a->setFlags(Qt::NoItemFlags);
                 a->setFlags(Qt::ItemIsEnabled);
-               // a->setSizeHint(QSize(largeur,largeur));
                 etats ->setItem(i, j, a);
             }
             if (s.dernier().getCellule(j) == true){
@@ -166,7 +146,7 @@ void Autocell2D::setEtat(int h,int l){
     }
 }
 
-Autocell2D::Autocell2D(QWidget* parent) : Autocell(parent){
+Autocell2D::Autocell2D(QWidget* parent) : Autocell(parent),regle(std::vector<std::vector<unsigned short int>>()){
     largeur=30;
     hauteur=30;
     this->setWindowTitle("Automate 2D");
@@ -234,7 +214,7 @@ void Autocell2D::runSim(){
         v[1].push_back(2);v[1].push_back(0);v[1].push_back(1);v[1].push_back(0);v[1].push_back(9);
         v[2].push_back(0);v[2].push_back(2);v[2].push_back(1);v[2].push_back(1);v[2].push_back(8);
         v[3].push_back(3);v[3].push_back(0);v[3].push_back(1);v[3].push_back(0);v[3].push_back(9);
-        Automate2D a(v,3);
+        Automate2D a(v,nbEtat);
         Simulateur<Automate2D,Etat2D> s(a,e);
         s.next();
         if (etats == nullptr){
@@ -281,3 +261,59 @@ void Autocell2D::clear(){
     runSim();
 }
 
+
+/*#####################################################---REGLE 2D----#######################################"*/
+
+Regle2D::Regle2D(QWidget* parent) : QWidget(parent){
+   nbEtat = new QSpinBox;
+   nbEtat->setRange(2,8);
+   nbEtat->setValue(2);
+   layout= new QGridLayout;
+   layout->addWidget(new QLabel("nombre d'état"),0,0);
+   layout->addWidget(nbEtat,0,1);
+   celluleACCompter= std::vector<QSpinBox*>();
+   interval= std::vector<QComboBox*>();
+   borneInf= std::vector<QSpinBox*>();
+   borneSup= std::vector<QSpinBox*>();
+   couleur = std::vector<QComboBox*>();
+   setWindowTitle("regle2D");
+   this->depart();
+   setLayout(layout);
+   this->cacher();
+}
+
+void Regle2D::depart(){
+    for (int i=0;i<nbEtat->maximum();i++){
+            std::string label("Passage à l'état " + std::to_string(i) +" ");
+            QString labelBis= label.c_str();
+            layout->addWidget(new QLabel(labelBis),i+1,0);
+
+            layout->addWidget(new QLabel(" Etat cellule à compter "),i+1,1);
+            celluleACCompter.push_back(new QSpinBox(this));celluleACCompter[i]->setRange(0,nbEtat->value());
+            layout->addWidget(celluleACCompter[i],i+1,2);
+
+            interval.push_back(new QComboBox(this));interval[i]->addItem("Dans interval");interval[i]->addItem("hors interval");
+            layout->addWidget(interval[i],i+1,3);
+
+
+            layout->addWidget(new QLabel(" Interval "),i+1,4);
+            borneInf.push_back(new QSpinBox(this));borneInf[i]->setRange(0,8);
+            layout->addWidget(borneInf[i],i+1,5);
+
+
+            borneSup.push_back(new QSpinBox);borneSup[i]->setRange(0,8);
+            layout->addWidget(borneSup[i],i+1,6);
+
+
+            couleur.push_back(new QComboBox(this)); couleur[i]->addItems((QStringList() << "white"<< "blue" << "red"<<"black"));
+            layout->addWidget(couleur[i],i+1,7);
+    }
+}
+
+void Regle2D::cacher(){
+    for (int i=nbEtat->value()+1;i<=nbEtat->maximum();i++){
+        for(int j=0;j<8;j++){
+            layout->itemAtPosition(i,j)->widget()->hide();
+        }
+    }
+}
