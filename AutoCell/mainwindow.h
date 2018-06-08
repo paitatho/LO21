@@ -1,14 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMainWindow>
-#include <QObject>
-#include <QWidget>
 #include <QtWidgets>
-#include <QMenu>
-#include <QSettings>
-#include <QEvent>
-#include <QCloseEvent>
 #include "autocell.h"
 #include<iostream>
 
@@ -52,7 +45,6 @@ private:
     Regle2D* fenetreRegle2D;
 
     QDockWidget* optionDock;
-    QFrame* separator;
     static Autocell1D* auto1D;
     static Autocell2D* auto2D;
 
@@ -72,7 +64,7 @@ public:
     void saveAppState();
     void restoreAppState();
 public slots:
-    void changeNbCell(int a);
+    void changeLargeur(int a);
     virtual void openSim();
     void clearAuto1D(){ auto1D = nullptr;subWin = nullptr;larg1D->setValue(15);nbSim1D->setValue(20);regle1D->setValue(0);}
     void clearAuto2D(){auto2D = nullptr; subWin2D = nullptr;larg2D->setValue(30);haut2D->setValue(30);}
@@ -80,8 +72,9 @@ public slots:
     void chooseColor() const;
     void changeColor(QColor);
     void changeSize();
-    void changeNbSim(int a);
+    void changeHauteur(int a);
     void changeRegle(int a);
+    void changeSpeed(int s);
     void play();
     void pause();
     void clear();
@@ -89,6 +82,8 @@ public slots:
     void allow(){action[3]->setEnabled(true);}
     void regle2D(std::vector<std::vector<unsigned short int>> r,std::vector<std::string> c);
     void afficherRegle2D(){ fenetreRegle2D->show();}
+    void setTaille2D(int);
+    void initialiseur();
 };
 
 

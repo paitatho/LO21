@@ -1,9 +1,6 @@
 #ifndef AUTOMATE2D_H
 #define AUTOMATE2D_H
 
-#include <QMainWindow>
-#include <QObject>
-#include <QWidget>
 #include <QtWidgets>
 #include "Automate.h"
 #include "Etat2D.h"

@@ -41,6 +41,10 @@ template<class T1, class T2> const T2 & Simulateur<T1,T2>::dernier() const{
   return *m_etats[m_rang%m_nbMaxEtats];
 }
 
+template<class T1, class T2> const T2 & Simulateur<T1,T2>::avantDernier() const{
+  return *m_etats[(m_rang-1)%m_nbMaxEtats];
+}
+
 template<class T1, class T2> void Simulateur<T1,T2>::reset(){//revenir à l'état de départ
   m_rang=0;
   *(m_etats[0])= *m_depart;

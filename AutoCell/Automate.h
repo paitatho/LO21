@@ -1,9 +1,7 @@
 #ifndef AUTOMATE_H
 #define AUTOMATE_H
 
-#include <QMainWindow>
-#include <QObject>
-#include <QWidget>
+#include <QtWidgets>
 #include <QThread>
 #include<QTime>
 #include<iostream>

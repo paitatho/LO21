@@ -1,9 +1,7 @@
 #ifndef SIMULATEUR_H
 #define SIMULATEUR_H
 
-#include <QMainWindow>
-#include <QObject>
-#include <QWidget>
+#include <QtWidgets>
 #include <iostream>
 #include <string>
 #include <vector>
@@ -29,9 +27,11 @@ public:
     void run (unsigned int nb);//génère les n prochains états
     void next(); // génère le prochain état
     const T2 & dernier() const;
+    const T2 & avantDernier() const;
     unsigned int getRangDernier() const {return m_rang;}
     void reset();//revenir à l'état de départ
     ~Simulateur();
+
     class iterator {
             friend class Simulateur;
             Simulateur* sim;

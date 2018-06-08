@@ -86,10 +86,10 @@ void MainWindow::createOption1D(){
     option1D = new QWidget;
     layout1D = new QGridLayout;
 
-    separator = new QFrame();
-    separator ->setFrameShape(QFrame::HLine);
-    separator ->setFrameShadow(QFrame::Sunken);
-    separator->setMaximumHeight(10);
+    QFrame* sep = new QFrame();
+    sep ->setFrameShape(QFrame::HLine);
+    sep ->setFrameShadow(QFrame::Sunken);
+    sep->setMaximumHeight(10);
 
     boxDim = new QGroupBox(tr("Dimension"));
     layoutBoxDim = new QGridLayout;
@@ -113,8 +113,8 @@ void MainWindow::createOption1D(){
     color = new QColorDialog;
     connect(bb,SIGNAL(clicked(bool)),this,SLOT(chooseColor()));
     connect(color,SIGNAL(currentColorChanged(QColor)),this,SLOT(changeColor(QColor)));
-    connect(larg1D, SIGNAL(valueChanged(int)),this,SLOT(changeNbCell(int)));
-    connect(nbSim1D, SIGNAL(valueChanged(int)),this,SLOT(changeNbSim(int)));
+    connect(larg1D, SIGNAL(valueChanged(int)),this,SLOT(changeLargeur(int)));
+    connect(nbSim1D, SIGNAL(valueChanged(int)),this,SLOT(changeHauteur(int)));
     connect(regle1D, SIGNAL(valueChanged(int)),this,SLOT(changeRegle(int)));
 
 
@@ -138,7 +138,7 @@ void MainWindow::createOption1D(){
 
     QWidget* w = new QWidget;
 
-    layout1D->addWidget(separator,0,0);
+    layout1D->addWidget(sep,0,0);
     layout1D->addWidget(boxDim,1,0);
     layout1D->addWidget(boxCel,2,0);
     layout1D->addWidget(w,3,0);
@@ -148,6 +148,11 @@ void MainWindow::createOption1D(){
 void MainWindow::createOption2D(){
     option2D = new QWidget;
     layout2D = new QGridLayout;
+
+    QFrame* sep = new QFrame();
+    sep ->setFrameShape(QFrame::HLine);
+    sep ->setFrameShadow(QFrame::Sunken);
+    sep->setMaximumHeight(10);
 
     QPushButton* boutonRegle=new QPushButton("Regle");
 
@@ -159,10 +164,10 @@ void MainWindow::createOption2D(){
     layoutBoxParam2D =new QGridLayout;
 
     larg2D = new QSpinBox;
-    larg2D->setRange(5,80);
+    larg2D->setRange(5,99);
     larg2D->setValue(30);
     haut2D = new QSpinBox;
-    haut2D->setRange(5,80);
+    haut2D->setRange(5,99);
     haut2D->setValue(30);
     speed2D = new QSpinBox;
     speed2D->setRange(1,1000);
@@ -174,31 +179,42 @@ void MainWindow::createOption2D(){
     layoutBoxDim2D->addWidget(new QLabel("Hauteur"),1,0);
     layoutBoxDim2D->addWidget(haut2D,1,1);
 
+    connect(larg2D, SIGNAL(valueChanged(int)),this,SLOT(changeLargeur(int)));
+    connect(haut2D, SIGNAL(valueChanged(int)),this,SLOT(changeHauteur(int)));
+
     layoutBoxCel2D->addWidget(boutonRegle, 0,0,1,2);
+    layoutBoxCel2D->addWidget(new QLabel("Taille"), 1,0);
+    QSpinBox* taille = new QSpinBox();taille->setValue(20);taille->setRange(6,40);
+    layoutBoxCel2D->addWidget(taille, 1,1);
+    connect(taille,SIGNAL(valueChanged(int)),this,SLOT(setTaille2D(int)));
 
     fenetreRegle2D = new Regle2D;
     fenetreRegle2D->hide();
     connect(boutonRegle,SIGNAL(clicked()),this,SLOT(afficherRegle2D()));
     connect(fenetreRegle2D,SIGNAL(envoiRegle(std::vector<std::vector<unsigned short int> >,std::vector<std::string>)),this,SLOT(regle2D(std::vector<std::vector<unsigned short int> >,std::vector<std::string>)));
 
-    layoutBoxParam2D->addWidget(new QLabel("Speed(ms)"), 0,0);
+    layoutBoxParam2D->addWidget(new QLabel("Delai(ms)"), 0,0);
     layoutBoxParam2D->addWidget(speed2D, 0,1);
+    connect(speed2D,SIGNAL(valueChanged(int)),this, SLOT(changeSpeed(int)));
     layoutBoxParam2D->addWidget(new QLabel("mode"), 1,0);
     layoutBoxParam2D->addWidget(mode2D, 1,1);
+    QPushButton* initialisation=new QPushButton("Etat initial");
+    layoutBoxParam2D->addWidget(initialisation, 2,0,1,2);
+    connect(initialisation,SIGNAL(clicked()),this,SLOT(initialiseur()));
 
     boxDim->setLayout(layoutBoxDim);
     boxDim->setMaximumHeight(100);
     boxCel->setLayout(layoutBoxCel);
     boxCel->setMaximumHeight(100);
     boxParam2D->setLayout(layoutBoxParam2D);
-    boxParam2D->setMaximumHeight(100);
+    boxParam2D->setMaximumHeight(150);
 
     QWidget* w = new QWidget;
     boxDim2D->setLayout(layoutBoxDim2D);
     boxDim2D->setMaximumHeight(100);
     boxCel2D->setLayout(layoutBoxCel2D);
     boxCel2D->setMaximumHeight(100);
-    layout2D->addWidget(separator,0,0);
+    layout2D->addWidget(sep,0,0);
     layout2D->addWidget(boxDim2D,1,0);
     layout2D->addWidget(boxCel2D,2,0);
     layout2D->addWidget(boxParam2D,3,0);
@@ -216,7 +232,6 @@ void MainWindow::openSim(){
        auto1D->setLargeur(larg1D->value());
        auto1D->setHauteur(nbSim1D->value());
        subWin = central->addSubWindow(auto1D);
-       //subWin->setoptionDock(QMdiSubWindow::RubberBandMove);
        subWin->show();
        auto1D->setAttribute(Qt::WA_DeleteOnClose);
        subWin->setAttribute(Qt::WA_DeleteOnClose);
@@ -258,15 +273,21 @@ void MainWindow::setOption(const QString& automate){
     }
 }
 
-void MainWindow::changeNbCell(int a){
-    if(auto1D != nullptr){
-        auto1D->setLargeur(a);
+void MainWindow::changeLargeur(int a){
+    QMdiSubWindow* sub =central->currentSubWindow();
+    if(sub != nullptr){
+        Autocell* au = dynamic_cast<Autocell*>(sub->widget());
+        if (au!=nullptr)au->setLargeur(a);
+        sub->adjustSize();
     }
 }
 
-void MainWindow::changeNbSim(int a){
-    if(auto1D != nullptr){
-        auto1D->setHauteur(a);
+void MainWindow::changeHauteur(int a){
+    QMdiSubWindow* sub =central->currentSubWindow();
+    if(sub != nullptr){
+        Autocell* au = dynamic_cast<Autocell*>(sub->widget());
+        if (au != nullptr)au->setHauteur(a);
+        sub->adjustSize();
     }
 }
 void MainWindow::changeRegle(int a){
@@ -283,6 +304,14 @@ void MainWindow::changeColor(QColor a){
 
 void MainWindow::changeSize(){
     if (subWin != nullptr) subWin->adjustSize();
+}
+
+void MainWindow::changeSpeed(int s){
+    QMdiSubWindow* sub =central->currentSubWindow();
+    if(sub != nullptr){
+        Autocell* a = dynamic_cast<Autocell*> (sub->widget());
+        if (a!=nullptr) a->setSpeed(s);
+    }
 }
 
 void MainWindow::play(){
@@ -304,7 +333,7 @@ void MainWindow::pause(){
     QMdiSubWindow* sub =central->currentSubWindow();
     if(sub != nullptr){
         Autocell* a = dynamic_cast<Autocell*>(sub->widget());
-        if (a!=nullptr/* && a==auto2D*/)a->setContinu(false);
+        if (a!=nullptr)a->setContinu(false);
     }
 }
 
@@ -317,18 +346,22 @@ void MainWindow::clear(){
 }
 
 void MainWindow::current(QMdiSubWindow *w){
-    /*if (w != nullptr){
-        Autocell* a = dynamic_cast<Autocell*>(w);
-        if(a == auto1D){
-            optionDock->show();
-            optionDock->setWidget(option1D);
+    if (w != nullptr){
+        QMdiSubWindow* sub =central->currentSubWindow();
+        Autocell* a = dynamic_cast<Autocell*>(sub->widget());
+        if(a!=nullptr){
+            if(a == auto1D){
+                optionDock->show();
+                optionDock->setWidget(option1D);
+            }
+            else if (a==auto2D){
+                optionDock->show();
+                optionDock->setWidget(option2D);
+            }
         }
-        else if (a==auto2D){
-            optionDock->show();
-            optionDock->setWidget(option2D);
-        }
-    }*/
+    }
 }
+
 
 void MainWindow::saveAppState(){
     QSettings settings("Reyhan&Thomas", "AutoCell");
@@ -363,6 +396,25 @@ void MainWindow::regle2D(std::vector<std::vector<unsigned short int>> r,std::vec
     if(auto2D != nullptr){
         auto2D->setRegle(r);
         auto2D->setCouleur(c);
+        auto2D->setNbEtat(r.size());
         auto2D->clear();
     }
 }
+
+void MainWindow::setTaille2D(int t){
+    if(auto2D != nullptr){
+        auto2D->setTaille(t);
+        auto2D->adjustSize();
+        if (subWin2D != nullptr)subWin2D->adjustSize();
+    }
+}
+
+void MainWindow::initialiseur(){
+    QMdiSubWindow* sub =central->currentSubWindow();
+    if(sub != nullptr){
+        Autocell* a = dynamic_cast<Autocell*> (sub->widget());
+        if (a!=nullptr) a->init();
+    }
+}
+
+

@@ -23,7 +23,8 @@ public:
     }
     unsigned short int getCellule(unsigned int i, unsigned int j) const {return m_valeur[i][j]; }
     virtual void adjustEtat();
-    bool operator==(const Etat2D& e){
+
+    bool operator==(const Etat2D& e) const{
         bool sol=true;
         for(int i=0;i<m_hauteur;i++){
             for(int j=0;j<m_largeur;j++){

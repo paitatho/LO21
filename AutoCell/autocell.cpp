@@ -65,7 +65,6 @@ Autocell1D::Autocell1D(QWidget* parent) : Autocell(parent){
 
     depart = new QTableWidget(1,largeur,this);
     layout = new QGridLayout(this);
-    //layout->addLayout(numeroc,1,0,Qt::AlignVCenter);
     depart->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     depart->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     depart->verticalHeader()->hide();
@@ -73,7 +72,7 @@ Autocell1D::Autocell1D(QWidget* parent) : Autocell(parent){
     layout->addWidget(depart,2,0);
     depart->setFixedSize(largeur * taille, taille);
     this->setEtatDepart(largeur);
-    QWidget::connect(depart, SIGNAL(cellDoubleClicked(int,int)),this,SLOT(cellSelected(int,int)));
+    QWidget::connect(depart, SIGNAL(cellClicked(int,int)),this,SLOT(cellSelected(int,int)));
 
     sim = new QHBoxLayout;
     layout->addLayout(sim,3,0);
@@ -124,6 +123,10 @@ void Autocell1D::clear(){
     runSim();
 }
 
+void Autocell1D::adjustTaille(){
+
+}
+
 /*##########################################################################################"*/
 
 void Autocell2D::setEtat(int h,int l){
@@ -151,8 +154,6 @@ Autocell2D::Autocell2D(QWidget* parent) : Autocell(parent),regle(std::vector<std
     hauteur=30;
     this->setWindowTitle("Automate 2D");
     layout = new QGridLayout;
-    color = new QColor(0,0,0);
-
     etats = new QTableWidget(largeur,hauteur,this);
 
     etats->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -161,7 +162,7 @@ Autocell2D::Autocell2D(QWidget* parent) : Autocell(parent),regle(std::vector<std
     etats->horizontalHeader()->hide();
     etats->setFixedSize(largeur * taille, hauteur* taille);
 
-    QWidget::connect(etats, SIGNAL(cellDoubleClicked(int,int)),this,SLOT(cellSelected(int,int)));
+    QWidget::connect(etats, SIGNAL(cellClicked(int,int)),this,SLOT(cellSelected(int,int)));
 
     this->setEtat(largeur,hauteur);
     layout->addWidget(etats);
@@ -186,44 +187,24 @@ void Autocell2D::cellSelected(int a,int b){
 void Autocell2D::runSim(){
     unsigned int c=0;
     bool sol=false;
-
-    do {
-        Etat2D e(largeur,hauteur);
-        for (unsigned int i= 0; i<hauteur;i++){
-            for(unsigned int j =0; j<largeur;j++){
-                while(sol==false && c<nbEtat){
-                    if (etats->item(i,j)->backgroundColor() == couleur[c].c_str()){
-                        e.setCellule(i,j,c);
-                        sol=true;
-                    }
-                    c++;
+    Etat2D e(largeur,hauteur);
+    for (unsigned int i= 0; i<hauteur;i++){
+        for(unsigned int j =0; j<largeur;j++){
+            while(sol==false && c<nbEtat){
+                if (etats->item(i,j)->backgroundColor() == couleur[c].c_str()){
+                    e.setCellule(i,j,c);
+                    sol=true;
                 }
-                sol=false;
-                c=0;
+                c++;
             }
+            sol=false;
+            c=0;
         }
-        /*std::vector<std::vector<unsigned short int>> v;
-        v.push_back(std::vector<unsigned short int>());
-        v.push_back(std::vector<unsigned short int>());//[1,1,0,2,3] [0,1,1,3,3]
-        v.push_back(std::vector<unsigned short int>());
-        v[0].push_back(0);v[0].push_back(2);v[0].push_back(0);v[0].push_back(1);v[0].push_back(8);
-        v[1].push_back(2);v[1].push_back(0);v[1].push_back(1);v[1].push_back(0);v[1].push_back(9);
-        v[2].push_back(0);v[2].push_back(2);v[2].push_back(1);v[2].push_back(1);v[2].push_back(8);
-        v[3].push_back(3);v[3].push_back(0);v[3].push_back(1);v[3].push_back(0);v[3].push_back(9);*/
-        Automate2D a(regle,nbEtat);
-        Simulateur<Automate2D,Etat2D> s(a,e);
+    }
+    Automate2D a(regle,nbEtat);
+    Simulateur<Automate2D,Etat2D> s(a,e);
+    do {
         s.next();
-        if (etats == nullptr){
-            etats = new QTableWidget(hauteur,largeur,this);
-            etats->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-            etats->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-            etats->verticalHeader()->hide();
-            etats->horizontalHeader()->hide();
-        }
-        etats->setFixedSize(largeur * taille,hauteur * taille);
-        if(hauteur != etats->rowCount())etats->setRowCount(hauteur);
-        if(largeur != etats->columnCount())etats->setColumnCount(largeur);
-
         for (unsigned int i=0;i<hauteur;i++){
             for(unsigned int j =0 ; j<largeur;j++){
                 if(etats->item(i,j) == nullptr){
@@ -232,7 +213,7 @@ void Autocell2D::runSim(){
                     a->setFlags(Qt::ItemIsEnabled);
                     etats ->setItem(i, j, a);
                 }
-                if(e == s.dernier()) continu=false;
+                if(s.avantDernier() == s.dernier()) continu=false;
                 else{
                     etats->item(i,j)->setBackgroundColor(couleur[s.dernier().getCellule(i,j)].c_str());
                     etats->setColumnWidth(j,taille);
@@ -240,32 +221,55 @@ void Autocell2D::runSim(){
                 }
             }
         }
-        if(continu){delay(300);}
-        //if(!continu) compteur--;
+        if(continu){delay(speed);}
     }while(continu);
-
-    //compteur++;
     emit endSim();
 }
 
 void Autocell2D::clear(){
     setContinu(false);
-    for (int i= 0; i<hauteur;i++)
+    for (int i= 0; i<hauteur;i++){
         for(int j=0;j<largeur;j++){
             etats->item(i,j)->setBackgroundColor(couleur[0].c_str());
         }
-    runSim();
+    }
 }
 
+void Autocell2D::adjustTaille(){
+    if(hauteur != etats->rowCount())etats->setRowCount(hauteur);
+    if(largeur != etats->columnCount())etats->setColumnCount(largeur);
+    for (unsigned int i=0;i<hauteur;i++){
+        for(unsigned int j =0 ; j<largeur;j++){
+            if(etats->item(i,j) == nullptr){
+                QTableWidgetItem* a = new QTableWidgetItem ("");
+                a->setFlags(Qt::NoItemFlags);
+                a->setFlags(Qt::ItemIsEnabled);
+                etats ->setItem(i, j, a);
+                etats->item(i,j)->setBackgroundColor(couleur[0].c_str());
+            }
+            etats->setColumnWidth(j,taille);
+            etats->setRowHeight(i,taille);
+        }
+    }
+    etats->setFixedSize(largeur * taille,hauteur * taille);;
+}
 
+void Autocell2D::init(){
+    for (unsigned int i=0;i<hauteur;i++){
+        for(unsigned int j =0 ; j<largeur;j++){
+            etats->item(i,j)->setBackgroundColor(couleur[rand()%2].c_str()); //met soit la couleur de l'état 0, soit celle de l'état 1
+        }
+    }
+}
 /*#####################################################---REGLE 2D----#######################################"*/
 
 Regle2D::Regle2D(QWidget* parent) : QWidget(parent),regle (std::vector<std::vector<unsigned short int>>()){
    nbEtat = new QSpinBox;
    nbEtat->setRange(2,8);
    nbEtat->setValue(2);
-   regleBase = new QComboBox;regleBase->addItems((QStringList()<<"régles prédéfinies" << "JDLV"<< "Feu de Foret"));
+   regleBase = new QComboBox;regleBase->addItems((QStringList()<<"régles prédéfinies" << "JDLV"));
    connect(regleBase,SIGNAL(currentTextChanged(QString)),this,SLOT(reglePredefini(QString)));
+   connect(nbEtat,SIGNAL(valueChanged(int)),this,SLOT(adjust()));
    layout= new QGridLayout;
    layout->addWidget(regleBase);
    layout->addWidget(new QLabel("nombre d'état"),0,1);
@@ -308,12 +312,13 @@ void Regle2D::depart(){
             layout->addWidget(borneSup[i],i+1,7);
 
 
-            couleur.push_back(new QComboBox(this)); couleur[i]->addItems((QStringList() << "white"<< "blue" << "red"<<"black"));
+            couleur.push_back(new QComboBox(this)); couleur[i]->addItems((QStringList() << "white"<< "black"<<"green" << "red"<<"blue"<<"yellow"));
             layout->addWidget(couleur[i],i+1,8);
     }
     QPushButton* bouton = new QPushButton("OK");
     connect(bouton,SIGNAL(clicked()),this,SLOT(sendRegle()));
     layout->addWidget(bouton,nbEtat->maximum()+1,8);
+    modifDepart();
 }
 
 void Regle2D::cacher(){
@@ -322,6 +327,25 @@ void Regle2D::cacher(){
             layout->itemAtPosition(i,j)->widget()->hide();
         }
     }
+}
+
+void Regle2D::montrer(){
+    int c =0;
+    for (int i=1;i<=nbEtat->value();i++){
+        for(int j=0;j<9;j++){
+            layout->itemAtPosition(i,j)->widget()->show();
+            if (c < 2){ //On modifie que les deux premiers QSpinBox qui ne doivent pas dépasser le nombre max d'état
+                QSpinBox* s =dynamic_cast<QSpinBox*>(layout->itemAtPosition(i,j)->widget());
+                if(s != nullptr) {s->setRange(0,nbEtat->value()-1); ++c;}
+            }
+
+        }
+        c=0;
+    }
+}
+void Regle2D::adjust(){
+    montrer();
+    cacher();
 }
 
 void Regle2D::setRegle(){
@@ -360,6 +384,31 @@ void Regle2D::reglePredefini(QString nom){
 
         etatCellulePourAppliquer[1]->setValue(0);
         celluleACCompter[1]->setValue(1); interval[1]->setCurrentIndex(0);
-        borneInf[1]->setValue(3);borneSup[1]->setValue(3);couleur[1]->setCurrentIndex(3);
+        borneInf[1]->setValue(3);borneSup[1]->setValue(3);couleur[1]->setCurrentIndex(1);
+    }
+    else
+        ajoutReglePredefini(nom);
+
+
+}
+
+void Regle2D::ajoutReglePredefini(QString nom){
+    if (nom == "Feu de Foret"){
+        nbEtat->setValue(4);
+        etatCellulePourAppliquer[0]->setValue(0);
+        celluleACCompter[0]->setValue(2); interval[0]->setCurrentIndex(1);
+        borneInf[0]->setValue(1);borneSup[0]->setValue(8);couleur[0]->setCurrentIndex(2);
+
+        etatCellulePourAppliquer[1]->setValue(1);
+        celluleACCompter[1]->setValue(0); interval[1]->setCurrentIndex(0);
+        borneInf[1]->setValue(0);borneSup[1]->setValue(8);couleur[1]->setCurrentIndex(0);
+
+        etatCellulePourAppliquer[2]->setValue(0);
+        celluleACCompter[2]->setValue(2); interval[2]->setCurrentIndex(0);
+        borneInf[2]->setValue(1);borneSup[2]->setValue(8);couleur[2]->setCurrentIndex(3);
+
+        etatCellulePourAppliquer[3]->setValue(2);
+        celluleACCompter[3]->setValue(0); interval[3]->setCurrentIndex(0);
+        borneInf[3]->setValue(0);borneSup[3]->setValue(8);couleur[3]->setCurrentIndex(1);
     }
 }
