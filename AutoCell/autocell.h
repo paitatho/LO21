@@ -136,6 +136,35 @@ private:
 
 public:
     Regle2D(QWidget* parent = nullptr);
+    const QSpinBox* get_nbEtat() const {return nbEtat;}
+    const QComboBox* get_regleBase() const{return regleBase;}
+    const std::vector<QSpinBox*>& get_etatCellulePourAppliquer() const {return etatCellulePourAppliquer;}
+    const std::vector<QSpinBox*>& get_celluleACCompter() const {return celluleACCompter;}
+    const std::vector<QComboBox*>& get_interval() const {return interval;}
+    const std::vector<QSpinBox*>& get_borneInf() const {return borneInf;}
+    const std::vector<QSpinBox*>& get_borneSup() const {return borneSup;}
+    const std::vector<QComboBox*>& get_couleur() const {return couleur;}
+    const std::vector<std::string>& get_couleurNom() const {return couleurNom;}
+    void setRegleBase(const QString& s){regleBase->setCurrentText(s);}
+    void setNbEtat(unsigned int n){nbEtat->setValue(n);}
+    void setEtatCellulePourAppliquer(unsigned int i, unsigned int n){
+        etatCellulePourAppliquer[i]->setValue(n);
+    }
+    void setCelluleACompter(unsigned int i, unsigned int n){
+        celluleACCompter[i]->setValue(n);
+    }
+    void setInterval(unsigned int i, const QString& s){
+        interval[i]->setCurrentText(s);
+    }
+    void setBorneInf(unsigned int i, unsigned int n){
+        borneInf[i]->setValue(n);
+    }
+    void setBorneSup(unsigned int i, unsigned int n){
+        borneSup[i]->setValue(n);
+    }
+    void setCouleur(unsigned int i, const QString& s){
+        couleur[i]->setCurrentText(s);
+    }
 public slots:
 
     void cacher();

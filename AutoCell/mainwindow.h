@@ -41,6 +41,11 @@ private:
     QMdiSubWindow* subWin2D;
     Regle2D* fenetreRegle2D;
 
+    QSpinBox* larg2D;
+    QSpinBox* haut2D;
+    QSpinBox* speed2D;
+    QSpinBox* taille;
+
     QDockWidget* optionDock;
     static Autocell1D* auto1D;
     static Autocell2D* auto2D;

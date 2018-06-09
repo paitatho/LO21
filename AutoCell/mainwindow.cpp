@@ -126,7 +126,7 @@ void MainWindow::createOption1D(){
     layoutBoxDim->addWidget(nbSim1D,1,1);
 
     layoutBoxCel->addWidget(bb, 0,0,1,2);
-    layoutBoxCel->addWidget(new QLabel("Régle"), 1,0);
+    layoutBoxCel->addWidget(new QLabel("Règle"), 1,0);
     layoutBoxCel->addWidget(regle1D, 1,1);
 
     boxDim->setLayout(layoutBoxDim);
@@ -164,9 +164,9 @@ void MainWindow::createOption2D(){
     boxParam2D = new QGroupBox(tr("Param"));
     layoutBoxParam2D =new QGridLayout;
 
-    QSpinBox* larg2D = new QSpinBox;larg2D->setRange(5,60);larg2D->setValue(35);
-    QSpinBox* haut2D = new QSpinBox;haut2D->setRange(5,60);haut2D->setValue(35);
-    QSpinBox* speed2D = new QSpinBox;speed2D->setRange(1,1000);speed2D->setValue(50);
+    larg2D = new QSpinBox;larg2D->setRange(5,60);larg2D->setValue(35);
+    haut2D = new QSpinBox;haut2D->setRange(5,60);haut2D->setValue(35);
+    speed2D = new QSpinBox;speed2D->setRange(1,1000);speed2D->setValue(50);
     mode2D = new QComboBox;
     mode2D->addItem("Continu");mode2D->addItem("pas à pas");
     layoutBoxDim2D->addWidget(new QLabel("Largeur"),0,0);layoutBoxDim2D->addWidget(larg2D,0,1);
@@ -177,7 +177,7 @@ void MainWindow::createOption2D(){
 
     layoutBoxCel2D->addWidget(boutonRegle, 0,0,1,2);
     layoutBoxCel2D->addWidget(new QLabel("Taille"), 1,0);
-    QSpinBox* taille = new QSpinBox();taille->setValue(17);taille->setRange(6,40);
+    taille = new QSpinBox();taille->setValue(17);taille->setRange(6,40);
     layoutBoxCel2D->addWidget(taille, 1,1);
     connect(taille,SIGNAL(valueChanged(int)),this,SLOT(setTaille2D(int)));
 
@@ -354,6 +354,23 @@ void MainWindow::saveAppState(){
         settings.setValue("regle1D", regle1D->value());
 
     }
+    if(choixSim->currentText()=="2D"){
+        settings.setValue("larg2D", larg2D->value());
+        settings.setValue("haut2D", haut2D->value());
+        settings.setValue("speed2D", speed2D->value());
+        settings.setValue("mode2D", mode2D->currentText());
+        settings.setValue("regle2DJeu", fenetreRegle2D->get_regleBase()->currentText());
+        settings.setValue("nbEtat", fenetreRegle2D->get_nbEtat()->value());
+        settings.setValue("tailleCellule", taille->value());
+        for(unsigned int i=0; i<(fenetreRegle2D->get_nbEtat()->value()); ++i){
+            settings.setValue("reglePassageEtatDepart"+QString::fromStdString(std::to_string(i)), fenetreRegle2D->get_etatCellulePourAppliquer()[i]->value());
+            settings.setValue("reglePassageEtatAcompter"+QString::fromStdString(std::to_string(i)), fenetreRegle2D->get_celluleACCompter()[i]->value());
+            settings.setValue("reglePassageTypeInterval"+QString::fromStdString(std::to_string(i)), fenetreRegle2D->get_interval()[i]->currentText());
+            settings.setValue("reglePassageBorneInf"+QString::fromStdString(std::to_string(i)), fenetreRegle2D->get_borneInf()[i]->value());
+            settings.setValue("reglePassageBorneSup"+QString::fromStdString(std::to_string(i)), fenetreRegle2D->get_borneSup()[i]->value());
+            settings.setValue("reglePassageCouleurEtat"+QString::fromStdString(std::to_string(i)), fenetreRegle2D->get_couleur()[i]->currentText());
+        }
+    }
 }
 
 void MainWindow::closeEvent(QCloseEvent* event){
@@ -368,6 +385,27 @@ void MainWindow::restoreAppState(){
         larg1D->setValue(settings.value("larg1D").toInt());
         nbSim1D->setValue(settings.value("nbSim1D").toInt());
         regle1D->setValue(settings.value("regle1D").toInt());
+        openSim();
+        play();
+    }
+    if(settings.value("typeAutomate") == "2D"){
+        choixSim->setCurrentText(settings.value("typeAutomate").toString());
+        larg2D->setValue(settings.value("larg2D").toInt());
+        haut2D->setValue(settings.value("haut2D").toInt());
+        speed2D->setValue(settings.value("speed2D").toInt());
+        mode2D->setCurrentText(settings.value("mode2D").toString());
+        fenetreRegle2D->setRegleBase(settings.value("regle2DJeu").toString());
+        fenetreRegle2D->setNbEtat(settings.value("nbEtat").toInt());
+        taille->setValue(settings.value("tailleCellule").toInt());
+        for(unsigned int i=0; i<(fenetreRegle2D->get_nbEtat()->value()); ++i){
+            fenetreRegle2D->setEtatCellulePourAppliquer(i, settings.value("reglePassageEtatDepart"+QString::fromStdString(std::to_string(i))).toInt());
+            fenetreRegle2D->setCelluleACompter(i, settings.value("reglePassageEtatAcompter"+QString::fromStdString(std::to_string(i))).toInt());
+            fenetreRegle2D->setInterval(i, settings.value("reglePassageTypeInterval"+QString::fromStdString(std::to_string(i))).toString());
+            fenetreRegle2D->setBorneInf(i, settings.value("reglePassageBorneInf"+QString::fromStdString(std::to_string(i))).toInt());
+            fenetreRegle2D->setBorneSup(i, settings.value("reglePassageBorneSup"+QString::fromStdString(std::to_string(i))).toInt());
+            fenetreRegle2D->setCouleur(i, settings.value("reglePassageCouleurEtat"+QString::fromStdString(std::to_string(i))).toString());
+        }
+
         openSim();
         play();
     }
