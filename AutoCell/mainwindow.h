@@ -40,7 +40,6 @@ private:
     QMdiSubWindow* subWin;
     QMdiSubWindow* subWin2D;
     Regle2D* fenetreRegle2D;
-
     QSpinBox* larg2D;
     QSpinBox* haut2D;
     QSpinBox* speed2D;
@@ -68,22 +67,24 @@ public:
 public slots:
     void changeLargeur(int a);
     virtual void openSim();
-    void clearAuto1D(){ auto1D = nullptr;subWin = nullptr;larg1D->setValue(15);nbSim1D->setValue(20);regle1D->setValue(0);}
+    void clearAuto1D(){ auto1D = nullptr;subWin = nullptr;larg1D->setValue(15);nbSim1D->setValue(20);regle1D->setValue(150);}
     void clearAuto2D(){auto2D = nullptr; subWin2D = nullptr;}
-    void chooseColor() const;
-    void changeColor(QColor);
+
+    void changeColor(QString);
     void changeSize();
     void changeHauteur(int a);
-    void changeRegle(int a);
+    void changeRegle1D(int a);
+    void changeRegle2D(std::vector<std::vector<unsigned short int>> r,std::vector<std::string> c);
     void changeSpeed(int s);
+    void changeTaille(int);
+
     void play();
     void pause();
     void clear();
     void current(QMdiSubWindow *w);
     void allow(){action[3]->setEnabled(true);}
-    void regle2D(std::vector<std::vector<unsigned short int>> r,std::vector<std::string> c);
     void afficherRegle2D(){ fenetreRegle2D->show();}
-    void setTaille2D(int);
+
     void initialiseur();
     void initialiseurSym();
 };

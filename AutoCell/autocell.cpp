@@ -2,6 +2,7 @@
  #include "Automate2D.h"
  #include "Etat2D.h"
 
+using namespace std;
 
 void delay(int n)
 {
@@ -11,19 +12,32 @@ void delay(int n)
 }
 
 void Autocell1D::cellSelected(int a,int b){
-    if (depart->item(a,b)->backgroundColor() == "white")
-         depart->item(a,b)->setBackgroundColor(*color);
-    else
-         depart->item(a,b)->setBackgroundColor("white");
+    unsigned int i=0;
+    bool sol=false;
+    while(i<nbEtat && sol==false )
+    {
+        if(depart->item(a,b)->backgroundColor()== couleur[i].c_str()){
+            depart->item(a,b)->setBackgroundColor(couleur[(i+1)%nbEtat].c_str());
+            sol=true;
+        }
+        i++;
+    }
 }
 
 void Autocell1D::runSim(){
+    unsigned int c=0;
+    bool sol=false;
     AutomateManager& aM = AutomateManager::getInstance();
     Etat1D e(largeur);
     for (int i= 0; i<largeur;i++){
-        if (depart->item(0,i)->backgroundColor() == *color){
-            e.setCellule(i,true);
+        while(sol==false && c<nbEtat){
+            if (depart->item(0,i)->backgroundColor() == couleur[c].c_str()){
+                e.setCellule(i,c);
+            }
+            c++;
         }
+        sol=false;
+        c=0;
     }
     Simulateur<Automate1D,Etat1D> s(aM.getAutomate(regle), e);
     if (etats == nullptr){
@@ -46,10 +60,7 @@ void Autocell1D::runSim(){
                 a->setFlags(Qt::ItemIsEnabled);
                 etats ->setItem(i, j, a);
             }
-            if (s.dernier().getCellule(j) == true){
-                etats->item(i,j)->setBackgroundColor(*color);
-             }
-            else  etats->item(i,j)->setBackgroundColor("white");
+            etats->item(i,j)->setBackgroundColor(couleur[s.dernier().getCellule(j)].c_str());
             etats->setColumnWidth(j,taille);
         }
         etats->setRowHeight(i,taille);
@@ -60,8 +71,7 @@ void Autocell1D::runSim(){
 
 Autocell1D::Autocell1D(QWidget* parent) : Autocell(parent){
     this->setWindowTitle("Automate 1D");
-
-    color = new QColor(0,0,0);
+    couleur.pop_back();couleur.push_back("black");
 
     depart = new QTableWidget(1,largeur,this);
     layout = new QGridLayout(this);
@@ -107,24 +117,41 @@ void Autocell1D::setEtatDepart(int dim){
     }
 }
 
-void Autocell1D::setColor(QColor a){
-    delete color;
-    color = new QColor(a);
+void Autocell1D::setColor(QString a){
+    string old = couleur[1];couleur.pop_back();couleur.push_back(a.toStdString());
     for(int i=0;i<largeur;i++){
-        if(depart->item(0,i)->backgroundColor() != "white")
-            depart->item(0,i)->setBackgroundColor(*color);
+        if(depart->item(0,i)->backgroundColor() == old.c_str())
+            depart->item(0,i)->setBackgroundColor(a.toStdString().c_str());
     }
     this->runSim();
 }
 
 void Autocell1D::clear(){
     for (int i= 0; i<largeur;i++)
-        depart->item(0,i)->setBackgroundColor("white");
+        depart->item(0,i)->setBackgroundColor(couleur[0].c_str());
     runSim();
 }
 
 void Autocell1D::adjustTaille(){
+    depart->setFixedSize(largeur * taille, taille);
+    depart->setRowHeight(0,taille);
+    for(int j=0;j<largeur;j++)
+     depart->setColumnWidth(j,taille);
 
+    runSim();
+}
+
+void Autocell1D::init(){
+    for (int i= 0; i<largeur;i++)
+        depart->item(0,i)->setBackgroundColor(couleur[rand()%2].c_str());
+}
+void Autocell1D::initSym() {
+    unsigned int c(0);
+    for (int i= 0; i<largeur/2+1;i++){
+        c =rand()%2;
+        depart->item(0,i)->setBackgroundColor(couleur[c].c_str());
+        depart->item(0,largeur-i-1)->setBackgroundColor(couleur[c].c_str());
+    }
 }
 
 /*##########################################################################################"*/
@@ -324,7 +351,7 @@ void Regle2D::depart(){
             layout->addWidget(borneSup[i],i+1,7);
 
 
-            couleur.push_back(new QComboBox(this)); couleur[i]->addItems((QStringList() << "white"<< "black"<<"green" << "red"<<"blue"<<"yellow"));
+            couleur.push_back(new QComboBox(this)); couleur[i]->addItems((QStringList() << "white"<< "black"<<"green" << "red"<<"blue"<<"yellow"<<"pink"<<"brown"<<"grey"));
             layout->addWidget(couleur[i],i+1,8);
     }
     QPushButton* bouton = new QPushButton("OK");
