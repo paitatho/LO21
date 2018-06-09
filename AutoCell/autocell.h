@@ -23,7 +23,7 @@ public:
     }
     void setNbEtat(unsigned int e){nbEtat = e;}
     unsigned int getNbEtat() const {return nbEtat;}
-    void setTaille(unsigned int t){taille =t;adjustTaille();}
+    void setTaille(unsigned int t){taille =t;adjustTaille();adjustSize();}
     unsigned int getTaille() const {return taille;}
     virtual int getLargeur() const{
         return largeur;
@@ -58,7 +58,6 @@ protected:
     QTableWidget* depart;
     QTableWidget* etats = nullptr;
     QHBoxLayout* sim;
-    QColor* color;
 
     unsigned int regle=0;
 
@@ -67,16 +66,15 @@ protected:
 public:
     explicit Autocell1D(QWidget* parent = nullptr);
     void setLargeur(unsigned int dim);
-    void setColor(QColor a);
-    QColor getColor() const{return *color;}
     void setHauteur(unsigned int nb){hauteur =nb;}
     void setRegle(unsigned int r){regle=r;}
+    void setColor(QString a);
     virtual void runSim();
     virtual void setContinu(bool a){}
     virtual void adjustTaille();
     virtual void clear();
-    virtual void init(){}
-    virtual void initSym(){}
+    virtual void init();
+    virtual void initSym();
     void setSpeed(unsigned int s){}
 public slots:
     virtual void cellSelected(int a,int b);
