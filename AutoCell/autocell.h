@@ -11,7 +11,7 @@
 class Autocell: public QWidget{
     Q_OBJECT
 protected:
-    int taille =20;
+    int taille =17;
     unsigned int nbEtat;
     unsigned int speed=100;
     std::vector<std::string> couleur;
@@ -19,10 +19,7 @@ protected:
     int largeur = 15;
 public:
     Autocell(QWidget* parent = nullptr,unsigned int Etat=2): QWidget(parent),nbEtat(Etat){
-        couleur.push_back("white");
-        couleur.push_back("black");
-        couleur.push_back("blue");
-        couleur.push_back("red");
+        couleur.push_back("white"); couleur.push_back("white");
     }
     void setNbEtat(unsigned int e){nbEtat = e;}
     unsigned int getNbEtat() const {return nbEtat;}
@@ -41,6 +38,7 @@ public:
     virtual void clear()=0;
     virtual void adjustTaille() =0;
     virtual void init()=0;
+    virtual void initSym()=0;
     virtual void setCouleur(std::vector<std::string> c){couleur.clear();couleur =c;}
     virtual void setSpeed(unsigned int s)=0;
  public slots:
@@ -78,6 +76,7 @@ public:
     virtual void adjustTaille();
     virtual void clear();
     virtual void init(){}
+    virtual void initSym(){}
     void setSpeed(unsigned int s){}
 public slots:
     virtual void cellSelected(int a,int b);
@@ -108,6 +107,7 @@ public:
     void setRegle(std::vector<std::vector<unsigned short int>> r){regle.clear();regle=r;setNbEtat(regle.size());}
     const std::vector<std::vector<unsigned short int>>& getRegle() const {return regle;}
     virtual void init();
+    virtual void initSym();
 
 public slots:
     void cellSelected(int a,int b);

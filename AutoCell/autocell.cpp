@@ -150,8 +150,8 @@ void Autocell2D::setEtat(int h,int l){
 }
 
 Autocell2D::Autocell2D(QWidget* parent) : Autocell(parent),regle(std::vector<std::vector<unsigned short int>>()){
-    largeur=30;
-    hauteur=30;
+    largeur=35;
+    hauteur=35;
     this->setWindowTitle("Automate 2D");
     layout = new QGridLayout;
     etats = new QTableWidget(largeur,hauteur,this);
@@ -261,7 +261,19 @@ void Autocell2D::init(){
         }
     }
 }
-/*#####################################################---REGLE 2D----#######################################"*/
+
+void Autocell2D::initSym(){
+    unsigned int c(0);
+    for (unsigned int i=0;i<hauteur;i++){
+        for(unsigned int j =0 ; j<largeur/2+1;j++){
+            c=rand()%2;
+            etats->item(i,j)->setBackgroundColor(couleur[c].c_str()); //met soit la couleur de l'état 0, soit celle de l'état 1
+            etats->item(i,largeur-j-1)->setBackgroundColor(couleur[c].c_str());
+        }
+    }
+}
+
+/*#####################################################----REGLE 2D----#######################################"*/
 
 Regle2D::Regle2D(QWidget* parent) : QWidget(parent),regle (std::vector<std::vector<unsigned short int>>()){
    nbEtat = new QSpinBox;

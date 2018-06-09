@@ -33,12 +33,9 @@ private:
     QGroupBox* boxCel2D;
     QGroupBox* boxDim2D;
     QGridLayout* layoutBoxCel2D;
-    QSpinBox* larg2D;
-    QSpinBox* haut2D;
     QGroupBox* boxParam2D;
     QComboBox* mode2D;
     QGridLayout* layoutBoxParam2D;
-    QSpinBox* speed2D;
     QMdiArea * central;
     QMdiSubWindow* subWin;
     QMdiSubWindow* subWin2D;
@@ -67,8 +64,7 @@ public slots:
     void changeLargeur(int a);
     virtual void openSim();
     void clearAuto1D(){ auto1D = nullptr;subWin = nullptr;larg1D->setValue(15);nbSim1D->setValue(20);regle1D->setValue(0);}
-    void clearAuto2D(){auto2D = nullptr; subWin2D = nullptr;larg2D->setValue(30);haut2D->setValue(30);}
-    void setOption(const QString& automate);
+    void clearAuto2D(){auto2D = nullptr; subWin2D = nullptr;}
     void chooseColor() const;
     void changeColor(QColor);
     void changeSize();
@@ -84,6 +80,7 @@ public slots:
     void afficherRegle2D(){ fenetreRegle2D->show();}
     void setTaille2D(int);
     void initialiseur();
+    void initialiseurSym();
 };
 
 

@@ -54,7 +54,6 @@ void MainWindow::createToolBar(){
     toolBar->setStyleSheet("QToolBar{border: 1px solid black;}");
 
     connect(action[0],&QAction::triggered,this,&MainWindow::openSim);
-    connect(choixSim,&QComboBox::currentTextChanged,this,&MainWindow::setOption);
     connect(action[1], SIGNAL(triggered()),this,SLOT(play()));
     connect(action[2], SIGNAL(triggered()),this,SLOT(pause()));
     connect(action[3],SIGNAL(triggered()),this,SLOT(clear()));
@@ -63,7 +62,10 @@ void MainWindow::createToolBar(){
 
 void MainWindow::createDockOption(){
 
-    optionDock = new QDockWidget("Option",this);
+    optionDock = new QDockWidget(this);
+    QFont* police = new QFont("",14,QFont::Bold);
+    QLabel* titre=new QLabel(tr("Option"));titre->setAlignment(Qt::AlignCenter);titre->setFont(*police);
+    optionDock->setTitleBarWidget(titre);
     optionDock->setAllowedAreas(Qt::LeftDockWidgetArea | Qt::RightDockWidgetArea);
     //optionDock->setWidget(label[0]);
     optionDock->setMinimumWidth(100);
@@ -100,7 +102,7 @@ void MainWindow::createOption1D(){
     larg1D->setRange(5,80);
     larg1D->setValue(15);
 
-    QPushButton* bb=new QPushButton;
+    QPushButton* bb=new QPushButton("Couleur");
 
     nbSim1D = new QSpinBox;
     nbSim1D->setRange(5,40);
@@ -123,8 +125,7 @@ void MainWindow::createOption1D(){
     layoutBoxDim->addWidget(new QLabel("Nombre Simu"),1,0);
     layoutBoxDim->addWidget(nbSim1D,1,1);
 
-    layoutBoxCel->addWidget(new QLabel("Couleur"), 0,0);
-    layoutBoxCel->addWidget(bb, 0,1);
+    layoutBoxCel->addWidget(bb, 0,0,1,2);
     layoutBoxCel->addWidget(new QLabel("Régle"), 1,0);
     layoutBoxCel->addWidget(regle1D, 1,1);
 
@@ -163,28 +164,20 @@ void MainWindow::createOption2D(){
     boxParam2D = new QGroupBox(tr("Param"));
     layoutBoxParam2D =new QGridLayout;
 
-    larg2D = new QSpinBox;
-    larg2D->setRange(5,99);
-    larg2D->setValue(30);
-    haut2D = new QSpinBox;
-    haut2D->setRange(5,99);
-    haut2D->setValue(30);
-    speed2D = new QSpinBox;
-    speed2D->setRange(1,1000);
-    speed2D->setValue(100);
+    QSpinBox* larg2D = new QSpinBox;larg2D->setRange(5,60);larg2D->setValue(35);
+    QSpinBox* haut2D = new QSpinBox;haut2D->setRange(5,60);haut2D->setValue(35);
+    QSpinBox* speed2D = new QSpinBox;speed2D->setRange(1,1000);speed2D->setValue(50);
     mode2D = new QComboBox;
     mode2D->addItem("Continu");mode2D->addItem("pas à pas");
-    layoutBoxDim2D->addWidget(new QLabel("Largeur"),0,0);
-    layoutBoxDim2D->addWidget(larg2D,0,1);
-    layoutBoxDim2D->addWidget(new QLabel("Hauteur"),1,0);
-    layoutBoxDim2D->addWidget(haut2D,1,1);
+    layoutBoxDim2D->addWidget(new QLabel("Largeur"),0,0);layoutBoxDim2D->addWidget(larg2D,0,1);
+    layoutBoxDim2D->addWidget(new QLabel("Hauteur"),1,0);layoutBoxDim2D->addWidget(haut2D,1,1);
 
     connect(larg2D, SIGNAL(valueChanged(int)),this,SLOT(changeLargeur(int)));
     connect(haut2D, SIGNAL(valueChanged(int)),this,SLOT(changeHauteur(int)));
 
     layoutBoxCel2D->addWidget(boutonRegle, 0,0,1,2);
     layoutBoxCel2D->addWidget(new QLabel("Taille"), 1,0);
-    QSpinBox* taille = new QSpinBox();taille->setValue(20);taille->setRange(6,40);
+    QSpinBox* taille = new QSpinBox();taille->setValue(17);taille->setRange(6,40);
     layoutBoxCel2D->addWidget(taille, 1,1);
     connect(taille,SIGNAL(valueChanged(int)),this,SLOT(setTaille2D(int)));
 
@@ -198,16 +191,19 @@ void MainWindow::createOption2D(){
     connect(speed2D,SIGNAL(valueChanged(int)),this, SLOT(changeSpeed(int)));
     layoutBoxParam2D->addWidget(new QLabel("mode"), 1,0);
     layoutBoxParam2D->addWidget(mode2D, 1,1);
-    QPushButton* initialisation=new QPushButton("Etat initial");
+    QPushButton* initialisation=new QPushButton("Etat initial aléatoire");
     layoutBoxParam2D->addWidget(initialisation, 2,0,1,2);
     connect(initialisation,SIGNAL(clicked()),this,SLOT(initialiseur()));
+    QPushButton* initialisationSym=new QPushButton("Etat initial symétrique");
+    layoutBoxParam2D->addWidget(initialisationSym, 3,0,1,2);
+    connect(initialisationSym,SIGNAL(clicked()),this,SLOT(initialiseurSym()));
 
     boxDim->setLayout(layoutBoxDim);
     boxDim->setMaximumHeight(100);
     boxCel->setLayout(layoutBoxCel);
     boxCel->setMaximumHeight(100);
     boxParam2D->setLayout(layoutBoxParam2D);
-    boxParam2D->setMaximumHeight(150);
+    boxParam2D->setMaximumHeight(200);
 
     QWidget* w = new QWidget;
     boxDim2D->setLayout(layoutBoxDim2D);
@@ -256,21 +252,6 @@ void MainWindow::openSim(){
    else{
        QMessageBox::information(this,"information","Vous ne pouvez pas créer 2 automates <strong>identiques</strong> en même temps");
    }
-}
-
-
-void MainWindow::setOption(const QString& automate){
-    if (automate == "1D"){
-        optionDock->show();
-        optionDock->setWidget(option1D);
-    }
-    else if (automate == "2D"){
-        optionDock->show();
-        optionDock->setWidget(option2D);
-    }
-    else if (automate == "Choix Automate"){
-        optionDock->hide();
-    }
 }
 
 void MainWindow::changeLargeur(int a){
@@ -322,7 +303,6 @@ void MainWindow::play(){
             if(a==auto2D && mode2D->currentText()=="Continu")a->setContinu(true);
             else a->setContinu(false);
             action[3]->setEnabled(false);
-            //action[1]->setEnabled(false);
             a->runSim();
         }
         else throw "erreur slot play()";
@@ -360,6 +340,7 @@ void MainWindow::current(QMdiSubWindow *w){
             }
         }
     }
+    else optionDock->hide();
 }
 
 
@@ -414,6 +395,14 @@ void MainWindow::initialiseur(){
     if(sub != nullptr){
         Autocell* a = dynamic_cast<Autocell*> (sub->widget());
         if (a!=nullptr) a->init();
+    }
+}
+
+void MainWindow::initialiseurSym(){
+    QMdiSubWindow* sub =central->currentSubWindow();
+    if(sub != nullptr){
+        Autocell* a = dynamic_cast<Autocell*> (sub->widget());
+        if (a!=nullptr) a->initSym();
     }
 }
 
