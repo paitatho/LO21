@@ -369,7 +369,8 @@ void MainWindow::saveAppState(){
                 writer.writeStartElement("valCellule");
                 writer.writeAttribute("row", QString::fromStdString(std::to_string(i)));
                 writer.writeAttribute("col", QString::fromStdString(std::to_string(j)));
-                writer.writeTextElement("val", (auto2D->get_etats()->item(i,j)->backgroundColor()).name());
+                writer.writeEmptyElement("val");
+                writer.writeAttribute("value", (auto2D->get_etats()->item(i,j)->backgroundColor()).name());
                 writer.writeEndElement();
             }
 
@@ -411,9 +412,30 @@ void MainWindow::restoreAppState(){
             fenetreRegle2D->setBorneSup(i, settings.value("reglePassageBorneSup"+QString::fromStdString(std::to_string(i))).toInt());
             fenetreRegle2D->setCouleur(i, settings.value("reglePassageCouleurEtat"+QString::fromStdString(std::to_string(i))).toString());
         }
-
         openSim();
-        play();
+
+        QString fileXmlName = QCoreApplication::applicationDirPath()+QString::fromStdString("/lastEtat.xml");
+        QFile file(fileXmlName);
+        QXmlStreamReader xml(&file);
+
+        if(!file.open(QFile::ReadOnly)) { qDebug() << "Cannot read file" << file.errorString(); }
+        while(!xml.atEnd())
+        {
+            if(xml.isStartElement())
+            {
+                if(xml.name() == "valCellule")
+                {
+                    unsigned int i = xml.attributes().at(0).value().toInt();
+                    unsigned int j = xml.attributes().at(1).value().toInt();
+                    xml.readNextStartElement();
+                    const QString color = *(xml.attributes().at(0).value().string());
+                    auto2D->setEtats(i, j, color);
+                    std::cout<<color.toStdString()<<std::endl;
+                }
+            }
+            xml.readNextStartElement();
+        }
+
     }
 }
 

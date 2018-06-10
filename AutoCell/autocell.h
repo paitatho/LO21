@@ -107,6 +107,9 @@ public:
     virtual void init();
     virtual void initSym();
     const QTableWidget* get_etats() const {return etats;}
+    void setEtats(unsigned int i, unsigned int j, QString color){
+        etats->item(i,j)->setBackgroundColor(QColor(color));
+    }
 
 public slots:
     void cellSelected(int a,int b);
