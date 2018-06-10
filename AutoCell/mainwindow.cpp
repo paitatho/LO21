@@ -434,7 +434,6 @@ void MainWindow::restoreAppState(){
             }
             xml.readNextStartElement();
         }
-
     }
 }
 
