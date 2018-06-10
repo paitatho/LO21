@@ -125,7 +125,7 @@ public slots:
 
 class Regle2D: public QWidget{
     Q_OBJECT
-private:
+protected:
     std::vector<std::vector<unsigned short int>> regle;
     QSpinBox* nbEtat;
     QComboBox* regleBase;
@@ -139,7 +139,7 @@ private:
     QGridLayout* layout;
 
     void depart();                  //méthode d'initialisation
-    virtual void modifDepart(){regleBase->addItem("Feu de Foret");}
+
 
 public:
     Regle2D(QWidget* parent = nullptr);
@@ -156,24 +156,12 @@ public:
 
     void setRegleBase(const QString& s){regleBase->setCurrentText(s);}
     void setNbEtat(unsigned int n){nbEtat->setValue(n);}
-    void setEtatCellulePourAppliquer(unsigned int i, unsigned int n){
-        etatCellulePourAppliquer[i]->setValue(n);
-    }
-    void setCelluleACompter(unsigned int i, unsigned int n){
-        celluleACCompter[i]->setValue(n);
-    }
-    void setInterval(unsigned int i, const QString& s){
-        interval[i]->setCurrentText(s);
-    }
-    void setBorneInf(unsigned int i, unsigned int n){
-        borneInf[i]->setValue(n);
-    }
-    void setBorneSup(unsigned int i, unsigned int n){
-        borneSup[i]->setValue(n);
-    }
-    void setCouleur(unsigned int i, const QString& s){
-        couleur[i]->setCurrentText(s);
-    }
+    void setEtatCellulePourAppliquer(unsigned int i, unsigned int n){ etatCellulePourAppliquer[i]->setValue(n);}
+    void setCelluleACompter(unsigned int i, unsigned int n){celluleACCompter[i]->setValue(n);}
+    void setInterval(unsigned int i, const QString& s){interval[i]->setCurrentText(s);}
+    void setBorneInf(unsigned int i, unsigned int n){borneInf[i]->setValue(n);}
+    void setBorneSup(unsigned int i, unsigned int n){borneSup[i]->setValue(n);}
+    void setCouleur(unsigned int i, const QString& s){couleur[i]->setCurrentText(s);}
 public slots:
     void cacher();
     void setRegle();
@@ -186,6 +174,41 @@ public slots:
 
 signals:
     void envoiRegle(std::vector<std::vector<unsigned short int>>,std::vector<std::string>);
+
+};
+
+class Regle2DBis : public Regle2D{
+public:
+    Regle2DBis(QWidget* parent = nullptr):Regle2D(parent){regleBase->addItem("Feu de Foret");}
+    virtual void ajoutReglePredefini(QString nom){
+        if (nom == "Feu de Foret"){
+            nbEtat->setValue(4);
+            etatCellulePourAppliquer[0]->setValue(0);
+            celluleACCompter[0]->setValue(2); interval[0]->setCurrentIndex(1);
+            borneInf[0]->setValue(1);borneSup[0]->setValue(8);couleur[0]->setCurrentIndex(2);
+
+            etatCellulePourAppliquer[1]->setValue(1);
+            celluleACCompter[1]->setValue(0); interval[1]->setCurrentIndex(0);
+            borneInf[1]->setValue(0);borneSup[1]->setValue(8);couleur[1]->setCurrentIndex(0);
+
+            etatCellulePourAppliquer[2]->setValue(0);
+            celluleACCompter[2]->setValue(2); interval[2]->setCurrentIndex(0);
+            borneInf[2]->setValue(1);borneSup[2]->setValue(8);couleur[2]->setCurrentIndex(3);
+
+            etatCellulePourAppliquer[3]->setValue(2);
+            celluleACCompter[3]->setValue(0); interval[3]->setCurrentIndex(0);
+            borneInf[3]->setValue(0);borneSup[3]->setValue(8);couleur[3]->setCurrentIndex(1);
+        }
+    }
+};
+
+class Autocell2DBis: public Autocell2D{
+public:
+    Autocell2DBis(QWidget* parent = nullptr):Autocell2D(parent){
+        delete fenetreRegle2D;
+        fenetreRegle2D = new Regle2DBis;
+        connect(fenetreRegle2D,SIGNAL(envoiRegle(std::vector<std::vector<unsigned short int> >,std::vector<std::string>)),this,SLOT(changeRegle(std::vector<std::vector<unsigned short int> >,std::vector<std::string>)));
+    }
 
 };
 

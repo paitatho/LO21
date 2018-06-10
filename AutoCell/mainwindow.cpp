@@ -67,7 +67,6 @@ void MainWindow::createDockOption(){
     QLabel* titre=new QLabel(tr("Option"));titre->setAlignment(Qt::AlignCenter);titre->setFont(*police);
     optionDock->setTitleBarWidget(titre);
     optionDock->setAllowedAreas(Qt::LeftDockWidgetArea | Qt::RightDockWidgetArea);
-    //optionDock->setWidget(label[0]);
     optionDock->setMinimumWidth(100);
     optionDock->setFeatures(QDockWidget::NoDockWidgetFeatures);optionDock->setFeatures(/*QDockWidget::DockWidgetClosable | */QDockWidget::DockWidgetMovable);
     setCorner(Qt::TopLeftCorner, Qt::LeftDockWidgetArea);
@@ -221,7 +220,7 @@ void MainWindow::openSim(){
        QMessageBox::information(this,"information","Vous devez choisir un automate!");
    }
    else if(choixSim->currentText() == "2D" && auto2D == nullptr){
-       auto2D =new Autocell2D;
+       auto2D =new Autocell2DBis;
        auto2D->setLargeur(larg2D->value());
        auto2D->setHauteur(haut2D->value());
        auto2D->setTaille(taille->value());
@@ -458,17 +457,7 @@ void MainWindow::restoreAppState(){
         haut2D->setValue(settings.value("haut2D").toInt());
         speed2D->setValue(settings.value("speed2D").toInt());
         mode2D->setCurrentText(settings.value("mode2D").toString());
-        /*fenetreRegle2D->setRegleBase(settings.value("regle2DJeu").toString());
-        fenetreRegle2D->setNbEtat(settings.value("nbEtat").toInt());*/
         taille->setValue(settings.value("tailleCellule").toInt());
-        /*for(unsigned int i=0; i<(fenetreRegle2D->get_nbEtat()->value()); ++i){
-            fenetreRegle2D->setEtatCellulePourAppliquer(i, settings.value("reglePassageEtatDepart"+QString::fromStdString(std::to_string(i))).toInt());
-            fenetreRegle2D->setCelluleACompter(i, settings.value("reglePassageEtatAcompter"+QString::fromStdString(std::to_string(i))).toInt());
-            fenetreRegle2D->setInterval(i, settings.value("reglePassageTypeInterval"+QString::fromStdString(std::to_string(i))).toString());
-            fenetreRegle2D->setBorneInf(i, settings.value("reglePassageBorneInf"+QString::fromStdString(std::to_string(i))).toInt());
-            fenetreRegle2D->setBorneSup(i, settings.value("reglePassageBorneSup"+QString::fromStdString(std::to_string(i))).toInt());
-            fenetreRegle2D->setCouleur(i, settings.value("reglePassageCouleurEtat"+QString::fromStdString(std::to_string(i))).toString());
-        }*/
         openSim();
         Regle2D* fenetreRegle2D = auto2D->get_regle2D();
         fenetreRegle2D->setRegleBase(settings.value("regle2DJeu").toString());
@@ -506,14 +495,6 @@ void MainWindow::restoreAppState(){
     }
 }
 
-/*void MainWindow::changeRegle2D(std::vector<std::vector<unsigned short int>> r,std::vector<std::string> c){
-    if(auto2D != nullptr){
-        auto2D->setRegle(r);
-        auto2D->setCouleur(c);
-        auto2D->setNbEtat(r.size());
-        auto2D->clear();
-    }
-}*/
 
 void MainWindow::changeTaille(int t){
     QMdiSubWindow* sub =central->currentSubWindow();

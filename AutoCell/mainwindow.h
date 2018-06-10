@@ -75,7 +75,6 @@ public slots:
     void changeHauteur(int a);
     void changeLargeur(int a);
     virtual void changeRegle1D(int a);
-    //virtual void changeRegle2D(std::vector<std::vector<unsigned short int>> r,std::vector<std::string> c);
     void changeSpeed(int s);
     void changeTaille(int);
 
@@ -84,7 +83,7 @@ public slots:
     void clear();
     virtual void current(QMdiSubWindow *w);
     virtual void allow(){action[3]->setEnabled(true);}
-    virtual void afficherRegle2D(){ auto2D->get_regle2D()->show();}
+    void afficherRegle2D(){ auto2D->get_regle2D()->show();} // avec le polymorphisme quelque soit la classe fille on aura les bonnes régles
 
     void initialiseur();
     void initialiseurSym();

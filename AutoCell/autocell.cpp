@@ -367,7 +367,7 @@ void Regle2D::depart(){
     QPushButton* bouton = new QPushButton("OK");
     connect(bouton,SIGNAL(clicked()),this,SLOT(sendRegle()));
     layout->addWidget(bouton,nbEtat->maximum()+1,8);
-    modifDepart();
+    //this->modifDepart();
 }
 
 void Regle2D::cacher(){
@@ -436,13 +436,13 @@ void Regle2D::reglePredefini(QString nom){
         borneInf[1]->setValue(3);borneSup[1]->setValue(3);couleur[1]->setCurrentIndex(1);
     }
     else
-        ajoutReglePredefini(nom);
+        this->ajoutReglePredefini(nom);
 
 
 }
 
 void Regle2D::ajoutReglePredefini(QString nom){
-    if (nom == "Feu de Foret"){
+   /* if (nom == "Feu de Foret"){
         nbEtat->setValue(4);
         etatCellulePourAppliquer[0]->setValue(0);
         celluleACCompter[0]->setValue(2); interval[0]->setCurrentIndex(1);
@@ -459,5 +459,5 @@ void Regle2D::ajoutReglePredefini(QString nom){
         etatCellulePourAppliquer[3]->setValue(2);
         celluleACCompter[3]->setValue(0); interval[3]->setCurrentIndex(0);
         borneInf[3]->setValue(0);borneSup[3]->setValue(8);couleur[3]->setCurrentIndex(1);
-    }
+    }*/
 }
