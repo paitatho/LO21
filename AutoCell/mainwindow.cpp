@@ -413,6 +413,7 @@ void MainWindow::restoreAppState(){
             fenetreRegle2D->setCouleur(i, settings.value("reglePassageCouleurEtat"+QString::fromStdString(std::to_string(i))).toString());
         }
         openSim();
+        fenetreRegle2D->sendRegle();
 
         QString fileXmlName = QCoreApplication::applicationDirPath()+QString::fromStdString("/lastEtat.xml");
         QFile file(fileXmlName);

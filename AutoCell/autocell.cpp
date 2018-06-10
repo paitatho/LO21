@@ -323,6 +323,7 @@ Regle2D::Regle2D(QWidget* parent) : QWidget(parent),regle (std::vector<std::vect
    this->depart();
    setLayout(layout);
    this->cacher();
+   this->setRegle();
 }
 
 void Regle2D::depart(){

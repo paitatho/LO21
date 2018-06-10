@@ -147,6 +147,8 @@ public:
     const std::vector<QSpinBox*>& get_borneSup() const {return borneSup;}
     const std::vector<QComboBox*>& get_couleur() const {return couleur;}
     const std::vector<std::string>& get_couleurNom() const {return couleurNom;}
+    const std::vector<std::vector<unsigned short int>>& get_regle() const {return regle;}
+
     void setRegleBase(const QString& s){regleBase->setCurrentText(s);}
     void setNbEtat(unsigned int n){nbEtat->setValue(n);}
     void setEtatCellulePourAppliquer(unsigned int i, unsigned int n){
@@ -168,7 +170,6 @@ public:
         couleur[i]->setCurrentText(s);
     }
 public slots:
-
     void cacher();
     void setRegle();
     void setCouleur();
