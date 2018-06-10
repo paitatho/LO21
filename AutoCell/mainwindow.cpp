@@ -207,6 +207,7 @@ void MainWindow::openSim(){
        auto1D = new Autocell1D;
        auto1D->setLargeur(larg1D->value());
        auto1D->setHauteur(nbSim1D->value());
+       auto1D->setTaille(taille->value());
        auto1D->setRegle(150);
        subWin = central->addSubWindow(auto1D);
        subWin->show();
@@ -223,6 +224,9 @@ void MainWindow::openSim(){
    }
    else if(choixSim->currentText() == "2D" && auto2D == nullptr){
        auto2D =new Autocell2D;
+       auto2D->setLargeur(larg2D->value());
+       auto2D->setHauteur(haut2D->value());
+       auto2D->setTaille(taille->value());
        subWin2D = central->addSubWindow(auto2D);
        auto2D->setAttribute(Qt::WA_DeleteOnClose);
        subWin2D->setAttribute(Qt::WA_DeleteOnClose);
