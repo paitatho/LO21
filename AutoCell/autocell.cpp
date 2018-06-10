@@ -441,23 +441,4 @@ void Regle2D::reglePredefini(QString nom){
 
 }
 
-void Regle2D::ajoutReglePredefini(QString nom){
-   /* if (nom == "Feu de Foret"){
-        nbEtat->setValue(4);
-        etatCellulePourAppliquer[0]->setValue(0);
-        celluleACCompter[0]->setValue(2); interval[0]->setCurrentIndex(1);
-        borneInf[0]->setValue(1);borneSup[0]->setValue(8);couleur[0]->setCurrentIndex(2);
-
-        etatCellulePourAppliquer[1]->setValue(1);
-        celluleACCompter[1]->setValue(0); interval[1]->setCurrentIndex(0);
-        borneInf[1]->setValue(0);borneSup[1]->setValue(8);couleur[1]->setCurrentIndex(0);
-
-        etatCellulePourAppliquer[2]->setValue(0);
-        celluleACCompter[2]->setValue(2); interval[2]->setCurrentIndex(0);
-        borneInf[2]->setValue(1);borneSup[2]->setValue(8);couleur[2]->setCurrentIndex(3);
-
-        etatCellulePourAppliquer[3]->setValue(2);
-        celluleACCompter[3]->setValue(0); interval[3]->setCurrentIndex(0);
-        borneInf[3]->setValue(0);borneSup[3]->setValue(8);couleur[3]->setCurrentIndex(1);
-    }*/
-}
+void Regle2D::ajoutReglePredefini(QString){}
