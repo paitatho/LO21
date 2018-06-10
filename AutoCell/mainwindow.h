@@ -4,6 +4,7 @@
 #include <QtWidgets>
 #include "autocell.h"
 #include<iostream>
+#include<QtXml>
 
 
 class MainWindow : public QMainWindow

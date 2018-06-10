@@ -106,6 +106,7 @@ public:
     const std::vector<std::vector<unsigned short int>>& getRegle() const {return regle;}
     virtual void init();
     virtual void initSym();
+    const QTableWidget* get_etats() const {return etats;}
 
 public slots:
     void cellSelected(int a,int b);

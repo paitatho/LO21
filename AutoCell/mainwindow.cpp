@@ -348,6 +348,34 @@ void MainWindow::saveAppState(){
             settings.setValue("reglePassageBorneSup"+QString::fromStdString(std::to_string(i)), fenetreRegle2D->get_borneSup()[i]->value());
             settings.setValue("reglePassageCouleurEtat"+QString::fromStdString(std::to_string(i)), fenetreRegle2D->get_couleur()[i]->currentText());
         }
+        QString fileXmlName = QCoreApplication::applicationDirPath()+QString::fromStdString("/lastEtat.xml");
+        QFile fileXml(fileXmlName);
+
+        // Ouverture du fichier en écriture et en texte. (sort de la fonction si le fichier ne s'ouvre pas)
+        if(!fileXml.open(QFile::WriteOnly | QFile::Text))
+            return;
+        QXmlStreamWriter writer(&fileXml);
+
+        // Active l'indentation automatique du fichier XML pour une meilleur visibilité
+        writer.setAutoFormatting(true);
+
+        // Insert la norme de codification du fichier XML :
+        writer.writeStartDocument();
+
+        // Élément racine du fichier XML
+        writer.writeStartElement("dernierEtat");
+        for(unsigned int i=0; i<auto2D->get_etats()->rowCount() ;++i){
+            for(unsigned int j=0; j<auto2D->get_etats()->columnCount(); ++j){
+                writer.writeStartElement("valCellule");
+                writer.writeAttribute("row", QString::fromStdString(std::to_string(i)));
+                writer.writeAttribute("col", QString::fromStdString(std::to_string(j)));
+                writer.writeTextElement("val", (auto2D->get_etats()->item(i,j)->backgroundColor()).name());
+                writer.writeEndElement();
+            }
+
+        }
+        writer.writeEndElement();
+        writer.writeEndDocument();
     }
 }
 
