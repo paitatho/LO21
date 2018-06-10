@@ -95,7 +95,7 @@ void MainWindow::createOption1D(){
     boxCel = new QGroupBox(tr("Cellule"));
     layoutBoxCel =new QGridLayout;
 
-    QComboBox* bb=new QComboBox;bb->addItems((QStringList() << "white"<< "black"<<"green" << "red"<<"blue"<<"yellow"<<"pink"<<"brown"<<"grey"));
+    bb=new QComboBox;bb->addItems((QStringList() << "white"<< "black"<<"green" << "red"<<"blue"<<"yellow"<<"pink"<<"brown"<<"grey"));
 
     nbSim1D = new QSpinBox;nbSim1D->setRange(5,40);nbSim1D->setValue(20);
     regle1D = new QSpinBox;regle1D->setRange(0,255);regle1D->setValue(150);
@@ -330,7 +330,35 @@ void MainWindow::saveAppState(){
         settings.setValue("larg1D", larg1D->value());
         settings.setValue("nbSim1D", nbSim1D->value());
         settings.setValue("regle1D", regle1D->value());
+        settings.setValue("tailleCellule", taille->value());
+        settings.setValue("couleurCellule", bb->currentText());
 
+        QString fileXmlName = QCoreApplication::applicationDirPath()+QString::fromStdString("/lastEtat1D.xml");
+        QFile fileXml(fileXmlName);
+
+        // Ouverture du fichier en écriture et en texte. (sort de la fonction si le fichier ne s'ouvre pas)
+        if(!fileXml.open(QFile::WriteOnly | QFile::Text))
+            return;
+        QXmlStreamWriter writer(&fileXml);
+
+        // Active l'indentation automatique du fichier XML pour une meilleur visibilité
+        writer.setAutoFormatting(true);
+
+        // Insert la norme de codification du fichier XML :
+        writer.writeStartDocument();
+
+        // Élément racine du fichier XML
+        writer.writeStartElement("dernierEtat");
+        for(unsigned int i=0; i<auto1D->get_depart()->columnCount() ;++i){
+                writer.writeStartElement("valCellule");
+                writer.writeAttribute("col", QString::fromStdString(std::to_string(i)));
+                writer.writeEmptyElement("val");
+                writer.writeAttribute("value", (auto1D->get_depart()->item(0,i)->backgroundColor()).name());
+                writer.writeEndElement();
+            }
+
+        writer.writeEndElement();
+        writer.writeEndDocument();
     }
     if(choixSim->currentText()=="2D"){
         settings.setValue("larg2D", larg2D->value());
@@ -348,7 +376,7 @@ void MainWindow::saveAppState(){
             settings.setValue("reglePassageBorneSup"+QString::fromStdString(std::to_string(i)), fenetreRegle2D->get_borneSup()[i]->value());
             settings.setValue("reglePassageCouleurEtat"+QString::fromStdString(std::to_string(i)), fenetreRegle2D->get_couleur()[i]->currentText());
         }
-        QString fileXmlName = QCoreApplication::applicationDirPath()+QString::fromStdString("/lastEtat.xml");
+        QString fileXmlName = QCoreApplication::applicationDirPath()+QString::fromStdString("/lastEtat2D.xml");
         QFile fileXml(fileXmlName);
 
         // Ouverture du fichier en écriture et en texte. (sort de la fonction si le fichier ne s'ouvre pas)
@@ -392,7 +420,29 @@ void MainWindow::restoreAppState(){
         larg1D->setValue(settings.value("larg1D").toInt());
         nbSim1D->setValue(settings.value("nbSim1D").toInt());
         regle1D->setValue(settings.value("regle1D").toInt());
+        bb->setCurrentText(settings.value("couleurCellule").toString());
+
         openSim();
+
+        QString fileXmlName = QCoreApplication::applicationDirPath()+QString::fromStdString("/lastEtat1D.xml");
+        QFile file(fileXmlName);
+        QXmlStreamReader xml(&file);
+
+        if(!file.open(QFile::ReadOnly)) { qDebug() << "Cannot read file" << file.errorString(); }
+        while(!xml.atEnd())
+        {
+            if(xml.isStartElement())
+            {
+                if(xml.name() == "valCellule")
+                {
+                    unsigned int i = xml.attributes().at(0).value().toInt();
+                    xml.readNextStartElement();
+                    const QString color = (xml.attributes().at(0).value().toString());
+                    auto1D->setDepart(i, color);
+                }
+            }
+            xml.readNextStartElement();
+        }
         play();
     }
     if(settings.value("typeAutomate") == "2D"){
@@ -415,7 +465,7 @@ void MainWindow::restoreAppState(){
         openSim();
         fenetreRegle2D->sendRegle();
 
-        QString fileXmlName = QCoreApplication::applicationDirPath()+QString::fromStdString("/lastEtat.xml");
+        QString fileXmlName = QCoreApplication::applicationDirPath()+QString::fromStdString("/lastEtat2D.xml");
         QFile file(fileXmlName);
         QXmlStreamReader xml(&file);
 

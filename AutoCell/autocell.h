@@ -76,6 +76,11 @@ public:
     virtual void init();
     virtual void initSym();
     void setSpeed(unsigned int s){}
+    const QTableWidget* get_depart() const {return depart;}
+
+    void setDepart(unsigned int i, QString color){
+        depart->item(0,i)->setBackgroundColor(QColor(color));
+    }
 public slots:
     virtual void cellSelected(int a,int b);
 

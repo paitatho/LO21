@@ -25,6 +25,7 @@ private:
     QSpinBox* larg1D;
     QSpinBox* nbSim1D;
     QSpinBox* regle1D;
+    QComboBox* bb;
 
     QColorDialog* color;
 
