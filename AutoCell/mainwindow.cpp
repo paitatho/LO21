@@ -428,9 +428,8 @@ void MainWindow::restoreAppState(){
                     unsigned int i = xml.attributes().at(0).value().toInt();
                     unsigned int j = xml.attributes().at(1).value().toInt();
                     xml.readNextStartElement();
-                    const QString color = *(xml.attributes().at(0).value().string());
+                    const QString color = (xml.attributes().at(0).value().toString());
                     auto2D->setEtats(i, j, color);
-                    std::cout<<color.toStdString()<<std::endl;
                 }
             }
             xml.readNextStartElement();
