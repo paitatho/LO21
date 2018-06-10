@@ -359,6 +359,7 @@ void MainWindow::saveAppState(){
 
         writer.writeEndElement();
         writer.writeEndDocument();
+
     }
     if(choixSim->currentText()=="2D"){
         settings.setValue("larg2D", larg2D->value());
@@ -443,6 +444,7 @@ void MainWindow::restoreAppState(){
             }
             xml.readNextStartElement();
         }
+        auto1D->setRegle(regle1D->value());
         play();
     }
     if(settings.value("typeAutomate") == "2D"){
