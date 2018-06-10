@@ -193,9 +193,18 @@ Autocell2D::Autocell2D(QWidget* parent) : Autocell(parent),regle(std::vector<std
 
     this->setEtat(largeur,hauteur);
     layout->addWidget(etats);
+    fenetreRegle2D = new Regle2D;fenetreRegle2D->hide();
+    connect(fenetreRegle2D,SIGNAL(envoiRegle(std::vector<std::vector<unsigned short int> >,std::vector<std::string>)),this,SLOT(changeRegle(std::vector<std::vector<unsigned short int> >,std::vector<std::string>)));
 
     this->setLayout(layout);
     //this->runSim();
+}
+
+void Autocell2D::changeRegle(std::vector<std::vector<unsigned short int>> r,std::vector<std::string> c){
+        this->setRegle(r);
+        this->setCouleur(c);
+        this->setNbEtat(r.size());
+        this->clear();
 }
 
 void Autocell2D::cellSelected(int a,int b){

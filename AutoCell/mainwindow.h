@@ -41,7 +41,6 @@ private:
     QMdiArea * central;
     QMdiSubWindow* subWin;
     QMdiSubWindow* subWin2D;
-    Regle2D* fenetreRegle2D;
     QSpinBox* larg2D;
     QSpinBox* haut2D;
     QSpinBox* speed2D;
@@ -51,11 +50,11 @@ private:
     static Autocell1D* auto1D;
     static Autocell2D* auto2D;
 
-    virtual void createToolBar();
+    void createToolBar();
     virtual void createDockOption();
     virtual void createMdiArea();
-    virtual void createOption1D();
-    virtual void createOption2D();
+    void createOption1D();
+    void createOption2D();
 
     virtual void extensionOption1D(){}
     virtual void extensionOption2D(){}
@@ -63,29 +62,29 @@ private:
 
 public:
     MainWindow();
-    void closeEvent(QCloseEvent *event);
-    void saveAppState();
-    void restoreAppState();
+    virtual void closeEvent(QCloseEvent *event);
+    virtual void saveAppState();
+    virtual void restoreAppState();
 public slots:
-    void changeLargeur(int a);
     virtual void openSim();
-    void clearAuto1D(){ auto1D = nullptr;subWin = nullptr;larg1D->setValue(15);nbSim1D->setValue(20);regle1D->setValue(150);}
-    void clearAuto2D(){auto2D = nullptr; subWin2D = nullptr;}
+    virtual void clearAuto1D(){ auto1D = nullptr;subWin = nullptr;larg1D->setValue(15);nbSim1D->setValue(20);regle1D->setValue(150);}
+    virtual void clearAuto2D(){auto2D = nullptr; subWin2D = nullptr;}
 
     void changeColor(QString);
     void changeSize();
     void changeHauteur(int a);
-    void changeRegle1D(int a);
-    void changeRegle2D(std::vector<std::vector<unsigned short int>> r,std::vector<std::string> c);
+    void changeLargeur(int a);
+    virtual void changeRegle1D(int a);
+    //virtual void changeRegle2D(std::vector<std::vector<unsigned short int>> r,std::vector<std::string> c);
     void changeSpeed(int s);
     void changeTaille(int);
 
-    void play();
+    virtual void play();
     void pause();
     void clear();
-    void current(QMdiSubWindow *w);
-    void allow(){action[3]->setEnabled(true);}
-    void afficherRegle2D(){ fenetreRegle2D->show();}
+    virtual void current(QMdiSubWindow *w);
+    virtual void allow(){action[3]->setEnabled(true);}
+    virtual void afficherRegle2D(){ auto2D->get_regle2D()->show();}
 
     void initialiseur();
     void initialiseurSym();

@@ -7,6 +7,7 @@
 #include "Automate1D.h"
 #include "Simulateur.h"
 
+class Regle2D;
 
 class Autocell: public QWidget{
     Q_OBJECT
@@ -22,15 +23,11 @@ public:
         couleur.push_back("white"); couleur.push_back("white");
     }
     void setNbEtat(unsigned int e){nbEtat = e;}
-    unsigned int getNbEtat() const {return nbEtat;}
     void setTaille(unsigned int t){taille =t;adjustTaille();adjustSize();}
+    unsigned int getNbEtat() const {return nbEtat;}
     unsigned int getTaille() const {return taille;}
-    virtual int getLargeur() const{
-        return largeur;
-    }
-    virtual int getHauteur() const{
-        return hauteur;
-    }
+    unsigned int getLargeur() const{return largeur;}
+    unsigned int getHauteur() const{return hauteur;}
     virtual void runSim() =0;
     virtual void setHauteur(unsigned int)=0;
     virtual void setLargeur(unsigned int)=0;
@@ -39,7 +36,7 @@ public:
     virtual void adjustTaille() =0;
     virtual void init()=0;
     virtual void initSym()=0;
-    virtual void setCouleur(std::vector<std::string> c){couleur.clear();couleur =c;}
+    void setCouleur(std::vector<std::string> c){couleur.clear();couleur =c;}
     virtual void setSpeed(unsigned int s)=0;
  public slots:
 
@@ -95,6 +92,7 @@ protected:
     std::vector<std::vector<unsigned short int>> regle;
     QGridLayout* layout;
     QTableWidget* etats = nullptr;
+    Regle2D* fenetreRegle2D;
     bool continu = true;
     unsigned int compteur =1;
     void setEtat(int h,int l);
@@ -112,6 +110,7 @@ public:
     virtual void init();
     virtual void initSym();
     const QTableWidget* get_etats() const {return etats;}
+    Regle2D* get_regle2D(){return fenetreRegle2D;}
     void setEtats(unsigned int i, unsigned int j, QString color){
         etats->item(i,j)->setBackgroundColor(QColor(color));
     }
@@ -120,6 +119,7 @@ public slots:
     void cellSelected(int a,int b);
     void clear();
     void runSim();
+    void changeRegle(std::vector<std::vector<unsigned short int> >,std::vector<std::string>);
 
 };
 

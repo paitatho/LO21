@@ -169,10 +169,8 @@ void MainWindow::createOption2D(){
 
     connect(taille,SIGNAL(valueChanged(int)),this,SLOT(changeTaille(int)));
 
-    fenetreRegle2D = new Regle2D;
-    fenetreRegle2D->hide();
+
     connect(boutonRegle,SIGNAL(clicked()),this,SLOT(afficherRegle2D()));
-    connect(fenetreRegle2D,SIGNAL(envoiRegle(std::vector<std::vector<unsigned short int> >,std::vector<std::string>)),this,SLOT(changeRegle2D(std::vector<std::vector<unsigned short int> >,std::vector<std::string>)));
 
     layoutBoxParam2D->addWidget(new QLabel("Delai(ms)"), 0,0);
     layoutBoxParam2D->addWidget(speed2D, 0,1);
@@ -370,6 +368,9 @@ void MainWindow::saveAppState(){
         settings.setValue("haut2D", haut2D->value());
         settings.setValue("speed2D", speed2D->value());
         settings.setValue("mode2D", mode2D->currentText());
+
+        Regle2D* fenetreRegle2D = auto2D->get_regle2D();
+
         settings.setValue("regle2DJeu", fenetreRegle2D->get_regleBase()->currentText());
         settings.setValue("nbEtat", fenetreRegle2D->get_nbEtat()->value());
         settings.setValue("tailleCellule", taille->value());
@@ -457,9 +458,21 @@ void MainWindow::restoreAppState(){
         haut2D->setValue(settings.value("haut2D").toInt());
         speed2D->setValue(settings.value("speed2D").toInt());
         mode2D->setCurrentText(settings.value("mode2D").toString());
+        /*fenetreRegle2D->setRegleBase(settings.value("regle2DJeu").toString());
+        fenetreRegle2D->setNbEtat(settings.value("nbEtat").toInt());*/
+        taille->setValue(settings.value("tailleCellule").toInt());
+        /*for(unsigned int i=0; i<(fenetreRegle2D->get_nbEtat()->value()); ++i){
+            fenetreRegle2D->setEtatCellulePourAppliquer(i, settings.value("reglePassageEtatDepart"+QString::fromStdString(std::to_string(i))).toInt());
+            fenetreRegle2D->setCelluleACompter(i, settings.value("reglePassageEtatAcompter"+QString::fromStdString(std::to_string(i))).toInt());
+            fenetreRegle2D->setInterval(i, settings.value("reglePassageTypeInterval"+QString::fromStdString(std::to_string(i))).toString());
+            fenetreRegle2D->setBorneInf(i, settings.value("reglePassageBorneInf"+QString::fromStdString(std::to_string(i))).toInt());
+            fenetreRegle2D->setBorneSup(i, settings.value("reglePassageBorneSup"+QString::fromStdString(std::to_string(i))).toInt());
+            fenetreRegle2D->setCouleur(i, settings.value("reglePassageCouleurEtat"+QString::fromStdString(std::to_string(i))).toString());
+        }*/
+        openSim();
+        Regle2D* fenetreRegle2D = auto2D->get_regle2D();
         fenetreRegle2D->setRegleBase(settings.value("regle2DJeu").toString());
         fenetreRegle2D->setNbEtat(settings.value("nbEtat").toInt());
-        taille->setValue(settings.value("tailleCellule").toInt());
         for(unsigned int i=0; i<(fenetreRegle2D->get_nbEtat()->value()); ++i){
             fenetreRegle2D->setEtatCellulePourAppliquer(i, settings.value("reglePassageEtatDepart"+QString::fromStdString(std::to_string(i))).toInt());
             fenetreRegle2D->setCelluleACompter(i, settings.value("reglePassageEtatAcompter"+QString::fromStdString(std::to_string(i))).toInt());
@@ -468,7 +481,6 @@ void MainWindow::restoreAppState(){
             fenetreRegle2D->setBorneSup(i, settings.value("reglePassageBorneSup"+QString::fromStdString(std::to_string(i))).toInt());
             fenetreRegle2D->setCouleur(i, settings.value("reglePassageCouleurEtat"+QString::fromStdString(std::to_string(i))).toString());
         }
-        openSim();
         fenetreRegle2D->sendRegle();
 
         QString fileXmlName = QCoreApplication::applicationDirPath()+QString::fromStdString("/lastEtat2D.xml");
@@ -494,14 +506,14 @@ void MainWindow::restoreAppState(){
     }
 }
 
-void MainWindow::changeRegle2D(std::vector<std::vector<unsigned short int>> r,std::vector<std::string> c){
+/*void MainWindow::changeRegle2D(std::vector<std::vector<unsigned short int>> r,std::vector<std::string> c){
     if(auto2D != nullptr){
         auto2D->setRegle(r);
         auto2D->setCouleur(c);
         auto2D->setNbEtat(r.size());
         auto2D->clear();
     }
-}
+}*/
 
 void MainWindow::changeTaille(int t){
     QMdiSubWindow* sub =central->currentSubWindow();
