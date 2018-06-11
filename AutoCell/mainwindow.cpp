@@ -57,6 +57,8 @@ void MainWindow::createToolBar(){
     connect(action[1], SIGNAL(triggered()),this,SLOT(play()));
     connect(action[2], SIGNAL(triggered()),this,SLOT(pause()));
     connect(action[3],SIGNAL(triggered()),this,SLOT(clear()));
+    connect(action[4],SIGNAL(triggered()),this,SLOT(saveAutomate()));
+    connect(action[5],SIGNAL(triggered()),this,SLOT(loadAutomate()));
 
 }
 
@@ -113,9 +115,9 @@ void MainWindow::createOption1D(){
     layoutBoxDim->addWidget(new QLabel("Taille"), 2,0);layoutBoxDim->addWidget(taille, 2,1);
 
     layoutBoxCel->addWidget(bb, 0,0,1,2);
-    layoutBoxCel->addWidget(new QLabel("Règle"), 1,0);
+    layoutBoxCel->addWidget(new QLabel("Regle"), 1,0);
     layoutBoxCel->addWidget(regle1D, 1,1);
-    layoutBoxCel->addWidget(new QLabel("Régle"), 1,0);layoutBoxCel->addWidget(regle1D, 1,1);
+    layoutBoxCel->addWidget(new QLabel("Regle"), 1,0);layoutBoxCel->addWidget(regle1D, 1,1);
 
     QPushButton* initialisation=new QPushButton("Etat initial aléatoire");
     layoutBoxCel->addWidget(initialisation, 2,0,1,2);
@@ -523,4 +525,118 @@ void MainWindow::initialiseurSym(){
     }
 }
 
+void MainWindow::saveAutomate(){
+    QString path = QFileDialog::getSaveFileName(this, "Enregistrer sous", QDir::homePath(), "XML (*.xml)");
+    if(choixSim->currentText()=="1D"){
+        QFile fileXml(path);
 
+        // Ouverture du fichier en écriture et en texte. (sort de la fonction si le fichier ne s'ouvre pas)
+        if(!fileXml.open(QFile::WriteOnly | QFile::Text))
+            return;
+        QXmlStreamWriter writer(&fileXml);
+
+        // Active l'indentation automatique du fichier XML pour une meilleur visibilité
+        writer.setAutoFormatting(true);
+
+        // Insert la norme de codification du fichier XML :
+        writer.writeStartDocument();
+
+        // Élément racine du fichier XML
+        writer.writeStartElement("Infos");
+        writer.writeEmptyElement("typeAutomate");
+        writer.writeAttribute("value", choixSim->currentText());
+        writer.writeEmptyElement("larg1D");
+        writer.writeAttribute("value", QString::fromStdString(std::to_string(larg1D->value())));
+        writer.writeEmptyElement("larg1D");
+        writer.writeAttribute("value", QString::fromStdString(std::to_string(nbSim1D->value())));
+        writer.writeEmptyElement("regle1D");
+        writer.writeAttribute("value", QString::fromStdString(std::to_string(regle1D->value())));
+        writer.writeEmptyElement("tailleCellule");
+        writer.writeAttribute("value", QString::fromStdString(std::to_string(taille->value())));
+        writer.writeEmptyElement("couleurCellule");
+        writer.writeAttribute("value", bb->currentText());
+        writer.writeEndElement();
+
+        writer.writeStartElement("dernierEtat");
+        for(unsigned int i=0; i<auto1D->get_depart()->columnCount() ;++i){
+                writer.writeStartElement("valCellule");
+                writer.writeAttribute("col", QString::fromStdString(std::to_string(i)));
+                writer.writeEmptyElement("val");
+                writer.writeAttribute("value", (auto1D->get_depart()->item(0,i)->backgroundColor()).name());
+                writer.writeEndElement();
+            }
+
+        writer.writeEndElement();
+        writer.writeEndDocument();
+
+    }
+    if(choixSim->currentText()=="2D"){
+        QFile fileXml(path);
+
+        // Ouverture du fichier en écriture et en texte. (sort de la fonction si le fichier ne s'ouvre pas)
+        if(!fileXml.open(QFile::WriteOnly | QFile::Text))
+            return;
+        QXmlStreamWriter writer(&fileXml);
+
+        // Active l'indentation automatique du fichier XML pour une meilleur visibilité
+        writer.setAutoFormatting(true);
+
+        // Insert la norme de codification du fichier XML :
+        writer.writeStartDocument();
+
+        // Élément racine du fichier XML
+        writer.writeStartElement("Infos");
+        writer.writeEmptyElement("typeAutomate");
+        writer.writeAttribute("value", choixSim->currentText());
+        writer.writeEmptyElement("larg2D");
+        writer.writeAttribute("value", QString::fromStdString(std::to_string(larg2D->value())));
+        writer.writeEmptyElement("haut2D");
+        writer.writeAttribute("value", QString::fromStdString(std::to_string(haut2D->value())));
+        writer.writeEmptyElement("speed2D");
+        writer.writeAttribute("value", QString::fromStdString(std::to_string(speed2D->value())));
+        writer.writeEmptyElement("mode2D");
+        writer.writeAttribute("value", mode2D->currentText());
+        writer.writeEmptyElement("regle2DJeu");
+
+        Regle2D* fenetreRegle2D = auto2D->get_regle2D();
+
+        writer.writeAttribute("value", fenetreRegle2D->get_regleBase()->currentText());
+        writer.writeEmptyElement("nbEtat");
+        writer.writeAttribute("value", QString::fromStdString(std::to_string(fenetreRegle2D->get_nbEtat()->value())));
+        writer.writeEmptyElement("tailleCellule");
+        writer.writeAttribute("value", QString::fromStdString(std::to_string(taille->value())));
+
+        for(unsigned int i=0; i<(fenetreRegle2D->get_nbEtat()->value()); ++i){
+            writer.writeEmptyElement("reglePassageEtatDepart"+QString::fromStdString(std::to_string(i)));
+            writer.writeAttribute("value", QString::fromStdString(std::to_string(fenetreRegle2D->get_etatCellulePourAppliquer()[i]->value())));
+            writer.writeEmptyElement("reglePassageEtatAcompter"+QString::fromStdString(std::to_string(i)));
+            writer.writeAttribute("value", QString::fromStdString(std::to_string(fenetreRegle2D->get_celluleACCompter()[i]->value())));
+            writer.writeEmptyElement("reglePassageTypeInterval"+QString::fromStdString(std::to_string(i)));
+            writer.writeAttribute("value", fenetreRegle2D->get_interval()[i]->currentText());
+            writer.writeEmptyElement("reglePassageBorneInf"+QString::fromStdString(std::to_string(i)));
+            writer.writeAttribute("value", QString::fromStdString(std::to_string(fenetreRegle2D->get_borneInf()[i]->value())));
+            writer.writeEmptyElement("reglePassageBorneSup"+QString::fromStdString(std::to_string(i)));
+            writer.writeAttribute("value", QString::fromStdString(std::to_string(fenetreRegle2D->get_borneSup()[i]->value())));
+            writer.writeEmptyElement("reglePassageCouleurEtat"+QString::fromStdString(std::to_string(i)));
+            writer.writeAttribute("value", fenetreRegle2D->get_couleur()[i]->currentText());
+        }
+        writer.writeEndElement();
+
+        writer.writeStartElement("dernierEtat");
+        for(unsigned int i=0; i<auto2D->get_etats()->rowCount() ;++i){
+            for(unsigned int j=0; j<auto2D->get_etats()->columnCount(); ++j){
+                writer.writeStartElement("valCellule");
+                writer.writeAttribute("row", QString::fromStdString(std::to_string(i)));
+                writer.writeAttribute("col", QString::fromStdString(std::to_string(j)));
+                writer.writeEmptyElement("val");
+                writer.writeAttribute("value", (auto2D->get_etats()->item(i,j)->backgroundColor()).name());
+                writer.writeEndElement();
+            }
+
+        }
+        writer.writeEndElement();
+        writer.writeEndDocument();
+    }
+}
+
+void MainWindow::loadAutomate(){}

@@ -5,6 +5,7 @@
 #include "autocell.h"
 #include<iostream>
 #include<QtXml>
+#include<QFileDialog>
 
 
 class MainWindow : public QMainWindow
@@ -87,6 +88,9 @@ public slots:
 
     void initialiseur();
     void initialiseurSym();
+
+    void saveAutomate();
+    void loadAutomate();
 };
 
 
