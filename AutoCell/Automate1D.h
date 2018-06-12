@@ -27,9 +27,8 @@ std::ostream &operator<<(std::ostream& flux, const Automate1D& automate);
 
 
 /*! \class Automate1D
- * \brief hérite de Automate<Etat1D>
- *
- *  La classe permet d'appliquer une transition sur les Etat1D suivant une règle
+ * \brief hérite de Automate<Etat1D>.
+          La classe permet d'appliquer une transition sur les Etat1D suivant une règle
  */
 
 class Automate1D : public Automate<Etat1D>
@@ -73,8 +72,7 @@ public:
 
 
 /*! \class AutomateManager
- * \brief
- *  La classe permet de gèrer les automates
+ * \brief La classe permet de gèrer les automates
  */
 class AutomateManager
 {
@@ -116,8 +114,7 @@ public:
 
 
 /*! \class AutomateException
- * \brief
- *      permet d'envoyer des erreurs concernant les automates1D
+ * \brief permet d'envoyer des erreurs concernant les automates1D
  */
 class AutomateException {
     public:

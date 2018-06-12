@@ -14,8 +14,8 @@
 
 
 /*! \class  Simulateur
- * \brief Classe template
-          permet de gérer la simulation de n'importe quel automate héritant de la Classe Automate
+ * \brief Classe template.
+          Permet de gérer la simulation de n'importe quel automate héritant de la Classe Automate
  */
 
 

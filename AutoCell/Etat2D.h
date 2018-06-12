@@ -12,9 +12,8 @@
 
 
 /*! \class  Etat2D
- * \brief hérite de Etat
- *
- *  La classe permet de créer des états à 2 dimensions
+ * \brief hérite de Etat.
+          Permet de créer des états à 2 dimensions
  */
 class Etat2D : public Etat
 {

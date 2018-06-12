@@ -13,9 +13,8 @@
 
 
 /*! \class  Etat
- * \brief Classe abstraite
- *
- *  La classe permet de généraliser un Etat
+ * \brief Classe abstraite.
+          La classe permet de généraliser un Etat
  */
 
 class Etat
