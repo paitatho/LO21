@@ -29,9 +29,8 @@
 
 
 /*! \class  Automate2D
- * \brief hérite de Automate<Etat2D>
- *
- *  La classe permet d'appliquer une transition sur les Etat2D en suivant des règles
+ * \brief hérite de Automate<Etat2D>.
+            La classe permet d'appliquer une transition sur les Etat2D en suivant des règles
  */
 class Automate2D : public Automate<Etat2D>
 {

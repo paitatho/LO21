@@ -16,9 +16,8 @@
 
 
 /*! \class Automate
- * \brief Classe Template abstraite
- *
- *  La classe généralise un Automate et définie la méthodes virtuelle qui devra être présente et définie dans chaque Automate. (runSim())
+ * \brief Classe Template abstraite.
+          La classe généralise un Automate et définie la méthodes virtuelle qui devra être présente et définie dans chaque Automate. (runSim())
  */
 
 template<class T>class Automate     // classe abstraite

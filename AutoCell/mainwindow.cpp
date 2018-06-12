@@ -556,7 +556,7 @@ void MainWindow::saveAutomate(){
         writer.writeEmptyElement("tailleCellule");
         writer.writeAttribute("value", QString::fromStdString(std::to_string(taille->value())));
         writer.writeEmptyElement("couleurCellule");
-        writer.writeAttribute("value", bb->currentText());
+        writer.writeAttribute("value", couleur->currentText());
         writer.writeEndElement();
 
         writer.writeStartElement("dernierEtat");

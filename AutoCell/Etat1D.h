@@ -16,8 +16,8 @@
 
 
 /*! \class Etat1D
- * \brief   hérite de Etat
- *      permet d'envoyer des erreurs concernant les automates1D
+ * \brief   hérite de Etat.
+ *         Permet de créer de état à 1Dimension
  */
 class Etat1D : public Etat
 {
