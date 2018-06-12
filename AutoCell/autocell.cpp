@@ -1,6 +1,7 @@
  #include "autocell.h"
  #include "Automate2D.h"
  #include "Etat2D.h"
+ #include "Etat1D.h"
 
 using namespace std;
 
@@ -84,15 +85,7 @@ Autocell1D::Autocell1D(QWidget* parent) : Autocell(parent){
     this->setEtatDepart(largeur);
     QWidget::connect(depart, SIGNAL(cellClicked(int,int)),this,SLOT(cellSelected(int,int)));
 
-    sim = new QHBoxLayout;
-    layout->addLayout(sim,3,0);
     setLayout(layout);
-    this->runSim();
-}
-
-void Autocell1D::setLargeur(unsigned int l){
-    setEtatDepart(l);
-    largeur=l;
     this->runSim();
 }
 
@@ -135,9 +128,18 @@ void Autocell1D::clear(){
 void Autocell1D::adjustTaille(){
     depart->setFixedSize(largeur * taille, taille);
     depart->setRowHeight(0,taille);
-    for(int j=0;j<largeur;j++)
-     depart->setColumnWidth(j,taille);
-
+    depart->setColumnCount(largeur);
+    for(int j=0;j<largeur;j++){
+        if(depart->item(0,j) == nullptr){
+            QTableWidgetItem* a = new QTableWidgetItem ("");
+            a->setFlags(Qt::NoItemFlags);
+            a->setFlags(Qt::ItemIsEnabled);
+            depart->setItem(0, j, a);
+            depart->item(0,j)->setBackgroundColor("white");
+        }
+        depart->setColumnWidth(j,taille);
+        depart->setRowHeight(j,taille);
+    }
     runSim();
 }
 
@@ -258,7 +260,9 @@ void Autocell2D::runSim(){
             }
         }
         if(continu){delay(speed);}
+        ++compteur;
     }while(continu);
+    compteur =0;
     emit endSim();
 }
 

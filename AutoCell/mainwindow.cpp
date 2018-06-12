@@ -7,7 +7,7 @@
 Autocell1D* MainWindow::auto1D = nullptr;
 Autocell2D* MainWindow::auto2D = nullptr;
 
-MainWindow::MainWindow(): QMainWindow(){
+MainWindow::MainWindow(QWidget* parent): QMainWindow(parent){
 
     createToolBar();
     createDockOption();
@@ -94,14 +94,14 @@ void MainWindow::createOption1D(){
     boxCel = new QGroupBox(tr("Cellule"));
     layoutBoxCel =new QGridLayout;
 
-    bb=new QComboBox;bb->addItems((QStringList() << "white"<< "black"<<"green" << "red"<<"blue"<<"yellow"<<"pink"<<"brown"<<"grey"));
+    couleur=new QComboBox;couleur->addItems((QStringList() << "white"<< "black"<<"green" << "red"<<"blue"<<"yellow"<<"pink"<<"brown"<<"grey"));
 
     nbSim1D = new QSpinBox;nbSim1D->setRange(5,40);nbSim1D->setValue(20);
     regle1D = new QSpinBox;regle1D->setRange(0,255);regle1D->setValue(150);
     larg1D = new QSpinBox;larg1D->setRange(5,80);larg1D->setValue(15);
     QSpinBox* taille = new QSpinBox();taille->setValue(17);taille->setRange(6,40);
 
-    connect(bb,SIGNAL(currentTextChanged(QString)),this,SLOT(changeColor(QString)));
+    connect(couleur,SIGNAL(currentTextChanged(QString)),this,SLOT(changeColor(QString)));
     connect(larg1D, SIGNAL(valueChanged(int)),this,SLOT(changeLargeur(int)));
     connect(nbSim1D, SIGNAL(valueChanged(int)),this,SLOT(changeHauteur(int)));
     connect(regle1D, SIGNAL(valueChanged(int)),this,SLOT(changeRegle1D(int)));
@@ -112,7 +112,7 @@ void MainWindow::createOption1D(){
     layoutBoxDim->addWidget(new QLabel("Nombre Simu"),1,0);layoutBoxDim->addWidget(nbSim1D,1,1);
     layoutBoxDim->addWidget(new QLabel("Taille"), 2,0);layoutBoxDim->addWidget(taille, 2,1);
 
-    layoutBoxCel->addWidget(bb, 0,0,1,2);
+    layoutBoxCel->addWidget(couleur, 0,0,1,2);
     layoutBoxCel->addWidget(new QLabel("Règle"), 1,0);
     layoutBoxCel->addWidget(regle1D, 1,1);
     layoutBoxCel->addWidget(new QLabel("Régle"), 1,0);layoutBoxCel->addWidget(regle1D, 1,1);
@@ -332,7 +332,7 @@ void MainWindow::saveAppState(){
         settings.setValue("nbSim1D", nbSim1D->value());
         settings.setValue("regle1D", regle1D->value());
         settings.setValue("tailleCellule", taille->value());
-        settings.setValue("couleurCellule", bb->currentText());
+        settings.setValue("couleurCellule", couleur->currentText());
 
         QString fileXmlName = QCoreApplication::applicationDirPath()+QString::fromStdString("/lastEtat1D.xml");
         QFile fileXml(fileXmlName);
@@ -425,7 +425,7 @@ void MainWindow::restoreAppState(){
         larg1D->setValue(settings.value("larg1D").toInt());
         nbSim1D->setValue(settings.value("nbSim1D").toInt());
         regle1D->setValue(settings.value("regle1D").toInt());
-        bb->setCurrentText(settings.value("couleurCellule").toString());
+        couleur->setCurrentText(settings.value("couleurCellule").toString());
 
         openSim();
 

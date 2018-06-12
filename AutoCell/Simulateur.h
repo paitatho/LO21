@@ -6,32 +6,83 @@
 #include <string>
 #include <vector>
 
-class Etat1D;
+/*!
+ * \file Simulateur.h
+ * \brief
+ * \version 1.0
+ */
+
+
+/*! \class  Simulateur
+ * \brief Classe template
+          permet de gérer la simulation de n'importe quel automate héritant de la Classe Automate
+ */
+
+
 template<class T>class Automate;
 template<class T1, class T2> class Simulateur;
 class AutomateException;
 
 template<class T1, class T2> class Simulateur{
-    const T1 & m_automate;
-    std::vector<T2 *> m_etats;
-    const T2 * m_depart;
-    unsigned int m_nbMaxEtats;
-    unsigned int m_rang=0;
-    void build(unsigned int c);// elle manipule le tableau etats (allocation de l'espace mémoire)
+    const T1 & m_automate;          /*!< référence vers un automate*/
+    std::vector<T2 *> m_etats;      /*!< tableau d'états que l'automate peut gérer*/
+    const T2 * m_depart;            /*!< états de départ*/
+    unsigned int m_nbMaxEtats;      /*!< nombre maximum d'état stocké dans le tableau*/
+    unsigned int m_rang=0;          /*!< rang du dernier état dans le tableau*/
+
+
+    //void build(unsigned int c);
+
+    /*! \brief  suppression constructeur de recopie*/
     Simulateur(const Simulateur&) = delete;
+
+    /*! \brief  operateur d'affectation en privée*/
     Simulateur& operator=(const Simulateur&);
 public:
+    /*! \brief Constructeur
+        \param a : automate : const T1&
+        \param buffer : taille attribut m_etats : unsigned int*/
     Simulateur (const T1 & a,unsigned int buffer=2);
+
+    /*! \brief Constructeur
+        \param a : automate : const T1&
+        \param dep : état départ :const T2 &
+        \param buffer : taille attribut m_etats : unsigned int*/
     Simulateur (const T1 & a, const T2 & dep, unsigned int buffer=2 );
-    void setEtatDepart(const T2 & e);
-    void run (unsigned int nb);//génère les n prochains états
-    void next(); // génère le prochain état
-    const T2 & dernier() const;
-    const T2 & avantDernier() const;
-    unsigned int getRangDernier() const {return m_rang;}
-    void reset();//revenir à l'état de départ
+
+    /*! \brief destructeur*/
     ~Simulateur();
 
+    /*! \brief  modifie état de départ
+        \param e : const T2 &*/
+    void setEtatDepart(const T2 & e);
+
+    /*! \brief génère les n prochains états
+        \param nb : unsigned int*/
+    void run (unsigned int nb);
+
+    /*! \brief génère le  prochain état*/
+    void next(); // génère le prochain état
+
+    /*! \brief accesseur lecture
+        \return etat : dernier etat: const T2 &*/
+    const T2 & dernier() const;
+
+    /*! \brief accesseur lecture
+        \return etat : avant dernier etat: const T2 &*/
+    const T2 & avantDernier() const;
+
+    /*! \brief accesseur lecture
+        \return m_rang : unsigned int */
+    unsigned int getRangDernier() const {return m_rang;}
+
+    /*! \brief revient à l'état de départ*/
+    void reset();
+
+
+    /*! \class  iterator
+     * \brief permet le parcourt des états
+     */
     class iterator {
             friend class Simulateur;
             Simulateur* sim;
