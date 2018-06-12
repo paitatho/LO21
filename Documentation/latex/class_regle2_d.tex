@@ -1,0 +1,595 @@
+\hypertarget{class_regle2_d}{}\section{Référence de la classe Regle2D}
+\label{class_regle2_d}\index{Regle2D@{Regle2D}}
+
+
+Hérite de Q\+Widget. La classe \hyperlink{class_regle2_d}{Regle2D} permet d\textquotesingle{}entrer une règle pour un autocell2D (classe \hyperlink{class_automate2_d}{Automate2D} et \hyperlink{class_etat2_d}{Etat2D})  
+
+
+
+
+{\ttfamily \#include $<$autocell.\+h$>$}
+
+
+
+Graphe d\textquotesingle{}héritage de Regle2D\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=149pt]{class_regle2_d__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Graphe de collaboration de Regle2D\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=135pt]{class_regle2_d__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Connecteurs publics}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_regle2_d_a832501bff71ae1739d7936caee265477}{cacher} ()
+\begin{DoxyCompactList}\small\item\em S\+L\+OT qui cache les lignes inutiles en fonction du nombre d\textquotesingle{}états entré \end{DoxyCompactList}\item 
+void \hyperlink{class_regle2_d_ab66521625d0ff29d5928d65b1d62b14e}{set\+Regle} ()
+\begin{DoxyCompactList}\small\item\em S\+L\+OT qui affecte l\textquotesingle{}attribut membre regle pour mettre la règle dans le même format que \hyperlink{class_autocell2_d}{Autocell2D}. \end{DoxyCompactList}\item 
+void \hyperlink{class_regle2_d_a9147d46c674a80a5ef969a2b7f9ad9bc}{set\+Couleur} ()
+\begin{DoxyCompactList}\small\item\em S\+L\+OT qui affecte l\textquotesingle{}attribut membre couleur\+Nom pour mettre le mettre dans le même format que \hyperlink{class_autocell2_d}{Autocell2D}. \end{DoxyCompactList}\item 
+void \hyperlink{class_regle2_d_a1958192093ce058d829ffc77cfa8ee78}{send\+Regle} ()
+\begin{DoxyCompactList}\small\item\em S\+L\+OT qui envoie le signal envoie\+Regle. \end{DoxyCompactList}\item 
+void \hyperlink{class_regle2_d_aa096e82f85ef2cfa78bf6784b5dda448}{regle\+Predefini} (Q\+String)
+\begin{DoxyCompactList}\small\item\em S\+L\+OT qui gère les règles prédéfinies. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_regle2_d_ad53e81ccd6fa9eb94d30d87dca19a213}{ajout\+Regle\+Predefini} (Q\+String)
+\begin{DoxyCompactList}\small\item\em S\+L\+OT Hook qui permet de rajouter des règles prédéfinies. \end{DoxyCompactList}\item 
+void \hyperlink{class_regle2_d_a95a59bb0ffbc2a4fd735a4695c95d72f}{montrer} ()
+\begin{DoxyCompactList}\small\item\em S\+L\+OT qui montre les lignes nécessaires en fonction du nombre d\textquotesingle{}états entré \end{DoxyCompactList}\item 
+void \hyperlink{class_regle2_d_ae82e185c4e126e9bee7fd2e91e29b2f0}{adjust} ()
+\begin{DoxyCompactList}\small\item\em S\+L\+OT qui utilise \hyperlink{class_regle2_d_a95a59bb0ffbc2a4fd735a4695c95d72f}{montrer()} et \hyperlink{class_regle2_d_a832501bff71ae1739d7936caee265477}{cacher()} pour modifier la fenêtre en fonction du nombre d\textquotesingle{}état. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Signaux}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_regle2_d_ae4d763e7e7dec6c1e339769ba7ec0c52}{envoi\+Regle} (std\+::vector$<$ std\+::vector$<$ unsigned short int $>$$>$, std\+::vector$<$ std\+::string $>$)
+\begin{DoxyCompactList}\small\item\em S\+I\+G\+N\+AL qui envoie la règle et la couleur des cellules. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_regle2_d_a21a799e32774f6cc50183a04422498e4}{Regle2D} (Q\+Widget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
+const Q\+Spin\+Box $\ast$ \hyperlink{class_regle2_d_abce7ef62aa852352d77ce8f88d5f05b6}{get\+\_\+nb\+Etat} () const 
+\begin{DoxyCompactList}\small\item\em accesseur lecture \end{DoxyCompactList}\item 
+const Q\+Combo\+Box $\ast$ \hyperlink{class_regle2_d_a25aba2d5c2d9acff7f433e35cb048504}{get\+\_\+regle\+Base} () const 
+\begin{DoxyCompactList}\small\item\em accesseur lecture \end{DoxyCompactList}\item 
+const std\+::vector$<$ Q\+Spin\+Box $\ast$ $>$ \& \hyperlink{class_regle2_d_a78534b72823ef634bf49d5f0f9db77f6}{get\+\_\+etat\+Cellule\+Pour\+Appliquer} () const 
+\begin{DoxyCompactList}\small\item\em accesseur lecture \end{DoxyCompactList}\item 
+const std\+::vector$<$ Q\+Spin\+Box $\ast$ $>$ \& \hyperlink{class_regle2_d_a7659287a9161902d50ac2e92c89919e6}{get\+\_\+cellule\+A\+C\+Compter} () const 
+\begin{DoxyCompactList}\small\item\em accesseur lecture \end{DoxyCompactList}\item 
+const std\+::vector$<$ Q\+Combo\+Box $\ast$ $>$ \& \hyperlink{class_regle2_d_a16721b0251aaedbac6b25dc840bc3aad}{get\+\_\+interval} () const 
+\begin{DoxyCompactList}\small\item\em accesseur lecture \end{DoxyCompactList}\item 
+const std\+::vector$<$ Q\+Spin\+Box $\ast$ $>$ \& \hyperlink{class_regle2_d_af9719a1cd616a23bbdb3271626161aee}{get\+\_\+borne\+Inf} () const 
+\begin{DoxyCompactList}\small\item\em accesseur lecture \end{DoxyCompactList}\item 
+const std\+::vector$<$ Q\+Spin\+Box $\ast$ $>$ \& \hyperlink{class_regle2_d_ada123ada77ca4c432fb6793466a2f653}{get\+\_\+borne\+Sup} () const 
+\begin{DoxyCompactList}\small\item\em accesseur lecture \end{DoxyCompactList}\item 
+const std\+::vector$<$ Q\+Combo\+Box $\ast$ $>$ \& \hyperlink{class_regle2_d_a9da84d09974a0cf60d59bf84e4bfff0a}{get\+\_\+couleur} () const 
+\begin{DoxyCompactList}\small\item\em accesseur lecture \end{DoxyCompactList}\item 
+const std\+::vector$<$ std\+::string $>$ \& \hyperlink{class_regle2_d_a80dc816d0ce1dc33cba264c41e1a6f8e}{get\+\_\+couleur\+Nom} () const 
+\begin{DoxyCompactList}\small\item\em accesseur lecture \end{DoxyCompactList}\item 
+const std\+::vector$<$ std\+::vector$<$ unsigned short int $>$ $>$ \& \hyperlink{class_regle2_d_a6165adcd23f35308667da783c210c911}{get\+\_\+regle} () const 
+\begin{DoxyCompactList}\small\item\em accesseur lecture \end{DoxyCompactList}\item 
+void \hyperlink{class_regle2_d_a93a3404a450462b60a01dcf102e65eee}{set\+Regle\+Base} (const Q\+String \&s)
+\begin{DoxyCompactList}\small\item\em change la règle prédéfinie \end{DoxyCompactList}\item 
+void \hyperlink{class_regle2_d_aa287cec81b0b71d3f87fea5357bec46b}{set\+Nb\+Etat} (unsigned int n)
+\begin{DoxyCompactList}\small\item\em change le nombre d\textquotesingle{}état \end{DoxyCompactList}\item 
+void \hyperlink{class_regle2_d_adfdc1e1d68906882c9e96b900dc49086}{set\+Etat\+Cellule\+Pour\+Appliquer} (unsigned int i, unsigned int n)
+\begin{DoxyCompactList}\small\item\em change l\textquotesingle{}objet à l\textquotesingle{}indice i \end{DoxyCompactList}\item 
+void \hyperlink{class_regle2_d_af12aeb43af9b84670923ef55c5c1daf6}{set\+Cellule\+A\+Compter} (unsigned int i, unsigned int n)
+\begin{DoxyCompactList}\small\item\em change l\textquotesingle{}objet à l\textquotesingle{}indice i \end{DoxyCompactList}\item 
+void \hyperlink{class_regle2_d_a67d7b3803a63f2bb1b2b3073e01334ba}{set\+Interval} (unsigned int i, const Q\+String \&s)
+\begin{DoxyCompactList}\small\item\em change l\textquotesingle{}objet à l\textquotesingle{}indice i \end{DoxyCompactList}\item 
+void \hyperlink{class_regle2_d_aa547b53ccd967ba81e1eb899517713c7}{set\+Borne\+Inf} (unsigned int i, unsigned int n)
+\begin{DoxyCompactList}\small\item\em change l\textquotesingle{}objet à l\textquotesingle{}indice i \end{DoxyCompactList}\item 
+void \hyperlink{class_regle2_d_a65e642a8babbaf2f9ab92c105b44753c}{set\+Borne\+Sup} (unsigned int i, unsigned int n)
+\begin{DoxyCompactList}\small\item\em change l\textquotesingle{}objet à l\textquotesingle{}indice i \end{DoxyCompactList}\item 
+void \hyperlink{class_regle2_d_a1f45d6182d2e12d25717c8958cdffeac}{set\+Couleur} (unsigned int i, const Q\+String \&s)
+\begin{DoxyCompactList}\small\item\em change l\textquotesingle{}objet à l\textquotesingle{}indice i \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Fonctions membres protégées}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_regle2_d_a89d141ceb6bca904b32c4b31a824538d}{depart} ()
+\begin{DoxyCompactList}\small\item\em initialise tous les attributs méthode protected \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Attributs protégés}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::vector$<$ unsigned short int $>$ $>$ \hyperlink{class_regle2_d_adaa6396d86c6f21c6bf7ae5ba4346dde}{regle}
+\item 
+std\+::vector$<$ std\+::string $>$ \hyperlink{class_regle2_d_aece48b7d62d4dc0ebfc8fd7334e7d9be}{couleur\+Nom}
+\item 
+Q\+Spin\+Box $\ast$ \hyperlink{class_regle2_d_a2a2964b8223ff47e483f0703c482526a}{nb\+Etat}
+\item 
+Q\+Combo\+Box $\ast$ \hyperlink{class_regle2_d_ae544919d03302b0ecd7bfacfc2842ccf}{regle\+Base}
+\item 
+std\+::vector$<$ Q\+Spin\+Box $\ast$ $>$ \hyperlink{class_regle2_d_aa5356ff562ccfe9828275effb8866fa9}{etat\+Cellule\+Pour\+Appliquer}
+\item 
+std\+::vector$<$ Q\+Spin\+Box $\ast$ $>$ \hyperlink{class_regle2_d_aff3f269a5118bda47bcdf133d26010e6}{cellule\+A\+C\+Compter}
+\item 
+std\+::vector$<$ Q\+Combo\+Box $\ast$ $>$ \hyperlink{class_regle2_d_a528a7cfc33a1be6540177b67e270c157}{interval}
+\item 
+std\+::vector$<$ Q\+Spin\+Box $\ast$ $>$ \hyperlink{class_regle2_d_a1b15542eb7bc7b32dc9c1cc615089eab}{borne\+Inf}
+\item 
+std\+::vector$<$ Q\+Spin\+Box $\ast$ $>$ \hyperlink{class_regle2_d_a206e0c9c6f0710e98326e438affb2134}{borne\+Sup}
+\item 
+std\+::vector$<$ Q\+Combo\+Box $\ast$ $>$ \hyperlink{class_regle2_d_a57b848611ac63837d30790b5ddec9299}{couleur}
+\item 
+Q\+Grid\+Layout $\ast$ \hyperlink{class_regle2_d_a344f417a81ffccf34760808b3969d25e}{layout}
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Hérite de Q\+Widget. La classe \hyperlink{class_regle2_d}{Regle2D} permet d\textquotesingle{}entrer une règle pour un autocell2D (classe \hyperlink{class_automate2_d}{Automate2D} et \hyperlink{class_etat2_d}{Etat2D}) 
+
+\subsection{Documentation des constructeurs et destructeur}
+\index{Regle2D@{Regle2D}!Regle2D@{Regle2D}}
+\index{Regle2D@{Regle2D}!Regle2D@{Regle2D}}
+\subsubsection[{\texorpdfstring{Regle2\+D(\+Q\+Widget $\ast$parent=nullptr)}{Regle2D(QWidget *parent=nullptr)}}]{\setlength{\rightskip}{0pt plus 5cm}Regle2\+D\+::\+Regle2D (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{parent = {\ttfamily nullptr}}
+\end{DoxyParamCaption}
+)}\hypertarget{class_regle2_d_a21a799e32774f6cc50183a04422498e4}{}\label{class_regle2_d_a21a799e32774f6cc50183a04422498e4}
+
+
+Constructeur. 
+
+
+
+\subsection{Documentation des fonctions membres}
+\index{Regle2D@{Regle2D}!adjust@{adjust}}
+\index{adjust@{adjust}!Regle2D@{Regle2D}}
+\subsubsection[{\texorpdfstring{adjust}{adjust}}]{\setlength{\rightskip}{0pt plus 5cm}void Regle2\+D\+::adjust (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{class_regle2_d_ae82e185c4e126e9bee7fd2e91e29b2f0}{}\label{class_regle2_d_ae82e185c4e126e9bee7fd2e91e29b2f0}
+
+
+S\+L\+OT qui utilise \hyperlink{class_regle2_d_a95a59bb0ffbc2a4fd735a4695c95d72f}{montrer()} et \hyperlink{class_regle2_d_a832501bff71ae1739d7936caee265477}{cacher()} pour modifier la fenêtre en fonction du nombre d\textquotesingle{}état. 
+
+\index{Regle2D@{Regle2D}!ajout\+Regle\+Predefini@{ajout\+Regle\+Predefini}}
+\index{ajout\+Regle\+Predefini@{ajout\+Regle\+Predefini}!Regle2D@{Regle2D}}
+\subsubsection[{\texorpdfstring{ajout\+Regle\+Predefini}{ajoutReglePredefini}}]{\setlength{\rightskip}{0pt plus 5cm}void Regle2\+D\+::ajout\+Regle\+Predefini (
+\begin{DoxyParamCaption}
+\item[{Q\+String}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}\hypertarget{class_regle2_d_ad53e81ccd6fa9eb94d30d87dca19a213}{}\label{class_regle2_d_ad53e81ccd6fa9eb94d30d87dca19a213}
+
+
+S\+L\+OT Hook qui permet de rajouter des règles prédéfinies. 
+
+
+
+Réimplémentée dans \hyperlink{class_regle2_d_bis_a7851a6efdc011876e729797fc70e0a0f}{Regle2\+D\+Bis}.
+
+\index{Regle2D@{Regle2D}!cacher@{cacher}}
+\index{cacher@{cacher}!Regle2D@{Regle2D}}
+\subsubsection[{\texorpdfstring{cacher}{cacher}}]{\setlength{\rightskip}{0pt plus 5cm}void Regle2\+D\+::cacher (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{class_regle2_d_a832501bff71ae1739d7936caee265477}{}\label{class_regle2_d_a832501bff71ae1739d7936caee265477}
+
+
+S\+L\+OT qui cache les lignes inutiles en fonction du nombre d\textquotesingle{}états entré 
+
+\index{Regle2D@{Regle2D}!depart@{depart}}
+\index{depart@{depart}!Regle2D@{Regle2D}}
+\subsubsection[{\texorpdfstring{depart()}{depart()}}]{\setlength{\rightskip}{0pt plus 5cm}void Regle2\+D\+::depart (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_regle2_d_a89d141ceb6bca904b32c4b31a824538d}{}\label{class_regle2_d_a89d141ceb6bca904b32c4b31a824538d}
+
+
+initialise tous les attributs méthode protected 
+
+\index{Regle2D@{Regle2D}!envoi\+Regle@{envoi\+Regle}}
+\index{envoi\+Regle@{envoi\+Regle}!Regle2D@{Regle2D}}
+\subsubsection[{\texorpdfstring{envoi\+Regle}{envoiRegle}}]{\setlength{\rightskip}{0pt plus 5cm}void Regle2\+D\+::envoi\+Regle (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ std\+::vector$<$ unsigned short int $>$$>$}]{\+\_\+t1, }
+\item[{std\+::vector$<$ std\+::string $>$}]{\+\_\+t2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\hypertarget{class_regle2_d_ae4d763e7e7dec6c1e339769ba7ec0c52}{}\label{class_regle2_d_ae4d763e7e7dec6c1e339769ba7ec0c52}
+
+
+S\+I\+G\+N\+AL qui envoie la règle et la couleur des cellules. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em regle} & \+: std\+::vector$<$std\+::vector$<$unsigned short int$>$$>$ \\
+\hline
+{\em couleur} & \+: std\+::vector$<$std\+::string$>$ \\
+\hline
+\end{DoxyParams}
+\index{Regle2D@{Regle2D}!get\+\_\+borne\+Inf@{get\+\_\+borne\+Inf}}
+\index{get\+\_\+borne\+Inf@{get\+\_\+borne\+Inf}!Regle2D@{Regle2D}}
+\subsubsection[{\texorpdfstring{get\+\_\+borne\+Inf() const }{get_borneInf() const }}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::vector$<$Q\+Spin\+Box$\ast$$>$\& Regle2\+D\+::get\+\_\+borne\+Inf (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_regle2_d_af9719a1cd616a23bbdb3271626161aee}{}\label{class_regle2_d_af9719a1cd616a23bbdb3271626161aee}
+
+
+accesseur lecture 
+
+\begin{DoxyReturn}{Renvoie}
+borne\+Inf \+: const std\+::vector$<$\+Q\+Spin\+Box$\ast$$>$\& 
+\end{DoxyReturn}
+\index{Regle2D@{Regle2D}!get\+\_\+borne\+Sup@{get\+\_\+borne\+Sup}}
+\index{get\+\_\+borne\+Sup@{get\+\_\+borne\+Sup}!Regle2D@{Regle2D}}
+\subsubsection[{\texorpdfstring{get\+\_\+borne\+Sup() const }{get_borneSup() const }}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::vector$<$Q\+Spin\+Box$\ast$$>$\& Regle2\+D\+::get\+\_\+borne\+Sup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_regle2_d_ada123ada77ca4c432fb6793466a2f653}{}\label{class_regle2_d_ada123ada77ca4c432fb6793466a2f653}
+
+
+accesseur lecture 
+
+\begin{DoxyReturn}{Renvoie}
+borne\+Sup \+: const std\+::vector$<$\+Q\+Spin\+Box$\ast$$>$\& 
+\end{DoxyReturn}
+\index{Regle2D@{Regle2D}!get\+\_\+cellule\+A\+C\+Compter@{get\+\_\+cellule\+A\+C\+Compter}}
+\index{get\+\_\+cellule\+A\+C\+Compter@{get\+\_\+cellule\+A\+C\+Compter}!Regle2D@{Regle2D}}
+\subsubsection[{\texorpdfstring{get\+\_\+cellule\+A\+C\+Compter() const }{get_celluleACCompter() const }}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::vector$<$Q\+Spin\+Box$\ast$$>$\& Regle2\+D\+::get\+\_\+cellule\+A\+C\+Compter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_regle2_d_a7659287a9161902d50ac2e92c89919e6}{}\label{class_regle2_d_a7659287a9161902d50ac2e92c89919e6}
+
+
+accesseur lecture 
+
+\begin{DoxyReturn}{Renvoie}
+cellule\+A\+C\+Compter \+: const std\+::vector$<$\+Q\+Spin\+Box$\ast$$>$\& 
+\end{DoxyReturn}
+\index{Regle2D@{Regle2D}!get\+\_\+couleur@{get\+\_\+couleur}}
+\index{get\+\_\+couleur@{get\+\_\+couleur}!Regle2D@{Regle2D}}
+\subsubsection[{\texorpdfstring{get\+\_\+couleur() const }{get_couleur() const }}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::vector$<$Q\+Combo\+Box$\ast$$>$\& Regle2\+D\+::get\+\_\+couleur (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_regle2_d_a9da84d09974a0cf60d59bf84e4bfff0a}{}\label{class_regle2_d_a9da84d09974a0cf60d59bf84e4bfff0a}
+
+
+accesseur lecture 
+
+\begin{DoxyReturn}{Renvoie}
+couleur \+: const std\+::vector$<$\+Q\+Combo\+Box$\ast$$>$\& 
+\end{DoxyReturn}
+\index{Regle2D@{Regle2D}!get\+\_\+couleur\+Nom@{get\+\_\+couleur\+Nom}}
+\index{get\+\_\+couleur\+Nom@{get\+\_\+couleur\+Nom}!Regle2D@{Regle2D}}
+\subsubsection[{\texorpdfstring{get\+\_\+couleur\+Nom() const }{get_couleurNom() const }}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::vector$<$std\+::string$>$\& Regle2\+D\+::get\+\_\+couleur\+Nom (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_regle2_d_a80dc816d0ce1dc33cba264c41e1a6f8e}{}\label{class_regle2_d_a80dc816d0ce1dc33cba264c41e1a6f8e}
+
+
+accesseur lecture 
+
+\begin{DoxyReturn}{Renvoie}
+couleur\+Nom \+: const std\+::vector$<$std\+::string$>$\& 
+\end{DoxyReturn}
+\index{Regle2D@{Regle2D}!get\+\_\+etat\+Cellule\+Pour\+Appliquer@{get\+\_\+etat\+Cellule\+Pour\+Appliquer}}
+\index{get\+\_\+etat\+Cellule\+Pour\+Appliquer@{get\+\_\+etat\+Cellule\+Pour\+Appliquer}!Regle2D@{Regle2D}}
+\subsubsection[{\texorpdfstring{get\+\_\+etat\+Cellule\+Pour\+Appliquer() const }{get_etatCellulePourAppliquer() const }}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::vector$<$Q\+Spin\+Box$\ast$$>$\& Regle2\+D\+::get\+\_\+etat\+Cellule\+Pour\+Appliquer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_regle2_d_a78534b72823ef634bf49d5f0f9db77f6}{}\label{class_regle2_d_a78534b72823ef634bf49d5f0f9db77f6}
+
+
+accesseur lecture 
+
+\begin{DoxyReturn}{Renvoie}
+etat\+Cellule\+Pour\+Appliquer \+: const std\+::vector$<$\+Q\+Spin\+Box$\ast$$>$\& 
+\end{DoxyReturn}
+\index{Regle2D@{Regle2D}!get\+\_\+interval@{get\+\_\+interval}}
+\index{get\+\_\+interval@{get\+\_\+interval}!Regle2D@{Regle2D}}
+\subsubsection[{\texorpdfstring{get\+\_\+interval() const }{get_interval() const }}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::vector$<$Q\+Combo\+Box$\ast$$>$\& Regle2\+D\+::get\+\_\+interval (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_regle2_d_a16721b0251aaedbac6b25dc840bc3aad}{}\label{class_regle2_d_a16721b0251aaedbac6b25dc840bc3aad}
+
+
+accesseur lecture 
+
+\begin{DoxyReturn}{Renvoie}
+interval \+: const std\+::vector$<$\+Q\+Combo\+Box$\ast$$>$\& 
+\end{DoxyReturn}
+\index{Regle2D@{Regle2D}!get\+\_\+nb\+Etat@{get\+\_\+nb\+Etat}}
+\index{get\+\_\+nb\+Etat@{get\+\_\+nb\+Etat}!Regle2D@{Regle2D}}
+\subsubsection[{\texorpdfstring{get\+\_\+nb\+Etat() const }{get_nbEtat() const }}]{\setlength{\rightskip}{0pt plus 5cm}const Q\+Spin\+Box$\ast$ Regle2\+D\+::get\+\_\+nb\+Etat (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_regle2_d_abce7ef62aa852352d77ce8f88d5f05b6}{}\label{class_regle2_d_abce7ef62aa852352d77ce8f88d5f05b6}
+
+
+accesseur lecture 
+
+\begin{DoxyReturn}{Renvoie}
+nb\+Etat \+: const Q\+Spin\+Box$\ast$ 
+\end{DoxyReturn}
+\index{Regle2D@{Regle2D}!get\+\_\+regle@{get\+\_\+regle}}
+\index{get\+\_\+regle@{get\+\_\+regle}!Regle2D@{Regle2D}}
+\subsubsection[{\texorpdfstring{get\+\_\+regle() const }{get_regle() const }}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::vector$<$std\+::vector$<$unsigned short int$>$ $>$\& Regle2\+D\+::get\+\_\+regle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_regle2_d_a6165adcd23f35308667da783c210c911}{}\label{class_regle2_d_a6165adcd23f35308667da783c210c911}
+
+
+accesseur lecture 
+
+\begin{DoxyReturn}{Renvoie}
+regle \+: const std\+::vector$<$std\+::vector$<$unsigned short int$>$$>$\& 
+\end{DoxyReturn}
+\index{Regle2D@{Regle2D}!get\+\_\+regle\+Base@{get\+\_\+regle\+Base}}
+\index{get\+\_\+regle\+Base@{get\+\_\+regle\+Base}!Regle2D@{Regle2D}}
+\subsubsection[{\texorpdfstring{get\+\_\+regle\+Base() const }{get_regleBase() const }}]{\setlength{\rightskip}{0pt plus 5cm}const Q\+Combo\+Box$\ast$ Regle2\+D\+::get\+\_\+regle\+Base (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_regle2_d_a25aba2d5c2d9acff7f433e35cb048504}{}\label{class_regle2_d_a25aba2d5c2d9acff7f433e35cb048504}
+
+
+accesseur lecture 
+
+\begin{DoxyReturn}{Renvoie}
+regle\+Base \+: const Q\+Combo\+Box$\ast$ 
+\end{DoxyReturn}
+\index{Regle2D@{Regle2D}!montrer@{montrer}}
+\index{montrer@{montrer}!Regle2D@{Regle2D}}
+\subsubsection[{\texorpdfstring{montrer}{montrer}}]{\setlength{\rightskip}{0pt plus 5cm}void Regle2\+D\+::montrer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{class_regle2_d_a95a59bb0ffbc2a4fd735a4695c95d72f}{}\label{class_regle2_d_a95a59bb0ffbc2a4fd735a4695c95d72f}
+
+
+S\+L\+OT qui montre les lignes nécessaires en fonction du nombre d\textquotesingle{}états entré 
+
+\index{Regle2D@{Regle2D}!regle\+Predefini@{regle\+Predefini}}
+\index{regle\+Predefini@{regle\+Predefini}!Regle2D@{Regle2D}}
+\subsubsection[{\texorpdfstring{regle\+Predefini}{reglePredefini}}]{\setlength{\rightskip}{0pt plus 5cm}void Regle2\+D\+::regle\+Predefini (
+\begin{DoxyParamCaption}
+\item[{Q\+String}]{nom}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{class_regle2_d_aa096e82f85ef2cfa78bf6784b5dda448}{}\label{class_regle2_d_aa096e82f85ef2cfa78bf6784b5dda448}
+
+
+S\+L\+OT qui gère les règles prédéfinies. 
+
+\index{Regle2D@{Regle2D}!send\+Regle@{send\+Regle}}
+\index{send\+Regle@{send\+Regle}!Regle2D@{Regle2D}}
+\subsubsection[{\texorpdfstring{send\+Regle}{sendRegle}}]{\setlength{\rightskip}{0pt plus 5cm}void Regle2\+D\+::send\+Regle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{class_regle2_d_a1958192093ce058d829ffc77cfa8ee78}{}\label{class_regle2_d_a1958192093ce058d829ffc77cfa8ee78}
+
+
+S\+L\+OT qui envoie le signal envoie\+Regle. 
+
+\index{Regle2D@{Regle2D}!set\+Borne\+Inf@{set\+Borne\+Inf}}
+\index{set\+Borne\+Inf@{set\+Borne\+Inf}!Regle2D@{Regle2D}}
+\subsubsection[{\texorpdfstring{set\+Borne\+Inf(unsigned int i, unsigned int n)}{setBorneInf(unsigned int i, unsigned int n)}}]{\setlength{\rightskip}{0pt plus 5cm}void Regle2\+D\+::set\+Borne\+Inf (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{i, }
+\item[{unsigned int}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_regle2_d_aa547b53ccd967ba81e1eb899517713c7}{}\label{class_regle2_d_aa547b53ccd967ba81e1eb899517713c7}
+
+
+change l\textquotesingle{}objet à l\textquotesingle{}indice i 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em i} & \+: indice \+: unsigned int \\
+\hline
+{\em n} & \+: nouvelle valeur \+: unsigned int \\
+\hline
+\end{DoxyParams}
+\index{Regle2D@{Regle2D}!set\+Borne\+Sup@{set\+Borne\+Sup}}
+\index{set\+Borne\+Sup@{set\+Borne\+Sup}!Regle2D@{Regle2D}}
+\subsubsection[{\texorpdfstring{set\+Borne\+Sup(unsigned int i, unsigned int n)}{setBorneSup(unsigned int i, unsigned int n)}}]{\setlength{\rightskip}{0pt plus 5cm}void Regle2\+D\+::set\+Borne\+Sup (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{i, }
+\item[{unsigned int}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_regle2_d_a65e642a8babbaf2f9ab92c105b44753c}{}\label{class_regle2_d_a65e642a8babbaf2f9ab92c105b44753c}
+
+
+change l\textquotesingle{}objet à l\textquotesingle{}indice i 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em i} & \+: indice \+: unsigned int \\
+\hline
+{\em n} & \+: nouvelle valeur \+: unsigned int \\
+\hline
+\end{DoxyParams}
+\index{Regle2D@{Regle2D}!set\+Cellule\+A\+Compter@{set\+Cellule\+A\+Compter}}
+\index{set\+Cellule\+A\+Compter@{set\+Cellule\+A\+Compter}!Regle2D@{Regle2D}}
+\subsubsection[{\texorpdfstring{set\+Cellule\+A\+Compter(unsigned int i, unsigned int n)}{setCelluleACompter(unsigned int i, unsigned int n)}}]{\setlength{\rightskip}{0pt plus 5cm}void Regle2\+D\+::set\+Cellule\+A\+Compter (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{i, }
+\item[{unsigned int}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_regle2_d_af12aeb43af9b84670923ef55c5c1daf6}{}\label{class_regle2_d_af12aeb43af9b84670923ef55c5c1daf6}
+
+
+change l\textquotesingle{}objet à l\textquotesingle{}indice i 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em i} & \+: indice \+: unsigned int \\
+\hline
+{\em n} & \+: nouvelle valeur \+: unsigned int \\
+\hline
+\end{DoxyParams}
+\index{Regle2D@{Regle2D}!set\+Couleur@{set\+Couleur}}
+\index{set\+Couleur@{set\+Couleur}!Regle2D@{Regle2D}}
+\subsubsection[{\texorpdfstring{set\+Couleur(unsigned int i, const Q\+String \&s)}{setCouleur(unsigned int i, const QString &s)}}]{\setlength{\rightskip}{0pt plus 5cm}void Regle2\+D\+::set\+Couleur (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{i, }
+\item[{const Q\+String \&}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_regle2_d_a1f45d6182d2e12d25717c8958cdffeac}{}\label{class_regle2_d_a1f45d6182d2e12d25717c8958cdffeac}
+
+
+change l\textquotesingle{}objet à l\textquotesingle{}indice i 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em i} & \+: indice \+: unsigned int \\
+\hline
+{\em s} & \+: nouvelle valeur \+: const Q\+String\& \\
+\hline
+\end{DoxyParams}
+\index{Regle2D@{Regle2D}!set\+Couleur@{set\+Couleur}}
+\index{set\+Couleur@{set\+Couleur}!Regle2D@{Regle2D}}
+\subsubsection[{\texorpdfstring{set\+Couleur}{setCouleur}}]{\setlength{\rightskip}{0pt plus 5cm}void Regle2\+D\+::set\+Couleur (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{class_regle2_d_a9147d46c674a80a5ef969a2b7f9ad9bc}{}\label{class_regle2_d_a9147d46c674a80a5ef969a2b7f9ad9bc}
+
+
+S\+L\+OT qui affecte l\textquotesingle{}attribut membre couleur\+Nom pour mettre le mettre dans le même format que \hyperlink{class_autocell2_d}{Autocell2D}. 
+
+\index{Regle2D@{Regle2D}!set\+Etat\+Cellule\+Pour\+Appliquer@{set\+Etat\+Cellule\+Pour\+Appliquer}}
+\index{set\+Etat\+Cellule\+Pour\+Appliquer@{set\+Etat\+Cellule\+Pour\+Appliquer}!Regle2D@{Regle2D}}
+\subsubsection[{\texorpdfstring{set\+Etat\+Cellule\+Pour\+Appliquer(unsigned int i, unsigned int n)}{setEtatCellulePourAppliquer(unsigned int i, unsigned int n)}}]{\setlength{\rightskip}{0pt plus 5cm}void Regle2\+D\+::set\+Etat\+Cellule\+Pour\+Appliquer (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{i, }
+\item[{unsigned int}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_regle2_d_adfdc1e1d68906882c9e96b900dc49086}{}\label{class_regle2_d_adfdc1e1d68906882c9e96b900dc49086}
+
+
+change l\textquotesingle{}objet à l\textquotesingle{}indice i 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em i} & \+: indice \+: unsigned int \\
+\hline
+{\em n} & \+: nouvelle valeur \+: unsigned int \\
+\hline
+\end{DoxyParams}
+\index{Regle2D@{Regle2D}!set\+Interval@{set\+Interval}}
+\index{set\+Interval@{set\+Interval}!Regle2D@{Regle2D}}
+\subsubsection[{\texorpdfstring{set\+Interval(unsigned int i, const Q\+String \&s)}{setInterval(unsigned int i, const QString &s)}}]{\setlength{\rightskip}{0pt plus 5cm}void Regle2\+D\+::set\+Interval (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{i, }
+\item[{const Q\+String \&}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_regle2_d_a67d7b3803a63f2bb1b2b3073e01334ba}{}\label{class_regle2_d_a67d7b3803a63f2bb1b2b3073e01334ba}
+
+
+change l\textquotesingle{}objet à l\textquotesingle{}indice i 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em i} & \+: indice \+: unsigned int \\
+\hline
+{\em s} & \+: nouvelle valeur \+: const Q\+String\& \\
+\hline
+\end{DoxyParams}
+\index{Regle2D@{Regle2D}!set\+Nb\+Etat@{set\+Nb\+Etat}}
+\index{set\+Nb\+Etat@{set\+Nb\+Etat}!Regle2D@{Regle2D}}
+\subsubsection[{\texorpdfstring{set\+Nb\+Etat(unsigned int n)}{setNbEtat(unsigned int n)}}]{\setlength{\rightskip}{0pt plus 5cm}void Regle2\+D\+::set\+Nb\+Etat (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_regle2_d_aa287cec81b0b71d3f87fea5357bec46b}{}\label{class_regle2_d_aa287cec81b0b71d3f87fea5357bec46b}
+
+
+change le nombre d\textquotesingle{}état 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em n} & \+: nouveau nombre d\textquotesingle{}état\+: unsigned int \\
+\hline
+\end{DoxyParams}
+\index{Regle2D@{Regle2D}!set\+Regle@{set\+Regle}}
+\index{set\+Regle@{set\+Regle}!Regle2D@{Regle2D}}
+\subsubsection[{\texorpdfstring{set\+Regle}{setRegle}}]{\setlength{\rightskip}{0pt plus 5cm}void Regle2\+D\+::set\+Regle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{class_regle2_d_ab66521625d0ff29d5928d65b1d62b14e}{}\label{class_regle2_d_ab66521625d0ff29d5928d65b1d62b14e}
+
+
+S\+L\+OT qui affecte l\textquotesingle{}attribut membre regle pour mettre la règle dans le même format que \hyperlink{class_autocell2_d}{Autocell2D}. 
+
+\index{Regle2D@{Regle2D}!set\+Regle\+Base@{set\+Regle\+Base}}
+\index{set\+Regle\+Base@{set\+Regle\+Base}!Regle2D@{Regle2D}}
+\subsubsection[{\texorpdfstring{set\+Regle\+Base(const Q\+String \&s)}{setRegleBase(const QString &s)}}]{\setlength{\rightskip}{0pt plus 5cm}void Regle2\+D\+::set\+Regle\+Base (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_regle2_d_a93a3404a450462b60a01dcf102e65eee}{}\label{class_regle2_d_a93a3404a450462b60a01dcf102e65eee}
+
+
+change la règle prédéfinie 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em s} & \+: nouveau nom de règle prédéfinie\+: Q\+String \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentation des données membres}
+\index{Regle2D@{Regle2D}!borne\+Inf@{borne\+Inf}}
+\index{borne\+Inf@{borne\+Inf}!Regle2D@{Regle2D}}
+\subsubsection[{\texorpdfstring{borne\+Inf}{borneInf}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$Q\+Spin\+Box$\ast$$>$ Regle2\+D\+::borne\+Inf\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_regle2_d_a1b15542eb7bc7b32dc9c1cc615089eab}{}\label{class_regle2_d_a1b15542eb7bc7b32dc9c1cc615089eab}
+permet de rentrer la borne inférieur de l\textquotesingle{}interval \index{Regle2D@{Regle2D}!borne\+Sup@{borne\+Sup}}
+\index{borne\+Sup@{borne\+Sup}!Regle2D@{Regle2D}}
+\subsubsection[{\texorpdfstring{borne\+Sup}{borneSup}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$Q\+Spin\+Box$\ast$$>$ Regle2\+D\+::borne\+Sup\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_regle2_d_a206e0c9c6f0710e98326e438affb2134}{}\label{class_regle2_d_a206e0c9c6f0710e98326e438affb2134}
+permet de rentrer la borne supérieur de l\textquotesingle{}interval \index{Regle2D@{Regle2D}!cellule\+A\+C\+Compter@{cellule\+A\+C\+Compter}}
+\index{cellule\+A\+C\+Compter@{cellule\+A\+C\+Compter}!Regle2D@{Regle2D}}
+\subsubsection[{\texorpdfstring{cellule\+A\+C\+Compter}{celluleACCompter}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$Q\+Spin\+Box$\ast$$>$ Regle2\+D\+::cellule\+A\+C\+Compter\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_regle2_d_aff3f269a5118bda47bcdf133d26010e6}{}\label{class_regle2_d_aff3f269a5118bda47bcdf133d26010e6}
+permet de rentre l\textquotesingle{}état que la cellule doit avoir qu\textquotesingle{}on la considère dans l\textquotesingle{}entourage \index{Regle2D@{Regle2D}!couleur@{couleur}}
+\index{couleur@{couleur}!Regle2D@{Regle2D}}
+\subsubsection[{\texorpdfstring{couleur}{couleur}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$Q\+Combo\+Box$\ast$$>$ Regle2\+D\+::couleur\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_regle2_d_a57b848611ac63837d30790b5ddec9299}{}\label{class_regle2_d_a57b848611ac63837d30790b5ddec9299}
+permet de rentrer la couleur de la cellule \index{Regle2D@{Regle2D}!couleur\+Nom@{couleur\+Nom}}
+\index{couleur\+Nom@{couleur\+Nom}!Regle2D@{Regle2D}}
+\subsubsection[{\texorpdfstring{couleur\+Nom}{couleurNom}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$std\+::string$>$ Regle2\+D\+::couleur\+Nom\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_regle2_d_aece48b7d62d4dc0ebfc8fd7334e7d9be}{}\label{class_regle2_d_aece48b7d62d4dc0ebfc8fd7334e7d9be}
+enregistre les couleurs sous le même format que dans autocell2D \index{Regle2D@{Regle2D}!etat\+Cellule\+Pour\+Appliquer@{etat\+Cellule\+Pour\+Appliquer}}
+\index{etat\+Cellule\+Pour\+Appliquer@{etat\+Cellule\+Pour\+Appliquer}!Regle2D@{Regle2D}}
+\subsubsection[{\texorpdfstring{etat\+Cellule\+Pour\+Appliquer}{etatCellulePourAppliquer}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$Q\+Spin\+Box$\ast$$>$ Regle2\+D\+::etat\+Cellule\+Pour\+Appliquer\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_regle2_d_aa5356ff562ccfe9828275effb8866fa9}{}\label{class_regle2_d_aa5356ff562ccfe9828275effb8866fa9}
+permet de rentre l\textquotesingle{}état que la cellule doit avoir pour qu\textquotesingle{}on lui applique la règle \index{Regle2D@{Regle2D}!interval@{interval}}
+\index{interval@{interval}!Regle2D@{Regle2D}}
+\subsubsection[{\texorpdfstring{interval}{interval}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$Q\+Combo\+Box$\ast$$>$ Regle2\+D\+::interval\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_regle2_d_a528a7cfc33a1be6540177b67e270c157}{}\label{class_regle2_d_a528a7cfc33a1be6540177b67e270c157}
+permet de savoir si on doit être dedans ou hors de l\textquotesingle{}interval \index{Regle2D@{Regle2D}!layout@{layout}}
+\index{layout@{layout}!Regle2D@{Regle2D}}
+\subsubsection[{\texorpdfstring{layout}{layout}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Grid\+Layout$\ast$ Regle2\+D\+::layout\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_regle2_d_a344f417a81ffccf34760808b3969d25e}{}\label{class_regle2_d_a344f417a81ffccf34760808b3969d25e}
+layout principal \index{Regle2D@{Regle2D}!nb\+Etat@{nb\+Etat}}
+\index{nb\+Etat@{nb\+Etat}!Regle2D@{Regle2D}}
+\subsubsection[{\texorpdfstring{nb\+Etat}{nbEtat}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Spin\+Box$\ast$ Regle2\+D\+::nb\+Etat\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_regle2_d_a2a2964b8223ff47e483f0703c482526a}{}\label{class_regle2_d_a2a2964b8223ff47e483f0703c482526a}
+permet d\textquotesingle{}entrer le nombre d\textquotesingle{}état des cellules \index{Regle2D@{Regle2D}!regle@{regle}}
+\index{regle@{regle}!Regle2D@{Regle2D}}
+\subsubsection[{\texorpdfstring{regle}{regle}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$std\+::vector$<$unsigned short int$>$ $>$ Regle2\+D\+::regle\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_regle2_d_adaa6396d86c6f21c6bf7ae5ba4346dde}{}\label{class_regle2_d_adaa6396d86c6f21c6bf7ae5ba4346dde}
+enregistre la règle sous le même format que dans autocell2D \index{Regle2D@{Regle2D}!regle\+Base@{regle\+Base}}
+\index{regle\+Base@{regle\+Base}!Regle2D@{Regle2D}}
+\subsubsection[{\texorpdfstring{regle\+Base}{regleBase}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Combo\+Box$\ast$ Regle2\+D\+::regle\+Base\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_regle2_d_ae544919d03302b0ecd7bfacfc2842ccf}{}\label{class_regle2_d_ae544919d03302b0ecd7bfacfc2842ccf}
+permet de sélectionner des règles prédéfinies 
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+info/\+L\+O21/\+L\+O21/\+Auto\+Cell/\hyperlink{autocell_8h}{autocell.\+h}\item 
+info/\+L\+O21/\+L\+O21/\+Auto\+Cell/\hyperlink{autocell_8cpp}{autocell.\+cpp}\item 
+info/\+L\+O21/\+L\+O21/build-\/\+Auto\+Cell-\/\+Desktop-\/\+Debug/\hyperlink{moc__autocell_8cpp}{moc\+\_\+autocell.\+cpp}\end{DoxyCompactItemize}

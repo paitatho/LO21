@@ -1,0 +1,240 @@
+\hypertarget{class_etat2_d}{}\section{Référence de la classe Etat2D}
+\label{class_etat2_d}\index{Etat2D@{Etat2D}}
+
+
+hérite de \hyperlink{class_etat}{Etat}  
+
+
+
+
+{\ttfamily \#include $<$Etat2\+D.\+h$>$}
+
+
+
+Graphe d\textquotesingle{}héritage de Etat2D\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=127pt]{class_etat2_d__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Graphe de collaboration de Etat2D\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=127pt]{class_etat2_d__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_etat2_d_aae67a6ba3b3b3726a9533f647d34dd55}{Etat2D} (unsigned int l=0, unsigned int h=0, unsigned int nb\+Etat=2)
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
+\hyperlink{class_etat2_d_a3eaa7f0e606a9b2f5fc634d6b571042e}{$\sim$\+Etat2D} ()
+\begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{class_etat2_d_aff82bb61adbe51f2702e34f0ea34a55d}{get\+Hauteur} () const 
+\begin{DoxyCompactList}\small\item\em Accesseur en lecture. \end{DoxyCompactList}\item 
+void \hyperlink{class_etat2_d_a97b757ecf3f703f5e418c00e250c074c}{set\+Hauteur} (unsigned int h)
+\begin{DoxyCompactList}\small\item\em modifie la hauteur \end{DoxyCompactList}\item 
+void \hyperlink{class_etat2_d_a6fa30b43d2971b01cbfb59aef094aded}{afficher} () const 
+\begin{DoxyCompactList}\small\item\em affiche l\textquotesingle{}état \end{DoxyCompactList}\item 
+void \hyperlink{class_etat2_d_a96f855c00941ce59b2c84d347dfb5e1c}{set\+Cellule} (unsigned int i, unsigned int j, unsigned short int val)
+\begin{DoxyCompactList}\small\item\em modifie la valeur d\textquotesingle{}une cellule \end{DoxyCompactList}\item 
+unsigned short int \hyperlink{class_etat2_d_adfe7448075788e3cd17c0b7df50b9438}{get\+Cellule} (unsigned int i, unsigned int j) const 
+\begin{DoxyCompactList}\small\item\em Accesseur en lecture. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_etat2_d_af99e5b4041ce363a4b1e96a6751719d5}{adjust\+Etat} ()
+\begin{DoxyCompactList}\small\item\em ajuste la taille de l\textquotesingle{}etat \end{DoxyCompactList}\item 
+bool \hyperlink{class_etat2_d_a6834241d99725640691eb3a252d14f5a}{operator==} (const \hyperlink{class_etat2_d}{Etat2D} \&e) const 
+\begin{DoxyCompactList}\small\item\em opérateur d\textquotesingle{}affectation \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Attributs protégés}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::vector$<$ unsigned short int $>$ $>$ \hyperlink{class_etat2_d_a82d1c6326dedc79f902c1782d6a10cfb}{m\+\_\+valeur}
+\item 
+unsigned int \hyperlink{class_etat2_d_a9be83a06c967b20b80b344e50af02626}{m\+\_\+hauteur}
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+hérite de \hyperlink{class_etat}{Etat} 
+
+La classe permet de créer des états à 2 dimensions 
+
+\subsection{Documentation des constructeurs et destructeur}
+\index{Etat2D@{Etat2D}!Etat2D@{Etat2D}}
+\index{Etat2D@{Etat2D}!Etat2D@{Etat2D}}
+\subsubsection[{\texorpdfstring{Etat2\+D(unsigned int l=0, unsigned int h=0, unsigned int nb\+Etat=2)}{Etat2D(unsigned int l=0, unsigned int h=0, unsigned int nbEtat=2)}}]{\setlength{\rightskip}{0pt plus 5cm}Etat2\+D\+::\+Etat2D (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{l = {\ttfamily 0}, }
+\item[{unsigned int}]{h = {\ttfamily 0}, }
+\item[{unsigned int}]{nb\+Etat = {\ttfamily 2}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_etat2_d_aae67a6ba3b3b3726a9533f647d34dd55}{}\label{class_etat2_d_aae67a6ba3b3b3726a9533f647d34dd55}
+
+
+Constructeur. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em l} & \+: largeur \+: unsigned int \\
+\hline
+{\em h} & \+: hauteur\+: unsigned int \\
+\hline
+{\em nb\+Etat} & \+: nombre d\textquotesingle{}état \+:unsigned int \\
+\hline
+\end{DoxyParams}
+\index{Etat2D@{Etat2D}!````~Etat2D@{$\sim$\+Etat2D}}
+\index{````~Etat2D@{$\sim$\+Etat2D}!Etat2D@{Etat2D}}
+\subsubsection[{\texorpdfstring{$\sim$\+Etat2\+D()}{~Etat2D()}}]{\setlength{\rightskip}{0pt plus 5cm}Etat2\+D\+::$\sim$\+Etat2D (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_etat2_d_a3eaa7f0e606a9b2f5fc634d6b571042e}{}\label{class_etat2_d_a3eaa7f0e606a9b2f5fc634d6b571042e}
+
+
+Destructeur. 
+
+
+
+\subsection{Documentation des fonctions membres}
+\index{Etat2D@{Etat2D}!adjust\+Etat@{adjust\+Etat}}
+\index{adjust\+Etat@{adjust\+Etat}!Etat2D@{Etat2D}}
+\subsubsection[{\texorpdfstring{adjust\+Etat()}{adjustEtat()}}]{\setlength{\rightskip}{0pt plus 5cm}void Etat2\+D\+::adjust\+Etat (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_etat2_d_af99e5b4041ce363a4b1e96a6751719d5}{}\label{class_etat2_d_af99e5b4041ce363a4b1e96a6751719d5}
+
+
+ajuste la taille de l\textquotesingle{}etat 
+
+
+
+Implémente \hyperlink{class_etat_ac29c6d30fc8c982ff5f67eab6fc396de}{Etat}.
+
+\index{Etat2D@{Etat2D}!afficher@{afficher}}
+\index{afficher@{afficher}!Etat2D@{Etat2D}}
+\subsubsection[{\texorpdfstring{afficher() const }{afficher() const }}]{\setlength{\rightskip}{0pt plus 5cm}void Etat2\+D\+::afficher (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_etat2_d_a6fa30b43d2971b01cbfb59aef094aded}{}\label{class_etat2_d_a6fa30b43d2971b01cbfb59aef094aded}
+
+
+affiche l\textquotesingle{}état 
+
+
+
+Implémente \hyperlink{class_etat_a796cef1d7607e3d185bec0a31eb7a819}{Etat}.
+
+\index{Etat2D@{Etat2D}!get\+Cellule@{get\+Cellule}}
+\index{get\+Cellule@{get\+Cellule}!Etat2D@{Etat2D}}
+\subsubsection[{\texorpdfstring{get\+Cellule(unsigned int i, unsigned int j) const }{getCellule(unsigned int i, unsigned int j) const }}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short int Etat2\+D\+::get\+Cellule (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{i, }
+\item[{unsigned int}]{j}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_etat2_d_adfe7448075788e3cd17c0b7df50b9438}{}\label{class_etat2_d_adfe7448075788e3cd17c0b7df50b9438}
+
+
+Accesseur en lecture. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em i} & \+: ligne \+: unsigned int \\
+\hline
+{\em j} & \+: colonne \+: unsigned int \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+m\+\_\+valeur\mbox{[}i\mbox{]}\mbox{[}j\mbox{]} \+: unsigned short int 
+\end{DoxyReturn}
+\index{Etat2D@{Etat2D}!get\+Hauteur@{get\+Hauteur}}
+\index{get\+Hauteur@{get\+Hauteur}!Etat2D@{Etat2D}}
+\subsubsection[{\texorpdfstring{get\+Hauteur() const }{getHauteur() const }}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Etat2\+D\+::get\+Hauteur (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{class_etat2_d_aff82bb61adbe51f2702e34f0ea34a55d}{}\label{class_etat2_d_aff82bb61adbe51f2702e34f0ea34a55d}
+
+
+Accesseur en lecture. 
+
+\begin{DoxyReturn}{Renvoie}
+m\+\_\+hauteur \+: unsigned int 
+\end{DoxyReturn}
+
+
+Implémente \hyperlink{class_etat_aa2eeed5ffbef3b53a149385f81bf2af0}{Etat}.
+
+\index{Etat2D@{Etat2D}!operator==@{operator==}}
+\index{operator==@{operator==}!Etat2D@{Etat2D}}
+\subsubsection[{\texorpdfstring{operator==(const Etat2\+D \&e) const }{operator==(const Etat2D &e) const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Etat2\+D\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Etat2D} \&}]{e}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_etat2_d_a6834241d99725640691eb3a252d14f5a}{}\label{class_etat2_d_a6834241d99725640691eb3a252d14f5a}
+
+
+opérateur d\textquotesingle{}affectation 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em e} & \+: état à copier \+:const \hyperlink{class_etat2_d}{Etat2D}\& \\
+\hline
+\end{DoxyParams}
+\index{Etat2D@{Etat2D}!set\+Cellule@{set\+Cellule}}
+\index{set\+Cellule@{set\+Cellule}!Etat2D@{Etat2D}}
+\subsubsection[{\texorpdfstring{set\+Cellule(unsigned int i, unsigned int j, unsigned short int val)}{setCellule(unsigned int i, unsigned int j, unsigned short int val)}}]{\setlength{\rightskip}{0pt plus 5cm}void Etat2\+D\+::set\+Cellule (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{i, }
+\item[{unsigned int}]{j, }
+\item[{unsigned short int}]{val}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_etat2_d_a96f855c00941ce59b2c84d347dfb5e1c}{}\label{class_etat2_d_a96f855c00941ce59b2c84d347dfb5e1c}
+
+
+modifie la valeur d\textquotesingle{}une cellule 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em i} & \+: ligne \+: unsigned int \\
+\hline
+{\em j} & \+: colonne \+: unsigned int \\
+\hline
+{\em val} & \+: nouvelle valeur \+: unsigned int \\
+\hline
+\end{DoxyParams}
+\index{Etat2D@{Etat2D}!set\+Hauteur@{set\+Hauteur}}
+\index{set\+Hauteur@{set\+Hauteur}!Etat2D@{Etat2D}}
+\subsubsection[{\texorpdfstring{set\+Hauteur(unsigned int h)}{setHauteur(unsigned int h)}}]{\setlength{\rightskip}{0pt plus 5cm}void Etat2\+D\+::set\+Hauteur (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{h}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_etat2_d_a97b757ecf3f703f5e418c00e250c074c}{}\label{class_etat2_d_a97b757ecf3f703f5e418c00e250c074c}
+
+
+modifie la hauteur 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em h} & \+: nouvelle hauteur \+: unsigned int \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentation des données membres}
+\index{Etat2D@{Etat2D}!m\+\_\+hauteur@{m\+\_\+hauteur}}
+\index{m\+\_\+hauteur@{m\+\_\+hauteur}!Etat2D@{Etat2D}}
+\subsubsection[{\texorpdfstring{m\+\_\+hauteur}{m_hauteur}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Etat2\+D\+::m\+\_\+hauteur\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_etat2_d_a9be83a06c967b20b80b344e50af02626}{}\label{class_etat2_d_a9be83a06c967b20b80b344e50af02626}
+hauteur de la grille \index{Etat2D@{Etat2D}!m\+\_\+valeur@{m\+\_\+valeur}}
+\index{m\+\_\+valeur@{m\+\_\+valeur}!Etat2D@{Etat2D}}
+\subsubsection[{\texorpdfstring{m\+\_\+valeur}{m_valeur}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$std\+::vector$<$unsigned short int$>$ $>$ Etat2\+D\+::m\+\_\+valeur\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_etat2_d_a82d1c6326dedc79f902c1782d6a10cfb}{}\label{class_etat2_d_a82d1c6326dedc79f902c1782d6a10cfb}
+représente la grille de cellule 
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+info/\+L\+O21/\+L\+O21/\+Auto\+Cell/\hyperlink{_etat2_d_8h}{Etat2\+D.\+h}\item 
+info/\+L\+O21/\+L\+O21/\+Auto\+Cell/\hyperlink{_etat2_d_8cpp}{Etat2\+D.\+cpp}\end{DoxyCompactItemize}

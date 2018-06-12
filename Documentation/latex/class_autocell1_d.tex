@@ -1,0 +1,287 @@
+\hypertarget{class_autocell1_d}{}\section{Référence de la classe Autocell1D}
+\label{class_autocell1_d}\index{Autocell1D@{Autocell1D}}
+
+
+Hérite de \hyperlink{class_autocell}{Autocell}. La classe \hyperlink{class_autocell1_d}{Autocell1D} permet de lancer des automates cellulaires à 1\+Dimensions (classe \hyperlink{class_automate1_d}{Automate1D} et \hyperlink{class_etat1_d}{Etat1D})  
+
+
+
+
+{\ttfamily \#include $<$autocell.\+h$>$}
+
+
+
+Graphe d\textquotesingle{}héritage de Autocell1D\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=145pt]{class_autocell1_d__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Graphe de collaboration de Autocell1D\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=145pt]{class_autocell1_d__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Connecteurs publics}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_autocell1_d_ac38fb0d27778ecdff40628556956f64a}{cell\+Selected} (int a, int b)
+\begin{DoxyCompactList}\small\item\em S\+L\+OT qui change la couleur d\textquotesingle{}une cellule (a,b) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_autocell1_d_a4a706f162ed7e0b81f55a3463e355c9c}{Autocell1D} (Q\+Widget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em constructeur \end{DoxyCompactList}\item 
+void \hyperlink{class_autocell1_d_a9591755409ac74ff5564d86af4236a28}{set\+Regle} (unsigned int r)
+\begin{DoxyCompactList}\small\item\em change la règle \end{DoxyCompactList}\item 
+void \hyperlink{class_autocell1_d_a624d426584e5dbc621416118f09ac528}{set\+Color} (Q\+String a)
+\begin{DoxyCompactList}\small\item\em change la couleur \end{DoxyCompactList}\item 
+const Q\+Table\+Widget $\ast$ \hyperlink{class_autocell1_d_af724076ad7bd4f512174d63394c89aba}{get\+\_\+depart} () const 
+\begin{DoxyCompactList}\small\item\em retourne le départ \end{DoxyCompactList}\item 
+void \hyperlink{class_autocell1_d_a4e7c5c216925849a0ba80ea94272b63e}{set\+Depart} (unsigned int i, Q\+String color)
+\begin{DoxyCompactList}\small\item\em change la case i de l\textquotesingle{}état de départ dans l\textquotesingle{}attribut membre depart \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_autocell1_d_a4793eae53adcca32290621c45a76260c}{run\+Sim} ()
+\begin{DoxyCompactList}\small\item\em Simule un automate1D construit un automate1D et un etat1D. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_autocell1_d_ade60b5de205e8890b608baa7b7c4d186}{adjust\+Taille} ()
+\begin{DoxyCompactList}\small\item\em ajuste la fenêtre ajuste la fenêtre en fonction de la largeur, hauteur et la taille \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_autocell1_d_a711408c00cac1a00112ce8a72eab5b48}{clear} ()
+\begin{DoxyCompactList}\small\item\em nettoie l\textquotesingle{}autocell \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_autocell1_d_a53c95905c3b33bf49a92b64f39ec2c29}{init} ()
+\begin{DoxyCompactList}\small\item\em initialise un état de départ pour l\textquotesingle{}attribut membre depart aléatoirement \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_autocell1_d_a5ad8a1b903cca1cce5965d22039b6e04}{init\+Sym} ()
+\begin{DoxyCompactList}\small\item\em initialise un état de départ pour l\textquotesingle{}attribut membre depart symétriquement \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Fonctions membres protégées}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_autocell1_d_af7a137f43564c602e7503b34a232c4e0}{set\+Etat\+Depart} (int dim)
+\begin{DoxyCompactList}\small\item\em initialise grille de départ méthode privée qui est utilisée dans le constructeur \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Attributs protégés}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Grid\+Layout $\ast$ \hyperlink{class_autocell1_d_a7934db954892dc0efc12a961686a75c0}{layout}
+\item 
+Q\+Table\+Widget $\ast$ \hyperlink{class_autocell1_d_a7bd65a39691f86e179bcb0466e7e38c2}{depart}
+\item 
+Q\+Table\+Widget $\ast$ \hyperlink{class_autocell1_d_aed4038c48d9cc0a841e6f565d4cd792c}{etats} = nullptr
+\item 
+unsigned int \hyperlink{class_autocell1_d_ae28c4a70102bd5e08a2414d27b20bb47}{regle} =0
+\end{DoxyCompactItemize}
+\subsection*{Membres hérités additionnels}
+
+
+\subsection{Description détaillée}
+Hérite de \hyperlink{class_autocell}{Autocell}. La classe \hyperlink{class_autocell1_d}{Autocell1D} permet de lancer des automates cellulaires à 1\+Dimensions (classe \hyperlink{class_automate1_d}{Automate1D} et \hyperlink{class_etat1_d}{Etat1D}) 
+
+\subsection{Documentation des constructeurs et destructeur}
+\index{Autocell1D@{Autocell1D}!Autocell1D@{Autocell1D}}
+\index{Autocell1D@{Autocell1D}!Autocell1D@{Autocell1D}}
+\subsubsection[{\texorpdfstring{Autocell1\+D(\+Q\+Widget $\ast$parent=nullptr)}{Autocell1D(QWidget *parent=nullptr)}}]{\setlength{\rightskip}{0pt plus 5cm}Autocell1\+D\+::\+Autocell1D (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{parent = {\ttfamily nullptr}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\hypertarget{class_autocell1_d_a4a706f162ed7e0b81f55a3463e355c9c}{}\label{class_autocell1_d_a4a706f162ed7e0b81f55a3463e355c9c}
+
+
+constructeur 
+
+
+
+\subsection{Documentation des fonctions membres}
+\index{Autocell1D@{Autocell1D}!adjust\+Taille@{adjust\+Taille}}
+\index{adjust\+Taille@{adjust\+Taille}!Autocell1D@{Autocell1D}}
+\subsubsection[{\texorpdfstring{adjust\+Taille()}{adjustTaille()}}]{\setlength{\rightskip}{0pt plus 5cm}void Autocell1\+D\+::adjust\+Taille (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_autocell1_d_ade60b5de205e8890b608baa7b7c4d186}{}\label{class_autocell1_d_ade60b5de205e8890b608baa7b7c4d186}
+
+
+ajuste la fenêtre ajuste la fenêtre en fonction de la largeur, hauteur et la taille 
+
+
+
+Implémente \hyperlink{class_autocell_a060d956fa55ae3871081b3ecb949689f}{Autocell}.
+
+\index{Autocell1D@{Autocell1D}!cell\+Selected@{cell\+Selected}}
+\index{cell\+Selected@{cell\+Selected}!Autocell1D@{Autocell1D}}
+\subsubsection[{\texorpdfstring{cell\+Selected}{cellSelected}}]{\setlength{\rightskip}{0pt plus 5cm}void Autocell1\+D\+::cell\+Selected (
+\begin{DoxyParamCaption}
+\item[{int}]{a, }
+\item[{int}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}\hypertarget{class_autocell1_d_ac38fb0d27778ecdff40628556956f64a}{}\label{class_autocell1_d_ac38fb0d27778ecdff40628556956f64a}
+
+
+S\+L\+OT qui change la couleur d\textquotesingle{}une cellule (a,b) 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em ligne\+:int} & \\
+\hline
+{\em colonne} & int \\
+\hline
+\end{DoxyParams}
+\index{Autocell1D@{Autocell1D}!clear@{clear}}
+\index{clear@{clear}!Autocell1D@{Autocell1D}}
+\subsubsection[{\texorpdfstring{clear()}{clear()}}]{\setlength{\rightskip}{0pt plus 5cm}void Autocell1\+D\+::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_autocell1_d_a711408c00cac1a00112ce8a72eab5b48}{}\label{class_autocell1_d_a711408c00cac1a00112ce8a72eab5b48}
+
+
+nettoie l\textquotesingle{}autocell 
+
+
+
+Implémente \hyperlink{class_autocell_abffbd1e2026f04e489a03cc9bc0c28f4}{Autocell}.
+
+\index{Autocell1D@{Autocell1D}!get\+\_\+depart@{get\+\_\+depart}}
+\index{get\+\_\+depart@{get\+\_\+depart}!Autocell1D@{Autocell1D}}
+\subsubsection[{\texorpdfstring{get\+\_\+depart() const }{get_depart() const }}]{\setlength{\rightskip}{0pt plus 5cm}const Q\+Table\+Widget$\ast$ Autocell1\+D\+::get\+\_\+depart (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_autocell1_d_af724076ad7bd4f512174d63394c89aba}{}\label{class_autocell1_d_af724076ad7bd4f512174d63394c89aba}
+
+
+retourne le départ 
+
+\begin{DoxyReturn}{Renvoie}
+const Q\+Table\+Widget$\ast$ 
+\end{DoxyReturn}
+\index{Autocell1D@{Autocell1D}!init@{init}}
+\index{init@{init}!Autocell1D@{Autocell1D}}
+\subsubsection[{\texorpdfstring{init()}{init()}}]{\setlength{\rightskip}{0pt plus 5cm}void Autocell1\+D\+::init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_autocell1_d_a53c95905c3b33bf49a92b64f39ec2c29}{}\label{class_autocell1_d_a53c95905c3b33bf49a92b64f39ec2c29}
+
+
+initialise un état de départ pour l\textquotesingle{}attribut membre depart aléatoirement 
+
+
+
+Implémente \hyperlink{class_autocell_ac505c956de1d90a48e2d3558bdf97253}{Autocell}.
+
+\index{Autocell1D@{Autocell1D}!init\+Sym@{init\+Sym}}
+\index{init\+Sym@{init\+Sym}!Autocell1D@{Autocell1D}}
+\subsubsection[{\texorpdfstring{init\+Sym()}{initSym()}}]{\setlength{\rightskip}{0pt plus 5cm}void Autocell1\+D\+::init\+Sym (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_autocell1_d_a5ad8a1b903cca1cce5965d22039b6e04}{}\label{class_autocell1_d_a5ad8a1b903cca1cce5965d22039b6e04}
+
+
+initialise un état de départ pour l\textquotesingle{}attribut membre depart symétriquement 
+
+
+
+Implémente \hyperlink{class_autocell_aa1e1870af0142596a9a81afe7f300a11}{Autocell}.
+
+\index{Autocell1D@{Autocell1D}!run\+Sim@{run\+Sim}}
+\index{run\+Sim@{run\+Sim}!Autocell1D@{Autocell1D}}
+\subsubsection[{\texorpdfstring{run\+Sim()}{runSim()}}]{\setlength{\rightskip}{0pt plus 5cm}void Autocell1\+D\+::run\+Sim (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_autocell1_d_a4793eae53adcca32290621c45a76260c}{}\label{class_autocell1_d_a4793eae53adcca32290621c45a76260c}
+
+
+Simule un automate1D construit un automate1D et un etat1D. 
+
+
+
+Implémente \hyperlink{class_autocell_a83fb2030039bcddc40ee72f44ac38e63}{Autocell}.
+
+\index{Autocell1D@{Autocell1D}!set\+Color@{set\+Color}}
+\index{set\+Color@{set\+Color}!Autocell1D@{Autocell1D}}
+\subsubsection[{\texorpdfstring{set\+Color(\+Q\+String a)}{setColor(QString a)}}]{\setlength{\rightskip}{0pt plus 5cm}void Autocell1\+D\+::set\+Color (
+\begin{DoxyParamCaption}
+\item[{Q\+String}]{a}
+\end{DoxyParamCaption}
+)}\hypertarget{class_autocell1_d_a624d426584e5dbc621416118f09ac528}{}\label{class_autocell1_d_a624d426584e5dbc621416118f09ac528}
+
+
+change la couleur 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em a} & \+: nouvelle couleur\+: Q\+String \\
+\hline
+\end{DoxyParams}
+\index{Autocell1D@{Autocell1D}!set\+Depart@{set\+Depart}}
+\index{set\+Depart@{set\+Depart}!Autocell1D@{Autocell1D}}
+\subsubsection[{\texorpdfstring{set\+Depart(unsigned int i, Q\+String color)}{setDepart(unsigned int i, QString color)}}]{\setlength{\rightskip}{0pt plus 5cm}void Autocell1\+D\+::set\+Depart (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{i, }
+\item[{Q\+String}]{color}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_autocell1_d_a4e7c5c216925849a0ba80ea94272b63e}{}\label{class_autocell1_d_a4e7c5c216925849a0ba80ea94272b63e}
+
+
+change la case i de l\textquotesingle{}état de départ dans l\textquotesingle{}attribut membre depart 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em i} & \+: indice\+: unsigned int \\
+\hline
+{\em color} & \+: couleur de la case\+: Q\+String \\
+\hline
+\end{DoxyParams}
+\index{Autocell1D@{Autocell1D}!set\+Etat\+Depart@{set\+Etat\+Depart}}
+\index{set\+Etat\+Depart@{set\+Etat\+Depart}!Autocell1D@{Autocell1D}}
+\subsubsection[{\texorpdfstring{set\+Etat\+Depart(int dim)}{setEtatDepart(int dim)}}]{\setlength{\rightskip}{0pt plus 5cm}void Autocell1\+D\+::set\+Etat\+Depart (
+\begin{DoxyParamCaption}
+\item[{int}]{dim}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_autocell1_d_af7a137f43564c602e7503b34a232c4e0}{}\label{class_autocell1_d_af7a137f43564c602e7503b34a232c4e0}
+
+
+initialise grille de départ méthode privée qui est utilisée dans le constructeur 
+
+\index{Autocell1D@{Autocell1D}!set\+Regle@{set\+Regle}}
+\index{set\+Regle@{set\+Regle}!Autocell1D@{Autocell1D}}
+\subsubsection[{\texorpdfstring{set\+Regle(unsigned int r)}{setRegle(unsigned int r)}}]{\setlength{\rightskip}{0pt plus 5cm}void Autocell1\+D\+::set\+Regle (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_autocell1_d_a9591755409ac74ff5564d86af4236a28}{}\label{class_autocell1_d_a9591755409ac74ff5564d86af4236a28}
+
+
+change la règle 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em r} & \+:nouvelle règle \+: unsigned int \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentation des données membres}
+\index{Autocell1D@{Autocell1D}!depart@{depart}}
+\index{depart@{depart}!Autocell1D@{Autocell1D}}
+\subsubsection[{\texorpdfstring{depart}{depart}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Table\+Widget$\ast$ Autocell1\+D\+::depart\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_autocell1_d_a7bd65a39691f86e179bcb0466e7e38c2}{}\label{class_autocell1_d_a7bd65a39691f86e179bcb0466e7e38c2}
+grille de départ à 1D \index{Autocell1D@{Autocell1D}!etats@{etats}}
+\index{etats@{etats}!Autocell1D@{Autocell1D}}
+\subsubsection[{\texorpdfstring{etats}{etats}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Table\+Widget$\ast$ Autocell1\+D\+::etats = nullptr\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_autocell1_d_aed4038c48d9cc0a841e6f565d4cd792c}{}\label{class_autocell1_d_aed4038c48d9cc0a841e6f565d4cd792c}
+grille de simulation \index{Autocell1D@{Autocell1D}!layout@{layout}}
+\index{layout@{layout}!Autocell1D@{Autocell1D}}
+\subsubsection[{\texorpdfstring{layout}{layout}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Grid\+Layout$\ast$ Autocell1\+D\+::layout\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_autocell1_d_a7934db954892dc0efc12a961686a75c0}{}\label{class_autocell1_d_a7934db954892dc0efc12a961686a75c0}
+layout principal \index{Autocell1D@{Autocell1D}!regle@{regle}}
+\index{regle@{regle}!Autocell1D@{Autocell1D}}
+\subsubsection[{\texorpdfstring{regle}{regle}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Autocell1\+D\+::regle =0\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_autocell1_d_ae28c4a70102bd5e08a2414d27b20bb47}{}\label{class_autocell1_d_ae28c4a70102bd5e08a2414d27b20bb47}
+numéro de la règle à appliquer 
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+info/\+L\+O21/\+L\+O21/\+Auto\+Cell/\hyperlink{autocell_8h}{autocell.\+h}\item 
+info/\+L\+O21/\+L\+O21/\+Auto\+Cell/\hyperlink{autocell_8cpp}{autocell.\+cpp}\end{DoxyCompactItemize}

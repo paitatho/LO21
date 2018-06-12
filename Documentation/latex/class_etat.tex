@@ -1,0 +1,190 @@
+\hypertarget{class_etat}{}\section{Référence de la classe Etat}
+\label{class_etat}\index{Etat@{Etat}}
+
+
+Classe abstraite.  
+
+
+
+
+{\ttfamily \#include $<$Etat.\+h$>$}
+
+
+
+Graphe d\textquotesingle{}héritage de Etat\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{class_etat__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_etat_a78a5538e285af98cc010c0a197b14d50}{Etat} (unsigned int nb\+Cel, unsigned int nb\+Etat=2)
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
+virtual \hyperlink{class_etat_a00bde3e769da5523e194a780ca95f7f7}{$\sim$\+Etat} ()
+\begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{class_etat_ad7822bc39dbe59ce5123bebcecb5c311}{get\+Largeur} () const 
+\begin{DoxyCompactList}\small\item\em Accesseur en lecture. \end{DoxyCompactList}\item 
+void \hyperlink{class_etat_a42eb8dc32d9865c25ff34f011d2c2706}{set\+Largeur} (unsigned int l)
+\begin{DoxyCompactList}\small\item\em change la largeur \end{DoxyCompactList}\item 
+unsigned int \hyperlink{class_etat_a9d4366197c4c39da8dd77929c4ca9621}{get\+Nb\+Etat} () const 
+\begin{DoxyCompactList}\small\item\em Accesseur en lecture. \end{DoxyCompactList}\item 
+virtual unsigned int \hyperlink{class_etat_aa2eeed5ffbef3b53a149385f81bf2af0}{get\+Hauteur} () const =0
+\begin{DoxyCompactList}\small\item\em Accesseur en lecture méthode virtuelle pure. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_etat_ac29c6d30fc8c982ff5f67eab6fc396de}{adjust\+Etat} ()=0
+\begin{DoxyCompactList}\small\item\em Ajuste la taille de l\textquotesingle{}état méthode virtuelle pure. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_etat_a796cef1d7607e3d185bec0a31eb7a819}{afficher} () const =0
+\begin{DoxyCompactList}\small\item\em affiche un état dans la sortier standard méthode virtuelle pure \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Attributs protégés}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{class_etat_af575fb141b3c300c9cbb61337094ba1b}{m\+\_\+largeur}
+\item 
+unsigned int \hyperlink{class_etat_a281d9e6224c108d5db463540bb2414f3}{m\+\_\+nb\+Etat}
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Classe abstraite. 
+
+La classe permet de généraliser un \hyperlink{class_etat}{Etat} 
+
+\subsection{Documentation des constructeurs et destructeur}
+\index{Etat@{Etat}!Etat@{Etat}}
+\index{Etat@{Etat}!Etat@{Etat}}
+\subsubsection[{\texorpdfstring{Etat(unsigned int nb\+Cel, unsigned int nb\+Etat=2)}{Etat(unsigned int nbCel, unsigned int nbEtat=2)}}]{\setlength{\rightskip}{0pt plus 5cm}Etat\+::\+Etat (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{nb\+Cel, }
+\item[{unsigned int}]{nb\+Etat = {\ttfamily 2}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_etat_a78a5538e285af98cc010c0a197b14d50}{}\label{class_etat_a78a5538e285af98cc010c0a197b14d50}
+
+
+Constructeur. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em nb\+Cel} & \+: largeur\+: unsigned int \\
+\hline
+{\em nb\+Etat} & \+: nombre d\textquotesingle{}état \+:unsigned int \\
+\hline
+\end{DoxyParams}
+\index{Etat@{Etat}!````~Etat@{$\sim$\+Etat}}
+\index{````~Etat@{$\sim$\+Etat}!Etat@{Etat}}
+\subsubsection[{\texorpdfstring{$\sim$\+Etat()}{~Etat()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual Etat\+::$\sim$\+Etat (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{class_etat_a00bde3e769da5523e194a780ca95f7f7}{}\label{class_etat_a00bde3e769da5523e194a780ca95f7f7}
+
+
+Destructeur. 
+
+
+
+\subsection{Documentation des fonctions membres}
+\index{Etat@{Etat}!adjust\+Etat@{adjust\+Etat}}
+\index{adjust\+Etat@{adjust\+Etat}!Etat@{Etat}}
+\subsubsection[{\texorpdfstring{adjust\+Etat()=0}{adjustEtat()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Etat\+::adjust\+Etat (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_etat_ac29c6d30fc8c982ff5f67eab6fc396de}{}\label{class_etat_ac29c6d30fc8c982ff5f67eab6fc396de}
+
+
+Ajuste la taille de l\textquotesingle{}état méthode virtuelle pure. 
+
+
+
+Implémenté dans \hyperlink{class_etat1_d_a95f0f0455d3dfda771330648ec5395fb}{Etat1D}, et \hyperlink{class_etat2_d_af99e5b4041ce363a4b1e96a6751719d5}{Etat2D}.
+
+\index{Etat@{Etat}!afficher@{afficher}}
+\index{afficher@{afficher}!Etat@{Etat}}
+\subsubsection[{\texorpdfstring{afficher() const =0}{afficher() const =0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Etat\+::afficher (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_etat_a796cef1d7607e3d185bec0a31eb7a819}{}\label{class_etat_a796cef1d7607e3d185bec0a31eb7a819}
+
+
+affiche un état dans la sortier standard méthode virtuelle pure 
+
+
+
+Implémenté dans \hyperlink{class_etat1_d_a11b2e64dc835aad04a5f138337ba7b99}{Etat1D}, et \hyperlink{class_etat2_d_a6fa30b43d2971b01cbfb59aef094aded}{Etat2D}.
+
+\index{Etat@{Etat}!get\+Hauteur@{get\+Hauteur}}
+\index{get\+Hauteur@{get\+Hauteur}!Etat@{Etat}}
+\subsubsection[{\texorpdfstring{get\+Hauteur() const =0}{getHauteur() const =0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned int Etat\+::get\+Hauteur (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_etat_aa2eeed5ffbef3b53a149385f81bf2af0}{}\label{class_etat_aa2eeed5ffbef3b53a149385f81bf2af0}
+
+
+Accesseur en lecture méthode virtuelle pure. 
+
+
+
+Implémenté dans \hyperlink{class_etat1_d_aed8c9082f8caefeef7687ba1f4590f40}{Etat1D}, et \hyperlink{class_etat2_d_aff82bb61adbe51f2702e34f0ea34a55d}{Etat2D}.
+
+\index{Etat@{Etat}!get\+Largeur@{get\+Largeur}}
+\index{get\+Largeur@{get\+Largeur}!Etat@{Etat}}
+\subsubsection[{\texorpdfstring{get\+Largeur() const }{getLargeur() const }}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Etat\+::get\+Largeur (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_etat_ad7822bc39dbe59ce5123bebcecb5c311}{}\label{class_etat_ad7822bc39dbe59ce5123bebcecb5c311}
+
+
+Accesseur en lecture. 
+
+\begin{DoxyReturn}{Renvoie}
+m\+\_\+largeur \+: unsigned int 
+\end{DoxyReturn}
+\index{Etat@{Etat}!get\+Nb\+Etat@{get\+Nb\+Etat}}
+\index{get\+Nb\+Etat@{get\+Nb\+Etat}!Etat@{Etat}}
+\subsubsection[{\texorpdfstring{get\+Nb\+Etat() const }{getNbEtat() const }}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Etat\+::get\+Nb\+Etat (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_etat_a9d4366197c4c39da8dd77929c4ca9621}{}\label{class_etat_a9d4366197c4c39da8dd77929c4ca9621}
+
+
+Accesseur en lecture. 
+
+\begin{DoxyReturn}{Renvoie}
+m\+\_\+nb\+Etat \+: unsigned int 
+\end{DoxyReturn}
+\index{Etat@{Etat}!set\+Largeur@{set\+Largeur}}
+\index{set\+Largeur@{set\+Largeur}!Etat@{Etat}}
+\subsubsection[{\texorpdfstring{set\+Largeur(unsigned int l)}{setLargeur(unsigned int l)}}]{\setlength{\rightskip}{0pt plus 5cm}void Etat\+::set\+Largeur (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{l}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_etat_a42eb8dc32d9865c25ff34f011d2c2706}{}\label{class_etat_a42eb8dc32d9865c25ff34f011d2c2706}
+
+
+change la largeur 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em l} & \+: nouvelle largeur \+:unsigned int \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentation des données membres}
+\index{Etat@{Etat}!m\+\_\+largeur@{m\+\_\+largeur}}
+\index{m\+\_\+largeur@{m\+\_\+largeur}!Etat@{Etat}}
+\subsubsection[{\texorpdfstring{m\+\_\+largeur}{m_largeur}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Etat\+::m\+\_\+largeur\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_etat_af575fb141b3c300c9cbb61337094ba1b}{}\label{class_etat_af575fb141b3c300c9cbb61337094ba1b}
+largeur de l\textquotesingle{}état \index{Etat@{Etat}!m\+\_\+nb\+Etat@{m\+\_\+nb\+Etat}}
+\index{m\+\_\+nb\+Etat@{m\+\_\+nb\+Etat}!Etat@{Etat}}
+\subsubsection[{\texorpdfstring{m\+\_\+nb\+Etat}{m_nbEtat}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Etat\+::m\+\_\+nb\+Etat\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_etat_a281d9e6224c108d5db463540bb2414f3}{}\label{class_etat_a281d9e6224c108d5db463540bb2414f3}
+nombre d\textquotesingle{}état d\textquotesingle{}une cellule 
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+info/\+L\+O21/\+L\+O21/\+Auto\+Cell/\hyperlink{_etat_8h}{Etat.\+h}\end{DoxyCompactItemize}

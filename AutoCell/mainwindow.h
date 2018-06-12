@@ -5,6 +5,7 @@
 #include "autocell.h"
 #include<iostream>
 #include<QtXml>
+#include<QFileDialog>
 
 /*!
  * \file MainWindow.h
@@ -149,6 +150,9 @@ public slots:
 
     /*! \brief SLOT qui gère la génération d'un état initial symétrique en fonction de l'automate courant*/
     void initialiseurSym();
+
+    void saveAutomate();
+    void loadAutomate();
 };
 
 

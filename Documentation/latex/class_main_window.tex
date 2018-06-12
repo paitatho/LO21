@@ -1,0 +1,602 @@
+\hypertarget{class_main_window}{}\section{Référence de la classe Main\+Window}
+\label{class_main_window}\index{Main\+Window@{Main\+Window}}
+
+
+hérite de Q\+Main\+Window Représente la fenêtre principal de l\textquotesingle{}application  
+
+
+
+
+{\ttfamily \#include $<$mainwindow.\+h$>$}
+
+
+
+Graphe d\textquotesingle{}héritage de Main\+Window\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{class_main_window__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Graphe de collaboration de Main\+Window\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_main_window__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Connecteurs publics}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_main_window_a13e1e518cda3c3ef508f319e5230a425}{open\+Sim} ()
+\begin{DoxyCompactList}\small\item\em S\+L\+OT qui ouvre un automate choisit dans l\textquotesingle{}attribut membre choix\+Sim méthode vituelle. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_main_window_a990d78b7f127395e17c2772d751052aa}{clear\+Auto1D} ()
+\begin{DoxyCompactList}\small\item\em S\+L\+OT qui nettoie le attribut et les options à la destruction de l\textquotesingle{}automate 1D méthode vituelle. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_main_window_a57bb2b74f849477d2033ea02c95d85fc}{clear\+Auto2D} ()
+\begin{DoxyCompactList}\small\item\em S\+L\+OT qui nettoie le attribut à la destruction de l\textquotesingle{}automate 1D méthode vituelle. \end{DoxyCompactList}\item 
+void \hyperlink{class_main_window_a709661eaabd6f570a8942f66f7c07738}{change\+Color} (Q\+String)
+\begin{DoxyCompactList}\small\item\em S\+L\+OT qui gère le changement de couleur de l\textquotesingle{}automate courant. \end{DoxyCompactList}\item 
+void \hyperlink{class_main_window_a06ce6c068fd97d586543f7cdd535d23a}{change\+Size} ()
+\begin{DoxyCompactList}\small\item\em S\+L\+OT qui gère le changement de taille de l\textquotesingle{}automate courant. \end{DoxyCompactList}\item 
+void \hyperlink{class_main_window_ac907dba426762ffbf3a7702af0aba74b}{change\+Hauteur} (int a)
+\begin{DoxyCompactList}\small\item\em S\+L\+OT qui gère le changement de hauteur de l\textquotesingle{}automate courant. \end{DoxyCompactList}\item 
+void \hyperlink{class_main_window_a9f316199d2ac2937364bf417cbd0aa30}{change\+Largeur} (int a)
+\begin{DoxyCompactList}\small\item\em S\+L\+OT qui gère le changement de hauteur de l\textquotesingle{}automate courant. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_main_window_abcab912ee0f094d4a6599b9f78f4c182}{change\+Regle1D} (int a)
+\begin{DoxyCompactList}\small\item\em S\+L\+OT qui gère le changement de règle de l\textquotesingle{}automate1D. \end{DoxyCompactList}\item 
+void \hyperlink{class_main_window_aae185fa2271003f1cce8d7182acae455}{change\+Speed} (int s)
+\begin{DoxyCompactList}\small\item\em S\+L\+OT qui gère le changement de délai de l\textquotesingle{}automate courant. \end{DoxyCompactList}\item 
+void \hyperlink{class_main_window_ab4b7fc1336fd08e311c9655edc8378c6}{change\+Taille} (int)
+\begin{DoxyCompactList}\small\item\em S\+L\+OT qui gère le changement de taille de l\textquotesingle{}automate courant. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_main_window_a4f035b25b6181829a9275155e3ca9bbd}{play} ()
+\begin{DoxyCompactList}\small\item\em S\+L\+OT qui gère la lecture de l\textquotesingle{}automate courant. \end{DoxyCompactList}\item 
+void \hyperlink{class_main_window_a17cb661f62805c510b99d9162ac8201a}{pause} ()
+\begin{DoxyCompactList}\small\item\em S\+L\+OT qui gère l\textquotesingle{}arrêt de l\textquotesingle{}automate courant. \end{DoxyCompactList}\item 
+void \hyperlink{class_main_window_a77557e32fb4ed3530daf2f6225c877db}{clear} ()
+\begin{DoxyCompactList}\small\item\em S\+L\+OT qui gère le nettoyage de l\textquotesingle{}automate courant. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_main_window_a83229b428a4774bf75bebfb6a1ae2bfe}{current} (Q\+Mdi\+Sub\+Window $\ast$w)
+\begin{DoxyCompactList}\small\item\em S\+L\+OT qui gère l\textquotesingle{}affichage des options en fonction de l\textquotesingle{}automate courant. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_main_window_a9a12b2903cb870b374af5f0ab8df7bda}{allow} ()
+\begin{DoxyCompactList}\small\item\em S\+L\+OT qui permet d\textquotesingle{}activer le bouton pour nettoyer l\textquotesingle{}automate (quand on est en lecture on ne peut pas clear) \end{DoxyCompactList}\item 
+void \hyperlink{class_main_window_ab14d52a2b2a63b6ed930e4131322dd3d}{afficher\+Regle2D} ()
+\begin{DoxyCompactList}\small\item\em S\+L\+OT qui permet d\textquotesingle{}afficherla fenêtre de saisie des règles pour l\textquotesingle{}automate2D. \end{DoxyCompactList}\item 
+void \hyperlink{class_main_window_a2ee1589220ee377441d94777ccef6c9f}{initialiseur} ()
+\begin{DoxyCompactList}\small\item\em S\+L\+OT qui gère la génération d\textquotesingle{}un état initial aléatoire en fonction de l\textquotesingle{}automate courant. \end{DoxyCompactList}\item 
+void \hyperlink{class_main_window_a611ef20ef8820089fe62ea686f321456}{initialiseur\+Sym} ()
+\begin{DoxyCompactList}\small\item\em S\+L\+OT qui gère la génération d\textquotesingle{}un état initial symétrique en fonction de l\textquotesingle{}automate courant. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_main_window_a996c5a2b6f77944776856f08ec30858d}{Main\+Window} (Q\+Widget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_main_window_a4e20a4a065fbb0e4d3532a45a0a91425}{close\+Event} (Q\+Close\+Event $\ast$event)
+\item 
+virtual void \hyperlink{class_main_window_a94b693e3fa35f35ba200d2427b9cd419}{save\+App\+State} ()
+\item 
+virtual void \hyperlink{class_main_window_ab1dbe77cfb9a4876733a540614afdec0}{restore\+App\+State} ()
+\end{DoxyCompactItemize}
+\subsection*{Fonctions membres privées}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_main_window_aeb57235ebc08860e680132db167c09b4}{create\+Tool\+Bar} ()
+\begin{DoxyCompactList}\small\item\em construit la barre d\textquotesingle{}outil méthode virtuelle privée utilisée dans le constructeur \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_main_window_a57d11300ed1f37447626810acbcfd6c4}{create\+Dock\+Option} ()
+\begin{DoxyCompactList}\small\item\em construit les options méthode virtuelle privée utilisée dans le constructeur \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_main_window_a6de156fdb121e0c7f7b940eca3633087}{create\+Mdi\+Area} ()
+\begin{DoxyCompactList}\small\item\em construit la zone centrale méthode virtuelle privée utilisée dans le constructeur \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_main_window_a8ab1b6ec65be939f3f3927e2fff93756}{create\+Option1D} ()
+\begin{DoxyCompactList}\small\item\em construit les options pour l\textquotesingle{}automate1D méthode virtuelle privée utilisée dans le constructeur \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_main_window_a45eb73f1c5f7a104c6bb7d14c281435c}{create\+Option2D} ()
+\begin{DoxyCompactList}\small\item\em construit les options pour l\textquotesingle{}automate2D méthode virtuelle privée utilisée dans le constructeur \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Tool\+Bar $\ast$ \hyperlink{class_main_window_a10d2a8149dc4da0a7df5ee9e4e189721}{tool\+Bar}
+\item 
+std\+::vector$<$ Q\+Icon $\ast$ $>$ \hyperlink{class_main_window_ab903c7e6c6310d5ae1455d5935ec446a}{icon}
+\item 
+std\+::vector$<$ Q\+Action $\ast$ $>$ \hyperlink{class_main_window_a03fc8c2845f51b55f2b733c9ad66a0c8}{action}
+\item 
+std\+::vector$<$ Q\+Label $\ast$ $>$ \hyperlink{class_main_window_a4d2abb2a3dc6e601f8ed99ec58879f79}{label}
+\item 
+Q\+Combo\+Box $\ast$ \hyperlink{class_main_window_a11ee55d02a2bccaf673267f930bc0f90}{choix\+Sim}
+\item 
+Q\+Group\+Box $\ast$ \hyperlink{class_main_window_a69406bb359d08dd42c0a05957ae89b51}{box\+Dim}
+\item 
+Q\+Grid\+Layout $\ast$ \hyperlink{class_main_window_a1827baeeedb3477f4fd4c705aedda5c1}{layout\+Box\+Dim}
+\item 
+Q\+Group\+Box $\ast$ \hyperlink{class_main_window_ac7c010cdcd4cafe4a9ac0b87ad384b8a}{box\+Cel}
+\item 
+Q\+Grid\+Layout $\ast$ \hyperlink{class_main_window_accffbd02cf5f6e812592410d90a2bf01}{layout\+Box\+Cel}
+\item 
+Q\+Widget $\ast$ \hyperlink{class_main_window_a676e5f857b1b37f685cce4d1b53e221c}{option1D}
+\item 
+Q\+Grid\+Layout $\ast$ \hyperlink{class_main_window_a25605b8d3fa4ec4b5cef93bb266136e7}{layout1D}
+\item 
+Q\+Spin\+Box $\ast$ \hyperlink{class_main_window_a8ea57e6e7e57cbe0e03ebb75a385439a}{larg1D}
+\item 
+Q\+Spin\+Box $\ast$ \hyperlink{class_main_window_adf5c1f107d4ba21b762ddde7c9284f57}{nb\+Sim1D}
+\item 
+Q\+Spin\+Box $\ast$ \hyperlink{class_main_window_ad652e5a8e2bbf95af39779853bab4142}{regle1D}
+\item 
+Q\+Combo\+Box $\ast$ \hyperlink{class_main_window_aae0246fdb4536b62a90c2fd39fef98ab}{couleur}
+\item 
+Q\+Widget $\ast$ \hyperlink{class_main_window_abe71dc980ca6f6a52d5d0f9bf0902dff}{option2D}
+\item 
+Q\+Grid\+Layout $\ast$ \hyperlink{class_main_window_a648672720c15d3b363c131c91408422d}{layout2D}
+\item 
+Q\+Grid\+Layout $\ast$ \hyperlink{class_main_window_a7ab6b649b9761ce29bcda27ebbbe9ccd}{layout\+Box\+Dim2D}
+\item 
+Q\+Group\+Box $\ast$ \hyperlink{class_main_window_a1d591f82ca53c455c4a5204f8baad925}{box\+Cel2D}
+\item 
+Q\+Group\+Box $\ast$ \hyperlink{class_main_window_ad25e047b431ec6c6d244c9d4a3355582}{box\+Dim2D}
+\item 
+Q\+Grid\+Layout $\ast$ \hyperlink{class_main_window_a69d0a438a34120f96b7394136ee13a15}{layout\+Box\+Cel2D}
+\item 
+Q\+Group\+Box $\ast$ \hyperlink{class_main_window_aa758e230a66e84a946b125af5df55618}{box\+Param2D}
+\item 
+Q\+Combo\+Box $\ast$ \hyperlink{class_main_window_aaba4f5a028019a18aae76c21d3ffa0d5}{mode2D}
+\item 
+Q\+Grid\+Layout $\ast$ \hyperlink{class_main_window_af5faffe7dcb929efd6cf1a1b823c99a1}{layout\+Box\+Param2D}
+\item 
+Q\+Mdi\+Area $\ast$ \hyperlink{class_main_window_a9c7c0dfa79f78e05a3745962c680cd18}{central}
+\item 
+Q\+Mdi\+Sub\+Window $\ast$ \hyperlink{class_main_window_ac18cc180f7f4908f63ce91487bf044cd}{sub\+Win}
+\item 
+Q\+Mdi\+Sub\+Window $\ast$ \hyperlink{class_main_window_a9e6a20036bfb2fe795858f32b0f72282}{sub\+Win2D}
+\item 
+Q\+Spin\+Box $\ast$ \hyperlink{class_main_window_af66e8d082f97a24629399dec9da7aa03}{larg2D}
+\item 
+Q\+Spin\+Box $\ast$ \hyperlink{class_main_window_aea127325b7c01f02b7a98b17595326bb}{haut2D}
+\item 
+Q\+Spin\+Box $\ast$ \hyperlink{class_main_window_a062e8ba0040a577871dd29cadbade31b}{speed2D}
+\item 
+Q\+Spin\+Box $\ast$ \hyperlink{class_main_window_a4ee0dd35b93263abed8d50c2517632e2}{taille}
+\item 
+Q\+Dock\+Widget $\ast$ \hyperlink{class_main_window_a2cfa6cfbdcaba78e37d9dd17847dd620}{option\+Dock}
+\end{DoxyCompactItemize}
+\subsection*{Attributs privés statiques}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_autocell1_d}{Autocell1D} $\ast$ \hyperlink{class_main_window_a252b3e10b17bf529c25b4e72be4b4332}{auto1D} = nullptr
+\item 
+static \hyperlink{class_autocell2_d}{Autocell2D} $\ast$ \hyperlink{class_main_window_ae1a48aa4de447712675f3aa2d7482034}{auto2D} = nullptr
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+hérite de Q\+Main\+Window Représente la fenêtre principal de l\textquotesingle{}application 
+
+\subsection{Documentation des constructeurs et destructeur}
+\index{Main\+Window@{Main\+Window}!Main\+Window@{Main\+Window}}
+\index{Main\+Window@{Main\+Window}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{Main\+Window(\+Q\+Widget $\ast$parent=nullptr)}{MainWindow(QWidget *parent=nullptr)}}]{\setlength{\rightskip}{0pt plus 5cm}Main\+Window\+::\+Main\+Window (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{parent = {\ttfamily nullptr}}
+\end{DoxyParamCaption}
+)}\hypertarget{class_main_window_a996c5a2b6f77944776856f08ec30858d}{}\label{class_main_window_a996c5a2b6f77944776856f08ec30858d}
+
+
+Constructeur. 
+
+
+
+\subsection{Documentation des fonctions membres}
+\index{Main\+Window@{Main\+Window}!afficher\+Regle2D@{afficher\+Regle2D}}
+\index{afficher\+Regle2D@{afficher\+Regle2D}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{afficher\+Regle2D}{afficherRegle2D}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::afficher\+Regle2D (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}\hypertarget{class_main_window_ab14d52a2b2a63b6ed930e4131322dd3d}{}\label{class_main_window_ab14d52a2b2a63b6ed930e4131322dd3d}
+
+
+S\+L\+OT qui permet d\textquotesingle{}afficherla fenêtre de saisie des règles pour l\textquotesingle{}automate2D. 
+
+\index{Main\+Window@{Main\+Window}!allow@{allow}}
+\index{allow@{allow}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{allow}{allow}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Main\+Window\+::allow (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [slot]}}\hypertarget{class_main_window_a9a12b2903cb870b374af5f0ab8df7bda}{}\label{class_main_window_a9a12b2903cb870b374af5f0ab8df7bda}
+
+
+S\+L\+OT qui permet d\textquotesingle{}activer le bouton pour nettoyer l\textquotesingle{}automate (quand on est en lecture on ne peut pas clear) 
+
+\index{Main\+Window@{Main\+Window}!change\+Color@{change\+Color}}
+\index{change\+Color@{change\+Color}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{change\+Color}{changeColor}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::change\+Color (
+\begin{DoxyParamCaption}
+\item[{Q\+String}]{a}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{class_main_window_a709661eaabd6f570a8942f66f7c07738}{}\label{class_main_window_a709661eaabd6f570a8942f66f7c07738}
+
+
+S\+L\+OT qui gère le changement de couleur de l\textquotesingle{}automate courant. 
+
+\index{Main\+Window@{Main\+Window}!change\+Hauteur@{change\+Hauteur}}
+\index{change\+Hauteur@{change\+Hauteur}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{change\+Hauteur}{changeHauteur}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::change\+Hauteur (
+\begin{DoxyParamCaption}
+\item[{int}]{a}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{class_main_window_ac907dba426762ffbf3a7702af0aba74b}{}\label{class_main_window_ac907dba426762ffbf3a7702af0aba74b}
+
+
+S\+L\+OT qui gère le changement de hauteur de l\textquotesingle{}automate courant. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em a} & \+: nouvelle hauteur \+: int \\
+\hline
+\end{DoxyParams}
+\index{Main\+Window@{Main\+Window}!change\+Largeur@{change\+Largeur}}
+\index{change\+Largeur@{change\+Largeur}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{change\+Largeur}{changeLargeur}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::change\+Largeur (
+\begin{DoxyParamCaption}
+\item[{int}]{a}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{class_main_window_a9f316199d2ac2937364bf417cbd0aa30}{}\label{class_main_window_a9f316199d2ac2937364bf417cbd0aa30}
+
+
+S\+L\+OT qui gère le changement de hauteur de l\textquotesingle{}automate courant. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em a} & \+: nouvelle largeur \+: int \\
+\hline
+\end{DoxyParams}
+\index{Main\+Window@{Main\+Window}!change\+Regle1D@{change\+Regle1D}}
+\index{change\+Regle1D@{change\+Regle1D}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{change\+Regle1D}{changeRegle1D}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::change\+Regle1D (
+\begin{DoxyParamCaption}
+\item[{int}]{a}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}\hypertarget{class_main_window_abcab912ee0f094d4a6599b9f78f4c182}{}\label{class_main_window_abcab912ee0f094d4a6599b9f78f4c182}
+
+
+S\+L\+OT qui gère le changement de règle de l\textquotesingle{}automate1D. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em a} & \+: nouvelle règle \+: int \\
+\hline
+\end{DoxyParams}
+\index{Main\+Window@{Main\+Window}!change\+Size@{change\+Size}}
+\index{change\+Size@{change\+Size}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{change\+Size}{changeSize}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::change\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{class_main_window_a06ce6c068fd97d586543f7cdd535d23a}{}\label{class_main_window_a06ce6c068fd97d586543f7cdd535d23a}
+
+
+S\+L\+OT qui gère le changement de taille de l\textquotesingle{}automate courant. 
+
+\index{Main\+Window@{Main\+Window}!change\+Speed@{change\+Speed}}
+\index{change\+Speed@{change\+Speed}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{change\+Speed}{changeSpeed}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::change\+Speed (
+\begin{DoxyParamCaption}
+\item[{int}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{class_main_window_aae185fa2271003f1cce8d7182acae455}{}\label{class_main_window_aae185fa2271003f1cce8d7182acae455}
+
+
+S\+L\+OT qui gère le changement de délai de l\textquotesingle{}automate courant. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em a} & \+: nouveau délai \+: int \\
+\hline
+\end{DoxyParams}
+\index{Main\+Window@{Main\+Window}!change\+Taille@{change\+Taille}}
+\index{change\+Taille@{change\+Taille}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{change\+Taille}{changeTaille}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::change\+Taille (
+\begin{DoxyParamCaption}
+\item[{int}]{t}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{class_main_window_ab4b7fc1336fd08e311c9655edc8378c6}{}\label{class_main_window_ab4b7fc1336fd08e311c9655edc8378c6}
+
+
+S\+L\+OT qui gère le changement de taille de l\textquotesingle{}automate courant. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em taille} & \+: nouvelle taille \+: int \\
+\hline
+\end{DoxyParams}
+\index{Main\+Window@{Main\+Window}!clear@{clear}}
+\index{clear@{clear}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{clear}{clear}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{class_main_window_a77557e32fb4ed3530daf2f6225c877db}{}\label{class_main_window_a77557e32fb4ed3530daf2f6225c877db}
+
+
+S\+L\+OT qui gère le nettoyage de l\textquotesingle{}automate courant. 
+
+\index{Main\+Window@{Main\+Window}!clear\+Auto1D@{clear\+Auto1D}}
+\index{clear\+Auto1D@{clear\+Auto1D}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{clear\+Auto1D}{clearAuto1D}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Main\+Window\+::clear\+Auto1D (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [slot]}}\hypertarget{class_main_window_a990d78b7f127395e17c2772d751052aa}{}\label{class_main_window_a990d78b7f127395e17c2772d751052aa}
+
+
+S\+L\+OT qui nettoie le attribut et les options à la destruction de l\textquotesingle{}automate 1D méthode vituelle. 
+
+\index{Main\+Window@{Main\+Window}!clear\+Auto2D@{clear\+Auto2D}}
+\index{clear\+Auto2D@{clear\+Auto2D}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{clear\+Auto2D}{clearAuto2D}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Main\+Window\+::clear\+Auto2D (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [slot]}}\hypertarget{class_main_window_a57bb2b74f849477d2033ea02c95d85fc}{}\label{class_main_window_a57bb2b74f849477d2033ea02c95d85fc}
+
+
+S\+L\+OT qui nettoie le attribut à la destruction de l\textquotesingle{}automate 1D méthode vituelle. 
+
+\index{Main\+Window@{Main\+Window}!close\+Event@{close\+Event}}
+\index{close\+Event@{close\+Event}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{close\+Event(\+Q\+Close\+Event $\ast$event)}{closeEvent(QCloseEvent *event)}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::close\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Close\+Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_main_window_a4e20a4a065fbb0e4d3532a45a0a91425}{}\label{class_main_window_a4e20a4a065fbb0e4d3532a45a0a91425}
+\index{Main\+Window@{Main\+Window}!create\+Dock\+Option@{create\+Dock\+Option}}
+\index{create\+Dock\+Option@{create\+Dock\+Option}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{create\+Dock\+Option()}{createDockOption()}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::create\+Dock\+Option (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\hypertarget{class_main_window_a57d11300ed1f37447626810acbcfd6c4}{}\label{class_main_window_a57d11300ed1f37447626810acbcfd6c4}
+
+
+construit les options méthode virtuelle privée utilisée dans le constructeur 
+
+\index{Main\+Window@{Main\+Window}!create\+Mdi\+Area@{create\+Mdi\+Area}}
+\index{create\+Mdi\+Area@{create\+Mdi\+Area}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{create\+Mdi\+Area()}{createMdiArea()}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::create\+Mdi\+Area (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\hypertarget{class_main_window_a6de156fdb121e0c7f7b940eca3633087}{}\label{class_main_window_a6de156fdb121e0c7f7b940eca3633087}
+
+
+construit la zone centrale méthode virtuelle privée utilisée dans le constructeur 
+
+\index{Main\+Window@{Main\+Window}!create\+Option1D@{create\+Option1D}}
+\index{create\+Option1D@{create\+Option1D}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{create\+Option1\+D()}{createOption1D()}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::create\+Option1D (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\hypertarget{class_main_window_a8ab1b6ec65be939f3f3927e2fff93756}{}\label{class_main_window_a8ab1b6ec65be939f3f3927e2fff93756}
+
+
+construit les options pour l\textquotesingle{}automate1D méthode virtuelle privée utilisée dans le constructeur 
+
+\index{Main\+Window@{Main\+Window}!create\+Option2D@{create\+Option2D}}
+\index{create\+Option2D@{create\+Option2D}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{create\+Option2\+D()}{createOption2D()}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::create\+Option2D (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\hypertarget{class_main_window_a45eb73f1c5f7a104c6bb7d14c281435c}{}\label{class_main_window_a45eb73f1c5f7a104c6bb7d14c281435c}
+
+
+construit les options pour l\textquotesingle{}automate2D méthode virtuelle privée utilisée dans le constructeur 
+
+\index{Main\+Window@{Main\+Window}!create\+Tool\+Bar@{create\+Tool\+Bar}}
+\index{create\+Tool\+Bar@{create\+Tool\+Bar}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{create\+Tool\+Bar()}{createToolBar()}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::create\+Tool\+Bar (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\hypertarget{class_main_window_aeb57235ebc08860e680132db167c09b4}{}\label{class_main_window_aeb57235ebc08860e680132db167c09b4}
+
+
+construit la barre d\textquotesingle{}outil méthode virtuelle privée utilisée dans le constructeur 
+
+\index{Main\+Window@{Main\+Window}!current@{current}}
+\index{current@{current}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{current}{current}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::current (
+\begin{DoxyParamCaption}
+\item[{Q\+Mdi\+Sub\+Window $\ast$}]{w}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}\hypertarget{class_main_window_a83229b428a4774bf75bebfb6a1ae2bfe}{}\label{class_main_window_a83229b428a4774bf75bebfb6a1ae2bfe}
+
+
+S\+L\+OT qui gère l\textquotesingle{}affichage des options en fonction de l\textquotesingle{}automate courant. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em w} & \+: automate\+Courant \+: Q\+Mdi\+Sub\+Window $\ast$ \\
+\hline
+\end{DoxyParams}
+\index{Main\+Window@{Main\+Window}!initialiseur@{initialiseur}}
+\index{initialiseur@{initialiseur}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{initialiseur}{initialiseur}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::initialiseur (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{class_main_window_a2ee1589220ee377441d94777ccef6c9f}{}\label{class_main_window_a2ee1589220ee377441d94777ccef6c9f}
+
+
+S\+L\+OT qui gère la génération d\textquotesingle{}un état initial aléatoire en fonction de l\textquotesingle{}automate courant. 
+
+\index{Main\+Window@{Main\+Window}!initialiseur\+Sym@{initialiseur\+Sym}}
+\index{initialiseur\+Sym@{initialiseur\+Sym}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{initialiseur\+Sym}{initialiseurSym}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::initialiseur\+Sym (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{class_main_window_a611ef20ef8820089fe62ea686f321456}{}\label{class_main_window_a611ef20ef8820089fe62ea686f321456}
+
+
+S\+L\+OT qui gère la génération d\textquotesingle{}un état initial symétrique en fonction de l\textquotesingle{}automate courant. 
+
+\index{Main\+Window@{Main\+Window}!open\+Sim@{open\+Sim}}
+\index{open\+Sim@{open\+Sim}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{open\+Sim}{openSim}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::open\+Sim (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}\hypertarget{class_main_window_a13e1e518cda3c3ef508f319e5230a425}{}\label{class_main_window_a13e1e518cda3c3ef508f319e5230a425}
+
+
+S\+L\+OT qui ouvre un automate choisit dans l\textquotesingle{}attribut membre choix\+Sim méthode vituelle. 
+
+\index{Main\+Window@{Main\+Window}!pause@{pause}}
+\index{pause@{pause}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{pause}{pause}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::pause (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{class_main_window_a17cb661f62805c510b99d9162ac8201a}{}\label{class_main_window_a17cb661f62805c510b99d9162ac8201a}
+
+
+S\+L\+OT qui gère l\textquotesingle{}arrêt de l\textquotesingle{}automate courant. 
+
+\index{Main\+Window@{Main\+Window}!play@{play}}
+\index{play@{play}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{play}{play}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::play (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}\hypertarget{class_main_window_a4f035b25b6181829a9275155e3ca9bbd}{}\label{class_main_window_a4f035b25b6181829a9275155e3ca9bbd}
+
+
+S\+L\+OT qui gère la lecture de l\textquotesingle{}automate courant. 
+
+\index{Main\+Window@{Main\+Window}!restore\+App\+State@{restore\+App\+State}}
+\index{restore\+App\+State@{restore\+App\+State}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{restore\+App\+State()}{restoreAppState()}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::restore\+App\+State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_main_window_ab1dbe77cfb9a4876733a540614afdec0}{}\label{class_main_window_ab1dbe77cfb9a4876733a540614afdec0}
+\index{Main\+Window@{Main\+Window}!save\+App\+State@{save\+App\+State}}
+\index{save\+App\+State@{save\+App\+State}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{save\+App\+State()}{saveAppState()}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::save\+App\+State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_main_window_a94b693e3fa35f35ba200d2427b9cd419}{}\label{class_main_window_a94b693e3fa35f35ba200d2427b9cd419}
+
+
+\subsection{Documentation des données membres}
+\index{Main\+Window@{Main\+Window}!action@{action}}
+\index{action@{action}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{action}{action}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$Q\+Action $\ast$$>$ Main\+Window\+::action\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_a03fc8c2845f51b55f2b733c9ad66a0c8}{}\label{class_main_window_a03fc8c2845f51b55f2b733c9ad66a0c8}
+action de la barre d\textquotesingle{}outil \index{Main\+Window@{Main\+Window}!auto1D@{auto1D}}
+\index{auto1D@{auto1D}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{auto1D}{auto1D}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Autocell1D} $\ast$ Main\+Window\+::auto1D = nullptr\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\hypertarget{class_main_window_a252b3e10b17bf529c25b4e72be4b4332}{}\label{class_main_window_a252b3e10b17bf529c25b4e72be4b4332}
+attribut static pour l\textquotesingle{}automate 1D (on peut en construire qu\textquotesingle{}un) \index{Main\+Window@{Main\+Window}!auto2D@{auto2D}}
+\index{auto2D@{auto2D}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{auto2D}{auto2D}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Autocell2D} $\ast$ Main\+Window\+::auto2D = nullptr\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\hypertarget{class_main_window_ae1a48aa4de447712675f3aa2d7482034}{}\label{class_main_window_ae1a48aa4de447712675f3aa2d7482034}
+attribut static pour l\textquotesingle{}automate 2D (on peut en construire qu\textquotesingle{}un) \index{Main\+Window@{Main\+Window}!box\+Cel@{box\+Cel}}
+\index{box\+Cel@{box\+Cel}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{box\+Cel}{boxCel}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Group\+Box$\ast$ Main\+Window\+::box\+Cel\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_ac7c010cdcd4cafe4a9ac0b87ad384b8a}{}\label{class_main_window_ac7c010cdcd4cafe4a9ac0b87ad384b8a}
+sous option cellule \index{Main\+Window@{Main\+Window}!box\+Cel2D@{box\+Cel2D}}
+\index{box\+Cel2D@{box\+Cel2D}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{box\+Cel2D}{boxCel2D}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Group\+Box$\ast$ Main\+Window\+::box\+Cel2D\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_a1d591f82ca53c455c4a5204f8baad925}{}\label{class_main_window_a1d591f82ca53c455c4a5204f8baad925}
+sous option Cellule \index{Main\+Window@{Main\+Window}!box\+Dim@{box\+Dim}}
+\index{box\+Dim@{box\+Dim}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{box\+Dim}{boxDim}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Group\+Box$\ast$ Main\+Window\+::box\+Dim\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_a69406bb359d08dd42c0a05957ae89b51}{}\label{class_main_window_a69406bb359d08dd42c0a05957ae89b51}
+sous option dimension \index{Main\+Window@{Main\+Window}!box\+Dim2D@{box\+Dim2D}}
+\index{box\+Dim2D@{box\+Dim2D}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{box\+Dim2D}{boxDim2D}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Group\+Box$\ast$ Main\+Window\+::box\+Dim2D\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_ad25e047b431ec6c6d244c9d4a3355582}{}\label{class_main_window_ad25e047b431ec6c6d244c9d4a3355582}
+sous option dimension \index{Main\+Window@{Main\+Window}!box\+Param2D@{box\+Param2D}}
+\index{box\+Param2D@{box\+Param2D}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{box\+Param2D}{boxParam2D}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Group\+Box$\ast$ Main\+Window\+::box\+Param2D\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_aa758e230a66e84a946b125af5df55618}{}\label{class_main_window_aa758e230a66e84a946b125af5df55618}
+sous option paramètre \index{Main\+Window@{Main\+Window}!central@{central}}
+\index{central@{central}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{central}{central}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Mdi\+Area$\ast$ Main\+Window\+::central\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_a9c7c0dfa79f78e05a3745962c680cd18}{}\label{class_main_window_a9c7c0dfa79f78e05a3745962c680cd18}
+représente la zone centrale de l\textquotesingle{}application ou seront chargé les automates \index{Main\+Window@{Main\+Window}!choix\+Sim@{choix\+Sim}}
+\index{choix\+Sim@{choix\+Sim}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{choix\+Sim}{choixSim}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Combo\+Box$\ast$ Main\+Window\+::choix\+Sim\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_a11ee55d02a2bccaf673267f930bc0f90}{}\label{class_main_window_a11ee55d02a2bccaf673267f930bc0f90}
+Permet le choix de l\textquotesingle{}automate qu\textquotesingle{}on veut lancer \index{Main\+Window@{Main\+Window}!couleur@{couleur}}
+\index{couleur@{couleur}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{couleur}{couleur}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Combo\+Box$\ast$ Main\+Window\+::couleur\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_aae0246fdb4536b62a90c2fd39fef98ab}{}\label{class_main_window_aae0246fdb4536b62a90c2fd39fef98ab}
+Couleur des cellules 1D \index{Main\+Window@{Main\+Window}!haut2D@{haut2D}}
+\index{haut2D@{haut2D}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{haut2D}{haut2D}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Spin\+Box$\ast$ Main\+Window\+::haut2D\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_aea127325b7c01f02b7a98b17595326bb}{}\label{class_main_window_aea127325b7c01f02b7a98b17595326bb}
+Hauteur \index{Main\+Window@{Main\+Window}!icon@{icon}}
+\index{icon@{icon}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{icon}{icon}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$Q\+Icon $\ast$$>$ Main\+Window\+::icon\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_ab903c7e6c6310d5ae1455d5935ec446a}{}\label{class_main_window_ab903c7e6c6310d5ae1455d5935ec446a}
+icone de la barre d\textquotesingle{}outil \index{Main\+Window@{Main\+Window}!label@{label}}
+\index{label@{label}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{label}{label}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$Q\+Label $\ast$$>$ Main\+Window\+::label\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_a4d2abb2a3dc6e601f8ed99ec58879f79}{}\label{class_main_window_a4d2abb2a3dc6e601f8ed99ec58879f79}
+text de la barre d\textquotesingle{}outil \index{Main\+Window@{Main\+Window}!larg1D@{larg1D}}
+\index{larg1D@{larg1D}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{larg1D}{larg1D}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Spin\+Box$\ast$ Main\+Window\+::larg1D\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_a8ea57e6e7e57cbe0e03ebb75a385439a}{}\label{class_main_window_a8ea57e6e7e57cbe0e03ebb75a385439a}
+sous option dimension \index{Main\+Window@{Main\+Window}!larg2D@{larg2D}}
+\index{larg2D@{larg2D}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{larg2D}{larg2D}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Spin\+Box$\ast$ Main\+Window\+::larg2D\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_af66e8d082f97a24629399dec9da7aa03}{}\label{class_main_window_af66e8d082f97a24629399dec9da7aa03}
+Largeur \index{Main\+Window@{Main\+Window}!layout1D@{layout1D}}
+\index{layout1D@{layout1D}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{layout1D}{layout1D}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Grid\+Layout$\ast$ Main\+Window\+::layout1D\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_a25605b8d3fa4ec4b5cef93bb266136e7}{}\label{class_main_window_a25605b8d3fa4ec4b5cef93bb266136e7}
+layout principal des options 1D \index{Main\+Window@{Main\+Window}!layout2D@{layout2D}}
+\index{layout2D@{layout2D}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{layout2D}{layout2D}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Grid\+Layout$\ast$ Main\+Window\+::layout2D\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_a648672720c15d3b363c131c91408422d}{}\label{class_main_window_a648672720c15d3b363c131c91408422d}
+layout principal des options 1D \index{Main\+Window@{Main\+Window}!layout\+Box\+Cel@{layout\+Box\+Cel}}
+\index{layout\+Box\+Cel@{layout\+Box\+Cel}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{layout\+Box\+Cel}{layoutBoxCel}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Grid\+Layout$\ast$ Main\+Window\+::layout\+Box\+Cel\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_accffbd02cf5f6e812592410d90a2bf01}{}\label{class_main_window_accffbd02cf5f6e812592410d90a2bf01}
+layout des sous option cellule \index{Main\+Window@{Main\+Window}!layout\+Box\+Cel2D@{layout\+Box\+Cel2D}}
+\index{layout\+Box\+Cel2D@{layout\+Box\+Cel2D}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{layout\+Box\+Cel2D}{layoutBoxCel2D}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Grid\+Layout$\ast$ Main\+Window\+::layout\+Box\+Cel2D\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_a69d0a438a34120f96b7394136ee13a15}{}\label{class_main_window_a69d0a438a34120f96b7394136ee13a15}
+layout des sous option cellule 2D \index{Main\+Window@{Main\+Window}!layout\+Box\+Dim@{layout\+Box\+Dim}}
+\index{layout\+Box\+Dim@{layout\+Box\+Dim}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{layout\+Box\+Dim}{layoutBoxDim}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Grid\+Layout$\ast$ Main\+Window\+::layout\+Box\+Dim\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_a1827baeeedb3477f4fd4c705aedda5c1}{}\label{class_main_window_a1827baeeedb3477f4fd4c705aedda5c1}
+layout des sous option dimension \index{Main\+Window@{Main\+Window}!layout\+Box\+Dim2D@{layout\+Box\+Dim2D}}
+\index{layout\+Box\+Dim2D@{layout\+Box\+Dim2D}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{layout\+Box\+Dim2D}{layoutBoxDim2D}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Grid\+Layout$\ast$ Main\+Window\+::layout\+Box\+Dim2D\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_a7ab6b649b9761ce29bcda27ebbbe9ccd}{}\label{class_main_window_a7ab6b649b9761ce29bcda27ebbbe9ccd}
+layout des sous option dimension 2D \index{Main\+Window@{Main\+Window}!layout\+Box\+Param2D@{layout\+Box\+Param2D}}
+\index{layout\+Box\+Param2D@{layout\+Box\+Param2D}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{layout\+Box\+Param2D}{layoutBoxParam2D}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Grid\+Layout$\ast$ Main\+Window\+::layout\+Box\+Param2D\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_af5faffe7dcb929efd6cf1a1b823c99a1}{}\label{class_main_window_af5faffe7dcb929efd6cf1a1b823c99a1}
+layout des sous option paramètre 2D \index{Main\+Window@{Main\+Window}!mode2D@{mode2D}}
+\index{mode2D@{mode2D}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{mode2D}{mode2D}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Combo\+Box$\ast$ Main\+Window\+::mode2D\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_aaba4f5a028019a18aae76c21d3ffa0d5}{}\label{class_main_window_aaba4f5a028019a18aae76c21d3ffa0d5}
+mode de lecture 2D \index{Main\+Window@{Main\+Window}!nb\+Sim1D@{nb\+Sim1D}}
+\index{nb\+Sim1D@{nb\+Sim1D}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{nb\+Sim1D}{nbSim1D}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Spin\+Box$\ast$ Main\+Window\+::nb\+Sim1D\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_adf5c1f107d4ba21b762ddde7c9284f57}{}\label{class_main_window_adf5c1f107d4ba21b762ddde7c9284f57}
+Nombre de simulation \index{Main\+Window@{Main\+Window}!option1D@{option1D}}
+\index{option1D@{option1D}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{option1D}{option1D}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Widget$\ast$ Main\+Window\+::option1D\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_a676e5f857b1b37f685cce4d1b53e221c}{}\label{class_main_window_a676e5f857b1b37f685cce4d1b53e221c}
+représente les options de l\textquotesingle{}automate1D \index{Main\+Window@{Main\+Window}!option2D@{option2D}}
+\index{option2D@{option2D}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{option2D}{option2D}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Widget$\ast$ Main\+Window\+::option2D\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_abe71dc980ca6f6a52d5d0f9bf0902dff}{}\label{class_main_window_abe71dc980ca6f6a52d5d0f9bf0902dff}
+représente les options de l\textquotesingle{}automate2D \index{Main\+Window@{Main\+Window}!option\+Dock@{option\+Dock}}
+\index{option\+Dock@{option\+Dock}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{option\+Dock}{optionDock}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Dock\+Widget$\ast$ Main\+Window\+::option\+Dock\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_a2cfa6cfbdcaba78e37d9dd17847dd620}{}\label{class_main_window_a2cfa6cfbdcaba78e37d9dd17847dd620}
+option \index{Main\+Window@{Main\+Window}!regle1D@{regle1D}}
+\index{regle1D@{regle1D}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{regle1D}{regle1D}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Spin\+Box$\ast$ Main\+Window\+::regle1D\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_ad652e5a8e2bbf95af39779853bab4142}{}\label{class_main_window_ad652e5a8e2bbf95af39779853bab4142}
+Numéro de la règle de transition \index{Main\+Window@{Main\+Window}!speed2D@{speed2D}}
+\index{speed2D@{speed2D}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{speed2D}{speed2D}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Spin\+Box$\ast$ Main\+Window\+::speed2D\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_a062e8ba0040a577871dd29cadbade31b}{}\label{class_main_window_a062e8ba0040a577871dd29cadbade31b}
+Delai entre chaque simulation \index{Main\+Window@{Main\+Window}!sub\+Win@{sub\+Win}}
+\index{sub\+Win@{sub\+Win}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{sub\+Win}{subWin}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Mdi\+Sub\+Window$\ast$ Main\+Window\+::sub\+Win\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_ac18cc180f7f4908f63ce91487bf044cd}{}\label{class_main_window_ac18cc180f7f4908f63ce91487bf044cd}
+représente la la sub\+Window de l\textquotesingle{}automate 1D \index{Main\+Window@{Main\+Window}!sub\+Win2D@{sub\+Win2D}}
+\index{sub\+Win2D@{sub\+Win2D}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{sub\+Win2D}{subWin2D}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Mdi\+Sub\+Window$\ast$ Main\+Window\+::sub\+Win2D\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_a9e6a20036bfb2fe795858f32b0f72282}{}\label{class_main_window_a9e6a20036bfb2fe795858f32b0f72282}
+représente la la sub\+Window de l\textquotesingle{}automate 2D \index{Main\+Window@{Main\+Window}!taille@{taille}}
+\index{taille@{taille}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{taille}{taille}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Spin\+Box$\ast$ Main\+Window\+::taille\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_a4ee0dd35b93263abed8d50c2517632e2}{}\label{class_main_window_a4ee0dd35b93263abed8d50c2517632e2}
+taille des cellules \index{Main\+Window@{Main\+Window}!tool\+Bar@{tool\+Bar}}
+\index{tool\+Bar@{tool\+Bar}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{tool\+Bar}{toolBar}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Tool\+Bar$\ast$ Main\+Window\+::tool\+Bar\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_main_window_a10d2a8149dc4da0a7df5ee9e4e189721}{}\label{class_main_window_a10d2a8149dc4da0a7df5ee9e4e189721}
+barre d\textquotesingle{}outil 
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+info/\+L\+O21/\+L\+O21/\+Auto\+Cell/\hyperlink{mainwindow_8h}{mainwindow.\+h}\item 
+info/\+L\+O21/\+L\+O21/\+Auto\+Cell/\hyperlink{mainwindow_8cpp}{mainwindow.\+cpp}\end{DoxyCompactItemize}

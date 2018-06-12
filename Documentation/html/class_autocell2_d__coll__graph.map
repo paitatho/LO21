@@ -1,0 +1,4 @@
+<map id="Autocell2D" name="Autocell2D">
+<area shape="rect" id="node2" href="$class_autocell.html" title="Classe abstraite. La classe généralise un Autocell et définie les méthodes virtuelles qui devront êtr..." alt="" coords="5,81,75,108"/>
+<area shape="rect" id="node4" href="$class_regle2_d.html" title="Hérite de QWidget. La classe Regle2D permet d&#39;entrer une règle pour un autocell2D (classe Automate2D ..." alt="" coords="99,81,173,108"/>
+</map>

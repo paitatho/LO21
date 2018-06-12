@@ -1,0 +1,186 @@
+\hypertarget{class_automate_manager}{}\section{Référence de la classe Automate\+Manager}
+\label{class_automate_manager}\index{Automate\+Manager@{Automate\+Manager}}
+
+
+La classe permet de gèrer les automates.  
+
+
+
+
+{\ttfamily \#include $<$Automate1\+D.\+h$>$}
+
+
+
+Graphe de collaboration de Automate\+Manager\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{class_automate_manager__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{class_automate1_d}{Automate1D} \& \hyperlink{class_automate_manager_a534cff7abbced831621b521e8fb2e56c}{get\+Automate} (short unsigned int num)
+\begin{DoxyCompactList}\small\item\em retourne un automate1D \end{DoxyCompactList}\item 
+const \hyperlink{class_automate1_d}{Automate1D} \& \hyperlink{class_automate_manager_ad6321c641c0c79e237ea65a880ff13ed}{get\+Automate} (const std\+::string \&numbit)
+\begin{DoxyCompactList}\small\item\em retourne un automate1D \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Fonctions membres publiques statiques}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_automate_manager}{Automate\+Manager} \& \hyperlink{class_automate_manager_aea2798eaed147913d2ca18090147fb57}{get\+Instance} ()
+\begin{DoxyCompactList}\small\item\em Méthode statique. \end{DoxyCompactList}\item 
+static void \hyperlink{class_automate_manager_a586e331de853505a7f6a7c8d50a42248}{free\+Istance} ()
+\begin{DoxyCompactList}\small\item\em Méthode statique libère l\textquotesingle{}automate manager. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Fonctions membres protégées}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_automate_manager_a75225270782fb3b8bf593c9f8a0787fa}{Automate\+Manager} ()
+\begin{DoxyCompactList}\small\item\em Constructeur Protected. \end{DoxyCompactList}\item 
+\hyperlink{class_automate_manager_a8733cbdcc283258677bcf4c9cdf26384}{$\sim$\+Automate\+Manager} ()
+\begin{DoxyCompactList}\small\item\em Destructeur Protected. \end{DoxyCompactList}\item 
+\hyperlink{class_automate_manager_a855de28e9c3f99ae576f8ce217779af1}{Automate\+Manager} (const \hyperlink{class_automate_manager}{Automate\+Manager} \&)=delete
+\begin{DoxyCompactList}\small\item\em Constructeur de recopie supprimé \end{DoxyCompactList}\item 
+\hyperlink{class_automate_manager}{Automate\+Manager} \& \hyperlink{class_automate_manager_aa8210055a20404b52d77d6338b17edcd}{operator=} (const \hyperlink{class_automate_manager}{Automate\+Manager} \&)
+\begin{DoxyCompactList}\small\item\em Opérateur d\textquotesingle{}affectation protected. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \hyperlink{class_automate1_d}{Automate1D} $\ast$ $>$ \hyperlink{class_automate_manager_a0074ef7d42f91a9c9bfc14f85e09947b}{m\+\_\+tab\+Automate}
+\end{DoxyCompactItemize}
+\subsection*{Attributs privés statiques}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_automate_manager}{Automate\+Manager} $\ast$ \hyperlink{class_automate_manager_ae4fbe0d2ddc84231626cd912aeb0f792}{m\+\_\+automate\+Manager} = nullptr
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+La classe permet de gèrer les automates. 
+
+\subsection{Documentation des constructeurs et destructeur}
+\index{Automate\+Manager@{Automate\+Manager}!Automate\+Manager@{Automate\+Manager}}
+\index{Automate\+Manager@{Automate\+Manager}!Automate\+Manager@{Automate\+Manager}}
+\subsubsection[{\texorpdfstring{Automate\+Manager()}{AutomateManager()}}]{\setlength{\rightskip}{0pt plus 5cm}Automate\+Manager\+::\+Automate\+Manager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_automate_manager_a75225270782fb3b8bf593c9f8a0787fa}{}\label{class_automate_manager_a75225270782fb3b8bf593c9f8a0787fa}
+
+
+Constructeur Protected. 
+
+\index{Automate\+Manager@{Automate\+Manager}!````~Automate\+Manager@{$\sim$\+Automate\+Manager}}
+\index{````~Automate\+Manager@{$\sim$\+Automate\+Manager}!Automate\+Manager@{Automate\+Manager}}
+\subsubsection[{\texorpdfstring{$\sim$\+Automate\+Manager()}{~AutomateManager()}}]{\setlength{\rightskip}{0pt plus 5cm}Automate\+Manager\+::$\sim$\+Automate\+Manager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_automate_manager_a8733cbdcc283258677bcf4c9cdf26384}{}\label{class_automate_manager_a8733cbdcc283258677bcf4c9cdf26384}
+
+
+Destructeur Protected. 
+
+\index{Automate\+Manager@{Automate\+Manager}!Automate\+Manager@{Automate\+Manager}}
+\index{Automate\+Manager@{Automate\+Manager}!Automate\+Manager@{Automate\+Manager}}
+\subsubsection[{\texorpdfstring{Automate\+Manager(const Automate\+Manager \&)=delete}{AutomateManager(const AutomateManager &)=delete}}]{\setlength{\rightskip}{0pt plus 5cm}Automate\+Manager\+::\+Automate\+Manager (
+\begin{DoxyParamCaption}
+\item[{const {\bf Automate\+Manager} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [delete]}}\hypertarget{class_automate_manager_a855de28e9c3f99ae576f8ce217779af1}{}\label{class_automate_manager_a855de28e9c3f99ae576f8ce217779af1}
+
+
+Constructeur de recopie supprimé 
+
+
+
+\subsection{Documentation des fonctions membres}
+\index{Automate\+Manager@{Automate\+Manager}!free\+Istance@{free\+Istance}}
+\index{free\+Istance@{free\+Istance}!Automate\+Manager@{Automate\+Manager}}
+\subsubsection[{\texorpdfstring{free\+Istance()}{freeIstance()}}]{\setlength{\rightskip}{0pt plus 5cm}void Automate\+Manager\+::free\+Istance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_automate_manager_a586e331de853505a7f6a7c8d50a42248}{}\label{class_automate_manager_a586e331de853505a7f6a7c8d50a42248}
+
+
+Méthode statique libère l\textquotesingle{}automate manager. 
+
+\index{Automate\+Manager@{Automate\+Manager}!get\+Automate@{get\+Automate}}
+\index{get\+Automate@{get\+Automate}!Automate\+Manager@{Automate\+Manager}}
+\subsubsection[{\texorpdfstring{get\+Automate(short unsigned int num)}{getAutomate(short unsigned int num)}}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Automate1D} \& Automate\+Manager\+::get\+Automate (
+\begin{DoxyParamCaption}
+\item[{short unsigned int}]{num}
+\end{DoxyParamCaption}
+)}\hypertarget{class_automate_manager_a534cff7abbced831621b521e8fb2e56c}{}\label{class_automate_manager_a534cff7abbced831621b521e8fb2e56c}
+
+
+retourne un automate1D 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em num} & \+: numéro de la règle \+: short unsigned int \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+const \hyperlink{class_automate1_d}{Automate1D}\& 
+\end{DoxyReturn}
+\index{Automate\+Manager@{Automate\+Manager}!get\+Automate@{get\+Automate}}
+\index{get\+Automate@{get\+Automate}!Automate\+Manager@{Automate\+Manager}}
+\subsubsection[{\texorpdfstring{get\+Automate(const std\+::string \&numbit)}{getAutomate(const std::string &numbit)}}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Automate1D} \& Automate\+Manager\+::get\+Automate (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{numbit}
+\end{DoxyParamCaption}
+)}\hypertarget{class_automate_manager_ad6321c641c0c79e237ea65a880ff13ed}{}\label{class_automate_manager_ad6321c641c0c79e237ea65a880ff13ed}
+
+
+retourne un automate1D 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em numbit} & \+: numéro de la règle \+: const std\+::string\& \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+const \hyperlink{class_automate1_d}{Automate1D}\& 
+\end{DoxyReturn}
+\index{Automate\+Manager@{Automate\+Manager}!get\+Instance@{get\+Instance}}
+\index{get\+Instance@{get\+Instance}!Automate\+Manager@{Automate\+Manager}}
+\subsubsection[{\texorpdfstring{get\+Instance()}{getInstance()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Automate\+Manager} \& Automate\+Manager\+::get\+Instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_automate_manager_aea2798eaed147913d2ca18090147fb57}{}\label{class_automate_manager_aea2798eaed147913d2ca18090147fb57}
+
+
+Méthode statique. 
+
+\begin{DoxyReturn}{Renvoie}
+m\+\_\+automate\+Manager \+: \hyperlink{class_automate_manager}{Automate\+Manager}\& 
+\end{DoxyReturn}
+\index{Automate\+Manager@{Automate\+Manager}!operator=@{operator=}}
+\index{operator=@{operator=}!Automate\+Manager@{Automate\+Manager}}
+\subsubsection[{\texorpdfstring{operator=(const Automate\+Manager \&)}{operator=(const AutomateManager &)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Automate\+Manager}\& Automate\+Manager\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Automate\+Manager} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_automate_manager_aa8210055a20404b52d77d6338b17edcd}{}\label{class_automate_manager_aa8210055a20404b52d77d6338b17edcd}
+
+
+Opérateur d\textquotesingle{}affectation protected. 
+
+
+
+\subsection{Documentation des données membres}
+\index{Automate\+Manager@{Automate\+Manager}!m\+\_\+automate\+Manager@{m\+\_\+automate\+Manager}}
+\index{m\+\_\+automate\+Manager@{m\+\_\+automate\+Manager}!Automate\+Manager@{Automate\+Manager}}
+\subsubsection[{\texorpdfstring{m\+\_\+automate\+Manager}{m_automateManager}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Automate\+Manager} $\ast$ Automate\+Manager\+::m\+\_\+automate\+Manager = nullptr\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\hypertarget{class_automate_manager_ae4fbe0d2ddc84231626cd912aeb0f792}{}\label{class_automate_manager_ae4fbe0d2ddc84231626cd912aeb0f792}
+Singleton \index{Automate\+Manager@{Automate\+Manager}!m\+\_\+tab\+Automate@{m\+\_\+tab\+Automate}}
+\index{m\+\_\+tab\+Automate@{m\+\_\+tab\+Automate}!Automate\+Manager@{Automate\+Manager}}
+\subsubsection[{\texorpdfstring{m\+\_\+tab\+Automate}{m_tabAutomate}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf Automate1D}$\ast$$>$ Automate\+Manager\+::m\+\_\+tab\+Automate\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_automate_manager_a0074ef7d42f91a9c9bfc14f85e09947b}{}\label{class_automate_manager_a0074ef7d42f91a9c9bfc14f85e09947b}
+Stocke tous les automate1D 
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+info/\+L\+O21/\+L\+O21/\+Auto\+Cell/\hyperlink{_automate1_d_8h}{Automate1\+D.\+h}\item 
+info/\+L\+O21/\+L\+O21/\+Auto\+Cell/\hyperlink{_automate1_d_8cpp}{Automate1\+D.\+cpp}\end{DoxyCompactItemize}

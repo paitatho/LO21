@@ -1,0 +1,26 @@
+var annotated_dup =
+[
+    [ "Autocell", "class_autocell.html", "class_autocell" ],
+    [ "Autocell1D", "class_autocell1_d.html", "class_autocell1_d" ],
+    [ "Autocell2D", "class_autocell2_d.html", "class_autocell2_d" ],
+    [ "Autocell2DBis", "class_autocell2_d_bis.html", "class_autocell2_d_bis" ],
+    [ "Automate", "class_automate.html", "class_automate" ],
+    [ "Automate1D", "class_automate1_d.html", "class_automate1_d" ],
+    [ "Automate2D", "class_automate2_d.html", "class_automate2_d" ],
+    [ "AutomateException", "class_automate_exception.html", "class_automate_exception" ],
+    [ "AutomateManager", "class_automate_manager.html", "class_automate_manager" ],
+    [ "Etat", "class_etat.html", "class_etat" ],
+    [ "Etat1D", "class_etat1_d.html", "class_etat1_d" ],
+    [ "Etat2D", "class_etat2_d.html", "class_etat2_d" ],
+    [ "MainWindow", "class_main_window.html", "class_main_window" ],
+    [ "qt_meta_stringdata_Autocell1D_t", "structqt__meta__stringdata___autocell1_d__t.html", "structqt__meta__stringdata___autocell1_d__t" ],
+    [ "qt_meta_stringdata_Autocell2D_t", "structqt__meta__stringdata___autocell2_d__t.html", "structqt__meta__stringdata___autocell2_d__t" ],
+    [ "qt_meta_stringdata_Autocell_t", "structqt__meta__stringdata___autocell__t.html", "structqt__meta__stringdata___autocell__t" ],
+    [ "qt_meta_stringdata_MainWindow_t", "structqt__meta__stringdata___main_window__t.html", "structqt__meta__stringdata___main_window__t" ],
+    [ "qt_meta_stringdata_Regle2D_t", "structqt__meta__stringdata___regle2_d__t.html", "structqt__meta__stringdata___regle2_d__t" ],
+    [ "qt_meta_stringdata_WSpacer_t", "structqt__meta__stringdata___w_spacer__t.html", "structqt__meta__stringdata___w_spacer__t" ],
+    [ "Regle2D", "class_regle2_d.html", "class_regle2_d" ],
+    [ "Regle2DBis", "class_regle2_d_bis.html", "class_regle2_d_bis" ],
+    [ "Simulateur", "class_simulateur.html", "class_simulateur" ],
+    [ "WSpacer", "class_w_spacer.html", "class_w_spacer" ]
+];
