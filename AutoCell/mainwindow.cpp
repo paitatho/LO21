@@ -542,6 +542,7 @@ void MainWindow::saveAutomate(){
         writer.writeStartDocument();
 
         // Élément racine du fichier XML
+        writer.writeStartElement("racine");
         writer.writeStartElement("Infos");
         writer.writeEmptyElement("typeAutomate");
         writer.writeAttribute("value", choixSim->currentText());
@@ -567,6 +568,7 @@ void MainWindow::saveAutomate(){
             }
 
         writer.writeEndElement();
+        writer.writeEndElement();
         writer.writeEndDocument();
 
     }
@@ -585,6 +587,7 @@ void MainWindow::saveAutomate(){
         writer.writeStartDocument();
 
         // Élément racine du fichier XML
+        writer.writeStartElement("racine");
         writer.writeStartElement("Infos");
         writer.writeEmptyElement("typeAutomate");
         writer.writeAttribute("value", choixSim->currentText());
@@ -635,8 +638,85 @@ void MainWindow::saveAutomate(){
 
         }
         writer.writeEndElement();
+        writer.writeEndElement();
         writer.writeEndDocument();
     }
 }
 
-void MainWindow::loadAutomate(){}
+void MainWindow::loadAutomate(){
+
+    QString fileXmlName = QFileDialog::getOpenFileName(this, "Enregistrer sous", QDir::homePath(), "XML (*.xml)");
+    QFile file(fileXmlName);
+    QXmlStreamReader xml(&file);
+    QString typeAutomate;
+    std::cout<<fileXmlName.toStdString();
+
+    if(!file.open(QFile::ReadOnly)) { qDebug() << "Cannot read file" << file.errorString(); }
+    while(!xml.atEnd())
+    {
+        if(xml.isStartElement())
+        {
+            if(xml.name() == "Infos")
+            {
+                xml.readNext();
+                typeAutomate = xml.attributes().at(0).value().toString();
+
+                if(typeAutomate == "2D"){
+                    xml.readNext();
+                    larg2D->setValue(xml.attributes().at(0).value().toInt());
+                    xml.readNext();
+                    haut2D->setValue(xml.attributes().at(0).value().toInt());
+                    xml.readNext();
+                    speed2D->setValue(xml.attributes().at(0).value().toInt());
+                    xml.readNext();
+                    mode2D->setCurrentText(xml.attributes().at(0).value().toString());
+                    xml.readNext();
+                    openSim();
+                    Regle2D* fenetreRegle2D = auto2D->get_regle2D();
+                    fenetreRegle2D->setRegleBase(xml.attributes().at(0).value().toString());
+                    xml.readNext();
+                    fenetreRegle2D->setNbEtat(xml.attributes().at(0).value().toInt());
+                    xml.readNext();
+                    taille->setValue(xml.attributes().at(0).value().toInt());
+                    xml.readNext();
+
+                    for(unsigned int i=0; i<(fenetreRegle2D->get_nbEtat()->value()); ++i){
+                        fenetreRegle2D->setEtatCellulePourAppliquer(i, xml.attributes().at(0).value().toInt());
+                        xml.readNext();
+                        fenetreRegle2D->setCelluleACompter(i, xml.attributes().at(0).value().toInt());
+                        xml.readNext();
+                        fenetreRegle2D->setInterval(i, xml.attributes().at(0).value().toString());
+                        xml.readNext();
+                        fenetreRegle2D->setBorneInf(i, xml.attributes().at(0).value().toInt());
+                        xml.readNext();
+                        fenetreRegle2D->setBorneSup(i, xml.attributes().at(0).value().toInt());
+                        xml.readNext();
+                        fenetreRegle2D->setCouleur(i, xml.attributes().at(0).value().toString());
+                        xml.readNext();
+                    }
+                    fenetreRegle2D->sendRegle();
+                    xml.readNext();
+
+
+                }
+            }
+            if(xml.name() == "dernierEtat"){
+                if(typeAutomate == "2D"){
+                    if(xml.isStartElement())
+                    {
+                        if(xml.name() == "valCellule")
+                        {
+                            unsigned int i = xml.attributes().at(0).value().toInt();
+                            unsigned int j = xml.attributes().at(1).value().toInt();
+                            xml.readNext();
+                            const QString color = (xml.attributes().at(0).value().toString());
+                            auto2D->setEtats(i, j, color);
+                        }
+                        xml.readNext();
+                    }
+                }
+            }
+        }
+        xml.readNextStartElement();
+    }
+}
