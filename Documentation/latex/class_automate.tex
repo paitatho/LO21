@@ -1,0 +1,121 @@
+\hypertarget{class_automate}{}\section{Référence du modèle de la classe Automate$<$ T $>$}
+\label{class_automate}\index{Automate$<$ T $>$@{Automate$<$ T $>$}}
+
+
+Classe Template abstraite.  
+
+
+
+
+{\ttfamily \#include $<$Automate.\+h$>$}
+
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_automate_a3215065f896b7297a676219a0d80a045}{Automate} (unsigned short int nb\+Etat=2)
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
+void \hyperlink{class_automate_afcf89728c989465400a19174ef22dfa5}{set\+Nb\+Etat} (unsigned short int e)
+\begin{DoxyCompactList}\small\item\em change le nombre d\textquotesingle{}état \end{DoxyCompactList}\item 
+unsigned short int \hyperlink{class_automate_a80d9f6cfc6786ac21b51c4ab7fcb072d}{get\+Nb\+Etat} () const 
+\begin{DoxyCompactList}\small\item\em retourne le nombre d\textquotesingle{}état \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_automate_abfeaddcc8930b1f63a785cd5c6ff6dc5}{appliquer\+Transition} (const T \&, T \&) const =0
+\begin{DoxyCompactList}\small\item\em applique la transition entre deux quelconques donnés en paramètre Méthode virtuelle pure \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+unsigned short int \hyperlink{class_automate_aa3d97a653a0c0f20175237c03345d085}{m\+\_\+nb\+Etat}
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+\subsubsection*{template$<$class T$>$\\*
+class Automate$<$ T $>$}
+
+Classe Template abstraite. 
+
+La classe généralise un \hyperlink{class_automate}{Automate} et définie la méthodes virtuelle qui devra être présente et définie dans chaque \hyperlink{class_automate}{Automate}. (run\+Sim()) 
+
+\subsection{Documentation des constructeurs et destructeur}
+\index{Automate@{Automate}!Automate@{Automate}}
+\index{Automate@{Automate}!Automate@{Automate}}
+\subsubsection[{\texorpdfstring{Automate(unsigned short int nb\+Etat=2)}{Automate(unsigned short int nbEtat=2)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf Automate}$<$ T $>$\+::{\bf Automate} (
+\begin{DoxyParamCaption}
+\item[{unsigned short int}]{nb\+Etat = {\ttfamily 2}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_automate_a3215065f896b7297a676219a0d80a045}{}\label{class_automate_a3215065f896b7297a676219a0d80a045}
+
+
+Constructeur. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em nb\+Etat} & nombre d\textquotesingle{}états que peut prendre chaque cellule (2 par défaut)\+: unsigned short int \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentation des fonctions membres}
+\index{Automate@{Automate}!appliquer\+Transition@{appliquer\+Transition}}
+\index{appliquer\+Transition@{appliquer\+Transition}!Automate@{Automate}}
+\subsubsection[{\texorpdfstring{appliquer\+Transition(const T \&, T \&) const =0}{appliquerTransition(const T &, T &) const =0}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ virtual void {\bf Automate}$<$ T $>$\+::appliquer\+Transition (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{, }
+\item[{T \&}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_automate_abfeaddcc8930b1f63a785cd5c6ff6dc5}{}\label{class_automate_abfeaddcc8930b1f63a785cd5c6ff6dc5}
+
+
+applique la transition entre deux quelconques donnés en paramètre Méthode virtuelle pure 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em depart} & \+: const T\& \\
+\hline
+{\em destination} & \+: T\& \\
+\hline
+\end{DoxyParams}
+
+
+Implémenté dans \hyperlink{class_automate1_d_a46c4e3b65e6d657c93e54fcbbc022dc6}{Automate1D}, et \hyperlink{class_automate2_d_a2cbea145a6e7eff58528bcab31316365}{Automate2D}.
+
+\index{Automate@{Automate}!get\+Nb\+Etat@{get\+Nb\+Etat}}
+\index{get\+Nb\+Etat@{get\+Nb\+Etat}!Automate@{Automate}}
+\subsubsection[{\texorpdfstring{get\+Nb\+Etat() const }{getNbEtat() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ unsigned short int {\bf Automate}$<$ T $>$\+::get\+Nb\+Etat (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_automate_a80d9f6cfc6786ac21b51c4ab7fcb072d}{}\label{class_automate_a80d9f6cfc6786ac21b51c4ab7fcb072d}
+
+
+retourne le nombre d\textquotesingle{}état 
+
+\begin{DoxyReturn}{Renvoie}
+m\+\_\+nb\+Etat \+: unsigned short int 
+\end{DoxyReturn}
+\index{Automate@{Automate}!set\+Nb\+Etat@{set\+Nb\+Etat}}
+\index{set\+Nb\+Etat@{set\+Nb\+Etat}!Automate@{Automate}}
+\subsubsection[{\texorpdfstring{set\+Nb\+Etat(unsigned short int e)}{setNbEtat(unsigned short int e)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf Automate}$<$ T $>$\+::set\+Nb\+Etat (
+\begin{DoxyParamCaption}
+\item[{unsigned short int}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_automate_afcf89728c989465400a19174ef22dfa5}{}\label{class_automate_afcf89728c989465400a19174ef22dfa5}
+
+
+change le nombre d\textquotesingle{}état 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em e} & \+: nouveau nombre d\textquotesingle{}état \+:unsigned short int \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentation des données membres}
+\index{Automate@{Automate}!m\+\_\+nb\+Etat@{m\+\_\+nb\+Etat}}
+\index{m\+\_\+nb\+Etat@{m\+\_\+nb\+Etat}!Automate@{Automate}}
+\subsubsection[{\texorpdfstring{m\+\_\+nb\+Etat}{m_nbEtat}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ unsigned short int {\bf Automate}$<$ T $>$\+::m\+\_\+nb\+Etat\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_automate_aa3d97a653a0c0f20175237c03345d085}{}\label{class_automate_aa3d97a653a0c0f20175237c03345d085}
+Nombre d\textquotesingle{}état 
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+info/\+L\+O21/\+L\+O21/\+Auto\+Cell/\hyperlink{_automate_8h}{Automate.\+h}\end{DoxyCompactItemize}

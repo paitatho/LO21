@@ -1,0 +1,9 @@
+<map id="Graphe hiérarchique des classes" name="Graphe hiérarchique des classes">
+<area shape="rect" id="node2" href="$class_autocell.html" title="Classe abstraite. La classe généralise un Autocell et définie les méthodes virtuelles qui devront êtr..." alt="" coords="130,56,199,83"/>
+<area shape="rect" id="node6" href="$class_regle2_d.html" title="Hérite de QWidget. La classe Regle2D permet d&#39;entrer une règle pour un autocell2D (classe Automate2D ..." alt="" coords="128,107,201,133"/>
+<area shape="rect" id="node8" href="$class_w_spacer.html" title="hérite de QWidget met un espace dans la QToolBar " alt="" coords="127,157,203,184"/>
+<area shape="rect" id="node3" href="$class_autocell1_d.html" title="Hérite de Autocell. La classe Autocell1D permet de lancer des automates cellulaires à 1Dimensions (cl..." alt="" coords="253,5,340,32"/>
+<area shape="rect" id="node4" href="$class_autocell2_d.html" title="Hérite de Autocell. La classe Autocell2D permet de lancer des automates cellulaires à 2Dimensions (cl..." alt="" coords="253,56,340,83"/>
+<area shape="rect" id="node5" href="$class_autocell2_d_bis.html" title="Hérite de Autocell2D. La classe Autocell2DBis montre comment intégrer de nouvelles règles à un autoce..." alt="" coords="391,56,496,83"/>
+<area shape="rect" id="node7" href="$class_regle2_d_bis.html" title="Hérite de Regle2D La classe Regle2DBis montre comment intégrer de nouvelles règles à un autocell2D..." alt="" coords="251,107,343,133"/>
+</map>

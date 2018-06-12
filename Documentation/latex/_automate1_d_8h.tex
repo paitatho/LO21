@@ -1,0 +1,92 @@
+\hypertarget{_automate1_d_8h}{}\section{Référence du fichier info/\+L\+O21/\+L\+O21/\+Auto\+Cell/\+Automate1D.h}
+\label{_automate1_d_8h}\index{info/\+L\+O21/\+L\+O21/\+Auto\+Cell/\+Automate1\+D.\+h@{info/\+L\+O21/\+L\+O21/\+Auto\+Cell/\+Automate1\+D.\+h}}
+
+
+Implémente l\textquotesingle{}automate 1D ainsi que les Etats 1D.  
+
+
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include \char`\"{}Automate.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Etat.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Etat1\+D.\+h\char`\"{}}\\*
+Graphe des dépendances par inclusion de Automate1\+D.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_automate1_d_8h__incl}
+\end{center}
+\end{figure}
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_automate1_d_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_automate}{Automate$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em Classe Template abstraite. \end{DoxyCompactList}\item 
+class \hyperlink{class_simulateur}{Simulateur$<$ T1, T2 $>$}
+\begin{DoxyCompactList}\small\item\em Classe template permet de gérer la simulation de n\textquotesingle{}importe quel automate héritant de la Classe \hyperlink{class_automate}{Automate}. \end{DoxyCompactList}\item 
+class \hyperlink{class_automate1_d}{Automate1D}
+\begin{DoxyCompactList}\small\item\em hérite de \hyperlink{class_automate}{Automate$<$\+Etat1\+D$>$} \end{DoxyCompactList}\item 
+class \hyperlink{class_automate_manager}{Automate\+Manager}
+\begin{DoxyCompactList}\small\item\em La classe permet de gèrer les automates. \end{DoxyCompactList}\item 
+class \hyperlink{class_automate_exception}{Automate\+Exception}
+\begin{DoxyCompactList}\small\item\em permet d\textquotesingle{}envoyer des erreurs concernant les automates1D \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+short unsigned int \hyperlink{_automate1_d_8h_aaefffc64e67992ad922bc54ced3e3d50}{Num\+Bit\+To\+Num} (const std\+::string \&num)
+\item 
+std\+::string \hyperlink{_automate1_d_8h_abc9c082c2b96399293dac2d8455991af}{Num\+To\+Num\+Bit} (short unsigned int num)
+\item 
+std\+::ostream \& \hyperlink{_automate1_d_8h_a7dc827aae58435b83f54f62f9d95840c}{operator$<$$<$} (std\+::ostream \&flux, const \hyperlink{class_etat1_d}{Etat1D} \&etat)
+\item 
+std\+::ostream \& \hyperlink{_automate1_d_8h_a1e5ee432e2e308d12e8e5d8d49da2aed}{operator$<$$<$} (std\+::ostream \&flux, const \hyperlink{class_automate1_d}{Automate1D} \&automate)
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Implémente l\textquotesingle{}automate 1D ainsi que les Etats 1D. 
+
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\subsection{Documentation des fonctions}
+\index{Automate1\+D.\+h@{Automate1\+D.\+h}!Num\+Bit\+To\+Num@{Num\+Bit\+To\+Num}}
+\index{Num\+Bit\+To\+Num@{Num\+Bit\+To\+Num}!Automate1\+D.\+h@{Automate1\+D.\+h}}
+\subsubsection[{\texorpdfstring{Num\+Bit\+To\+Num(const std\+::string \&num)}{NumBitToNum(const std::string &num)}}]{\setlength{\rightskip}{0pt plus 5cm}short unsigned int Num\+Bit\+To\+Num (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{num}
+\end{DoxyParamCaption}
+)}\hypertarget{_automate1_d_8h_aaefffc64e67992ad922bc54ced3e3d50}{}\label{_automate1_d_8h_aaefffc64e67992ad922bc54ced3e3d50}
+\index{Automate1\+D.\+h@{Automate1\+D.\+h}!Num\+To\+Num\+Bit@{Num\+To\+Num\+Bit}}
+\index{Num\+To\+Num\+Bit@{Num\+To\+Num\+Bit}!Automate1\+D.\+h@{Automate1\+D.\+h}}
+\subsubsection[{\texorpdfstring{Num\+To\+Num\+Bit(short unsigned int num)}{NumToNumBit(short unsigned int num)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Num\+To\+Num\+Bit (
+\begin{DoxyParamCaption}
+\item[{short unsigned int}]{num}
+\end{DoxyParamCaption}
+)}\hypertarget{_automate1_d_8h_abc9c082c2b96399293dac2d8455991af}{}\label{_automate1_d_8h_abc9c082c2b96399293dac2d8455991af}
+\index{Automate1\+D.\+h@{Automate1\+D.\+h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Automate1\+D.\+h@{Automate1\+D.\+h}}
+\subsubsection[{\texorpdfstring{operator$<$$<$(std\+::ostream \&flux, const Etat1\+D \&etat)}{operator<<(std::ostream &flux, const Etat1D &etat)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{flux, }
+\item[{const {\bf Etat1D} \&}]{etat}
+\end{DoxyParamCaption}
+)}\hypertarget{_automate1_d_8h_a7dc827aae58435b83f54f62f9d95840c}{}\label{_automate1_d_8h_a7dc827aae58435b83f54f62f9d95840c}
+\index{Automate1\+D.\+h@{Automate1\+D.\+h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Automate1\+D.\+h@{Automate1\+D.\+h}}
+\subsubsection[{\texorpdfstring{operator$<$$<$(std\+::ostream \&flux, const Automate1\+D \&automate)}{operator<<(std::ostream &flux, const Automate1D &automate)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{flux, }
+\item[{const {\bf Automate1D} \&}]{automate}
+\end{DoxyParamCaption}
+)}\hypertarget{_automate1_d_8h_a1e5ee432e2e308d12e8e5d8d49da2aed}{}\label{_automate1_d_8h_a1e5ee432e2e308d12e8e5d8d49da2aed}

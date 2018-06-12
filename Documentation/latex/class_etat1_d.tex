@@ -1,0 +1,254 @@
+\hypertarget{class_etat1_d}{}\section{Référence de la classe Etat1D}
+\label{class_etat1_d}\index{Etat1D@{Etat1D}}
+
+
+hérite de \hyperlink{class_etat}{Etat} permet d\textquotesingle{}envoyer des erreurs concernant les automates1D  
+
+
+
+
+{\ttfamily \#include $<$Etat1\+D.\+h$>$}
+
+
+
+Graphe d\textquotesingle{}héritage de Etat1D\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=127pt]{class_etat1_d__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Graphe de collaboration de Etat1D\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=127pt]{class_etat1_d__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_etat1_d_ae9cabf1b4a858c1c0c458387b52a8ce4}{Etat1D} (unsigned int taille=0, unsigned int nb\+Etat=2)
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
+\hyperlink{class_etat1_d_a1294037bb4f90d1da9deb872caa2cbe9}{Etat1D} (\hyperlink{class_etat1_d}{Etat1D} const \&etat)
+\begin{DoxyCompactList}\small\item\em Constructeur par recopie. \end{DoxyCompactList}\item 
+virtual \hyperlink{class_etat1_d_aba338e321568e641e7c3d4e9ef5e13e7}{$\sim$\+Etat1D} ()
+\begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{class_etat1_d_ab34b895c79fecfb41fac13e180c13302}{get\+Dimension} () const 
+\begin{DoxyCompactList}\small\item\em accesseur lecture \end{DoxyCompactList}\item 
+bool \hyperlink{class_etat1_d_a4a969863ec0067872148b326cea0cf4e}{get\+Cellule} (unsigned int i) const 
+\begin{DoxyCompactList}\small\item\em accesseur lecture \end{DoxyCompactList}\item 
+void \hyperlink{class_etat1_d_a04dc19eb1adbfe392eff45c7c5880c74}{set\+Cellule} (unsigned int i, bool val)
+\begin{DoxyCompactList}\small\item\em accesseur écriture \end{DoxyCompactList}\item 
+void \hyperlink{class_etat1_d_a11b2e64dc835aad04a5f138337ba7b99}{afficher} () const 
+\begin{DoxyCompactList}\small\item\em affiche un \hyperlink{class_etat1_d}{Etat1D} \end{DoxyCompactList}\item 
+\hyperlink{class_etat1_d}{Etat1D} \& \hyperlink{class_etat1_d_a4ce3b4931c766b2a6cdf6e3ac7590c5a}{operator=} (const \hyperlink{class_etat1_d}{Etat1D} \&etat)
+\begin{DoxyCompactList}\small\item\em operateur de copie \end{DoxyCompactList}\item 
+virtual unsigned int \hyperlink{class_etat1_d_aed8c9082f8caefeef7687ba1f4590f40}{get\+Hauteur} () const 
+\begin{DoxyCompactList}\small\item\em méthode virtuelle \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_etat1_d_a95f0f0455d3dfda771330648ec5395fb}{adjust\+Etat} ()
+\begin{DoxyCompactList}\small\item\em méthode virtuelle modifie la taille de l\textquotesingle{}état \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Attributs protégés}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ bool $>$ \hyperlink{class_etat1_d_a07068969d6d83e95a8d04363914adf33}{m\+\_\+tab}
+\end{DoxyCompactItemize}
+\subsection*{Amis}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_etat1_d_a7b442c5e6a2ad84fcc725706d1f77dfe}{Automate1D}
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+hérite de \hyperlink{class_etat}{Etat} permet d\textquotesingle{}envoyer des erreurs concernant les automates1D 
+
+\subsection{Documentation des constructeurs et destructeur}
+\index{Etat1D@{Etat1D}!Etat1D@{Etat1D}}
+\index{Etat1D@{Etat1D}!Etat1D@{Etat1D}}
+\subsubsection[{\texorpdfstring{Etat1\+D(unsigned int taille=0, unsigned int nb\+Etat=2)}{Etat1D(unsigned int taille=0, unsigned int nbEtat=2)}}]{\setlength{\rightskip}{0pt plus 5cm}Etat1\+D\+::\+Etat1D (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{taille = {\ttfamily 0}, }
+\item[{unsigned int}]{nb\+Etat = {\ttfamily 2}}
+\end{DoxyParamCaption}
+)}\hypertarget{class_etat1_d_ae9cabf1b4a858c1c0c458387b52a8ce4}{}\label{class_etat1_d_ae9cabf1b4a858c1c0c458387b52a8ce4}
+
+
+Constructeur. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em taille} & \+: nombre de cellule \+: unsigned int \\
+\hline
+{\em nb\+Etat} & \+: unsigned int \\
+\hline
+\end{DoxyParams}
+\index{Etat1D@{Etat1D}!Etat1D@{Etat1D}}
+\index{Etat1D@{Etat1D}!Etat1D@{Etat1D}}
+\subsubsection[{\texorpdfstring{Etat1\+D(\+Etat1\+D const \&etat)}{Etat1D(Etat1D const &etat)}}]{\setlength{\rightskip}{0pt plus 5cm}Etat1\+D\+::\+Etat1D (
+\begin{DoxyParamCaption}
+\item[{{\bf Etat1D} const \&}]{etat}
+\end{DoxyParamCaption}
+)}\hypertarget{class_etat1_d_a1294037bb4f90d1da9deb872caa2cbe9}{}\label{class_etat1_d_a1294037bb4f90d1da9deb872caa2cbe9}
+
+
+Constructeur par recopie. 
+
+\index{Etat1D@{Etat1D}!````~Etat1D@{$\sim$\+Etat1D}}
+\index{````~Etat1D@{$\sim$\+Etat1D}!Etat1D@{Etat1D}}
+\subsubsection[{\texorpdfstring{$\sim$\+Etat1\+D()}{~Etat1D()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual Etat1\+D\+::$\sim$\+Etat1D (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{class_etat1_d_aba338e321568e641e7c3d4e9ef5e13e7}{}\label{class_etat1_d_aba338e321568e641e7c3d4e9ef5e13e7}
+
+
+Destructeur. 
+
+
+
+\subsection{Documentation des fonctions membres}
+\index{Etat1D@{Etat1D}!adjust\+Etat@{adjust\+Etat}}
+\index{adjust\+Etat@{adjust\+Etat}!Etat1D@{Etat1D}}
+\subsubsection[{\texorpdfstring{adjust\+Etat()}{adjustEtat()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Etat1\+D\+::adjust\+Etat (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{class_etat1_d_a95f0f0455d3dfda771330648ec5395fb}{}\label{class_etat1_d_a95f0f0455d3dfda771330648ec5395fb}
+
+
+méthode virtuelle modifie la taille de l\textquotesingle{}état 
+
+
+
+Implémente \hyperlink{class_etat_ac29c6d30fc8c982ff5f67eab6fc396de}{Etat}.
+
+\index{Etat1D@{Etat1D}!afficher@{afficher}}
+\index{afficher@{afficher}!Etat1D@{Etat1D}}
+\subsubsection[{\texorpdfstring{afficher() const }{afficher() const }}]{\setlength{\rightskip}{0pt plus 5cm}void Etat1\+D\+::afficher (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{class_etat1_d_a11b2e64dc835aad04a5f138337ba7b99}{}\label{class_etat1_d_a11b2e64dc835aad04a5f138337ba7b99}
+
+
+affiche un \hyperlink{class_etat1_d}{Etat1D} 
+
+
+
+Implémente \hyperlink{class_etat_a796cef1d7607e3d185bec0a31eb7a819}{Etat}.
+
+\index{Etat1D@{Etat1D}!get\+Cellule@{get\+Cellule}}
+\index{get\+Cellule@{get\+Cellule}!Etat1D@{Etat1D}}
+\subsubsection[{\texorpdfstring{get\+Cellule(unsigned int i) const }{getCellule(unsigned int i) const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Etat1\+D\+::get\+Cellule (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{i}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_etat1_d_a4a969863ec0067872148b326cea0cf4e}{}\label{class_etat1_d_a4a969863ec0067872148b326cea0cf4e}
+
+
+accesseur lecture 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em i} & \+: indice \+:unsigned int \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+valeur \+: bool 
+\end{DoxyReturn}
+\index{Etat1D@{Etat1D}!get\+Dimension@{get\+Dimension}}
+\index{get\+Dimension@{get\+Dimension}!Etat1D@{Etat1D}}
+\subsubsection[{\texorpdfstring{get\+Dimension() const }{getDimension() const }}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Etat1\+D\+::get\+Dimension (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_etat1_d_ab34b895c79fecfb41fac13e180c13302}{}\label{class_etat1_d_ab34b895c79fecfb41fac13e180c13302}
+
+
+accesseur lecture 
+
+\begin{DoxyReturn}{Renvoie}
+taille \+: unsigned int 
+\end{DoxyReturn}
+\index{Etat1D@{Etat1D}!get\+Hauteur@{get\+Hauteur}}
+\index{get\+Hauteur@{get\+Hauteur}!Etat1D@{Etat1D}}
+\subsubsection[{\texorpdfstring{get\+Hauteur() const }{getHauteur() const }}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned int Etat1\+D\+::get\+Hauteur (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{class_etat1_d_aed8c9082f8caefeef7687ba1f4590f40}{}\label{class_etat1_d_aed8c9082f8caefeef7687ba1f4590f40}
+
+
+méthode virtuelle 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em etat} & \+: const \hyperlink{class_etat1_d}{Etat1D}\&l \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+\hyperlink{class_etat1_d}{Etat1D}\& 
+\end{DoxyReturn}
+
+
+Implémente \hyperlink{class_etat_aa2eeed5ffbef3b53a149385f81bf2af0}{Etat}.
+
+\index{Etat1D@{Etat1D}!operator=@{operator=}}
+\index{operator=@{operator=}!Etat1D@{Etat1D}}
+\subsubsection[{\texorpdfstring{operator=(const Etat1\+D \&etat)}{operator=(const Etat1D &etat)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Etat1D} \& Etat1\+D\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Etat1D} \&}]{etat}
+\end{DoxyParamCaption}
+)}\hypertarget{class_etat1_d_a4ce3b4931c766b2a6cdf6e3ac7590c5a}{}\label{class_etat1_d_a4ce3b4931c766b2a6cdf6e3ac7590c5a}
+
+
+operateur de copie 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em etat} & \+: const \hyperlink{class_etat1_d}{Etat1D}\&l \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+\hyperlink{class_etat1_d}{Etat1D}\& 
+\end{DoxyReturn}
+\index{Etat1D@{Etat1D}!set\+Cellule@{set\+Cellule}}
+\index{set\+Cellule@{set\+Cellule}!Etat1D@{Etat1D}}
+\subsubsection[{\texorpdfstring{set\+Cellule(unsigned int i, bool val)}{setCellule(unsigned int i, bool val)}}]{\setlength{\rightskip}{0pt plus 5cm}void Etat1\+D\+::set\+Cellule (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{i, }
+\item[{bool}]{val}
+\end{DoxyParamCaption}
+)}\hypertarget{class_etat1_d_a04dc19eb1adbfe392eff45c7c5880c74}{}\label{class_etat1_d_a04dc19eb1adbfe392eff45c7c5880c74}
+
+
+accesseur écriture 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em i} & \+: indice \+:unsigned int \\
+\hline
+{\em val} & \+: valeur \+: bool \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentation des fonctions amies et associées}
+\index{Etat1D@{Etat1D}!Automate1D@{Automate1D}}
+\index{Automate1D@{Automate1D}!Etat1D@{Etat1D}}
+\subsubsection[{\texorpdfstring{Automate1D}{Automate1D}}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Automate1D}\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{class_etat1_d_a7b442c5e6a2ad84fcc725706d1f77dfe}{}\label{class_etat1_d_a7b442c5e6a2ad84fcc725706d1f77dfe}
+
+
+\subsection{Documentation des données membres}
+\index{Etat1D@{Etat1D}!m\+\_\+tab@{m\+\_\+tab}}
+\index{m\+\_\+tab@{m\+\_\+tab}!Etat1D@{Etat1D}}
+\subsubsection[{\texorpdfstring{m\+\_\+tab}{m_tab}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$bool$>$ Etat1\+D\+::m\+\_\+tab\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_etat1_d_a07068969d6d83e95a8d04363914adf33}{}\label{class_etat1_d_a07068969d6d83e95a8d04363914adf33}
+\hyperlink{class_etat}{Etat} de la cellule 
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+info/\+L\+O21/\+L\+O21/\+Auto\+Cell/\hyperlink{_etat1_d_8h}{Etat1\+D.\+h}\item 
+info/\+L\+O21/\+L\+O21/\+Auto\+Cell/\hyperlink{_etat1_d_8cpp}{Etat1\+D.\+cpp}\end{DoxyCompactItemize}

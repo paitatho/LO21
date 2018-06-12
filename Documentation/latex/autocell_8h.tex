@@ -1,0 +1,49 @@
+\hypertarget{autocell_8h}{}\section{Référence du fichier info/\+L\+O21/\+L\+O21/\+Auto\+Cell/autocell.h}
+\label{autocell_8h}\index{info/\+L\+O21/\+L\+O21/\+Auto\+Cell/autocell.\+h@{info/\+L\+O21/\+L\+O21/\+Auto\+Cell/autocell.\+h}}
+
+
+Gestion graphique des Automates cellulaires 1D et 2D.  
+
+
+{\ttfamily \#include $<$Qt\+Widgets$>$}\\*
+{\ttfamily \#include $<$typeinfo$>$}\\*
+{\ttfamily \#include $<$cstdlib$>$}\\*
+{\ttfamily \#include \char`\"{}Automate1\+D.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Simulateur.\+h\char`\"{}}\\*
+Graphe des dépendances par inclusion de autocell.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{autocell_8h__incl}
+\end{center}
+\end{figure}
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{autocell_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_autocell}{Autocell}
+\begin{DoxyCompactList}\small\item\em Classe abstraite. La classe généralise un \hyperlink{class_autocell}{Autocell} et définie les méthodes virtuelles qui devront être présente et définie dans chaque \hyperlink{class_autocell}{Autocell}. La fenetre principale va alors mettre en action le polymorphisme, permettant alors de lancer, arrêter... n\textquotesingle{}importe quel \hyperlink{class_autocell}{Autocell}. \end{DoxyCompactList}\item 
+class \hyperlink{class_autocell1_d}{Autocell1D}
+\begin{DoxyCompactList}\small\item\em Hérite de \hyperlink{class_autocell}{Autocell}. La classe \hyperlink{class_autocell1_d}{Autocell1D} permet de lancer des automates cellulaires à 1\+Dimensions (classe \hyperlink{class_automate1_d}{Automate1D} et \hyperlink{class_etat1_d}{Etat1D}) \end{DoxyCompactList}\item 
+class \hyperlink{class_autocell2_d}{Autocell2D}
+\begin{DoxyCompactList}\small\item\em Hérite de \hyperlink{class_autocell}{Autocell}. La classe \hyperlink{class_autocell2_d}{Autocell2D} permet de lancer des automates cellulaires à 2\+Dimensions (classe \hyperlink{class_automate2_d}{Automate2D} et \hyperlink{class_etat2_d}{Etat2D}) \end{DoxyCompactList}\item 
+class \hyperlink{class_regle2_d}{Regle2D}
+\begin{DoxyCompactList}\small\item\em Hérite de Q\+Widget. La classe \hyperlink{class_regle2_d}{Regle2D} permet d\textquotesingle{}entrer une règle pour un autocell2D (classe \hyperlink{class_automate2_d}{Automate2D} et \hyperlink{class_etat2_d}{Etat2D}) \end{DoxyCompactList}\item 
+class \hyperlink{class_regle2_d_bis}{Regle2\+D\+Bis}
+\begin{DoxyCompactList}\small\item\em Hérite de \hyperlink{class_regle2_d}{Regle2D} La classe \hyperlink{class_regle2_d_bis}{Regle2\+D\+Bis} montre comment intégrer de nouvelles règles à un autocell2D. \end{DoxyCompactList}\item 
+class \hyperlink{class_autocell2_d_bis}{Autocell2\+D\+Bis}
+\begin{DoxyCompactList}\small\item\em Hérite de \hyperlink{class_autocell2_d}{Autocell2D}. La classe \hyperlink{class_autocell2_d_bis}{Autocell2\+D\+Bis} montre comment intégrer de nouvelles règles à un autocell2D. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Gestion graphique des Automates cellulaires 1D et 2D. 
+
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}

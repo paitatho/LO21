@@ -1,0 +1,191 @@
+\hypertarget{class_automate1_d}{}\section{Référence de la classe Automate1D}
+\label{class_automate1_d}\index{Automate1D@{Automate1D}}
+
+
+hérite de \hyperlink{class_automate}{Automate$<$\+Etat1\+D$>$}  
+
+
+
+
+{\ttfamily \#include $<$Automate1\+D.\+h$>$}
+
+
+
+Graphe d\textquotesingle{}héritage de Automate1D\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{class_automate1_d__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Graphe de collaboration de Automate1D\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{class_automate1_d__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_automate1_d_a3ad4c7b525674ea7abdfdaa5dbf3e83e}{get\+Numero} () const 
+\begin{DoxyCompactList}\small\item\em accesseur en lecture \end{DoxyCompactList}\item 
+std\+::string \hyperlink{class_automate1_d_a165ec2dbac45a6d8731fb564efb72095}{get\+Numero\+Bit} () const 
+\begin{DoxyCompactList}\small\item\em accesseur en lecture \end{DoxyCompactList}\item 
+void \hyperlink{class_automate1_d_a46c4e3b65e6d657c93e54fcbbc022dc6}{appliquer\+Transition} (const \hyperlink{class_etat1_d}{Etat1D} \&dep, \hyperlink{class_etat1_d}{Etat1D} \&dest) const 
+\begin{DoxyCompactList}\small\item\em applique les règles de transition à un état \end{DoxyCompactList}\item 
+void \hyperlink{class_automate1_d_ade2e9e03aef92b66c7f41f38e54e61b1}{afficher} () const 
+\begin{DoxyCompactList}\small\item\em afficher un automate \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Fonctions membres privées}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_automate1_d_a80210daacd80e5b0ce9132ac3c6d074c}{Automate1D} (short unsigned int num, unsigned short int nb\+Etat=2)
+\begin{DoxyCompactList}\small\item\em Constructeur Privée. \end{DoxyCompactList}\item 
+\hyperlink{class_automate1_d_a91c67e3e10240866e641c0824531acdb}{Automate1D} (const std\+::string \&num\+Bit, unsigned short int nb\+Etat=2)
+\begin{DoxyCompactList}\small\item\em Constructeur Privée. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+short unsigned int \hyperlink{class_automate1_d_a5ae877f5860e58fc17f6654b96b3aff8}{m\+\_\+numero}
+\item 
+std\+::string \hyperlink{class_automate1_d_a2a7ec50a64371b8b5dacd49844b712e3}{m\+\_\+numero\+Bit}
+\end{DoxyCompactItemize}
+\subsection*{Amis}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_automate1_d_a6f30ee58a7bdd1cf1c712265d22f2faa}{Automate\+Manager}
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+hérite de \hyperlink{class_automate}{Automate$<$\+Etat1\+D$>$} 
+
+La classe permet d\textquotesingle{}appliquer une transition sur les \hyperlink{class_etat1_d}{Etat1D} suivant une règle 
+
+\subsection{Documentation des constructeurs et destructeur}
+\index{Automate1D@{Automate1D}!Automate1D@{Automate1D}}
+\index{Automate1D@{Automate1D}!Automate1D@{Automate1D}}
+\subsubsection[{\texorpdfstring{Automate1\+D(short unsigned int num, unsigned short int nb\+Etat=2)}{Automate1D(short unsigned int num, unsigned short int nbEtat=2)}}]{\setlength{\rightskip}{0pt plus 5cm}Automate1\+D\+::\+Automate1D (
+\begin{DoxyParamCaption}
+\item[{short unsigned int}]{num, }
+\item[{unsigned short int}]{nb\+Etat = {\ttfamily 2}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_automate1_d_a80210daacd80e5b0ce9132ac3c6d074c}{}\label{class_automate1_d_a80210daacd80e5b0ce9132ac3c6d074c}
+
+
+Constructeur Privée. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em num} & \+: numéro de la régle\+: unsigned short int \\
+\hline
+{\em nb\+Etat} & \+: nombre d\textquotesingle{}état \+: unsigned short int \\
+\hline
+\end{DoxyParams}
+\index{Automate1D@{Automate1D}!Automate1D@{Automate1D}}
+\index{Automate1D@{Automate1D}!Automate1D@{Automate1D}}
+\subsubsection[{\texorpdfstring{Automate1\+D(const std\+::string \&num\+Bit, unsigned short int nb\+Etat=2)}{Automate1D(const std::string &numBit, unsigned short int nbEtat=2)}}]{\setlength{\rightskip}{0pt plus 5cm}Automate1\+D\+::\+Automate1D (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{num\+Bit, }
+\item[{unsigned short int}]{nb\+Etat = {\ttfamily 2}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_automate1_d_a91c67e3e10240866e641c0824531acdb}{}\label{class_automate1_d_a91c67e3e10240866e641c0824531acdb}
+
+
+Constructeur Privée. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em num\+Bit} & \+: numéro de la régle\+: const std\+::string\& \\
+\hline
+{\em nb\+Etat} & \+: nombre d\textquotesingle{}état \+: unsigned short int \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentation des fonctions membres}
+\index{Automate1D@{Automate1D}!afficher@{afficher}}
+\index{afficher@{afficher}!Automate1D@{Automate1D}}
+\subsubsection[{\texorpdfstring{afficher() const }{afficher() const }}]{\setlength{\rightskip}{0pt plus 5cm}void Automate1\+D\+::afficher (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_automate1_d_ade2e9e03aef92b66c7f41f38e54e61b1}{}\label{class_automate1_d_ade2e9e03aef92b66c7f41f38e54e61b1}
+
+
+afficher un automate 
+
+\index{Automate1D@{Automate1D}!appliquer\+Transition@{appliquer\+Transition}}
+\index{appliquer\+Transition@{appliquer\+Transition}!Automate1D@{Automate1D}}
+\subsubsection[{\texorpdfstring{appliquer\+Transition(const Etat1\+D \&dep, Etat1\+D \&dest) const }{appliquerTransition(const Etat1D &dep, Etat1D &dest) const }}]{\setlength{\rightskip}{0pt plus 5cm}void Automate1\+D\+::appliquer\+Transition (
+\begin{DoxyParamCaption}
+\item[{const {\bf Etat1D} \&}]{dep, }
+\item[{{\bf Etat1D} \&}]{dest}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_automate1_d_a46c4e3b65e6d657c93e54fcbbc022dc6}{}\label{class_automate1_d_a46c4e3b65e6d657c93e54fcbbc022dc6}
+
+
+applique les règles de transition à un état 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em dep} & \+: état de départ\+: const \hyperlink{class_etat1_d}{Etat1D}\& \\
+\hline
+{\em dest} & \+: etat d\textquotesingle{}arrivé\+: \hyperlink{class_etat1_d}{Etat1D}\& \\
+\hline
+\end{DoxyParams}
+
+
+Implémente \hyperlink{class_automate_abfeaddcc8930b1f63a785cd5c6ff6dc5}{Automate$<$ Etat1\+D $>$}.
+
+\index{Automate1D@{Automate1D}!get\+Numero@{get\+Numero}}
+\index{get\+Numero@{get\+Numero}!Automate1D@{Automate1D}}
+\subsubsection[{\texorpdfstring{get\+Numero() const }{getNumero() const }}]{\setlength{\rightskip}{0pt plus 5cm}int Automate1\+D\+::get\+Numero (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_automate1_d_a3ad4c7b525674ea7abdfdaa5dbf3e83e}{}\label{class_automate1_d_a3ad4c7b525674ea7abdfdaa5dbf3e83e}
+
+
+accesseur en lecture 
+
+\begin{DoxyReturn}{Renvoie}
+m\+\_\+numero \+: numéro de la règle\+: int 
+\end{DoxyReturn}
+\index{Automate1D@{Automate1D}!get\+Numero\+Bit@{get\+Numero\+Bit}}
+\index{get\+Numero\+Bit@{get\+Numero\+Bit}!Automate1D@{Automate1D}}
+\subsubsection[{\texorpdfstring{get\+Numero\+Bit() const }{getNumeroBit() const }}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Automate1\+D\+::get\+Numero\+Bit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_automate1_d_a165ec2dbac45a6d8731fb564efb72095}{}\label{class_automate1_d_a165ec2dbac45a6d8731fb564efb72095}
+
+
+accesseur en lecture 
+
+\begin{DoxyReturn}{Renvoie}
+m\+\_\+numero\+Bit \+: numéro de la règle\+: std\+::string 
+\end{DoxyReturn}
+
+
+\subsection{Documentation des fonctions amies et associées}
+\index{Automate1D@{Automate1D}!Automate\+Manager@{Automate\+Manager}}
+\index{Automate\+Manager@{Automate\+Manager}!Automate1D@{Automate1D}}
+\subsubsection[{\texorpdfstring{Automate\+Manager}{AutomateManager}}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Automate\+Manager}\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{class_automate1_d_a6f30ee58a7bdd1cf1c712265d22f2faa}{}\label{class_automate1_d_a6f30ee58a7bdd1cf1c712265d22f2faa}
+
+
+\subsection{Documentation des données membres}
+\index{Automate1D@{Automate1D}!m\+\_\+numero@{m\+\_\+numero}}
+\index{m\+\_\+numero@{m\+\_\+numero}!Automate1D@{Automate1D}}
+\subsubsection[{\texorpdfstring{m\+\_\+numero}{m_numero}}]{\setlength{\rightskip}{0pt plus 5cm}short unsigned int Automate1\+D\+::m\+\_\+numero\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_automate1_d_a5ae877f5860e58fc17f6654b96b3aff8}{}\label{class_automate1_d_a5ae877f5860e58fc17f6654b96b3aff8}
+Numéro de la règle \index{Automate1D@{Automate1D}!m\+\_\+numero\+Bit@{m\+\_\+numero\+Bit}}
+\index{m\+\_\+numero\+Bit@{m\+\_\+numero\+Bit}!Automate1D@{Automate1D}}
+\subsubsection[{\texorpdfstring{m\+\_\+numero\+Bit}{m_numeroBit}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Automate1\+D\+::m\+\_\+numero\+Bit\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_automate1_d_a2a7ec50a64371b8b5dacd49844b712e3}{}\label{class_automate1_d_a2a7ec50a64371b8b5dacd49844b712e3}
+Numéro de la règle sous un autre format 
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+info/\+L\+O21/\+L\+O21/\+Auto\+Cell/\hyperlink{_automate1_d_8h}{Automate1\+D.\+h}\item 
+info/\+L\+O21/\+L\+O21/\+Auto\+Cell/\hyperlink{_automate1_d_8cpp}{Automate1\+D.\+cpp}\end{DoxyCompactItemize}

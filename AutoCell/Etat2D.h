@@ -3,27 +3,68 @@
 
 #include "Etat.h"
 #include <vector>
+
+/*!
+ * \file Etat2D.h
+ * \brief Classe pour représenter un état à 2 dimensions
+ * \version 1.0
+ */
+
+
+/*! \class  Etat2D
+ * \brief hérite de Etat
+ *
+ *  La classe permet de créer des états à 2 dimensions
+ */
 class Etat2D : public Etat
 {
 protected:
-    std::vector<std::vector<unsigned short int>> m_valeur;
-    unsigned int m_hauteur;
+    std::vector<std::vector<unsigned short int>> m_valeur;/*!< représente la grille de cellule*/
+    unsigned int m_hauteur; /*!< hauteur de la grille*/
 public:
+    /*! \brief Constructeur
+     *  \param l : largeur : unsigned int
+        \param h : hauteur: unsigned int
+        \param nbEtat : nombre d'état :unsigned int */
     Etat2D(unsigned int l =0, unsigned int h =0, unsigned int nbEtat=2): Etat(l,nbEtat),m_hauteur(h){
         for(int i = 0; i<h ; i++){
             m_valeur.push_back(std::vector<unsigned short int>(m_largeur,0));
         }
     }
+
+    /*! \brief Destructeur */
     ~Etat2D(){}
+
+    /*! \brief Accesseur en lecture
+     *  \return m_hauteur : unsigned int*/
     unsigned int getHauteur() const {return m_hauteur;}
+
+    /*! \brief modifie la hauteur
+     *  \param h : nouvelle hauteur : unsigned int*/
     void setHauteur(unsigned int h) {m_hauteur =h; this->adjustEtat();}
+
+    /*! \brief affiche l'état*/
     void afficher() const;
+
+    /*! \brief modifie la valeur d'une cellule
+        \param i : ligne : unsigned int
+        \param j : colonne : unsigned int
+        \param val : nouvelle valeur : unsigned int*/
     void setCellule(unsigned int i, unsigned int j, unsigned short int val){
         m_valeur[i][j] = val;
     }
+
+    /*! \brief Accesseur en lecture
+     *  \param i : ligne : unsigned int
+        \param j : colonne : unsigned int
+     *  \return m_valeur[i][j] : unsigned short int*/
     unsigned short int getCellule(unsigned int i, unsigned int j) const {return m_valeur[i][j]; }
+
+    /*! \brief ajuste la taille de l'etat*/
     virtual void adjustEtat();
 
+    /*! \brief opérateur d'affectation
+        \param e : état à copier :const Etat2D& */
     bool operator==(const Etat2D& e) const{
         bool sol=true;
         for(int i=0;i<m_hauteur;i++){

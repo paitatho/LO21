@@ -1,0 +1,322 @@
+\hypertarget{class_simulateur}{}\section{Référence du modèle de la classe Simulateur$<$ T1, T2 $>$}
+\label{class_simulateur}\index{Simulateur$<$ T1, T2 $>$@{Simulateur$<$ T1, T2 $>$}}
+
+
+Classe template permet de gérer la simulation de n\textquotesingle{}importe quel automate héritant de la Classe \hyperlink{class_automate}{Automate}.  
+
+
+
+
+{\ttfamily \#include $<$Automate1\+D.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_simulateur_1_1const__iterator}{const\+\_\+iterator}
+\item 
+class \hyperlink{class_simulateur_1_1iterator}{iterator}
+\begin{DoxyCompactList}\small\item\em permet le parcourt des états \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_simulateur_afbd90fb92cd6e29e7a2ffe222d0194f8}{Simulateur} (const T1 \&a, unsigned int buffer=2)
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
+\hyperlink{class_simulateur_a9c6136e1ffa9ff733ab6b6680a556535}{Simulateur} (const T1 \&a, const T2 \&dep, unsigned int buffer=2)
+\begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
+\hyperlink{class_simulateur_a9253bdd8f60dd5f2f2af9ab1e855304c}{$\sim$\+Simulateur} ()
+\begin{DoxyCompactList}\small\item\em destructeur \end{DoxyCompactList}\item 
+void \hyperlink{class_simulateur_a31296b4599796563a8a6ad1177b76ef4}{set\+Etat\+Depart} (const T2 \&e)
+\begin{DoxyCompactList}\small\item\em modifie état de départ \end{DoxyCompactList}\item 
+void \hyperlink{class_simulateur_a5a9d0c9de702ee1d71c02126a5a80fad}{run} (unsigned int nb)
+\begin{DoxyCompactList}\small\item\em génère les n prochains états \end{DoxyCompactList}\item 
+void \hyperlink{class_simulateur_a6043e64df6e41c1d4ae84da540786379}{next} ()
+\begin{DoxyCompactList}\small\item\em génère le prochain état \end{DoxyCompactList}\item 
+const T2 \& \hyperlink{class_simulateur_a90dded0212c5d4f7005b90290f30c81a}{dernier} () const 
+\begin{DoxyCompactList}\small\item\em accesseur lecture \end{DoxyCompactList}\item 
+const T2 \& \hyperlink{class_simulateur_aca4b266c11eb65f61c0cb958d4232c0f}{avant\+Dernier} () const 
+\begin{DoxyCompactList}\small\item\em accesseur lecture \end{DoxyCompactList}\item 
+unsigned int \hyperlink{class_simulateur_afc98cbe3954590d6185b8c7c5d9fddd4}{get\+Rang\+Dernier} () const 
+\begin{DoxyCompactList}\small\item\em accesseur lecture \end{DoxyCompactList}\item 
+void \hyperlink{class_simulateur_a13ab6b17b05b2e70f2677543da4bde29}{reset} ()
+\begin{DoxyCompactList}\small\item\em revient à l\textquotesingle{}état de départ \end{DoxyCompactList}\item 
+\hyperlink{class_simulateur_1_1iterator}{iterator} \hyperlink{class_simulateur_aed5c2fe918140f59e51b39045263fe95}{begin} ()
+\item 
+\hyperlink{class_simulateur_1_1iterator}{iterator} \hyperlink{class_simulateur_aa9b6cc97791d4a46672ad5f4c998e6b2}{end} ()
+\item 
+\hyperlink{class_simulateur_1_1const__iterator}{const\+\_\+iterator} \hyperlink{class_simulateur_a0d59edd64a07747beae2532b1bcf822a}{begin} () const 
+\item 
+\hyperlink{class_simulateur_1_1const__iterator}{const\+\_\+iterator} \hyperlink{class_simulateur_a1fb0351ecf22dc11327914a1aba67081}{end} () const 
+\item 
+\hyperlink{class_simulateur_1_1const__iterator}{const\+\_\+iterator} \hyperlink{class_simulateur_a8efcc9d5d6c025fc139c3ad53c6323de}{cbegin} () const 
+\item 
+\hyperlink{class_simulateur_1_1const__iterator}{const\+\_\+iterator} \hyperlink{class_simulateur_aa69d1c52944b844cb45953ea063e20d2}{cend} () const 
+\end{DoxyCompactItemize}
+\subsection*{Fonctions membres privées}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_simulateur_a4d31da226a22b706e9f67311b517dad8}{Simulateur} (const \hyperlink{class_simulateur}{Simulateur} \&)=delete
+\begin{DoxyCompactList}\small\item\em suppression constructeur de recopie \end{DoxyCompactList}\item 
+\hyperlink{class_simulateur}{Simulateur} \& \hyperlink{class_simulateur_a60d23b4aa969fb25147147875fccafbb}{operator=} (const \hyperlink{class_simulateur}{Simulateur} \&)
+\begin{DoxyCompactList}\small\item\em operateur d\textquotesingle{}affectation en privée \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+const T1 \& \hyperlink{class_simulateur_a90182aefba76d1a43060fe608d493398}{m\+\_\+automate}
+\item 
+std\+::vector$<$ T2 $\ast$ $>$ \hyperlink{class_simulateur_a9156b165b5affe1b4627ff66802cfc99}{m\+\_\+etats}
+\item 
+const T2 $\ast$ \hyperlink{class_simulateur_a8f024dcb44d5688aac1fdbc7df531104}{m\+\_\+depart}
+\item 
+unsigned int \hyperlink{class_simulateur_aee6fbe615a412a23aafe23d5b6487eec}{m\+\_\+nb\+Max\+Etats}
+\item 
+unsigned int \hyperlink{class_simulateur_a40f39f55c107779de9c1b4418b98f7c0}{m\+\_\+rang} =0
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+\subsubsection*{template$<$class T1, class T2$>$\\*
+class Simulateur$<$ T1, T2 $>$}
+
+Classe template permet de gérer la simulation de n\textquotesingle{}importe quel automate héritant de la Classe \hyperlink{class_automate}{Automate}. 
+
+\subsection{Documentation des constructeurs et destructeur}
+\index{Simulateur@{Simulateur}!Simulateur@{Simulateur}}
+\index{Simulateur@{Simulateur}!Simulateur@{Simulateur}}
+\subsubsection[{\texorpdfstring{Simulateur(const Simulateur \&)=delete}{Simulateur(const Simulateur &)=delete}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T1 , class T2 $>$ {\bf Simulateur}$<$ T1, T2 $>$\+::{\bf Simulateur} (
+\begin{DoxyParamCaption}
+\item[{const {\bf Simulateur}$<$ T1, T2 $>$ \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}\hypertarget{class_simulateur_a4d31da226a22b706e9f67311b517dad8}{}\label{class_simulateur_a4d31da226a22b706e9f67311b517dad8}
+
+
+suppression constructeur de recopie 
+
+\index{Simulateur@{Simulateur}!Simulateur@{Simulateur}}
+\index{Simulateur@{Simulateur}!Simulateur@{Simulateur}}
+\subsubsection[{\texorpdfstring{Simulateur(const T1 \&a, unsigned int buffer=2)}{Simulateur(const T1 &a, unsigned int buffer=2)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T1 , class T2 $>$ {\bf Simulateur}$<$ T1, T2 $>$\+::{\bf Simulateur} (
+\begin{DoxyParamCaption}
+\item[{const T1 \&}]{a, }
+\item[{unsigned int}]{buffer = {\ttfamily 2}}
+\end{DoxyParamCaption}
+)}\hypertarget{class_simulateur_afbd90fb92cd6e29e7a2ffe222d0194f8}{}\label{class_simulateur_afbd90fb92cd6e29e7a2ffe222d0194f8}
+
+
+Constructeur. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em a} & \+: automate \+: const T1\& \\
+\hline
+{\em buffer} & \+: taille attribut m\+\_\+etats \+: unsigned int \\
+\hline
+\end{DoxyParams}
+\index{Simulateur@{Simulateur}!Simulateur@{Simulateur}}
+\index{Simulateur@{Simulateur}!Simulateur@{Simulateur}}
+\subsubsection[{\texorpdfstring{Simulateur(const T1 \&a, const T2 \&dep, unsigned int buffer=2)}{Simulateur(const T1 &a, const T2 &dep, unsigned int buffer=2)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T1 , class T2 $>$ {\bf Simulateur}$<$ T1, T2 $>$\+::{\bf Simulateur} (
+\begin{DoxyParamCaption}
+\item[{const T1 \&}]{a, }
+\item[{const T2 \&}]{dep, }
+\item[{unsigned int}]{buffer = {\ttfamily 2}}
+\end{DoxyParamCaption}
+)}\hypertarget{class_simulateur_a9c6136e1ffa9ff733ab6b6680a556535}{}\label{class_simulateur_a9c6136e1ffa9ff733ab6b6680a556535}
+
+
+Constructeur. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em a} & \+: automate \+: const T1\& \\
+\hline
+{\em dep} & \+: état départ \+:const T2 \& \\
+\hline
+{\em buffer} & \+: taille attribut m\+\_\+etats \+: unsigned int \\
+\hline
+\end{DoxyParams}
+\index{Simulateur@{Simulateur}!````~Simulateur@{$\sim$\+Simulateur}}
+\index{````~Simulateur@{$\sim$\+Simulateur}!Simulateur@{Simulateur}}
+\subsubsection[{\texorpdfstring{$\sim$\+Simulateur()}{~Simulateur()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T1 , class T2 $>$ {\bf Simulateur}$<$ T1, T2 $>$\+::$\sim${\bf Simulateur} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_simulateur_a9253bdd8f60dd5f2f2af9ab1e855304c}{}\label{class_simulateur_a9253bdd8f60dd5f2f2af9ab1e855304c}
+
+
+destructeur 
+
+
+
+\subsection{Documentation des fonctions membres}
+\index{Simulateur@{Simulateur}!avant\+Dernier@{avant\+Dernier}}
+\index{avant\+Dernier@{avant\+Dernier}!Simulateur@{Simulateur}}
+\subsubsection[{\texorpdfstring{avant\+Dernier() const }{avantDernier() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T1 , class T2 $>$ const T2 \& {\bf Simulateur}$<$ T1, T2 $>$\+::avant\+Dernier (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_simulateur_aca4b266c11eb65f61c0cb958d4232c0f}{}\label{class_simulateur_aca4b266c11eb65f61c0cb958d4232c0f}
+
+
+accesseur lecture 
+
+\begin{DoxyReturn}{Renvoie}
+etat \+: avant dernier etat\+: const T2 \& 
+\end{DoxyReturn}
+\index{Simulateur@{Simulateur}!begin@{begin}}
+\index{begin@{begin}!Simulateur@{Simulateur}}
+\subsubsection[{\texorpdfstring{begin()}{begin()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T1 , class T2 $>$ {\bf iterator} {\bf Simulateur}$<$ T1, T2 $>$\+::begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_simulateur_aed5c2fe918140f59e51b39045263fe95}{}\label{class_simulateur_aed5c2fe918140f59e51b39045263fe95}
+\index{Simulateur@{Simulateur}!begin@{begin}}
+\index{begin@{begin}!Simulateur@{Simulateur}}
+\subsubsection[{\texorpdfstring{begin() const }{begin() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T1 , class T2 $>$ {\bf const\+\_\+iterator} {\bf Simulateur}$<$ T1, T2 $>$\+::begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_simulateur_a0d59edd64a07747beae2532b1bcf822a}{}\label{class_simulateur_a0d59edd64a07747beae2532b1bcf822a}
+\index{Simulateur@{Simulateur}!cbegin@{cbegin}}
+\index{cbegin@{cbegin}!Simulateur@{Simulateur}}
+\subsubsection[{\texorpdfstring{cbegin() const }{cbegin() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T1 , class T2 $>$ {\bf const\+\_\+iterator} {\bf Simulateur}$<$ T1, T2 $>$\+::cbegin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_simulateur_a8efcc9d5d6c025fc139c3ad53c6323de}{}\label{class_simulateur_a8efcc9d5d6c025fc139c3ad53c6323de}
+\index{Simulateur@{Simulateur}!cend@{cend}}
+\index{cend@{cend}!Simulateur@{Simulateur}}
+\subsubsection[{\texorpdfstring{cend() const }{cend() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T1 , class T2 $>$ {\bf const\+\_\+iterator} {\bf Simulateur}$<$ T1, T2 $>$\+::cend (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_simulateur_aa69d1c52944b844cb45953ea063e20d2}{}\label{class_simulateur_aa69d1c52944b844cb45953ea063e20d2}
+\index{Simulateur@{Simulateur}!dernier@{dernier}}
+\index{dernier@{dernier}!Simulateur@{Simulateur}}
+\subsubsection[{\texorpdfstring{dernier() const }{dernier() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T1 , class T2 $>$ const T2 \& {\bf Simulateur}$<$ T1, T2 $>$\+::dernier (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_simulateur_a90dded0212c5d4f7005b90290f30c81a}{}\label{class_simulateur_a90dded0212c5d4f7005b90290f30c81a}
+
+
+accesseur lecture 
+
+\begin{DoxyReturn}{Renvoie}
+etat \+: dernier etat\+: const T2 \& 
+\end{DoxyReturn}
+\index{Simulateur@{Simulateur}!end@{end}}
+\index{end@{end}!Simulateur@{Simulateur}}
+\subsubsection[{\texorpdfstring{end()}{end()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T1 , class T2 $>$ {\bf iterator} {\bf Simulateur}$<$ T1, T2 $>$\+::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_simulateur_aa9b6cc97791d4a46672ad5f4c998e6b2}{}\label{class_simulateur_aa9b6cc97791d4a46672ad5f4c998e6b2}
+\index{Simulateur@{Simulateur}!end@{end}}
+\index{end@{end}!Simulateur@{Simulateur}}
+\subsubsection[{\texorpdfstring{end() const }{end() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T1 , class T2 $>$ {\bf const\+\_\+iterator} {\bf Simulateur}$<$ T1, T2 $>$\+::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_simulateur_a1fb0351ecf22dc11327914a1aba67081}{}\label{class_simulateur_a1fb0351ecf22dc11327914a1aba67081}
+\index{Simulateur@{Simulateur}!get\+Rang\+Dernier@{get\+Rang\+Dernier}}
+\index{get\+Rang\+Dernier@{get\+Rang\+Dernier}!Simulateur@{Simulateur}}
+\subsubsection[{\texorpdfstring{get\+Rang\+Dernier() const }{getRangDernier() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T1 , class T2 $>$ unsigned int {\bf Simulateur}$<$ T1, T2 $>$\+::get\+Rang\+Dernier (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_simulateur_afc98cbe3954590d6185b8c7c5d9fddd4}{}\label{class_simulateur_afc98cbe3954590d6185b8c7c5d9fddd4}
+
+
+accesseur lecture 
+
+\begin{DoxyReturn}{Renvoie}
+m\+\_\+rang \+: unsigned int 
+\end{DoxyReturn}
+\index{Simulateur@{Simulateur}!next@{next}}
+\index{next@{next}!Simulateur@{Simulateur}}
+\subsubsection[{\texorpdfstring{next()}{next()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T1 , class T2 $>$ void {\bf Simulateur}$<$ T1, T2 $>$\+::next (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_simulateur_a6043e64df6e41c1d4ae84da540786379}{}\label{class_simulateur_a6043e64df6e41c1d4ae84da540786379}
+
+
+génère le prochain état 
+
+\index{Simulateur@{Simulateur}!operator=@{operator=}}
+\index{operator=@{operator=}!Simulateur@{Simulateur}}
+\subsubsection[{\texorpdfstring{operator=(const Simulateur \&)}{operator=(const Simulateur &)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T1 , class T2 $>$ {\bf Simulateur}\& {\bf Simulateur}$<$ T1, T2 $>$\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Simulateur}$<$ T1, T2 $>$ \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_simulateur_a60d23b4aa969fb25147147875fccafbb}{}\label{class_simulateur_a60d23b4aa969fb25147147875fccafbb}
+
+
+operateur d\textquotesingle{}affectation en privée 
+
+\index{Simulateur@{Simulateur}!reset@{reset}}
+\index{reset@{reset}!Simulateur@{Simulateur}}
+\subsubsection[{\texorpdfstring{reset()}{reset()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T1 , class T2 $>$ void {\bf Simulateur}$<$ T1, T2 $>$\+::reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_simulateur_a13ab6b17b05b2e70f2677543da4bde29}{}\label{class_simulateur_a13ab6b17b05b2e70f2677543da4bde29}
+
+
+revient à l\textquotesingle{}état de départ 
+
+\index{Simulateur@{Simulateur}!run@{run}}
+\index{run@{run}!Simulateur@{Simulateur}}
+\subsubsection[{\texorpdfstring{run(unsigned int nb)}{run(unsigned int nb)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T1 , class T2 $>$ void {\bf Simulateur}$<$ T1, T2 $>$\+::run (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{nb}
+\end{DoxyParamCaption}
+)}\hypertarget{class_simulateur_a5a9d0c9de702ee1d71c02126a5a80fad}{}\label{class_simulateur_a5a9d0c9de702ee1d71c02126a5a80fad}
+
+
+génère les n prochains états 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em nb} & \+: unsigned int \\
+\hline
+\end{DoxyParams}
+\index{Simulateur@{Simulateur}!set\+Etat\+Depart@{set\+Etat\+Depart}}
+\index{set\+Etat\+Depart@{set\+Etat\+Depart}!Simulateur@{Simulateur}}
+\subsubsection[{\texorpdfstring{set\+Etat\+Depart(const T2 \&e)}{setEtatDepart(const T2 &e)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T1 , class T2 $>$ void {\bf Simulateur}$<$ T1, T2 $>$\+::set\+Etat\+Depart (
+\begin{DoxyParamCaption}
+\item[{const T2 \&}]{e}
+\end{DoxyParamCaption}
+)}\hypertarget{class_simulateur_a31296b4599796563a8a6ad1177b76ef4}{}\label{class_simulateur_a31296b4599796563a8a6ad1177b76ef4}
+
+
+modifie état de départ 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em e} & \+: const T2 \& \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentation des données membres}
+\index{Simulateur@{Simulateur}!m\+\_\+automate@{m\+\_\+automate}}
+\index{m\+\_\+automate@{m\+\_\+automate}!Simulateur@{Simulateur}}
+\subsubsection[{\texorpdfstring{m\+\_\+automate}{m_automate}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T1 , class T2 $>$ const T1\& {\bf Simulateur}$<$ T1, T2 $>$\+::m\+\_\+automate\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_simulateur_a90182aefba76d1a43060fe608d493398}{}\label{class_simulateur_a90182aefba76d1a43060fe608d493398}
+référence vers un automate \index{Simulateur@{Simulateur}!m\+\_\+depart@{m\+\_\+depart}}
+\index{m\+\_\+depart@{m\+\_\+depart}!Simulateur@{Simulateur}}
+\subsubsection[{\texorpdfstring{m\+\_\+depart}{m_depart}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T1 , class T2 $>$ const T2$\ast$ {\bf Simulateur}$<$ T1, T2 $>$\+::m\+\_\+depart\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_simulateur_a8f024dcb44d5688aac1fdbc7df531104}{}\label{class_simulateur_a8f024dcb44d5688aac1fdbc7df531104}
+états de départ \index{Simulateur@{Simulateur}!m\+\_\+etats@{m\+\_\+etats}}
+\index{m\+\_\+etats@{m\+\_\+etats}!Simulateur@{Simulateur}}
+\subsubsection[{\texorpdfstring{m\+\_\+etats}{m_etats}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T1 , class T2 $>$ std\+::vector$<$T2 $\ast$$>$ {\bf Simulateur}$<$ T1, T2 $>$\+::m\+\_\+etats\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_simulateur_a9156b165b5affe1b4627ff66802cfc99}{}\label{class_simulateur_a9156b165b5affe1b4627ff66802cfc99}
+tableau d\textquotesingle{}états que l\textquotesingle{}automate peut gérer \index{Simulateur@{Simulateur}!m\+\_\+nb\+Max\+Etats@{m\+\_\+nb\+Max\+Etats}}
+\index{m\+\_\+nb\+Max\+Etats@{m\+\_\+nb\+Max\+Etats}!Simulateur@{Simulateur}}
+\subsubsection[{\texorpdfstring{m\+\_\+nb\+Max\+Etats}{m_nbMaxEtats}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T1 , class T2 $>$ unsigned int {\bf Simulateur}$<$ T1, T2 $>$\+::m\+\_\+nb\+Max\+Etats\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_simulateur_aee6fbe615a412a23aafe23d5b6487eec}{}\label{class_simulateur_aee6fbe615a412a23aafe23d5b6487eec}
+nombre maximum d\textquotesingle{}état stocké dans le tableau \index{Simulateur@{Simulateur}!m\+\_\+rang@{m\+\_\+rang}}
+\index{m\+\_\+rang@{m\+\_\+rang}!Simulateur@{Simulateur}}
+\subsubsection[{\texorpdfstring{m\+\_\+rang}{m_rang}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T1 , class T2 $>$ unsigned int {\bf Simulateur}$<$ T1, T2 $>$\+::m\+\_\+rang =0\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_simulateur_a40f39f55c107779de9c1b4418b98f7c0}{}\label{class_simulateur_a40f39f55c107779de9c1b4418b98f7c0}
+rang du dernier état dans le tableau 
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+info/\+L\+O21/\+L\+O21/\+Auto\+Cell/\hyperlink{_automate1_d_8h}{Automate1\+D.\+h}\item 
+info/\+L\+O21/\+L\+O21/\+Auto\+Cell/\hyperlink{_simulateur_8h}{Simulateur.\+h}\item 
+info/\+L\+O21/\+L\+O21/\+Auto\+Cell/\hyperlink{_simulateur_8cpp}{Simulateur.\+cpp}\end{DoxyCompactItemize}

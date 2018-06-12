@@ -1,0 +1,416 @@
+\hypertarget{class_autocell}{}\section{Référence de la classe Autocell}
+\label{class_autocell}\index{Autocell@{Autocell}}
+
+
+Classe abstraite. La classe généralise un \hyperlink{class_autocell}{Autocell} et définie les méthodes virtuelles qui devront être présente et définie dans chaque \hyperlink{class_autocell}{Autocell}. La fenetre principale va alors mettre en action le polymorphisme, permettant alors de lancer, arrêter... n\textquotesingle{}importe quel \hyperlink{class_autocell}{Autocell}.  
+
+
+
+
+{\ttfamily \#include $<$autocell.\+h$>$}
+
+
+
+Graphe d\textquotesingle{}héritage de Autocell\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{class_autocell__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Graphe de collaboration de Autocell\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=135pt]{class_autocell__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Connecteurs publics}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_autocell_afada0a9ee44f58fe4151a205337a6787}{cell\+Selected} (int a, int b)=0
+\begin{DoxyCompactList}\small\item\em Change la couleur de la cellule selectionnée S\+L\+OT virtuel pur qui va réaliser une action à la selection (un click) d\textquotesingle{}une cellule. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Signaux}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_autocell_a4a248ebfe4372c27a2d9b03c7b14ddf4}{end\+Sim} ()
+\begin{DoxyCompactList}\small\item\em Signal de fin de simulation Signal envoyé à la fin de la simulation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_autocell_a43f55284a9ec07e5d0619a87391d7cc7}{Autocell} (Q\+Widget $\ast$parent=nullptr, unsigned int etat=2)
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe \hyperlink{class_autocell}{Autocell}. \end{DoxyCompactList}\item 
+void \hyperlink{class_autocell_a62154f66156d8abbde2dab84cc2b6b5d}{set\+Nb\+Etat} (unsigned int e)
+\begin{DoxyCompactList}\small\item\em change le nombre d\textquotesingle{}état que peut prendre une cellule \end{DoxyCompactList}\item 
+void \hyperlink{class_autocell_a8e1fab78b4369eceedad58ddee63ae78}{set\+Taille} (unsigned int t)
+\begin{DoxyCompactList}\small\item\em change la taille des cellules \end{DoxyCompactList}\item 
+void \hyperlink{class_autocell_ac1dd89aa8d881471b06802b2d780474a}{set\+Couleur} (std\+::vector$<$ std\+::string $>$ c)
+\begin{DoxyCompactList}\small\item\em change la liste de couleur \end{DoxyCompactList}\item 
+void \hyperlink{class_autocell_a5f449aec7927c7225ff22857d92e970d}{set\+Speed} (unsigned int s)
+\begin{DoxyCompactList}\small\item\em change le delai \end{DoxyCompactList}\item 
+void \hyperlink{class_autocell_af8ec313790f53cf4a3abbc688c2b307d}{set\+Continu} (bool a)
+\begin{DoxyCompactList}\small\item\em change le mode de lecture de l\textquotesingle{}autocell \end{DoxyCompactList}\item 
+unsigned int \hyperlink{class_autocell_a342d76cd9ff9ee3b9942a7917c12a435}{get\+Nb\+Etat} () const 
+\begin{DoxyCompactList}\small\item\em accesseur Lecture \end{DoxyCompactList}\item 
+unsigned int \hyperlink{class_autocell_af4649cfcee8d1eb6250de48110d2dda0}{get\+Taille} () const 
+\begin{DoxyCompactList}\small\item\em accesseur Lecture \end{DoxyCompactList}\item 
+unsigned int \hyperlink{class_autocell_af95bce9bd555eee6e38752a639265799}{get\+Largeur} () const 
+\begin{DoxyCompactList}\small\item\em accesseur Lecture \end{DoxyCompactList}\item 
+unsigned int \hyperlink{class_autocell_a6211b452c915737d2165dc7aeb7c31ba}{get\+Hauteur} () const 
+\begin{DoxyCompactList}\small\item\em accesseur Lecture \end{DoxyCompactList}\item 
+void \hyperlink{class_autocell_a8644ce5042e0849ebe0b0f045eed18a0}{set\+Hauteur} (unsigned int h)
+\begin{DoxyCompactList}\small\item\em accesseur en écriture change la hauteur et ajuste la taille de la fenetre grâce à la méthode virtuelle pure \hyperlink{class_autocell_a060d956fa55ae3871081b3ecb949689f}{adjust\+Taille()} \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_autocell_a73af052faee8acf25c6f91aba3493004}{set\+Largeur} (unsigned int l)
+\begin{DoxyCompactList}\small\item\em accesseur en écriture change la largeur et ajuste la taille de la fenetre grâce à la méthode virtuelle pure \hyperlink{class_autocell_a060d956fa55ae3871081b3ecb949689f}{adjust\+Taille()} \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_autocell_a83fb2030039bcddc40ee72f44ac38e63}{run\+Sim} ()=0
+\begin{DoxyCompactList}\small\item\em Lance la simulation méthode virtuelle pure qui va permettre de lancer une simulation en fonction de l\textquotesingle{}automate. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_autocell_abffbd1e2026f04e489a03cc9bc0c28f4}{clear} ()=0
+\begin{DoxyCompactList}\small\item\em nettoie l\textquotesingle{}autocell méthode virtuelle pure qui va permettre de réinitialiser l\textquotesingle{}autocell \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_autocell_a060d956fa55ae3871081b3ecb949689f}{adjust\+Taille} ()=0
+\begin{DoxyCompactList}\small\item\em ajuste l\textquotesingle{}autocell méthode virtuelle pure qui va permettre de d\textquotesingle{}ajuster l\textquotesingle{}autocelle en fonction de la largeur, hauteur et taille \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_autocell_ac505c956de1d90a48e2d3558bdf97253}{init} ()=0
+\begin{DoxyCompactList}\small\item\em Génère une grille de départ méthode virtuelle pure qui va générer aléatoirement un état initiale pour l\textquotesingle{}autocell. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_autocell_aa1e1870af0142596a9a81afe7f300a11}{init\+Sym} ()=0
+\begin{DoxyCompactList}\small\item\em Génère une grille de départ symétrique méthode virtuelle pure qui va générer aléatoirement un état initiale symétrique par rapport à l\textquotesingle{}axe Y pour l\textquotesingle{}autocell. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Attributs protégés}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_autocell_abcfd3af5e49b6a5b4538fb22a5f06d81}{taille} =17
+\item 
+unsigned int \hyperlink{class_autocell_a35a3592704f2fe987c846017b0fc83b2}{nb\+Etat}
+\item 
+unsigned int \hyperlink{class_autocell_a52291657adce98a0443559a5cd2e0c0b}{speed} =100
+\item 
+std\+::vector$<$ std\+::string $>$ \hyperlink{class_autocell_a42cb133bcf58ca2f0e797d938fb79cc5}{couleur}
+\item 
+int \hyperlink{class_autocell_a30f72e08777d91ecdd047ff5fa9b718f}{hauteur} =20
+\item 
+int \hyperlink{class_autocell_a7f7e3075befc2cae857ddbb9c4643ab7}{largeur} = 15
+\item 
+bool \hyperlink{class_autocell_acd28f9a1e0654c9c365923828924b78a}{continu} = true
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Classe abstraite. La classe généralise un \hyperlink{class_autocell}{Autocell} et définie les méthodes virtuelles qui devront être présente et définie dans chaque \hyperlink{class_autocell}{Autocell}. La fenetre principale va alors mettre en action le polymorphisme, permettant alors de lancer, arrêter... n\textquotesingle{}importe quel \hyperlink{class_autocell}{Autocell}. 
+
+\subsection{Documentation des constructeurs et destructeur}
+\index{Autocell@{Autocell}!Autocell@{Autocell}}
+\index{Autocell@{Autocell}!Autocell@{Autocell}}
+\subsubsection[{\texorpdfstring{Autocell(\+Q\+Widget $\ast$parent=nullptr, unsigned int etat=2)}{Autocell(QWidget *parent=nullptr, unsigned int etat=2)}}]{\setlength{\rightskip}{0pt plus 5cm}Autocell\+::\+Autocell (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{parent = {\ttfamily nullptr}, }
+\item[{unsigned int}]{etat = {\ttfamily 2}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_autocell_a43f55284a9ec07e5d0619a87391d7cc7}{}\label{class_autocell_a43f55284a9ec07e5d0619a87391d7cc7}
+
+
+Constructeur de la classe \hyperlink{class_autocell}{Autocell}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em etat} & nombre d\textquotesingle{}états que peut prendre chaque cellule (2 par défaut)\+: unsigned int \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentation des fonctions membres}
+\index{Autocell@{Autocell}!adjust\+Taille@{adjust\+Taille}}
+\index{adjust\+Taille@{adjust\+Taille}!Autocell@{Autocell}}
+\subsubsection[{\texorpdfstring{adjust\+Taille()=0}{adjustTaille()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Autocell\+::adjust\+Taille (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_autocell_a060d956fa55ae3871081b3ecb949689f}{}\label{class_autocell_a060d956fa55ae3871081b3ecb949689f}
+
+
+ajuste l\textquotesingle{}autocell méthode virtuelle pure qui va permettre de d\textquotesingle{}ajuster l\textquotesingle{}autocelle en fonction de la largeur, hauteur et taille 
+
+
+
+Implémenté dans \hyperlink{class_autocell2_d_a76ab804bc939ebe1957dd2ba3ea93803}{Autocell2D}, et \hyperlink{class_autocell1_d_ade60b5de205e8890b608baa7b7c4d186}{Autocell1D}.
+
+\index{Autocell@{Autocell}!cell\+Selected@{cell\+Selected}}
+\index{cell\+Selected@{cell\+Selected}!Autocell@{Autocell}}
+\subsubsection[{\texorpdfstring{cell\+Selected}{cellSelected}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Autocell\+::cell\+Selected (
+\begin{DoxyParamCaption}
+\item[{int}]{a, }
+\item[{int}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [slot]}}\hypertarget{class_autocell_afada0a9ee44f58fe4151a205337a6787}{}\label{class_autocell_afada0a9ee44f58fe4151a205337a6787}
+
+
+Change la couleur de la cellule selectionnée S\+L\+OT virtuel pur qui va réaliser une action à la selection (un click) d\textquotesingle{}une cellule. 
+
+\index{Autocell@{Autocell}!clear@{clear}}
+\index{clear@{clear}!Autocell@{Autocell}}
+\subsubsection[{\texorpdfstring{clear()=0}{clear()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Autocell\+::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_autocell_abffbd1e2026f04e489a03cc9bc0c28f4}{}\label{class_autocell_abffbd1e2026f04e489a03cc9bc0c28f4}
+
+
+nettoie l\textquotesingle{}autocell méthode virtuelle pure qui va permettre de réinitialiser l\textquotesingle{}autocell 
+
+
+
+Implémenté dans \hyperlink{class_autocell1_d_a711408c00cac1a00112ce8a72eab5b48}{Autocell1D}.
+
+\index{Autocell@{Autocell}!end\+Sim@{end\+Sim}}
+\index{end\+Sim@{end\+Sim}!Autocell@{Autocell}}
+\subsubsection[{\texorpdfstring{end\+Sim}{endSim}}]{\setlength{\rightskip}{0pt plus 5cm}void Autocell\+::end\+Sim (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\hypertarget{class_autocell_a4a248ebfe4372c27a2d9b03c7b14ddf4}{}\label{class_autocell_a4a248ebfe4372c27a2d9b03c7b14ddf4}
+
+
+Signal de fin de simulation Signal envoyé à la fin de la simulation. 
+
+\index{Autocell@{Autocell}!get\+Hauteur@{get\+Hauteur}}
+\index{get\+Hauteur@{get\+Hauteur}!Autocell@{Autocell}}
+\subsubsection[{\texorpdfstring{get\+Hauteur() const }{getHauteur() const }}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Autocell\+::get\+Hauteur (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_autocell_a6211b452c915737d2165dc7aeb7c31ba}{}\label{class_autocell_a6211b452c915737d2165dc7aeb7c31ba}
+
+
+accesseur Lecture 
+
+\begin{DoxyReturn}{Renvoie}
+retourne la hauteur 
+\end{DoxyReturn}
+\index{Autocell@{Autocell}!get\+Largeur@{get\+Largeur}}
+\index{get\+Largeur@{get\+Largeur}!Autocell@{Autocell}}
+\subsubsection[{\texorpdfstring{get\+Largeur() const }{getLargeur() const }}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Autocell\+::get\+Largeur (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_autocell_af95bce9bd555eee6e38752a639265799}{}\label{class_autocell_af95bce9bd555eee6e38752a639265799}
+
+
+accesseur Lecture 
+
+\begin{DoxyReturn}{Renvoie}
+retourne la largeur 
+\end{DoxyReturn}
+\index{Autocell@{Autocell}!get\+Nb\+Etat@{get\+Nb\+Etat}}
+\index{get\+Nb\+Etat@{get\+Nb\+Etat}!Autocell@{Autocell}}
+\subsubsection[{\texorpdfstring{get\+Nb\+Etat() const }{getNbEtat() const }}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Autocell\+::get\+Nb\+Etat (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_autocell_a342d76cd9ff9ee3b9942a7917c12a435}{}\label{class_autocell_a342d76cd9ff9ee3b9942a7917c12a435}
+
+
+accesseur Lecture 
+
+\begin{DoxyReturn}{Renvoie}
+retourne le nombre d\textquotesingle{}états 
+\end{DoxyReturn}
+\index{Autocell@{Autocell}!get\+Taille@{get\+Taille}}
+\index{get\+Taille@{get\+Taille}!Autocell@{Autocell}}
+\subsubsection[{\texorpdfstring{get\+Taille() const }{getTaille() const }}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Autocell\+::get\+Taille (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_autocell_af4649cfcee8d1eb6250de48110d2dda0}{}\label{class_autocell_af4649cfcee8d1eb6250de48110d2dda0}
+
+
+accesseur Lecture 
+
+\begin{DoxyReturn}{Renvoie}
+retourne la taille 
+\end{DoxyReturn}
+\index{Autocell@{Autocell}!init@{init}}
+\index{init@{init}!Autocell@{Autocell}}
+\subsubsection[{\texorpdfstring{init()=0}{init()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Autocell\+::init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_autocell_ac505c956de1d90a48e2d3558bdf97253}{}\label{class_autocell_ac505c956de1d90a48e2d3558bdf97253}
+
+
+Génère une grille de départ méthode virtuelle pure qui va générer aléatoirement un état initiale pour l\textquotesingle{}autocell. 
+
+
+
+Implémenté dans \hyperlink{class_autocell2_d_a9380918c9f11ff223223672685b2cdb7}{Autocell2D}, et \hyperlink{class_autocell1_d_a53c95905c3b33bf49a92b64f39ec2c29}{Autocell1D}.
+
+\index{Autocell@{Autocell}!init\+Sym@{init\+Sym}}
+\index{init\+Sym@{init\+Sym}!Autocell@{Autocell}}
+\subsubsection[{\texorpdfstring{init\+Sym()=0}{initSym()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Autocell\+::init\+Sym (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_autocell_aa1e1870af0142596a9a81afe7f300a11}{}\label{class_autocell_aa1e1870af0142596a9a81afe7f300a11}
+
+
+Génère une grille de départ symétrique méthode virtuelle pure qui va générer aléatoirement un état initiale symétrique par rapport à l\textquotesingle{}axe Y pour l\textquotesingle{}autocell. 
+
+
+
+Implémenté dans \hyperlink{class_autocell2_d_acd5f269beafa7f81ff57d6f05013892e}{Autocell2D}, et \hyperlink{class_autocell1_d_a5ad8a1b903cca1cce5965d22039b6e04}{Autocell1D}.
+
+\index{Autocell@{Autocell}!run\+Sim@{run\+Sim}}
+\index{run\+Sim@{run\+Sim}!Autocell@{Autocell}}
+\subsubsection[{\texorpdfstring{run\+Sim()=0}{runSim()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Autocell\+::run\+Sim (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_autocell_a83fb2030039bcddc40ee72f44ac38e63}{}\label{class_autocell_a83fb2030039bcddc40ee72f44ac38e63}
+
+
+Lance la simulation méthode virtuelle pure qui va permettre de lancer une simulation en fonction de l\textquotesingle{}automate. 
+
+
+
+Implémenté dans \hyperlink{class_autocell1_d_a4793eae53adcca32290621c45a76260c}{Autocell1D}.
+
+\index{Autocell@{Autocell}!set\+Continu@{set\+Continu}}
+\index{set\+Continu@{set\+Continu}!Autocell@{Autocell}}
+\subsubsection[{\texorpdfstring{set\+Continu(bool a)}{setContinu(bool a)}}]{\setlength{\rightskip}{0pt plus 5cm}void Autocell\+::set\+Continu (
+\begin{DoxyParamCaption}
+\item[{bool}]{a}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_autocell_af8ec313790f53cf4a3abbc688c2b307d}{}\label{class_autocell_af8ec313790f53cf4a3abbc688c2b307d}
+
+
+change le mode de lecture de l\textquotesingle{}autocell 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em a} & \+: mode de lecture\+: bool \\
+\hline
+\end{DoxyParams}
+\index{Autocell@{Autocell}!set\+Couleur@{set\+Couleur}}
+\index{set\+Couleur@{set\+Couleur}!Autocell@{Autocell}}
+\subsubsection[{\texorpdfstring{set\+Couleur(std\+::vector$<$ std\+::string $>$ c)}{setCouleur(std::vector< std::string > c)}}]{\setlength{\rightskip}{0pt plus 5cm}void Autocell\+::set\+Couleur (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ std\+::string $>$}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_autocell_ac1dd89aa8d881471b06802b2d780474a}{}\label{class_autocell_ac1dd89aa8d881471b06802b2d780474a}
+
+
+change la liste de couleur 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em c} & \+: nouvelle liste de couleur\+: std\+::vector$<$std\+::string$>$ \\
+\hline
+\end{DoxyParams}
+\index{Autocell@{Autocell}!set\+Hauteur@{set\+Hauteur}}
+\index{set\+Hauteur@{set\+Hauteur}!Autocell@{Autocell}}
+\subsubsection[{\texorpdfstring{set\+Hauteur(unsigned int h)}{setHauteur(unsigned int h)}}]{\setlength{\rightskip}{0pt plus 5cm}void Autocell\+::set\+Hauteur (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{h}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_autocell_a8644ce5042e0849ebe0b0f045eed18a0}{}\label{class_autocell_a8644ce5042e0849ebe0b0f045eed18a0}
+
+
+accesseur en écriture change la hauteur et ajuste la taille de la fenetre grâce à la méthode virtuelle pure \hyperlink{class_autocell_a060d956fa55ae3871081b3ecb949689f}{adjust\+Taille()} 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em h} & \+: nouvelle hauteur\+: unsigned int \\
+\hline
+\end{DoxyParams}
+\index{Autocell@{Autocell}!set\+Largeur@{set\+Largeur}}
+\index{set\+Largeur@{set\+Largeur}!Autocell@{Autocell}}
+\subsubsection[{\texorpdfstring{set\+Largeur(unsigned int l)}{setLargeur(unsigned int l)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Autocell\+::set\+Largeur (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{l}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{class_autocell_a73af052faee8acf25c6f91aba3493004}{}\label{class_autocell_a73af052faee8acf25c6f91aba3493004}
+
+
+accesseur en écriture change la largeur et ajuste la taille de la fenetre grâce à la méthode virtuelle pure \hyperlink{class_autocell_a060d956fa55ae3871081b3ecb949689f}{adjust\+Taille()} 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em l} & \+: nouvelle largeur\+:unsigned int \\
+\hline
+\end{DoxyParams}
+\index{Autocell@{Autocell}!set\+Nb\+Etat@{set\+Nb\+Etat}}
+\index{set\+Nb\+Etat@{set\+Nb\+Etat}!Autocell@{Autocell}}
+\subsubsection[{\texorpdfstring{set\+Nb\+Etat(unsigned int e)}{setNbEtat(unsigned int e)}}]{\setlength{\rightskip}{0pt plus 5cm}void Autocell\+::set\+Nb\+Etat (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_autocell_a62154f66156d8abbde2dab84cc2b6b5d}{}\label{class_autocell_a62154f66156d8abbde2dab84cc2b6b5d}
+
+
+change le nombre d\textquotesingle{}état que peut prendre une cellule 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em e} & \+: nouveau nombre d\textquotesingle{}état\+: unsigned int \\
+\hline
+\end{DoxyParams}
+\index{Autocell@{Autocell}!set\+Speed@{set\+Speed}}
+\index{set\+Speed@{set\+Speed}!Autocell@{Autocell}}
+\subsubsection[{\texorpdfstring{set\+Speed(unsigned int s)}{setSpeed(unsigned int s)}}]{\setlength{\rightskip}{0pt plus 5cm}void Autocell\+::set\+Speed (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_autocell_a5f449aec7927c7225ff22857d92e970d}{}\label{class_autocell_a5f449aec7927c7225ff22857d92e970d}
+
+
+change le delai 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em s} & \+: nouveau délai\+: unsigned int \\
+\hline
+\end{DoxyParams}
+\index{Autocell@{Autocell}!set\+Taille@{set\+Taille}}
+\index{set\+Taille@{set\+Taille}!Autocell@{Autocell}}
+\subsubsection[{\texorpdfstring{set\+Taille(unsigned int t)}{setTaille(unsigned int t)}}]{\setlength{\rightskip}{0pt plus 5cm}void Autocell\+::set\+Taille (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{t}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_autocell_a8e1fab78b4369eceedad58ddee63ae78}{}\label{class_autocell_a8e1fab78b4369eceedad58ddee63ae78}
+
+
+change la taille des cellules 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em t} & \+:nouvelle taille\+: unsigned int \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentation des données membres}
+\index{Autocell@{Autocell}!continu@{continu}}
+\index{continu@{continu}!Autocell@{Autocell}}
+\subsubsection[{\texorpdfstring{continu}{continu}}]{\setlength{\rightskip}{0pt plus 5cm}bool Autocell\+::continu = true\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_autocell_acd28f9a1e0654c9c365923828924b78a}{}\label{class_autocell_acd28f9a1e0654c9c365923828924b78a}
+Mode de lecture \index{Autocell@{Autocell}!couleur@{couleur}}
+\index{couleur@{couleur}!Autocell@{Autocell}}
+\subsubsection[{\texorpdfstring{couleur}{couleur}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$std\+::string$>$ Autocell\+::couleur\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_autocell_a42cb133bcf58ca2f0e797d938fb79cc5}{}\label{class_autocell_a42cb133bcf58ca2f0e797d938fb79cc5}
+liste des couleurs pour chaque état i \index{Autocell@{Autocell}!hauteur@{hauteur}}
+\index{hauteur@{hauteur}!Autocell@{Autocell}}
+\subsubsection[{\texorpdfstring{hauteur}{hauteur}}]{\setlength{\rightskip}{0pt plus 5cm}int Autocell\+::hauteur =20\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_autocell_a30f72e08777d91ecdd047ff5fa9b718f}{}\label{class_autocell_a30f72e08777d91ecdd047ff5fa9b718f}
+hauteur de la grille(pour \hyperlink{class_autocell1_d}{Autocell1D} la hauteur représente le nombre de simulation) \index{Autocell@{Autocell}!largeur@{largeur}}
+\index{largeur@{largeur}!Autocell@{Autocell}}
+\subsubsection[{\texorpdfstring{largeur}{largeur}}]{\setlength{\rightskip}{0pt plus 5cm}int Autocell\+::largeur = 15\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_autocell_a7f7e3075befc2cae857ddbb9c4643ab7}{}\label{class_autocell_a7f7e3075befc2cae857ddbb9c4643ab7}
+Largeur de la grille \index{Autocell@{Autocell}!nb\+Etat@{nb\+Etat}}
+\index{nb\+Etat@{nb\+Etat}!Autocell@{Autocell}}
+\subsubsection[{\texorpdfstring{nb\+Etat}{nbEtat}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Autocell\+::nb\+Etat\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_autocell_a35a3592704f2fe987c846017b0fc83b2}{}\label{class_autocell_a35a3592704f2fe987c846017b0fc83b2}
+Nombre d\textquotesingle{}état pour une cellule \index{Autocell@{Autocell}!speed@{speed}}
+\index{speed@{speed}!Autocell@{Autocell}}
+\subsubsection[{\texorpdfstring{speed}{speed}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Autocell\+::speed =100\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_autocell_a52291657adce98a0443559a5cd2e0c0b}{}\label{class_autocell_a52291657adce98a0443559a5cd2e0c0b}
+delai entre chaque simulation \index{Autocell@{Autocell}!taille@{taille}}
+\index{taille@{taille}!Autocell@{Autocell}}
+\subsubsection[{\texorpdfstring{taille}{taille}}]{\setlength{\rightskip}{0pt plus 5cm}int Autocell\+::taille =17\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_autocell_abcfd3af5e49b6a5b4538fb22a5f06d81}{}\label{class_autocell_abcfd3af5e49b6a5b4538fb22a5f06d81}
+Taille d\textquotesingle{}une cellule 
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+info/\+L\+O21/\+L\+O21/\+Auto\+Cell/\hyperlink{autocell_8h}{autocell.\+h}\item 
+info/\+L\+O21/\+L\+O21/build-\/\+Auto\+Cell-\/\+Desktop-\/\+Debug/\hyperlink{moc__autocell_8cpp}{moc\+\_\+autocell.\+cpp}\end{DoxyCompactItemize}
