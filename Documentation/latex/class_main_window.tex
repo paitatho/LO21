@@ -20,8 +20,7 @@ Graphe d\textquotesingle{}héritage de Main\+Window\+:\nopagebreak
 \end{figure}
 
 
-Graphe de collaboration de Main\+Window\+:
-\nopagebreak
+Graphe de collaboration de Main\+Window\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -31,8 +30,8 @@ Graphe de collaboration de Main\+Window\+:
 \subsection*{Connecteurs publics}
 \begin{DoxyCompactItemize}
 \item 
-virtual void \hyperlink{class_main_window_a13e1e518cda3c3ef508f319e5230a425}{open\+Sim} ()
-\begin{DoxyCompactList}\small\item\em S\+L\+OT qui ouvre un automate choisit dans l\textquotesingle{}attribut membre choix\+Sim méthode vituelle. \end{DoxyCompactList}\item 
+void \hyperlink{class_main_window_a13e1e518cda3c3ef508f319e5230a425}{open\+Sim} ()
+\begin{DoxyCompactList}\small\item\em S\+L\+OT qui ouvre un automate choisit dans l\textquotesingle{}attribut membre choix\+Sim. \end{DoxyCompactList}\item 
 virtual void \hyperlink{class_main_window_a990d78b7f127395e17c2772d751052aa}{clear\+Auto1D} ()
 \begin{DoxyCompactList}\small\item\em S\+L\+OT qui nettoie le attribut et les options à la destruction de l\textquotesingle{}automate 1D méthode vituelle. \end{DoxyCompactList}\item 
 virtual void \hyperlink{class_main_window_a57bb2b74f849477d2033ea02c95d85fc}{clear\+Auto2D} ()
@@ -66,7 +65,11 @@ void \hyperlink{class_main_window_ab14d52a2b2a63b6ed930e4131322dd3d}{afficher\+R
 void \hyperlink{class_main_window_a2ee1589220ee377441d94777ccef6c9f}{initialiseur} ()
 \begin{DoxyCompactList}\small\item\em S\+L\+OT qui gère la génération d\textquotesingle{}un état initial aléatoire en fonction de l\textquotesingle{}automate courant. \end{DoxyCompactList}\item 
 void \hyperlink{class_main_window_a611ef20ef8820089fe62ea686f321456}{initialiseur\+Sym} ()
-\begin{DoxyCompactList}\small\item\em S\+L\+OT qui gère la génération d\textquotesingle{}un état initial symétrique en fonction de l\textquotesingle{}automate courant. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em S\+L\+OT qui gère la génération d\textquotesingle{}un état initial symétrique en fonction de l\textquotesingle{}automate courant. \end{DoxyCompactList}\item 
+void \hyperlink{class_main_window_a4106cf25ea9980d703e04bac7c9ecd31}{save\+Automate} ()
+\item 
+void \hyperlink{class_main_window_ad9bd4644e729ca73c06d51378aa05753}{load\+Automate} ()
+\end{DoxyCompactItemize}
 \subsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
@@ -77,7 +80,9 @@ virtual void \hyperlink{class_main_window_a4e20a4a065fbb0e4d3532a45a0a91425}{clo
 virtual void \hyperlink{class_main_window_a94b693e3fa35f35ba200d2427b9cd419}{save\+App\+State} ()
 \item 
 virtual void \hyperlink{class_main_window_ab1dbe77cfb9a4876733a540614afdec0}{restore\+App\+State} ()
-\end{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_main_window_aec09ccd11397e7c8f83852ede698cf9c}{extension\+Open\+Sim} ()
+\begin{DoxyCompactList}\small\item\em méthode qui permet d\textquotesingle{}ajouter des automates dans le S\+L\+OT \hyperlink{class_main_window_a13e1e518cda3c3ef508f319e5230a425}{open\+Sim()} \mbox{[}Hook\mbox{]} méthode vituelle \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Fonctions membres privées}
 \begin{DoxyCompactItemize}
 \item 
@@ -420,6 +425,17 @@ S\+L\+OT qui gère l\textquotesingle{}affichage des options en fonction de l\tex
 {\em w} & \+: automate\+Courant \+: Q\+Mdi\+Sub\+Window $\ast$ \\
 \hline
 \end{DoxyParams}
+\index{Main\+Window@{Main\+Window}!extension\+Open\+Sim@{extension\+Open\+Sim}}
+\index{extension\+Open\+Sim@{extension\+Open\+Sim}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{extension\+Open\+Sim()}{extensionOpenSim()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Main\+Window\+::extension\+Open\+Sim (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{class_main_window_aec09ccd11397e7c8f83852ede698cf9c}{}\label{class_main_window_aec09ccd11397e7c8f83852ede698cf9c}
+
+
+méthode qui permet d\textquotesingle{}ajouter des automates dans le S\+L\+OT \hyperlink{class_main_window_a13e1e518cda3c3ef508f319e5230a425}{open\+Sim()} \mbox{[}Hook\mbox{]} méthode vituelle 
+
 \index{Main\+Window@{Main\+Window}!initialiseur@{initialiseur}}
 \index{initialiseur@{initialiseur}!Main\+Window@{Main\+Window}}
 \subsubsection[{\texorpdfstring{initialiseur}{initialiseur}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::initialiseur (
@@ -442,16 +458,23 @@ S\+L\+OT qui gère la génération d\textquotesingle{}un état initial aléatoir
 
 S\+L\+OT qui gère la génération d\textquotesingle{}un état initial symétrique en fonction de l\textquotesingle{}automate courant. 
 
+\index{Main\+Window@{Main\+Window}!load\+Automate@{load\+Automate}}
+\index{load\+Automate@{load\+Automate}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{load\+Automate}{loadAutomate}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::load\+Automate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{class_main_window_ad9bd4644e729ca73c06d51378aa05753}{}\label{class_main_window_ad9bd4644e729ca73c06d51378aa05753}
 \index{Main\+Window@{Main\+Window}!open\+Sim@{open\+Sim}}
 \index{open\+Sim@{open\+Sim}!Main\+Window@{Main\+Window}}
 \subsubsection[{\texorpdfstring{open\+Sim}{openSim}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::open\+Sim (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}\hypertarget{class_main_window_a13e1e518cda3c3ef508f319e5230a425}{}\label{class_main_window_a13e1e518cda3c3ef508f319e5230a425}
+)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{class_main_window_a13e1e518cda3c3ef508f319e5230a425}{}\label{class_main_window_a13e1e518cda3c3ef508f319e5230a425}
 
 
-S\+L\+OT qui ouvre un automate choisit dans l\textquotesingle{}attribut membre choix\+Sim méthode vituelle. 
+S\+L\+OT qui ouvre un automate choisit dans l\textquotesingle{}attribut membre choix\+Sim. 
 
 \index{Main\+Window@{Main\+Window}!pause@{pause}}
 \index{pause@{pause}!Main\+Window@{Main\+Window}}
@@ -489,6 +512,13 @@ S\+L\+OT qui gère la lecture de l\textquotesingle{}automate courant.
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_main_window_a94b693e3fa35f35ba200d2427b9cd419}{}\label{class_main_window_a94b693e3fa35f35ba200d2427b9cd419}
+\index{Main\+Window@{Main\+Window}!save\+Automate@{save\+Automate}}
+\index{save\+Automate@{save\+Automate}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{save\+Automate}{saveAutomate}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::save\+Automate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\hypertarget{class_main_window_a4106cf25ea9980d703e04bac7c9ecd31}{}\label{class_main_window_a4106cf25ea9980d703e04bac7c9ecd31}
 
 
 \subsection{Documentation des données membres}

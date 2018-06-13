@@ -87,10 +87,14 @@ public:
     virtual void closeEvent(QCloseEvent *event);
     virtual void saveAppState();
     virtual void restoreAppState();
-public slots:
-    /*! \brief SLOT qui ouvre un automate choisit dans l'attribut membre choixSim
+
+    /*! \brief méthode qui permet d'ajouter des automates dans le SLOT openSim() [Hook]
                 méthode vituelle*/
-    virtual void openSim();
+   virtual void extensionOpenSim(){}
+
+public slots:
+    /*! \brief SLOT qui ouvre un automate choisit dans l'attribut membre choixSim*/
+     void openSim();
 
     /*! \brief SLOT qui nettoie le attribut et les options à la destruction de l'automate 1D
                 méthode vituelle*/

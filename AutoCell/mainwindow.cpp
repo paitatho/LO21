@@ -237,6 +237,8 @@ void MainWindow::openSim(){
    else{
        QMessageBox::information(this,"information","Vous ne pouvez pas créer 2 automates <strong>identiques</strong> en même temps");
    }
+
+   extensionOpenSim();
 }
 
 void MainWindow::changeLargeur(int a){

@@ -1,6 +1,7 @@
 var searchData=
 [
   ['saveappstate',['saveAppState',['../class_main_window.html#a94b693e3fa35f35ba200d2427b9cd419',1,'MainWindow']]],
+  ['saveautomate',['saveAutomate',['../class_main_window.html#a4106cf25ea9980d703e04bac7c9ecd31',1,'MainWindow']]],
   ['sendregle',['sendRegle',['../class_regle2_d.html#a1958192093ce058d829ffc77cfa8ee78',1,'Regle2D']]],
   ['setborneinf',['setBorneInf',['../class_regle2_d.html#aa547b53ccd967ba81e1eb899517713c7',1,'Regle2D']]],
   ['setbornesup',['setBorneSup',['../class_regle2_d.html#a65e642a8babbaf2f9ab92c105b44753c',1,'Regle2D']]],
@@ -28,7 +29,7 @@ var searchData=
   ['simulateur_2eh',['Simulateur.h',['../_simulateur_8h.html',1,'']]],
   ['speed',['speed',['../class_autocell.html#a52291657adce98a0443559a5cd2e0c0b',1,'Autocell']]],
   ['speed2d',['speed2D',['../class_main_window.html#a062e8ba0040a577871dd29cadbade31b',1,'MainWindow']]],
-  ['stringdata0',['stringdata0',['../structqt__meta__stringdata___autocell__t.html#aacd0730b3ef21589a31099e0bffbec58',1,'qt_meta_stringdata_Autocell_t::stringdata0()'],['../structqt__meta__stringdata___autocell1_d__t.html#aa63fa3b230b4bd59751df0a366afe39f',1,'qt_meta_stringdata_Autocell1D_t::stringdata0()'],['../structqt__meta__stringdata___autocell2_d__t.html#abb1f63b6d95e8f7dfa1925caf0601041',1,'qt_meta_stringdata_Autocell2D_t::stringdata0()'],['../structqt__meta__stringdata___regle2_d__t.html#aa969665748e3c27f0a24557b6d8d3ec5',1,'qt_meta_stringdata_Regle2D_t::stringdata0()'],['../structqt__meta__stringdata___main_window__t.html#afb742f40c613588b4a6b55edda5c09e1',1,'qt_meta_stringdata_MainWindow_t::stringdata0()'],['../structqt__meta__stringdata___w_spacer__t.html#a6aa496e58add48e1d6dc9b3b615aa03d',1,'qt_meta_stringdata_WSpacer_t::stringdata0()']]],
+  ['stringdata0',['stringdata0',['../structqt__meta__stringdata___autocell__t.html#aacd0730b3ef21589a31099e0bffbec58',1,'qt_meta_stringdata_Autocell_t::stringdata0()'],['../structqt__meta__stringdata___autocell1_d__t.html#aa63fa3b230b4bd59751df0a366afe39f',1,'qt_meta_stringdata_Autocell1D_t::stringdata0()'],['../structqt__meta__stringdata___autocell2_d__t.html#abb1f63b6d95e8f7dfa1925caf0601041',1,'qt_meta_stringdata_Autocell2D_t::stringdata0()'],['../structqt__meta__stringdata___regle2_d__t.html#aa969665748e3c27f0a24557b6d8d3ec5',1,'qt_meta_stringdata_Regle2D_t::stringdata0()'],['../structqt__meta__stringdata___main_window__t.html#a2fa46444eb1ac35dca9266fcfdf74b9e',1,'qt_meta_stringdata_MainWindow_t::stringdata0()'],['../structqt__meta__stringdata___w_spacer__t.html#a6aa496e58add48e1d6dc9b3b615aa03d',1,'qt_meta_stringdata_WSpacer_t::stringdata0()']]],
   ['subwin',['subWin',['../class_main_window.html#ac18cc180f7f4908f63ce91487bf044cd',1,'MainWindow']]],
   ['subwin2d',['subWin2D',['../class_main_window.html#a9e6a20036bfb2fe795858f32b0f72282',1,'MainWindow']]]
 ];

@@ -1,4 +1,4 @@
 <map id="Etat" name="Etat">
-<area shape="rect" id="node2" href="$class_etat1_d.html" title="hérite de Etat permet d&#39;envoyer des erreurs concernant les automates1D " alt="" coords="5,80,68,107"/>
-<area shape="rect" id="node3" href="$class_etat2_d.html" title="hérite de Etat " alt="" coords="92,80,155,107"/>
+<area shape="rect" id="node2" href="$class_etat1_d.html" title="hérite de Etat. Permet de créer de état à 1Dimension " alt="" coords="5,80,68,107"/>
+<area shape="rect" id="node3" href="$class_etat2_d.html" title="hérite de Etat. Permet de créer des états à 2 dimensions " alt="" coords="92,80,155,107"/>
 </map>
