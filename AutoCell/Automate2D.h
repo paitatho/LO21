@@ -37,7 +37,6 @@ class Automate2D : public Automate<Etat2D>
 
 private:
     std::vector< std::vector<unsigned short int> > m_regle; /*!< représente les règles de transitions*/
-
 public:
     /*! \brief Constructeur Privée
      *  \param regle : std::vector< std::vector<unsigned short int> >
@@ -58,7 +57,7 @@ public:
     /*! \brief applique la transition entre 2 Etats en fonction de la règle
      *  \param dep : const Etat2D&
         \param dest : Etat2D&*/
-    virtual void appliquerTransition(const Etat2D& dep, Etat2D& dest) const;
+    virtual bool appliquerTransition(const Etat2D& dep, Etat2D& dest) const;
 
     /*! \brief compte le nombre de cellules alentours dans l'état etatCel
      *  \param i : unsigned int

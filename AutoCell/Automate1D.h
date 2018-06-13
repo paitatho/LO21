@@ -60,7 +60,7 @@ public:
     /*! \brief applique les règles de transition à un état
         \param dep : état de départ: const Etat1D&
         \param dest : etat d'arrivé: Etat1D&*/
-    void appliquerTransition(const Etat1D& dep, Etat1D& dest) const;
+    bool appliquerTransition(const Etat1D& dep, Etat1D& dest) const;
 
     /*! \brief afficher un automate*/
     void afficher() const;

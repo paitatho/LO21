@@ -197,6 +197,8 @@ protected:
     QTableWidget* etats = nullptr;  /*!< représente les cellules de l'automates*/
     Regle2D* fenetreRegle2D;        /*!< IHM pour rentrer les règles*/
     unsigned int compteur =0;       /*!< compte de nombre de simulation*/
+    QLabel* nbSimu;
+
     /*! \brief initialise l'attribut membre etats
     *   \param h : hauteur: int
     *   \param l : largeur: int */

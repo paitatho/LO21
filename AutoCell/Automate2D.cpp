@@ -16,29 +16,29 @@ int Automate2D::nbCellule(unsigned int i,unsigned int j, Etat2D const& etat, uns
     return nb;
 }
 
-void Automate2D::appliquerTransition(const Etat2D& dep, Etat2D& dest) const{
+bool Automate2D::appliquerTransition(const Etat2D& dep, Etat2D& dest) const{
     if((dep.getLargeur() != dest.getLargeur()) || (dep.getHauteur() != dest.getHauteur()))
       dest=dep;
     int largeur =dep.getLargeur(), hauteur =dep.getHauteur(), nbRegle = m_regle.size(), i =0, nbCel=0;
     bool sol = false;
-    //std::cout<<std::endl<<nbRegle<<std::endl;
-
+    bool changement =false;
     for (int iC = 0;iC<hauteur;iC++){
         for (int jC=0;jC<largeur;jC++){
             while(i != nbRegle && sol == false){ // tant qu'il y a des règles et qu'on a pas trouvé de solution
                 if(dep.getCellule(iC,jC) == m_regle[i][0]){
                     nbCel = nbCellule(iC,jC,dep,m_regle[i][1]);
-                    //std::cout<<nbCel;
                     if(m_regle[i][2] == 1 ){
                         if( m_regle[i][3]<= nbCel && nbCel <= m_regle[i][4] ){
                             dest.setCellule(iC,jC,i);
                             sol = true;
+                            if(i != dep.getCellule(iC,jC))changement=true;
                         }
                     }
                     else{
                         if( m_regle[i][4]< nbCel || nbCel < m_regle[i][3] ){
                             dest.setCellule(iC,jC,i);
                             sol = true;
+                            if(i != dep.getCellule(iC,jC))changement=true;
                         }
                     }
                 }
@@ -53,6 +53,6 @@ void Automate2D::appliquerTransition(const Etat2D& dep, Etat2D& dest) const{
             i=0;
         }
     }
-
+    return changement;
 }
 

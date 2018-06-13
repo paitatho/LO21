@@ -41,7 +41,7 @@ public:
      *          Méthode virtuelle pure
      *  \param depart : const T&
         \param destination : T&*/
-    virtual void appliquerTransition(const T& , T&) const = 0; // méthode virtuelle pure
+    virtual bool appliquerTransition(const T& , T&) const = 0; // méthode virtuelle pure
 };
 
 #endif // AUTOMATE_H

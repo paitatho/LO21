@@ -2,7 +2,7 @@
 
 using namespace std;
 
-Etat1D::Etat1D(unsigned int taille,unsigned int nbEtat) : Etat(taille,nbEtat){
+Etat1D::Etat1D(unsigned int taille,unsigned int nbEtat) : Etat(taille,0,nbEtat){
   for (int i=0;i<m_largeur;i++)
     m_tab.push_back(false);
 }

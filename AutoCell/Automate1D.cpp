@@ -42,7 +42,7 @@ int Automate1D::getNumero() const{
 std::string Automate1D::getNumeroBit() const{
   return m_numeroBit;
 }
-void Automate1D::appliquerTransition(const Etat1D& dep, Etat1D& dest) const{
+bool Automate1D::appliquerTransition(const Etat1D& dep, Etat1D& dest) const{
   if(dep.getDimension()!=dest.getDimension())
     dest=dep;
   for(unsigned int i=0;i<dep.getDimension();i++)
@@ -54,6 +54,7 @@ void Automate1D::appliquerTransition(const Etat1D& dep, Etat1D& dest) const{
       conf+=dep.getCellule(i+1);
     dest.setCellule(i,m_numeroBit[7-conf]-'0');
   }
+  return true;
 
 }
 

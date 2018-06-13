@@ -29,9 +29,7 @@ template<class T1, class T2> class Simulateur{
     const T2 * m_depart;            /*!< états de départ*/
     unsigned int m_nbMaxEtats;      /*!< nombre maximum d'état stocké dans le tableau*/
     unsigned int m_rang=0;          /*!< rang du dernier état dans le tableau*/
-
-
-    //void build(unsigned int c);
+    bool changement=false;
 
     /*! \brief  suppression constructeur de recopie*/
     Simulateur(const Simulateur&) = delete;
@@ -56,6 +54,8 @@ public:
     /*! \brief  modifie état de départ
         \param e : const T2 &*/
     void setEtatDepart(const T2 & e);
+
+    bool getChangement() const{return changement;}
 
     /*! \brief génère les n prochains états
         \param nb : unsigned int*/

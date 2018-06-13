@@ -9,7 +9,7 @@ void delay(int n)
 {
     QTime dieTime= QTime::currentTime().addMSecs(n);
     while (QTime::currentTime() < dieTime)
-    QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
+        QCoreApplication::processEvents(QEventLoop::AllEvents, 1);
 }
 
 void Autocell1D::cellSelected(int a,int b){
@@ -65,8 +65,8 @@ void Autocell1D::runSim(){
             etats->setColumnWidth(j,taille);
         }
         etats->setRowHeight(i,taille);
-    layout->addWidget(etats,4,0);
     }
+    layout->addWidget(etats,4,0);
     emit endSim();
 }
 
@@ -199,7 +199,9 @@ Autocell2D::Autocell2D(QWidget* parent) : Autocell(parent),regle(std::vector<std
     connect(fenetreRegle2D,SIGNAL(envoiRegle(std::vector<std::vector<unsigned short int> >,std::vector<std::string>)),this,SLOT(changeRegle(std::vector<std::vector<unsigned short int> >,std::vector<std::string>)));
 
     this->setLayout(layout);
-    //this->runSim();
+    nbSimu = new QLabel(this);
+    nbSimu->setText(("   " + to_string(compteur)).c_str());
+    nbSimu->setFont(QFont("",16,QFont::Bold));nbSimu->setStyleSheet("QLabel { color : red; }");
 }
 
 void Autocell2D::changeRegle(std::vector<std::vector<unsigned short int>> r,std::vector<std::string> c){
@@ -241,6 +243,7 @@ void Autocell2D::runSim(){
     }
     Automate2D a(regle,nbEtat);
     Simulateur<Automate2D,Etat2D> s(a,e);
+
     do {
         s.next();
         for (unsigned int i=0;i<hauteur;i++){
@@ -251,7 +254,7 @@ void Autocell2D::runSim(){
                     a->setFlags(Qt::ItemIsEnabled);
                     etats ->setItem(i, j, a);
                 }
-                if(s.avantDernier() == s.dernier()) continu=false;
+                if(s.getChangement() == false) continu=false;
                 else{
                     etats->item(i,j)->setBackgroundColor(couleur[s.dernier().getCellule(i,j)].c_str());
                     etats->setColumnWidth(j,taille);
@@ -261,8 +264,9 @@ void Autocell2D::runSim(){
         }
         if(continu){delay(speed);}
         ++compteur;
+        nbSimu->setText(("    " + to_string(compteur)).c_str());
     }while(continu);
-    compteur =0;
+
     emit endSim();
 }
 
@@ -273,6 +277,8 @@ void Autocell2D::clear(){
             etats->item(i,j)->setBackgroundColor(couleur[0].c_str());
         }
     }
+    compteur =0;
+    nbSimu->setText(("    " + to_string(compteur)).c_str());
 }
 
 void Autocell2D::adjustTaille(){
@@ -300,6 +306,8 @@ void Autocell2D::init(){
             etats->item(i,j)->setBackgroundColor(couleur[rand()%2].c_str()); //met soit la couleur de l'état 0, soit celle de l'état 1
         }
     }
+    compteur =0;
+    nbSimu->setText(("    " + to_string(compteur)).c_str());
 }
 
 void Autocell2D::initSym(){
@@ -311,6 +319,8 @@ void Autocell2D::initSym(){
             etats->item(i,largeur-j-1)->setBackgroundColor(couleur[c].c_str());
         }
     }
+    compteur =0;
+    nbSimu->setText(("    " + to_string(compteur)).c_str());
 }
 
 /*#####################################################----REGLE 2D----#######################################"*/

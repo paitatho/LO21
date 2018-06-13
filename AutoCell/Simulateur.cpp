@@ -12,10 +12,7 @@ template<class T1, class T2> Simulateur<T1,T2>::Simulateur (const T1 & a,unsigne
 template<class T1, class T2> Simulateur<T1,T2>::Simulateur (const T1& a, const T2 & dep, unsigned int buffer) : m_nbMaxEtats(buffer), m_automate(a),m_depart(&dep){
   for (int i=0; i<m_nbMaxEtats;i++)
     m_etats.push_back(nullptr);
-  if(a.getNbEtat() == dep.getNbEtat()){
-     // m_automate = a;
-     // m_depart = &dep;
-  }
+
   m_etats[0] = new T2(dep);
 }
 template<class T1, class T2> void Simulateur<T1,T2>::setEtatDepart(const T2 & e){
@@ -31,12 +28,15 @@ template<class T1, class T2> void Simulateur<T1,T2>::run (unsigned int nb){  //g
     next();
   }
 }
+
 template<class T1, class T2> void Simulateur<T1,T2>::next(){// génère le prochain état
   T2* e = new T2();
-  m_automate.appliquerTransition(*m_etats[m_rang%m_nbMaxEtats], *e);
+  if (m_automate.appliquerTransition(*m_etats[m_rang%m_nbMaxEtats], *e) == false)changement=false;
+  else changement =true;
   ++m_rang;
   m_etats[m_rang%m_nbMaxEtats]= e;
 }
+
 template<class T1, class T2> const T2 & Simulateur<T1,T2>::dernier() const{
   return *m_etats[m_rang%m_nbMaxEtats];
 }
