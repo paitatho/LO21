@@ -1,5 +1,5 @@
 var structqt__meta__stringdata___main_window__t =
 [
-    [ "data", "structqt__meta__stringdata___main_window__t.html#afe3efb55c44aeb65b1905fbb8b35699b", null ],
-    [ "stringdata0", "structqt__meta__stringdata___main_window__t.html#afb742f40c613588b4a6b55edda5c09e1", null ]
+    [ "data", "structqt__meta__stringdata___main_window__t.html#a48f255bc47fc5d9f118e582b8447d10a", null ],
+    [ "stringdata0", "structqt__meta__stringdata___main_window__t.html#a2fa46444eb1ac35dca9266fcfdf74b9e", null ]
 ];

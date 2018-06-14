@@ -21,6 +21,8 @@
  *      -m_regle[1] = [0,1,1,3,3]    Une cellule morte possédant 3 voisines vivantes devient vivante
  */
 
+class AutomateManager2D;
+
 /*!
  * \file Automate2D.h
  * \brief Implémente l'automate 2D ainsi que les Etats 2D
@@ -34,16 +36,17 @@
  */
 class Automate2D : public Automate<Etat2D>
 {
+    friend class AutomateManager2D;
 
-private:
+protected:
     std::vector< std::vector<unsigned short int> > m_regle; /*!< représente les règles de transitions*/
 
-public:
-    /*! \brief Constructeur Privée
+    /*! \brief Constructeur Protected
      *  \param regle : std::vector< std::vector<unsigned short int> >
         \param nbEtat : nombre d'état : unsigned short int*/
     Automate2D(std::vector< std::vector<unsigned short int> > regle = std::vector< std::vector<unsigned short int> >(), unsigned short int nbEtat = 2): Automate(nbEtat), m_regle(regle){}
 
+public:
     /*! \brief Destructeur virtuel*/
     virtual ~Automate2D(){}
 
@@ -57,8 +60,9 @@ public:
 
     /*! \brief applique la transition entre 2 Etats en fonction de la règle
      *  \param dep : const Etat2D&
-        \param dest : Etat2D&*/
-    virtual void appliquerTransition(const Etat2D& dep, Etat2D& dest) const;
+        \param dest : Etat2D&
+        \return bool : permet de savoir si il y a eu des modifications entre l'état de départ et celui d'arrivé*/
+    virtual bool appliquerTransition(const Etat2D& dep, Etat2D& dest) const;
 
     /*! \brief compte le nombre de cellules alentours dans l'état etatCel
      *  \param i : unsigned int
@@ -69,7 +73,42 @@ public:
 
 };
 
+/*! \class AutomateManager2D
+ * \brief Singleton. La classe permet de gèrer la création d'automates à 2 dimensions
+ */
+class AutomateManager2D
+{
+private:
+  static AutomateManager2D* m_AutomateManager2D;    /*!< Singleton*/
+  std::vector<Automate2D*> m_tabAutomate;       /*!< Stocke tous les automate2D*/
+protected:
+  /*! \brief Constructeur Protected*/
+    AutomateManager2D();
 
+    /*! \brief Destructeur Protected*/
+    ~AutomateManager2D();
+
+    /*! \brief Constructeur de recopie supprimé*/
+    AutomateManager2D(const AutomateManager2D&) = delete;
+
+    /*! \brief Opérateur d'affectation protected*/
+    AutomateManager2D& operator=(const AutomateManager2D&);
+public:
+    /*! \brief Méthode statique
+        \return m_AutomateManager2D : AutomateManager2D&*/
+  static AutomateManager2D& getInstance();
+
+  /*! \brief Méthode statique
+     libère l'automate manager*/
+  static void freeInstance();
+
+  /*! \brief retourne un Automate2D
+   * \param regle : règle de transition : std::vector< std::vector<unsigned short int> >
+   * \param nbEtat : nombre d'états possibles: unsigned short int
+   * \return const Automate2D&*/
+  const Automate2D& getAutomate(std::vector< std::vector<unsigned short int> > regle,unsigned short int nbEtat=2);
+
+};
 
 
 #endif // AUTOMATE2D_H

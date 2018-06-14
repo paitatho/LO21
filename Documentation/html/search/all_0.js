@@ -8,7 +8,7 @@ var searchData=
   ['afficherregle2d',['afficherRegle2D',['../class_main_window.html#ab14d52a2b2a63b6ed930e4131322dd3d',1,'MainWindow']]],
   ['ajoutreglepredefini',['ajoutReglePredefini',['../class_regle2_d.html#ad53e81ccd6fa9eb94d30d87dca19a213',1,'Regle2D::ajoutReglePredefini()'],['../class_regle2_d_bis.html#a7851a6efdc011876e729797fc70e0a0f',1,'Regle2DBis::ajoutReglePredefini()']]],
   ['allow',['allow',['../class_main_window.html#a9a12b2903cb870b374af5f0ab8df7bda',1,'MainWindow']]],
-  ['appliquertransition',['appliquerTransition',['../class_automate.html#abfeaddcc8930b1f63a785cd5c6ff6dc5',1,'Automate::appliquerTransition()'],['../class_automate1_d.html#a46c4e3b65e6d657c93e54fcbbc022dc6',1,'Automate1D::appliquerTransition()'],['../class_automate2_d.html#a2cbea145a6e7eff58528bcab31316365',1,'Automate2D::appliquerTransition()']]],
+  ['appliquertransition',['appliquerTransition',['../class_automate.html#a123c24c274f8f02dd9e2635eedf54533',1,'Automate::appliquerTransition()'],['../class_automate1_d.html#a95d43afbf8f9a3272a448e145bacee2b',1,'Automate1D::appliquerTransition()'],['../class_automate2_d.html#a2cc86edfb8c2ec56a645247449b94c16',1,'Automate2D::appliquerTransition()']]],
   ['auto1d',['auto1D',['../class_main_window.html#a252b3e10b17bf529c25b4e72be4b4332',1,'MainWindow']]],
   ['auto2d',['auto2D',['../class_main_window.html#ae1a48aa4de447712675f3aa2d7482034',1,'MainWindow']]],
   ['autocell',['Autocell',['../class_autocell.html',1,'Autocell'],['../class_autocell.html#a43f55284a9ec07e5d0619a87391d7cc7',1,'Autocell::Autocell()']]],
@@ -29,6 +29,7 @@ var searchData=
   ['automate_3c_20etat1d_20_3e',['Automate&lt; Etat1D &gt;',['../class_automate.html',1,'']]],
   ['automate_3c_20etat2d_20_3e',['Automate&lt; Etat2D &gt;',['../class_automate.html',1,'']]],
   ['automateexception',['AutomateException',['../class_automate_exception.html',1,'AutomateException'],['../class_automate_exception.html#a324660f942b04229a4795cc80c3dbe82',1,'AutomateException::AutomateException()']]],
-  ['automatemanager',['AutomateManager',['../class_automate_manager.html',1,'AutomateManager'],['../class_automate1_d.html#a6f30ee58a7bdd1cf1c712265d22f2faa',1,'Automate1D::AutomateManager()'],['../class_automate_manager.html#a75225270782fb3b8bf593c9f8a0787fa',1,'AutomateManager::AutomateManager()'],['../class_automate_manager.html#a855de28e9c3f99ae576f8ce217779af1',1,'AutomateManager::AutomateManager(const AutomateManager &amp;)=delete']]],
+  ['automatemanager1d',['AutomateManager1D',['../class_automate_manager1_d.html',1,'AutomateManager1D'],['../class_automate1_d.html#a775ba0aadecfca9626107f79c9ba333b',1,'Automate1D::AutomateManager1D()'],['../class_automate_manager1_d.html#adfe1844c6be79268d686aa702a4a2a7c',1,'AutomateManager1D::AutomateManager1D()'],['../class_automate_manager1_d.html#ab1eba03851be7405404c24934e13dadf',1,'AutomateManager1D::AutomateManager1D(const AutomateManager1D &amp;)=delete']]],
+  ['automatemanager2d',['AutomateManager2D',['../class_automate_manager2_d.html',1,'AutomateManager2D'],['../class_automate2_d.html#ae4af0b43eae2d17cf68916ad9e636cd8',1,'Automate2D::AutomateManager2D()'],['../class_automate_manager2_d.html#a10b50f85282bc1bce81332e02e542273',1,'AutomateManager2D::AutomateManager2D()'],['../class_automate_manager2_d.html#a8fa762ca890165d9b7cab24cfe0609df',1,'AutomateManager2D::AutomateManager2D(const AutomateManager2D &amp;)=delete']]],
   ['avantdernier',['avantDernier',['../class_simulateur.html#aca4b266c11eb65f61c0cb958d4232c0f',1,'Simulateur']]]
 ];

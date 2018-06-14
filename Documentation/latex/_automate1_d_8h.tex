@@ -1,5 +1,5 @@
-\hypertarget{_automate1_d_8h}{}\section{Référence du fichier info/\+L\+O21/\+L\+O21/\+Auto\+Cell/\+Automate1D.h}
-\label{_automate1_d_8h}\index{info/\+L\+O21/\+L\+O21/\+Auto\+Cell/\+Automate1\+D.\+h@{info/\+L\+O21/\+L\+O21/\+Auto\+Cell/\+Automate1\+D.\+h}}
+\hypertarget{_automate1_d_8h}{}\section{Référence du fichier /home/thomaspaita/\+Bureau/info/\+L\+O21/\+L\+O21/\+Auto\+Cell/\+Automate1D.h}
+\label{_automate1_d_8h}\index{/home/thomaspaita/\+Bureau/info/\+L\+O21/\+L\+O21/\+Auto\+Cell/\+Automate1\+D.\+h@{/home/thomaspaita/\+Bureau/info/\+L\+O21/\+L\+O21/\+Auto\+Cell/\+Automate1\+D.\+h}}
 
 
 Implémente l\textquotesingle{}automate 1D ainsi que les Etats 1D.  
@@ -18,7 +18,8 @@ Graphe des dépendances par inclusion de Automate1\+D.\+h\+:\nopagebreak
 \includegraphics[width=350pt]{_automate1_d_8h__incl}
 \end{center}
 \end{figure}
-Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:\nopagebreak
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -29,13 +30,13 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 \begin{DoxyCompactItemize}
 \item 
 class \hyperlink{class_automate}{Automate$<$ T $>$}
-\begin{DoxyCompactList}\small\item\em Classe Template abstraite. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Classe Template abstraite. La classe généralise un \hyperlink{class_automate}{Automate} et définie la méthodes virtuelle qui devra être présente et définie dans chaque \hyperlink{class_automate}{Automate}. (run\+Sim()) \end{DoxyCompactList}\item 
 class \hyperlink{class_simulateur}{Simulateur$<$ T1, T2 $>$}
-\begin{DoxyCompactList}\small\item\em Classe template permet de gérer la simulation de n\textquotesingle{}importe quel automate héritant de la Classe \hyperlink{class_automate}{Automate}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Classe template. Permet de gérer la simulation de n\textquotesingle{}importe quel automate héritant de la Classe \hyperlink{class_automate}{Automate}. \end{DoxyCompactList}\item 
 class \hyperlink{class_automate1_d}{Automate1D}
-\begin{DoxyCompactList}\small\item\em hérite de \hyperlink{class_automate}{Automate$<$\+Etat1\+D$>$} \end{DoxyCompactList}\item 
-class \hyperlink{class_automate_manager}{Automate\+Manager}
-\begin{DoxyCompactList}\small\item\em La classe permet de gèrer les automates. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em hérite de \hyperlink{class_automate}{Automate$<$\+Etat1\+D$>$}. La classe permet d\textquotesingle{}appliquer une transition sur les \hyperlink{class_etat1_d}{Etat1D} suivant une règle \end{DoxyCompactList}\item 
+class \hyperlink{class_automate_manager1_d}{Automate\+Manager1D}
+\begin{DoxyCompactList}\small\item\em Singleton. La classe permet de gèrer la création d\textquotesingle{}automates à 1 dimension. \end{DoxyCompactList}\item 
 class \hyperlink{class_automate_exception}{Automate\+Exception}
 \begin{DoxyCompactList}\small\item\em permet d\textquotesingle{}envoyer des erreurs concernant les automates1D \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Fonctions}

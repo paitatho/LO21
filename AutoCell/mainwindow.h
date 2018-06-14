@@ -87,18 +87,32 @@ public:
     virtual void closeEvent(QCloseEvent *event);
     virtual void saveAppState();
     virtual void restoreAppState();
-public slots:
-    /*! \brief SLOT qui ouvre un automate choisit dans l'attribut membre choixSim
+
+    /*! \brief méthode qui permet d'ajouter des automates dans le SLOT openSim() [Hook]
                 méthode vituelle*/
-    virtual void openSim();
+   virtual void extensionOpenSim(){}
+
+    /*! \brief méthode qui permet d'ajouter des actions lors du nettoyage des attributs dans le SLOT clearAuto1D() [Hook]
+                méthode vituelle*/
+   virtual void extensionclearAuto1D(){larg1D->setValue(15);nbSim1D->setValue(20);regle1D->setValue(150);}
+
+    /*! \brief méthode qui permet d'ajouter des actions lors du nettoyage des attributs dans le SLOT clearAuto2D()  [Hook]
+                méthode vituelle*/
+   virtual void extensionclearAuto2D(){larg2D->setValue(35);haut2D->setValue(35);taille->setValue(17);}
+
+public slots:
+    /*! \brief SLOT qui ouvre un automate choisit dans l'attribut membre choixSim*/
+     void openSim();
 
     /*! \brief SLOT qui nettoie le attribut et les options à la destruction de l'automate 1D
                 méthode vituelle*/
-    virtual void clearAuto1D(){ auto1D = nullptr;subWin = nullptr;larg1D->setValue(15);nbSim1D->setValue(20);regle1D->setValue(150);}
+    void clearAuto1D(){ auto1D = nullptr;subWin = nullptr;this->extensionclearAuto1D();}
+
 
     /*! \brief SLOT qui nettoie le attribut à la destruction de l'automate 1D
                 méthode vituelle*/
-    virtual void clearAuto2D(){auto2D = nullptr; subWin2D = nullptr;}
+    void clearAuto2D(){auto2D = nullptr; subWin2D = nullptr; this->extensionclearAuto2D();}
+
 
     /*! \brief SLOT qui gère le changement de couleur de l'automate courant*/
     void changeColor(QString);

@@ -2,7 +2,7 @@
 \label{class_etat2_d}\index{Etat2D@{Etat2D}}
 
 
-hérite de \hyperlink{class_etat}{Etat}  
+hérite de \hyperlink{class_etat}{Etat}. Permet de créer des états à 2 dimensions  
 
 
 
@@ -32,12 +32,8 @@ Graphe de collaboration de Etat2D\+:\nopagebreak
 \item 
 \hyperlink{class_etat2_d_aae67a6ba3b3b3726a9533f647d34dd55}{Etat2D} (unsigned int l=0, unsigned int h=0, unsigned int nb\+Etat=2)
 \begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
-\hyperlink{class_etat2_d_a3eaa7f0e606a9b2f5fc634d6b571042e}{$\sim$\+Etat2D} ()
+virtual \hyperlink{class_etat2_d_ab16143bd296cf929a9968400831b1a95}{$\sim$\+Etat2D} ()
 \begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
-unsigned int \hyperlink{class_etat2_d_aff82bb61adbe51f2702e34f0ea34a55d}{get\+Hauteur} () const 
-\begin{DoxyCompactList}\small\item\em Accesseur en lecture. \end{DoxyCompactList}\item 
-void \hyperlink{class_etat2_d_a97b757ecf3f703f5e418c00e250c074c}{set\+Hauteur} (unsigned int h)
-\begin{DoxyCompactList}\small\item\em modifie la hauteur \end{DoxyCompactList}\item 
 void \hyperlink{class_etat2_d_a6fa30b43d2971b01cbfb59aef094aded}{afficher} () const 
 \begin{DoxyCompactList}\small\item\em affiche l\textquotesingle{}état \end{DoxyCompactList}\item 
 void \hyperlink{class_etat2_d_a96f855c00941ce59b2c84d347dfb5e1c}{set\+Cellule} (unsigned int i, unsigned int j, unsigned short int val)
@@ -52,15 +48,11 @@ bool \hyperlink{class_etat2_d_a6834241d99725640691eb3a252d14f5a}{operator==} (co
 \begin{DoxyCompactItemize}
 \item 
 std\+::vector$<$ std\+::vector$<$ unsigned short int $>$ $>$ \hyperlink{class_etat2_d_a82d1c6326dedc79f902c1782d6a10cfb}{m\+\_\+valeur}
-\item 
-unsigned int \hyperlink{class_etat2_d_a9be83a06c967b20b80b344e50af02626}{m\+\_\+hauteur}
 \end{DoxyCompactItemize}
 
 
 \subsection{Description détaillée}
-hérite de \hyperlink{class_etat}{Etat} 
-
-La classe permet de créer des états à 2 dimensions 
+hérite de \hyperlink{class_etat}{Etat}. Permet de créer des états à 2 dimensions 
 
 \subsection{Documentation des constructeurs et destructeur}
 \index{Etat2D@{Etat2D}!Etat2D@{Etat2D}}
@@ -87,11 +79,11 @@ Constructeur.
 \end{DoxyParams}
 \index{Etat2D@{Etat2D}!````~Etat2D@{$\sim$\+Etat2D}}
 \index{````~Etat2D@{$\sim$\+Etat2D}!Etat2D@{Etat2D}}
-\subsubsection[{\texorpdfstring{$\sim$\+Etat2\+D()}{~Etat2D()}}]{\setlength{\rightskip}{0pt plus 5cm}Etat2\+D\+::$\sim$\+Etat2D (
+\subsubsection[{\texorpdfstring{$\sim$\+Etat2\+D()}{~Etat2D()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual Etat2\+D\+::$\sim$\+Etat2D (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_etat2_d_a3eaa7f0e606a9b2f5fc634d6b571042e}{}\label{class_etat2_d_a3eaa7f0e606a9b2f5fc634d6b571042e}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{class_etat2_d_ab16143bd296cf929a9968400831b1a95}{}\label{class_etat2_d_ab16143bd296cf929a9968400831b1a95}
 
 
 Destructeur. 
@@ -151,24 +143,6 @@ Accesseur en lecture.
 \begin{DoxyReturn}{Renvoie}
 m\+\_\+valeur\mbox{[}i\mbox{]}\mbox{[}j\mbox{]} \+: unsigned short int 
 \end{DoxyReturn}
-\index{Etat2D@{Etat2D}!get\+Hauteur@{get\+Hauteur}}
-\index{get\+Hauteur@{get\+Hauteur}!Etat2D@{Etat2D}}
-\subsubsection[{\texorpdfstring{get\+Hauteur() const }{getHauteur() const }}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Etat2\+D\+::get\+Hauteur (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{class_etat2_d_aff82bb61adbe51f2702e34f0ea34a55d}{}\label{class_etat2_d_aff82bb61adbe51f2702e34f0ea34a55d}
-
-
-Accesseur en lecture. 
-
-\begin{DoxyReturn}{Renvoie}
-m\+\_\+hauteur \+: unsigned int 
-\end{DoxyReturn}
-
-
-Implémente \hyperlink{class_etat_aa2eeed5ffbef3b53a149385f81bf2af0}{Etat}.
-
 \index{Etat2D@{Etat2D}!operator==@{operator==}}
 \index{operator==@{operator==}!Etat2D@{Etat2D}}
 \subsubsection[{\texorpdfstring{operator==(const Etat2\+D \&e) const }{operator==(const Etat2D &e) const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Etat2\+D\+::operator== (
@@ -207,34 +181,15 @@ modifie la valeur d\textquotesingle{}une cellule
 {\em val} & \+: nouvelle valeur \+: unsigned int \\
 \hline
 \end{DoxyParams}
-\index{Etat2D@{Etat2D}!set\+Hauteur@{set\+Hauteur}}
-\index{set\+Hauteur@{set\+Hauteur}!Etat2D@{Etat2D}}
-\subsubsection[{\texorpdfstring{set\+Hauteur(unsigned int h)}{setHauteur(unsigned int h)}}]{\setlength{\rightskip}{0pt plus 5cm}void Etat2\+D\+::set\+Hauteur (
-\begin{DoxyParamCaption}
-\item[{unsigned int}]{h}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_etat2_d_a97b757ecf3f703f5e418c00e250c074c}{}\label{class_etat2_d_a97b757ecf3f703f5e418c00e250c074c}
-
-
-modifie la hauteur 
-
-
-\begin{DoxyParams}{Paramètres}
-{\em h} & \+: nouvelle hauteur \+: unsigned int \\
-\hline
-\end{DoxyParams}
 
 
 \subsection{Documentation des données membres}
-\index{Etat2D@{Etat2D}!m\+\_\+hauteur@{m\+\_\+hauteur}}
-\index{m\+\_\+hauteur@{m\+\_\+hauteur}!Etat2D@{Etat2D}}
-\subsubsection[{\texorpdfstring{m\+\_\+hauteur}{m_hauteur}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Etat2\+D\+::m\+\_\+hauteur\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_etat2_d_a9be83a06c967b20b80b344e50af02626}{}\label{class_etat2_d_a9be83a06c967b20b80b344e50af02626}
-hauteur de la grille \index{Etat2D@{Etat2D}!m\+\_\+valeur@{m\+\_\+valeur}}
+\index{Etat2D@{Etat2D}!m\+\_\+valeur@{m\+\_\+valeur}}
 \index{m\+\_\+valeur@{m\+\_\+valeur}!Etat2D@{Etat2D}}
 \subsubsection[{\texorpdfstring{m\+\_\+valeur}{m_valeur}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$std\+::vector$<$unsigned short int$>$ $>$ Etat2\+D\+::m\+\_\+valeur\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_etat2_d_a82d1c6326dedc79f902c1782d6a10cfb}{}\label{class_etat2_d_a82d1c6326dedc79f902c1782d6a10cfb}
 représente la grille de cellule 
 
 La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
 \item 
-info/\+L\+O21/\+L\+O21/\+Auto\+Cell/\hyperlink{_etat2_d_8h}{Etat2\+D.\+h}\item 
-info/\+L\+O21/\+L\+O21/\+Auto\+Cell/\hyperlink{_etat2_d_8cpp}{Etat2\+D.\+cpp}\end{DoxyCompactItemize}
+/home/thomaspaita/\+Bureau/info/\+L\+O21/\+L\+O21/\+Auto\+Cell/\hyperlink{_etat2_d_8h}{Etat2\+D.\+h}\item 
+/home/thomaspaita/\+Bureau/info/\+L\+O21/\+L\+O21/\+Auto\+Cell/\hyperlink{_etat2_d_8cpp}{Etat2\+D.\+cpp}\end{DoxyCompactItemize}

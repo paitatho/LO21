@@ -1,6 +1,7 @@
 var class_autocell =
 [
     [ "Autocell", "class_autocell.html#a43f55284a9ec07e5d0619a87391d7cc7", null ],
+    [ "~Autocell", "class_autocell.html#acdb5335402dda348cc1e0a62e47418fe", null ],
     [ "adjustTaille", "class_autocell.html#a060d956fa55ae3871081b3ecb949689f", null ],
     [ "cellSelected", "class_autocell.html#afada0a9ee44f58fe4151a205337a6787", null ],
     [ "clear", "class_autocell.html#abffbd1e2026f04e489a03cc9bc0c28f4", null ],

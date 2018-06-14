@@ -1,6 +1,7 @@
 var searchData=
 [
   ['saveappstate',['saveAppState',['../class_main_window.html#a94b693e3fa35f35ba200d2427b9cd419',1,'MainWindow']]],
+  ['saveautomate',['saveAutomate',['../class_main_window.html#a4106cf25ea9980d703e04bac7c9ecd31',1,'MainWindow']]],
   ['sendregle',['sendRegle',['../class_regle2_d.html#a1958192093ce058d829ffc77cfa8ee78',1,'Regle2D']]],
   ['setborneinf',['setBorneInf',['../class_regle2_d.html#aa547b53ccd967ba81e1eb899517713c7',1,'Regle2D']]],
   ['setbornesup',['setBorneSup',['../class_regle2_d.html#a65e642a8babbaf2f9ab92c105b44753c',1,'Regle2D']]],
@@ -14,7 +15,7 @@ var searchData=
   ['setetatcellulepourappliquer',['setEtatCellulePourAppliquer',['../class_regle2_d.html#adfdc1e1d68906882c9e96b900dc49086',1,'Regle2D']]],
   ['setetatdepart',['setEtatDepart',['../class_autocell1_d.html#af7a137f43564c602e7503b34a232c4e0',1,'Autocell1D::setEtatDepart()'],['../class_simulateur.html#a31296b4599796563a8a6ad1177b76ef4',1,'Simulateur::setEtatDepart()']]],
   ['setetats',['setEtats',['../class_autocell2_d.html#ab7fbe02d26468c6f65f6510fb3f7862a',1,'Autocell2D']]],
-  ['sethauteur',['setHauteur',['../class_autocell.html#a8644ce5042e0849ebe0b0f045eed18a0',1,'Autocell::setHauteur()'],['../class_etat2_d.html#a97b757ecf3f703f5e418c00e250c074c',1,'Etat2D::setHauteur()']]],
+  ['sethauteur',['setHauteur',['../class_autocell.html#a8644ce5042e0849ebe0b0f045eed18a0',1,'Autocell::setHauteur()'],['../class_etat.html#ae8c67cfbc0ba51fe35533791f97a7f7e',1,'Etat::setHauteur()']]],
   ['setinterval',['setInterval',['../class_regle2_d.html#a67d7b3803a63f2bb1b2b3073e01334ba',1,'Regle2D']]],
   ['setlargeur',['setLargeur',['../class_autocell.html#a73af052faee8acf25c6f91aba3493004',1,'Autocell::setLargeur()'],['../class_etat.html#a42eb8dc32d9865c25ff34f011d2c2706',1,'Etat::setLargeur()']]],
   ['setnbetat',['setNbEtat',['../class_autocell.html#a62154f66156d8abbde2dab84cc2b6b5d',1,'Autocell::setNbEtat()'],['../class_regle2_d.html#aa287cec81b0b71d3f87fea5357bec46b',1,'Regle2D::setNbEtat()'],['../class_automate.html#afcf89728c989465400a19174ef22dfa5',1,'Automate::setNbEtat()']]],
@@ -24,11 +25,10 @@ var searchData=
   ['settaille',['setTaille',['../class_autocell.html#a8e1fab78b4369eceedad58ddee63ae78',1,'Autocell']]],
   ['sim',['sim',['../class_simulateur_1_1iterator.html#aefe7dba8b546a3b2baabe60dfbed43f8',1,'Simulateur::iterator::sim()'],['../class_simulateur_1_1const__iterator.html#af879bec3ae8b71f1c81826e0c1b24077',1,'Simulateur::const_iterator::sim()']]],
   ['simulateur',['Simulateur',['../class_simulateur.html',1,'Simulateur&lt; T1, T2 &gt;'],['../class_simulateur_1_1iterator.html#ae6c3966e699bf920c86e0bd006bd8183',1,'Simulateur::iterator::Simulateur()'],['../class_simulateur_1_1const__iterator.html#ae6c3966e699bf920c86e0bd006bd8183',1,'Simulateur::const_iterator::Simulateur()'],['../class_simulateur.html#a4d31da226a22b706e9f67311b517dad8',1,'Simulateur::Simulateur(const Simulateur &amp;)=delete'],['../class_simulateur.html#afbd90fb92cd6e29e7a2ffe222d0194f8',1,'Simulateur::Simulateur(const T1 &amp;a, unsigned int buffer=2)'],['../class_simulateur.html#a9c6136e1ffa9ff733ab6b6680a556535',1,'Simulateur::Simulateur(const T1 &amp;a, const T2 &amp;dep, unsigned int buffer=2)']]],
-  ['simulateur_2ecpp',['Simulateur.cpp',['../_simulateur_8cpp.html',1,'']]],
   ['simulateur_2eh',['Simulateur.h',['../_simulateur_8h.html',1,'']]],
   ['speed',['speed',['../class_autocell.html#a52291657adce98a0443559a5cd2e0c0b',1,'Autocell']]],
   ['speed2d',['speed2D',['../class_main_window.html#a062e8ba0040a577871dd29cadbade31b',1,'MainWindow']]],
-  ['stringdata0',['stringdata0',['../structqt__meta__stringdata___autocell__t.html#aacd0730b3ef21589a31099e0bffbec58',1,'qt_meta_stringdata_Autocell_t::stringdata0()'],['../structqt__meta__stringdata___autocell1_d__t.html#aa63fa3b230b4bd59751df0a366afe39f',1,'qt_meta_stringdata_Autocell1D_t::stringdata0()'],['../structqt__meta__stringdata___autocell2_d__t.html#abb1f63b6d95e8f7dfa1925caf0601041',1,'qt_meta_stringdata_Autocell2D_t::stringdata0()'],['../structqt__meta__stringdata___regle2_d__t.html#aa969665748e3c27f0a24557b6d8d3ec5',1,'qt_meta_stringdata_Regle2D_t::stringdata0()'],['../structqt__meta__stringdata___main_window__t.html#afb742f40c613588b4a6b55edda5c09e1',1,'qt_meta_stringdata_MainWindow_t::stringdata0()'],['../structqt__meta__stringdata___w_spacer__t.html#a6aa496e58add48e1d6dc9b3b615aa03d',1,'qt_meta_stringdata_WSpacer_t::stringdata0()']]],
+  ['stringdata0',['stringdata0',['../structqt__meta__stringdata___autocell__t.html#aacd0730b3ef21589a31099e0bffbec58',1,'qt_meta_stringdata_Autocell_t::stringdata0()'],['../structqt__meta__stringdata___autocell1_d__t.html#aa63fa3b230b4bd59751df0a366afe39f',1,'qt_meta_stringdata_Autocell1D_t::stringdata0()'],['../structqt__meta__stringdata___autocell2_d__t.html#abb1f63b6d95e8f7dfa1925caf0601041',1,'qt_meta_stringdata_Autocell2D_t::stringdata0()'],['../structqt__meta__stringdata___regle2_d__t.html#aa969665748e3c27f0a24557b6d8d3ec5',1,'qt_meta_stringdata_Regle2D_t::stringdata0()'],['../structqt__meta__stringdata___main_window__t.html#a2fa46444eb1ac35dca9266fcfdf74b9e',1,'qt_meta_stringdata_MainWindow_t::stringdata0()'],['../structqt__meta__stringdata___w_spacer__t.html#a6aa496e58add48e1d6dc9b3b615aa03d',1,'qt_meta_stringdata_WSpacer_t::stringdata0()']]],
   ['subwin',['subWin',['../class_main_window.html#ac18cc180f7f4908f63ce91487bf044cd',1,'MainWindow']]],
   ['subwin2d',['subWin2D',['../class_main_window.html#a9e6a20036bfb2fe795858f32b0f72282',1,'MainWindow']]]
 ];

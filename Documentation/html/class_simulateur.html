@@ -118,7 +118,7 @@ $(document).ready(function(){initNavTree('class_simulateur.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p>Classe template permet de gérer la simulation de n'importe quel automate héritant de la Classe <a class="el" href="class_automate.html" title="Classe Template abstraite. ">Automate</a>.  
+<p>Classe template. Permet de gérer la simulation de n'importe quel automate héritant de la Classe <a class="el" href="class_automate.html" title="Classe Template abstraite. La classe généralise un Automate et définie la méthodes virtuelle qui devr...">Automate</a>.  
  <a href="class_simulateur.html#details">Plus de détails...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_automate1_d_8h_source.html">Automate1D.h</a>&gt;</code></p>
@@ -126,6 +126,7 @@ $(document).ready(function(){initNavTree('class_simulateur.html','');});
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulateur_1_1const__iterator.html">const_iterator</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">permet le parcourt des états dans simulateur const  <a href="class_simulateur_1_1const__iterator.html#details">Plus de détails...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulateur_1_1iterator.html">iterator</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">permet le parcourt des états  <a href="class_simulateur_1_1iterator.html#details">Plus de détails...</a><br /></td></tr>
@@ -145,6 +146,9 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:a31296b4599796563a8a6ad1177b76ef4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulateur.html#a31296b4599796563a8a6ad1177b76ef4">setEtatDepart</a> (const T2 &amp;e)</td></tr>
 <tr class="memdesc:a31296b4599796563a8a6ad1177b76ef4"><td class="mdescLeft">&#160;</td><td class="mdescRight">modifie état de départ  <a href="#a31296b4599796563a8a6ad1177b76ef4">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a31296b4599796563a8a6ad1177b76ef4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e5511f65b8da6dec66ef9d32e1d1a6a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulateur.html#a6e5511f65b8da6dec66ef9d32e1d1a6a">getChangement</a> () const </td></tr>
+<tr class="memdesc:a6e5511f65b8da6dec66ef9d32e1d1a6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">indique si après une similation il y a bien au des modifications entre etat de départ et d'arrivé  <a href="#a6e5511f65b8da6dec66ef9d32e1d1a6a">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a6e5511f65b8da6dec66ef9d32e1d1a6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a9d0c9de702ee1d71c02126a5a80fad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulateur.html#a5a9d0c9de702ee1d71c02126a5a80fad">run</a> (unsigned int nb)</td></tr>
 <tr class="memdesc:a5a9d0c9de702ee1d71c02126a5a80fad"><td class="mdescLeft">&#160;</td><td class="mdescRight">génère les n prochains états  <a href="#a5a9d0c9de702ee1d71c02126a5a80fad">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a5a9d0c9de702ee1d71c02126a5a80fad"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -197,12 +201,14 @@ Attributs privés</h2></td></tr>
 <tr class="separator:aee6fbe615a412a23aafe23d5b6487eec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40f39f55c107779de9c1b4418b98f7c0"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulateur.html#a40f39f55c107779de9c1b4418b98f7c0">m_rang</a> =0</td></tr>
 <tr class="separator:a40f39f55c107779de9c1b4418b98f7c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa734d94931986b1a7a8351a94dde1938"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulateur.html#aa734d94931986b1a7a8351a94dde1938">changement</a> =false</td></tr>
+<tr class="separator:aa734d94931986b1a7a8351a94dde1938"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><h3>template&lt;class T1, class T2&gt;<br />
 class Simulateur&lt; T1, T2 &gt;</h3>
 
-<p>Classe template permet de gérer la simulation de n'importe quel automate héritant de la Classe <a class="el" href="class_automate.html" title="Classe Template abstraite. ">Automate</a>. </p>
+<p>Classe template. Permet de gérer la simulation de n'importe quel automate héritant de la Classe <a class="el" href="class_automate.html" title="Classe Template abstraite. La classe généralise un Automate et définie la méthodes virtuelle qui devr...">Automate</a>. </p>
 </div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
 <a class="anchor" id="a4d31da226a22b706e9f67311b517dad8"></a>
 <div class="memitem">
@@ -523,6 +529,34 @@ template&lt;class T1 , class T2 &gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="a6e5511f65b8da6dec66ef9d32e1d1a6a"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T1 , class T2 &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_simulateur.html">Simulateur</a>&lt; T1, T2 &gt;::getChangement </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>indique si après une similation il y a bien au des modifications entre etat de départ et d'arrivé </p>
+<dl class="section return"><dt>Renvoie</dt><dd>changement : bool </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="afc98cbe3954590d6185b8c7c5d9fddd4"></a>
 <div class="memitem">
 <div class="memproto">
@@ -670,6 +704,29 @@ template&lt;class T1 , class T2 &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Documentation des données membres</h2>
+<a class="anchor" id="aa734d94931986b1a7a8351a94dde1938"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T1 , class T2 &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_simulateur.html">Simulateur</a>&lt; T1, T2 &gt;::changement =false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>booléen qui indique si il y a eu des changements lors de la dernière simulation </p>
+
+</div>
+</div>
 <a class="anchor" id="a90182aefba76d1a43060fe608d493398"></a>
 <div class="memitem">
 <div class="memproto">
@@ -786,9 +843,8 @@ template&lt;class T1 , class T2 &gt; </div>
 </div>
 </div>
 <hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
-<li>info/LO21/LO21/AutoCell/<a class="el" href="_automate1_d_8h_source.html">Automate1D.h</a></li>
-<li>info/LO21/LO21/AutoCell/<a class="el" href="_simulateur_8h_source.html">Simulateur.h</a></li>
-<li>info/LO21/LO21/AutoCell/<a class="el" href="_simulateur_8cpp.html">Simulateur.cpp</a></li>
+<li>/home/thomaspaita/Bureau/info/LO21/LO21/AutoCell/<a class="el" href="_automate1_d_8h_source.html">Automate1D.h</a></li>
+<li>/home/thomaspaita/Bureau/info/LO21/LO21/AutoCell/<a class="el" href="_simulateur_8h_source.html">Simulateur.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -2,7 +2,7 @@
 \label{class_simulateur}\index{Simulateur$<$ T1, T2 $>$@{Simulateur$<$ T1, T2 $>$}}
 
 
-Classe template permet de gérer la simulation de n\textquotesingle{}importe quel automate héritant de la Classe \hyperlink{class_automate}{Automate}.  
+Classe template. Permet de gérer la simulation de n\textquotesingle{}importe quel automate héritant de la Classe \hyperlink{class_automate}{Automate}.  
 
 
 
@@ -13,7 +13,7 @@ Classe template permet de gérer la simulation de n\textquotesingle{}importe que
 \begin{DoxyCompactItemize}
 \item 
 class \hyperlink{class_simulateur_1_1const__iterator}{const\+\_\+iterator}
-\item 
+\begin{DoxyCompactList}\small\item\em permet le parcourt des états dans simulateur const \end{DoxyCompactList}\item 
 class \hyperlink{class_simulateur_1_1iterator}{iterator}
 \begin{DoxyCompactList}\small\item\em permet le parcourt des états \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Fonctions membres publiques}
@@ -27,6 +27,8 @@ class \hyperlink{class_simulateur_1_1iterator}{iterator}
 \begin{DoxyCompactList}\small\item\em destructeur \end{DoxyCompactList}\item 
 void \hyperlink{class_simulateur_a31296b4599796563a8a6ad1177b76ef4}{set\+Etat\+Depart} (const T2 \&e)
 \begin{DoxyCompactList}\small\item\em modifie état de départ \end{DoxyCompactList}\item 
+bool \hyperlink{class_simulateur_a6e5511f65b8da6dec66ef9d32e1d1a6a}{get\+Changement} () const 
+\begin{DoxyCompactList}\small\item\em indique si après une similation il y a bien au des modifications entre etat de départ et d\textquotesingle{}arrivé \end{DoxyCompactList}\item 
 void \hyperlink{class_simulateur_a5a9d0c9de702ee1d71c02126a5a80fad}{run} (unsigned int nb)
 \begin{DoxyCompactList}\small\item\em génère les n prochains états \end{DoxyCompactList}\item 
 void \hyperlink{class_simulateur_a6043e64df6e41c1d4ae84da540786379}{next} ()
@@ -70,6 +72,8 @@ const T2 $\ast$ \hyperlink{class_simulateur_a8f024dcb44d5688aac1fdbc7df531104}{m
 unsigned int \hyperlink{class_simulateur_aee6fbe615a412a23aafe23d5b6487eec}{m\+\_\+nb\+Max\+Etats}
 \item 
 unsigned int \hyperlink{class_simulateur_a40f39f55c107779de9c1b4418b98f7c0}{m\+\_\+rang} =0
+\item 
+bool \hyperlink{class_simulateur_aa734d94931986b1a7a8351a94dde1938}{changement} =false
 \end{DoxyCompactItemize}
 
 
@@ -77,7 +81,7 @@ unsigned int \hyperlink{class_simulateur_a40f39f55c107779de9c1b4418b98f7c0}{m\+\
 \subsubsection*{template$<$class T1, class T2$>$\\*
 class Simulateur$<$ T1, T2 $>$}
 
-Classe template permet de gérer la simulation de n\textquotesingle{}importe quel automate héritant de la Classe \hyperlink{class_automate}{Automate}. 
+Classe template. Permet de gérer la simulation de n\textquotesingle{}importe quel automate héritant de la Classe \hyperlink{class_automate}{Automate}. 
 
 \subsection{Documentation des constructeurs et destructeur}
 \index{Simulateur@{Simulateur}!Simulateur@{Simulateur}}
@@ -216,6 +220,20 @@ etat \+: dernier etat\+: const T2 \&
 {}
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_simulateur_a1fb0351ecf22dc11327914a1aba67081}{}\label{class_simulateur_a1fb0351ecf22dc11327914a1aba67081}
+\index{Simulateur@{Simulateur}!get\+Changement@{get\+Changement}}
+\index{get\+Changement@{get\+Changement}!Simulateur@{Simulateur}}
+\subsubsection[{\texorpdfstring{get\+Changement() const }{getChangement() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T1 , class T2 $>$ bool {\bf Simulateur}$<$ T1, T2 $>$\+::get\+Changement (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_simulateur_a6e5511f65b8da6dec66ef9d32e1d1a6a}{}\label{class_simulateur_a6e5511f65b8da6dec66ef9d32e1d1a6a}
+
+
+indique si après une similation il y a bien au des modifications entre etat de départ et d\textquotesingle{}arrivé 
+
+\begin{DoxyReturn}{Renvoie}
+changement \+: bool 
+\end{DoxyReturn}
 \index{Simulateur@{Simulateur}!get\+Rang\+Dernier@{get\+Rang\+Dernier}}
 \index{get\+Rang\+Dernier@{get\+Rang\+Dernier}!Simulateur@{Simulateur}}
 \subsubsection[{\texorpdfstring{get\+Rang\+Dernier() const }{getRangDernier() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T1 , class T2 $>$ unsigned int {\bf Simulateur}$<$ T1, T2 $>$\+::get\+Rang\+Dernier (
@@ -298,7 +316,10 @@ modifie état de départ
 
 
 \subsection{Documentation des données membres}
-\index{Simulateur@{Simulateur}!m\+\_\+automate@{m\+\_\+automate}}
+\index{Simulateur@{Simulateur}!changement@{changement}}
+\index{changement@{changement}!Simulateur@{Simulateur}}
+\subsubsection[{\texorpdfstring{changement}{changement}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T1 , class T2 $>$ bool {\bf Simulateur}$<$ T1, T2 $>$\+::changement =false\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_simulateur_aa734d94931986b1a7a8351a94dde1938}{}\label{class_simulateur_aa734d94931986b1a7a8351a94dde1938}
+booléen qui indique si il y a eu des changements lors de la dernière simulation \index{Simulateur@{Simulateur}!m\+\_\+automate@{m\+\_\+automate}}
 \index{m\+\_\+automate@{m\+\_\+automate}!Simulateur@{Simulateur}}
 \subsubsection[{\texorpdfstring{m\+\_\+automate}{m_automate}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T1 , class T2 $>$ const T1\& {\bf Simulateur}$<$ T1, T2 $>$\+::m\+\_\+automate\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_simulateur_a90182aefba76d1a43060fe608d493398}{}\label{class_simulateur_a90182aefba76d1a43060fe608d493398}
 référence vers un automate \index{Simulateur@{Simulateur}!m\+\_\+depart@{m\+\_\+depart}}
@@ -317,6 +338,5 @@ rang du dernier état dans le tableau
 
 La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
 \item 
-info/\+L\+O21/\+L\+O21/\+Auto\+Cell/\hyperlink{_automate1_d_8h}{Automate1\+D.\+h}\item 
-info/\+L\+O21/\+L\+O21/\+Auto\+Cell/\hyperlink{_simulateur_8h}{Simulateur.\+h}\item 
-info/\+L\+O21/\+L\+O21/\+Auto\+Cell/\hyperlink{_simulateur_8cpp}{Simulateur.\+cpp}\end{DoxyCompactItemize}
+/home/thomaspaita/\+Bureau/info/\+L\+O21/\+L\+O21/\+Auto\+Cell/\hyperlink{_automate1_d_8h}{Automate1\+D.\+h}\item 
+/home/thomaspaita/\+Bureau/info/\+L\+O21/\+L\+O21/\+Auto\+Cell/\hyperlink{_simulateur_8h}{Simulateur.\+h}\end{DoxyCompactItemize}

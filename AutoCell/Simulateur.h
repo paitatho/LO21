@@ -29,9 +29,7 @@ template<class T1, class T2> class Simulateur{
     const T2 * m_depart;            /*!< états de départ*/
     unsigned int m_nbMaxEtats;      /*!< nombre maximum d'état stocké dans le tableau*/
     unsigned int m_rang=0;          /*!< rang du dernier état dans le tableau*/
-
-
-    //void build(unsigned int c);
+    bool changement=false;          /*!< booléen qui indique si il y a eu des changements lors de la dernière simulation*/
 
     /*! \brief  suppression constructeur de recopie*/
     Simulateur(const Simulateur&) = delete;
@@ -56,6 +54,10 @@ public:
     /*! \brief  modifie état de départ
         \param e : const T2 &*/
     void setEtatDepart(const T2 & e);
+
+    /*! \brief  indique si après une similation il y a bien au des modifications entre etat de départ et d'arrivé
+        \return changement : bool*/
+    bool getChangement() const{return changement;}
 
     /*! \brief génère les n prochains états
         \param nb : unsigned int*/
@@ -105,6 +107,8 @@ public:
         iterator begin() {	return iterator(this); }
         iterator end() { if (m_rang < m_nbMaxEtats) return iterator(this, -1); else return iterator(this, m_rang - m_nbMaxEtats);  }
 
+        /*! \class  const_iterator
+         * \brief permet le parcourt des états dans simulateur const*/
         class const_iterator {
             friend class Simulateur;
             const Simulateur* sim;
@@ -129,5 +133,56 @@ public:
         const_iterator cbegin() const { return const_iterator(this); }
         const_iterator cend() const { if (m_rang < m_nbMaxEtats) return const_iterator(this, -1); else return const_iterator(this, m_rang - m_nbMaxEtats); }
 };
+
+template<class T1, class T2> Simulateur<T1,T2>::Simulateur (const T1 & a,unsigned int buffer) : m_nbMaxEtats(buffer), m_automate(a){
+  for (int i=0; i<m_nbMaxEtats;i++)
+    m_etats.push_back(nullptr);
+}
+template<class T1, class T2> Simulateur<T1,T2>::Simulateur (const T1& a, const T2 & dep, unsigned int buffer) : m_nbMaxEtats(buffer), m_automate(a),m_depart(&dep){
+  for (int i=0; i<m_nbMaxEtats;i++)
+    m_etats.push_back(nullptr);
+
+  m_etats[0] = new T2(dep);
+}
+template<class T1, class T2> void Simulateur<T1,T2>::setEtatDepart(const T2 & e){
+  if (m_automate.getNbEtat() == e.getNbEtat()){
+      m_depart = &e;
+      m_etats[0] = new T2(e);
+      reset();
+  }
+}
+
+template<class T1, class T2> void Simulateur<T1,T2>::run (unsigned int nb){  //génère les n prochains états
+  for( int i=0;i<nb;i++){
+    next();
+  }
+}
+
+template<class T1, class T2> void Simulateur<T1,T2>::next(){// génère le prochain état
+  T2* e = new T2();
+  if (m_automate.appliquerTransition(*m_etats[m_rang%m_nbMaxEtats], *e) == false)changement=false;
+  else changement =true;
+  ++m_rang;
+  m_etats[m_rang%m_nbMaxEtats]= e;
+}
+
+template<class T1, class T2> const T2 & Simulateur<T1,T2>::dernier() const{
+  return *m_etats[m_rang%m_nbMaxEtats];
+}
+
+template<class T1, class T2> const T2 & Simulateur<T1,T2>::avantDernier() const{
+  return *m_etats[(m_rang-1)%m_nbMaxEtats];
+}
+
+template<class T1, class T2> void Simulateur<T1,T2>::reset(){//revenir à l'état de départ
+  m_rang=0;
+  *(m_etats[0])= *m_depart;
+}
+
+template<class T1, class T2> Simulateur<T1,T2>::~Simulateur(){
+  for (int i=0;i<m_nbMaxEtats;i++)
+    delete m_etats[i];
+}
+
 
 #endif // SIMULATEUR_H

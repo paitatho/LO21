@@ -154,9 +154,9 @@ void MainWindow::createOption2D(){
     boxParam2D = new QGroupBox(tr("Param"));
     layoutBoxParam2D =new QGridLayout;
 
-    larg2D = new QSpinBox;larg2D->setRange(5,60);larg2D->setValue(35);
-    haut2D = new QSpinBox;haut2D->setRange(5,60);haut2D->setValue(35);
-    speed2D = new QSpinBox;speed2D->setRange(1,1000);speed2D->setValue(50);
+    larg2D = new QSpinBox;larg2D->setRange(5,100);larg2D->setValue(35);
+    haut2D = new QSpinBox;haut2D->setRange(5,100);haut2D->setValue(35);
+    speed2D = new QSpinBox;speed2D->setRange(1,1000);speed2D->setValue(100);
     mode2D = new QComboBox;
     mode2D->addItem("Continu");mode2D->addItem("pas à pas");
     taille = new QSpinBox();taille->setValue(17);taille->setRange(6,40);
@@ -227,6 +227,7 @@ void MainWindow::openSim(){
        auto2D->setLargeur(larg2D->value());
        auto2D->setHauteur(haut2D->value());
        auto2D->setTaille(taille->value());
+       auto2D->setSpeed(speed2D->value());
        subWin2D = central->addSubWindow(auto2D);
        auto2D->setAttribute(Qt::WA_DeleteOnClose);
        subWin2D->setAttribute(Qt::WA_DeleteOnClose);
@@ -237,6 +238,8 @@ void MainWindow::openSim(){
    else{
        QMessageBox::information(this,"information","Vous ne pouvez pas créer 2 automates <strong>identiques</strong> en même temps");
    }
+
+   extensionOpenSim();
 }
 
 void MainWindow::changeLargeur(int a){

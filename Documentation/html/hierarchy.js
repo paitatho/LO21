@@ -8,7 +8,8 @@ var hierarchy =
       [ "Automate2D", "class_automate2_d.html", null ]
     ] ],
     [ "AutomateException", "class_automate_exception.html", null ],
-    [ "AutomateManager", "class_automate_manager.html", null ],
+    [ "AutomateManager1D", "class_automate_manager1_d.html", null ],
+    [ "AutomateManager2D", "class_automate_manager2_d.html", null ],
     [ "Simulateur< T1, T2 >::const_iterator", "class_simulateur_1_1const__iterator.html", null ],
     [ "Etat", "class_etat.html", [
       [ "Etat1D", "class_etat1_d.html", null ],
