@@ -132,9 +132,9 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:a80d9f6cfc6786ac21b51c4ab7fcb072d"><td class="memItemLeft" align="right" valign="top">unsigned short int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_automate.html#a80d9f6cfc6786ac21b51c4ab7fcb072d">getNbEtat</a> () const </td></tr>
 <tr class="memdesc:a80d9f6cfc6786ac21b51c4ab7fcb072d"><td class="mdescLeft">&#160;</td><td class="mdescRight">retourne le nombre d'état  <a href="#a80d9f6cfc6786ac21b51c4ab7fcb072d">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a80d9f6cfc6786ac21b51c4ab7fcb072d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abfeaddcc8930b1f63a785cd5c6ff6dc5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_automate.html#abfeaddcc8930b1f63a785cd5c6ff6dc5">appliquerTransition</a> (const T &amp;, T &amp;) const =0</td></tr>
-<tr class="memdesc:abfeaddcc8930b1f63a785cd5c6ff6dc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">applique la transition entre deux quelconques donnés en paramètre Méthode virtuelle pure  <a href="#abfeaddcc8930b1f63a785cd5c6ff6dc5">Plus de détails...</a><br /></td></tr>
-<tr class="separator:abfeaddcc8930b1f63a785cd5c6ff6dc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a123c24c274f8f02dd9e2635eedf54533"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_automate.html#a123c24c274f8f02dd9e2635eedf54533">appliquerTransition</a> (const T &amp;, T &amp;) const =0</td></tr>
+<tr class="memdesc:a123c24c274f8f02dd9e2635eedf54533"><td class="mdescLeft">&#160;</td><td class="mdescRight">applique la transition entre deux quelconques donnés en paramètre Méthode virtuelle pure  <a href="#a123c24c274f8f02dd9e2635eedf54533">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a123c24c274f8f02dd9e2635eedf54533"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Attributs privés</h2></td></tr>
@@ -182,7 +182,7 @@ template&lt;class T&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Documentation des fonctions membres</h2>
-<a class="anchor" id="abfeaddcc8930b1f63a785cd5c6ff6dc5"></a>
+<a class="anchor" id="a123c24c274f8f02dd9e2635eedf54533"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -192,7 +192,7 @@ template&lt;class T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_automate.html">Automate</a>&lt; T &gt;::appliquerTransition </td>
+          <td class="memname">virtual bool <a class="el" href="class_automate.html">Automate</a>&lt; T &gt;::appliquerTransition </td>
           <td>(</td>
           <td class="paramtype">const T &amp;&#160;</td>
           <td class="paramname">, </td>
@@ -224,8 +224,9 @@ template&lt;class T&gt; </div>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Renvoie</dt><dd>bool : permet de savoir si il y a eu des modifications entre l'état de départ et celui d'arrivé </dd></dl>
 
-<p>Implémenté dans <a class="el" href="class_automate1_d.html#a46c4e3b65e6d657c93e54fcbbc022dc6">Automate1D</a>, et <a class="el" href="class_automate2_d.html#a2cbea145a6e7eff58528bcab31316365">Automate2D</a>.</p>
+<p>Implémenté dans <a class="el" href="class_automate1_d.html#a95d43afbf8f9a3272a448e145bacee2b">Automate1D</a>, et <a class="el" href="class_automate2_d.html#a2cc86edfb8c2ec56a645247449b94c16">Automate2D</a>.</p>
 
 </div>
 </div>
@@ -316,7 +317,7 @@ template&lt;class T&gt; </div>
 </div>
 </div>
 <hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
-<li>info/LO21/LO21/AutoCell/<a class="el" href="_automate_8h_source.html">Automate.h</a></li>
+<li>/home/thomaspaita/Bureau/info/LO21/LO21/AutoCell/<a class="el" href="_automate_8h_source.html">Automate.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

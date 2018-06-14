@@ -15,9 +15,10 @@ var dir_d2c29d0b245c745ed02f4ae078c8655e =
     ] ],
     [ "Automate1D.cpp", "_automate1_d_8cpp.html", "_automate1_d_8cpp" ],
     [ "Automate1D.h", "_automate1_d_8h.html", "_automate1_d_8h" ],
-    [ "Automate2D.cpp", "_automate2_d_8cpp.html", null ],
+    [ "Automate2D.cpp", "_automate2_d_8cpp.html", "_automate2_d_8cpp" ],
     [ "Automate2D.h", "_automate2_d_8h.html", [
-      [ "Automate2D", "class_automate2_d.html", "class_automate2_d" ]
+      [ "Automate2D", "class_automate2_d.html", "class_automate2_d" ],
+      [ "AutomateManager2D", "class_automate_manager2_d.html", "class_automate_manager2_d" ]
     ] ],
     [ "Etat.cpp", "_etat_8cpp.html", null ],
     [ "Etat.h", "_etat_8h.html", [

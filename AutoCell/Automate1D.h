@@ -33,8 +33,8 @@ std::ostream &operator<<(std::ostream& flux, const Automate1D& automate);
 
 class Automate1D : public Automate<Etat1D>
 {
-    friend class AutomateManager;
-private:
+    friend class AutomateManager1D;
+protected:
     short unsigned int m_numero;    /*!< Numéro de la règle*/
     std::string m_numeroBit;        /*!< Numéro de la règle sous un autre format*/
 
@@ -49,6 +49,10 @@ private:
     Automate1D(const std::string& numBit,unsigned short int nbEtat=2);
 
 public:
+
+    /*! \brief Destructeur virtuel*/
+    virtual ~Automate1D(){}
+
     /*! \brief accesseur en lecture
         \return m_numero : numéro de la règle: int*/
     int getNumero() const;
@@ -59,7 +63,8 @@ public:
 
     /*! \brief applique les règles de transition à un état
         \param dep : état de départ: const Etat1D&
-        \param dest : etat d'arrivé: Etat1D&*/
+        \param dest : etat d'arrivé: Etat1D&
+        \return bool : permet de savoir si il y a eu des modifications entre l'état de départ et celui d'arrivé*/
     bool appliquerTransition(const Etat1D& dep, Etat1D& dest) const;
 
     /*! \brief afficher un automate*/
@@ -71,30 +76,30 @@ public:
 
 
 
-/*! \class AutomateManager
- * \brief La classe permet de gèrer les automates
+/*! \class AutomateManager1D
+ * \brief Singleton. La classe permet de gèrer la création d'automates à 1 dimension
  */
-class AutomateManager
+class AutomateManager1D
 {
 private:
-  static AutomateManager* m_automateManager;    /*!< Singleton*/
+  static AutomateManager1D* m_AutomateManager1D;    /*!< Singleton*/
   std::vector<Automate1D*> m_tabAutomate;       /*!< Stocke tous les automate1D*/
 protected:
   /*! \brief Constructeur Protected*/
-    AutomateManager();
+    AutomateManager1D();
 
     /*! \brief Destructeur Protected*/
-    ~AutomateManager();
+    ~AutomateManager1D();
 
     /*! \brief Constructeur de recopie supprimé*/
-    AutomateManager(const AutomateManager&) = delete;
+    AutomateManager1D(const AutomateManager1D&) = delete;
 
     /*! \brief Opérateur d'affectation protected*/
-    AutomateManager& operator=(const AutomateManager&);
+    AutomateManager1D& operator=(const AutomateManager1D&);
 public:
     /*! \brief Méthode statique
-        \return m_automateManager : AutomateManager&*/
-  static AutomateManager& getInstance();
+        \return m_AutomateManager1D : AutomateManager1D&*/
+  static AutomateManager1D& getInstance();
 
   /*! \brief Méthode statique
      libère l'automate manager*/

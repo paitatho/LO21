@@ -10,5 +10,6 @@ var searchData=
   ['automate_3c_20etat1d_20_3e',['Automate&lt; Etat1D &gt;',['../class_automate.html',1,'']]],
   ['automate_3c_20etat2d_20_3e',['Automate&lt; Etat2D &gt;',['../class_automate.html',1,'']]],
   ['automateexception',['AutomateException',['../class_automate_exception.html',1,'']]],
-  ['automatemanager',['AutomateManager',['../class_automate_manager.html',1,'']]]
+  ['automatemanager1d',['AutomateManager1D',['../class_automate_manager1_d.html',1,'']]],
+  ['automatemanager2d',['AutomateManager2D',['../class_automate_manager2_d.html',1,'']]]
 ];

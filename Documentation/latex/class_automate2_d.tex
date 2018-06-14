@@ -30,22 +30,30 @@ Graphe de collaboration de Automate2D\+:\nopagebreak
 \subsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_automate2_d_ae00c4fae1c73cbac83424d576cfbd23d}{Automate2D} (std\+::vector$<$ std\+::vector$<$ unsigned short int $>$ $>$ regle=std\+::vector$<$ std\+::vector$<$ unsigned short int $>$ $>$(), unsigned short int nb\+Etat=2)
-\begin{DoxyCompactList}\small\item\em Constructeur Privée. \end{DoxyCompactList}\item 
 virtual \hyperlink{class_automate2_d_a20624efccdb4ec55afe6259f51ce3dd2}{$\sim$\+Automate2D} ()
 \begin{DoxyCompactList}\small\item\em Destructeur virtuel. \end{DoxyCompactList}\item 
 std\+::vector$<$ std\+::vector$<$ unsigned short int $>$ $>$ \hyperlink{class_automate2_d_a0140faf046124a3d6c1792ca8493f60b}{get\+Regle} () const 
 \begin{DoxyCompactList}\small\item\em accesseur lecture \end{DoxyCompactList}\item 
 void \hyperlink{class_automate2_d_a250f624adbe858ecbb17784730845248}{set\+Regle} (std\+::vector$<$ std\+::vector$<$ unsigned short int $>$ $>$ const \&new\+Regle)
 \begin{DoxyCompactList}\small\item\em modifie la règle \end{DoxyCompactList}\item 
-virtual void \hyperlink{class_automate2_d_a2cbea145a6e7eff58528bcab31316365}{appliquer\+Transition} (const \hyperlink{class_etat2_d}{Etat2D} \&dep, \hyperlink{class_etat2_d}{Etat2D} \&dest) const 
+virtual bool \hyperlink{class_automate2_d_a2cc86edfb8c2ec56a645247449b94c16}{appliquer\+Transition} (const \hyperlink{class_etat2_d}{Etat2D} \&dep, \hyperlink{class_etat2_d}{Etat2D} \&dest) const 
 \begin{DoxyCompactList}\small\item\em applique la transition entre 2 Etats en fonction de la règle \end{DoxyCompactList}\item 
 int \hyperlink{class_automate2_d_a067188a9e1b3afc554fc195e20cd60e8}{nb\+Cellule} (unsigned int i, unsigned int j, \hyperlink{class_etat2_d}{Etat2D} const \&etat, unsigned short int etat\+Cel) const 
 \begin{DoxyCompactList}\small\item\em compte le nombre de cellules alentours dans l\textquotesingle{}état etat\+Cel \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Attributs privés}
+\subsection*{Fonctions membres protégées}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_automate2_d_ae00c4fae1c73cbac83424d576cfbd23d}{Automate2D} (std\+::vector$<$ std\+::vector$<$ unsigned short int $>$ $>$ regle=std\+::vector$<$ std\+::vector$<$ unsigned short int $>$ $>$(), unsigned short int nb\+Etat=2)
+\begin{DoxyCompactList}\small\item\em Constructeur Protected. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Attributs protégés}
 \begin{DoxyCompactItemize}
 \item 
 std\+::vector$<$ std\+::vector$<$ unsigned short int $>$ $>$ \hyperlink{class_automate2_d_ac894413963ffddd67dc899e64a41bca0}{m\+\_\+regle}
+\end{DoxyCompactItemize}
+\subsection*{Amis}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_automate2_d_ae4af0b43eae2d17cf68916ad9e636cd8}{Automate\+Manager2D}
 \end{DoxyCompactItemize}
 
 
@@ -60,10 +68,10 @@ hérite de \hyperlink{class_automate}{Automate$<$\+Etat2\+D$>$}. La classe perme
 \item[{std\+::vector$<$ std\+::vector$<$ unsigned short int $>$ $>$}]{regle = {\ttfamily std\+:\+:vector$<$~std\+:\+:vector$<$unsigned~short~int$>$~$>$()}, }
 \item[{unsigned short int}]{nb\+Etat = {\ttfamily 2}}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_automate2_d_ae00c4fae1c73cbac83424d576cfbd23d}{}\label{class_automate2_d_ae00c4fae1c73cbac83424d576cfbd23d}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\hypertarget{class_automate2_d_ae00c4fae1c73cbac83424d576cfbd23d}{}\label{class_automate2_d_ae00c4fae1c73cbac83424d576cfbd23d}
 
 
-Constructeur Privée. 
+Constructeur Protected. 
 
 
 \begin{DoxyParams}{Paramètres}
@@ -88,12 +96,12 @@ Destructeur virtuel.
 \subsection{Documentation des fonctions membres}
 \index{Automate2D@{Automate2D}!appliquer\+Transition@{appliquer\+Transition}}
 \index{appliquer\+Transition@{appliquer\+Transition}!Automate2D@{Automate2D}}
-\subsubsection[{\texorpdfstring{appliquer\+Transition(const Etat2\+D \&dep, Etat2\+D \&dest) const }{appliquerTransition(const Etat2D &dep, Etat2D &dest) const }}]{\setlength{\rightskip}{0pt plus 5cm}void Automate2\+D\+::appliquer\+Transition (
+\subsubsection[{\texorpdfstring{appliquer\+Transition(const Etat2\+D \&dep, Etat2\+D \&dest) const }{appliquerTransition(const Etat2D &dep, Etat2D &dest) const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Automate2\+D\+::appliquer\+Transition (
 \begin{DoxyParamCaption}
 \item[{const {\bf Etat2D} \&}]{dep, }
 \item[{{\bf Etat2D} \&}]{dest}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_automate2_d_a2cbea145a6e7eff58528bcab31316365}{}\label{class_automate2_d_a2cbea145a6e7eff58528bcab31316365}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_automate2_d_a2cc86edfb8c2ec56a645247449b94c16}{}\label{class_automate2_d_a2cc86edfb8c2ec56a645247449b94c16}
 
 
 applique la transition entre 2 Etats en fonction de la règle 
@@ -105,9 +113,12 @@ applique la transition entre 2 Etats en fonction de la règle
 {\em dest} & \+: \hyperlink{class_etat2_d}{Etat2D}\& \\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+bool \+: permet de savoir si il y a eu des modifications entre l\textquotesingle{}état de départ et celui d\textquotesingle{}arrivé 
+\end{DoxyReturn}
 
 
-Implémente \hyperlink{class_automate_abfeaddcc8930b1f63a785cd5c6ff6dc5}{Automate$<$ Etat2\+D $>$}.
+Implémente \hyperlink{class_automate_a123c24c274f8f02dd9e2635eedf54533}{Automate$<$ Etat2\+D $>$}.
 
 \index{Automate2D@{Automate2D}!get\+Regle@{get\+Regle}}
 \index{get\+Regle@{get\+Regle}!Automate2D@{Automate2D}}
@@ -166,13 +177,19 @@ modifie la règle
 \end{DoxyParams}
 
 
+\subsection{Documentation des fonctions amies et associées}
+\index{Automate2D@{Automate2D}!Automate\+Manager2D@{Automate\+Manager2D}}
+\index{Automate\+Manager2D@{Automate\+Manager2D}!Automate2D@{Automate2D}}
+\subsubsection[{\texorpdfstring{Automate\+Manager2D}{AutomateManager2D}}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Automate\+Manager2D}\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{class_automate2_d_ae4af0b43eae2d17cf68916ad9e636cd8}{}\label{class_automate2_d_ae4af0b43eae2d17cf68916ad9e636cd8}
+
+
 \subsection{Documentation des données membres}
 \index{Automate2D@{Automate2D}!m\+\_\+regle@{m\+\_\+regle}}
 \index{m\+\_\+regle@{m\+\_\+regle}!Automate2D@{Automate2D}}
-\subsubsection[{\texorpdfstring{m\+\_\+regle}{m_regle}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ std\+::vector$<$unsigned short int$>$ $>$ Automate2\+D\+::m\+\_\+regle\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_automate2_d_ac894413963ffddd67dc899e64a41bca0}{}\label{class_automate2_d_ac894413963ffddd67dc899e64a41bca0}
+\subsubsection[{\texorpdfstring{m\+\_\+regle}{m_regle}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ std\+::vector$<$unsigned short int$>$ $>$ Automate2\+D\+::m\+\_\+regle\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_automate2_d_ac894413963ffddd67dc899e64a41bca0}{}\label{class_automate2_d_ac894413963ffddd67dc899e64a41bca0}
 représente les règles de transitions 
 
 La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
 \item 
-info/\+L\+O21/\+L\+O21/\+Auto\+Cell/\hyperlink{_automate2_d_8h}{Automate2\+D.\+h}\item 
-info/\+L\+O21/\+L\+O21/\+Auto\+Cell/\hyperlink{_automate2_d_8cpp}{Automate2\+D.\+cpp}\end{DoxyCompactItemize}
+/home/thomaspaita/\+Bureau/info/\+L\+O21/\+L\+O21/\+Auto\+Cell/\hyperlink{_automate2_d_8h}{Automate2\+D.\+h}\item 
+/home/thomaspaita/\+Bureau/info/\+L\+O21/\+L\+O21/\+Auto\+Cell/\hyperlink{_automate2_d_8cpp}{Automate2\+D.\+cpp}\end{DoxyCompactItemize}

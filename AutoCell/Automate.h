@@ -40,7 +40,8 @@ public:
     /*! \brief applique la transition entre deux quelconques donnés en paramètre
      *          Méthode virtuelle pure
      *  \param depart : const T&
-        \param destination : T&*/
+        \param destination : T&
+        \return bool : permet de savoir si il y a eu des modifications entre l'état de départ et celui d'arrivé*/
     virtual bool appliquerTransition(const T& , T&) const = 0; // méthode virtuelle pure
 };
 

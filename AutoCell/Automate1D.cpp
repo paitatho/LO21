@@ -63,30 +63,30 @@ ostream &operator<<(ostream& flux, const Automate1D& automate){
   return flux;
 }
 
-/*#############-AutomateManager-###############################*/
+/*#############-AutomateManager1D-###############################*/
 
-AutomateManager* AutomateManager::m_automateManager = nullptr;
+AutomateManager1D* AutomateManager1D::m_AutomateManager1D = nullptr;
 
-AutomateManager::AutomateManager(){}
+AutomateManager1D::AutomateManager1D(){}
 
-AutomateManager::~AutomateManager(){
+AutomateManager1D::~AutomateManager1D(){
   for (int i=0;i<m_tabAutomate.size();i++){
     delete m_tabAutomate[i];
   }
 }
-AutomateManager& AutomateManager::getInstance(){
-  if(AutomateManager::m_automateManager == nullptr){
-    AutomateManager::m_automateManager= new AutomateManager();
-    return *AutomateManager::m_automateManager;
+AutomateManager1D& AutomateManager1D::getInstance(){
+  if(AutomateManager1D::m_AutomateManager1D == nullptr){
+    AutomateManager1D::m_AutomateManager1D= new AutomateManager1D();
+    return *AutomateManager1D::m_AutomateManager1D;
   }
   else
-    return *AutomateManager::m_automateManager;
+    return *AutomateManager1D::m_AutomateManager1D;
 }
-void AutomateManager::freeIstance(){
-  delete AutomateManager::m_automateManager;
+void AutomateManager1D::freeIstance(){
+  delete AutomateManager1D::m_AutomateManager1D;
 }
 
-const Automate1D& AutomateManager::getAutomate(short unsigned int num){
+const Automate1D& AutomateManager1D::getAutomate(short unsigned int num){
   for (int i=0; i<m_tabAutomate.size();i++){
     if(m_tabAutomate[i]->getNumero()==num)
       return *m_tabAutomate[i];
@@ -95,7 +95,7 @@ const Automate1D& AutomateManager::getAutomate(short unsigned int num){
   m_tabAutomate.push_back(a);
   return *a;
 }
-const Automate1D& AutomateManager::getAutomate(const std::string& numbit){
+const Automate1D& AutomateManager1D::getAutomate(const std::string& numbit){
   for (int i=0; i<m_tabAutomate.size();i++){
     if(m_tabAutomate[i]->getNumeroBit()==numbit)
       return *m_tabAutomate[i];

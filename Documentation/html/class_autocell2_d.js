@@ -20,5 +20,6 @@ var class_autocell2_d =
     [ "etats", "class_autocell2_d.html#a3a7359db79b875b93bcf89ab8377cf7e", null ],
     [ "fenetreRegle2D", "class_autocell2_d.html#a46226226228ceb3dd4c5cd4a04867a85", null ],
     [ "layout", "class_autocell2_d.html#ae935ff1610be1b1375f62b6877c35afb", null ],
+    [ "nbSimu", "class_autocell2_d.html#a77c628582ad0c795ec3d2e1733f2d53f", null ],
     [ "regle", "class_autocell2_d.html#a238eef6674e510f6ce39d93427c6cad5", null ]
 ];

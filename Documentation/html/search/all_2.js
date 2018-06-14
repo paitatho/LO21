@@ -9,6 +9,7 @@ var searchData=
   ['changecolor',['changeColor',['../class_main_window.html#a709661eaabd6f570a8942f66f7c07738',1,'MainWindow']]],
   ['changehauteur',['changeHauteur',['../class_main_window.html#ac907dba426762ffbf3a7702af0aba74b',1,'MainWindow']]],
   ['changelargeur',['changeLargeur',['../class_main_window.html#a9f316199d2ac2937364bf417cbd0aa30',1,'MainWindow']]],
+  ['changement',['changement',['../class_simulateur.html#aa734d94931986b1a7a8351a94dde1938',1,'Simulateur']]],
   ['changeregle',['changeRegle',['../class_autocell2_d.html#acd5a8f9543affc825ddc82d840de7b42',1,'Autocell2D']]],
   ['changeregle1d',['changeRegle1D',['../class_main_window.html#abcab912ee0f094d4a6599b9f78f4c182',1,'MainWindow']]],
   ['changesize',['changeSize',['../class_main_window.html#a06ce6c068fd97d586543f7cdd535d23a',1,'MainWindow']]],

@@ -1,8 +1,8 @@
-<map id="info/LO21/LO21/AutoCell/mainwindow.h" name="info/LO21/LO21/AutoCell/mainwindow.h">
-<area shape="rect" id="node3" href="$autocell_8h.html" title="Gestion graphique des Automates cellulaires 1D et 2D. " alt="" coords="676,95,755,121"/>
-<area shape="rect" id="node6" href="$_automate1_d_8h.html" title="Implémente l&#39;automate 1D ainsi que les Etats 1D. " alt="" coords="379,169,486,196"/>
-<area shape="rect" id="node18" href="$_simulateur_8h.html" title="Simulateur.h" alt="" coords="687,319,781,345"/>
-<area shape="rect" id="node10" href="$_automate_8h.html" title="Structure de Base d&#39;un Automate. " alt="" coords="471,319,560,345"/>
-<area shape="rect" id="node13" href="$_etat_8h.html" title="Permet de généraliser un Etat. " alt="" coords="185,319,243,345"/>
-<area shape="rect" id="node17" href="$_etat1_d_8h.html" title="Classe pour représenter un état à 1 dimensions. " alt="" coords="395,244,470,271"/>
+<map id="/home/thomaspaita/Bureau/info/LO21/LO21/AutoCell/mainwindow.h" name="/home/thomaspaita/Bureau/info/LO21/LO21/AutoCell/mainwindow.h">
+<area shape="rect" id="node3" href="$autocell_8h.html" title="Gestion graphique des Automates cellulaires 1D et 2D. " alt="" coords="676,109,755,136"/>
+<area shape="rect" id="node6" href="$_automate1_d_8h.html" title="Implémente l&#39;automate 1D ainsi que les Etats 1D. " alt="" coords="379,184,486,211"/>
+<area shape="rect" id="node18" href="$_simulateur_8h.html" title="Simulateur.h" alt="" coords="687,333,781,360"/>
+<area shape="rect" id="node10" href="$_automate_8h.html" title="Structure de Base d&#39;un Automate. " alt="" coords="471,333,560,360"/>
+<area shape="rect" id="node13" href="$_etat_8h.html" title="Permet de généraliser un Etat. " alt="" coords="185,333,243,360"/>
+<area shape="rect" id="node17" href="$_etat1_d_8h.html" title="Classe pour représenter un état à 1 dimensions. " alt="" coords="395,259,470,285"/>
 </map>

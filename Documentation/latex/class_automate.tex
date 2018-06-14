@@ -18,7 +18,7 @@ void \hyperlink{class_automate_afcf89728c989465400a19174ef22dfa5}{set\+Nb\+Etat}
 \begin{DoxyCompactList}\small\item\em change le nombre d\textquotesingle{}état \end{DoxyCompactList}\item 
 unsigned short int \hyperlink{class_automate_a80d9f6cfc6786ac21b51c4ab7fcb072d}{get\+Nb\+Etat} () const 
 \begin{DoxyCompactList}\small\item\em retourne le nombre d\textquotesingle{}état \end{DoxyCompactList}\item 
-virtual void \hyperlink{class_automate_abfeaddcc8930b1f63a785cd5c6ff6dc5}{appliquer\+Transition} (const T \&, T \&) const =0
+virtual bool \hyperlink{class_automate_a123c24c274f8f02dd9e2635eedf54533}{appliquer\+Transition} (const T \&, T \&) const =0
 \begin{DoxyCompactList}\small\item\em applique la transition entre deux quelconques donnés en paramètre Méthode virtuelle pure \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Attributs privés}
 \begin{DoxyCompactItemize}
@@ -55,12 +55,12 @@ Constructeur.
 \subsection{Documentation des fonctions membres}
 \index{Automate@{Automate}!appliquer\+Transition@{appliquer\+Transition}}
 \index{appliquer\+Transition@{appliquer\+Transition}!Automate@{Automate}}
-\subsubsection[{\texorpdfstring{appliquer\+Transition(const T \&, T \&) const =0}{appliquerTransition(const T &, T &) const =0}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ virtual void {\bf Automate}$<$ T $>$\+::appliquer\+Transition (
+\subsubsection[{\texorpdfstring{appliquer\+Transition(const T \&, T \&) const =0}{appliquerTransition(const T &, T &) const =0}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ virtual bool {\bf Automate}$<$ T $>$\+::appliquer\+Transition (
 \begin{DoxyParamCaption}
 \item[{const T \&}]{, }
 \item[{T \&}]{}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_automate_abfeaddcc8930b1f63a785cd5c6ff6dc5}{}\label{class_automate_abfeaddcc8930b1f63a785cd5c6ff6dc5}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_automate_a123c24c274f8f02dd9e2635eedf54533}{}\label{class_automate_a123c24c274f8f02dd9e2635eedf54533}
 
 
 applique la transition entre deux quelconques donnés en paramètre Méthode virtuelle pure 
@@ -72,9 +72,12 @@ applique la transition entre deux quelconques donnés en paramètre Méthode vir
 {\em destination} & \+: T\& \\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+bool \+: permet de savoir si il y a eu des modifications entre l\textquotesingle{}état de départ et celui d\textquotesingle{}arrivé 
+\end{DoxyReturn}
 
 
-Implémenté dans \hyperlink{class_automate1_d_a46c4e3b65e6d657c93e54fcbbc022dc6}{Automate1D}, et \hyperlink{class_automate2_d_a2cbea145a6e7eff58528bcab31316365}{Automate2D}.
+Implémenté dans \hyperlink{class_automate1_d_a95d43afbf8f9a3272a448e145bacee2b}{Automate1D}, et \hyperlink{class_automate2_d_a2cc86edfb8c2ec56a645247449b94c16}{Automate2D}.
 
 \index{Automate@{Automate}!get\+Nb\+Etat@{get\+Nb\+Etat}}
 \index{get\+Nb\+Etat@{get\+Nb\+Etat}!Automate@{Automate}}
@@ -116,4 +119,4 @@ Nombre d\textquotesingle{}état
 
 La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
 \item 
-info/\+L\+O21/\+L\+O21/\+Auto\+Cell/\hyperlink{_automate_8h}{Automate.\+h}\end{DoxyCompactItemize}
+/home/thomaspaita/\+Bureau/info/\+L\+O21/\+L\+O21/\+Auto\+Cell/\hyperlink{_automate_8h}{Automate.\+h}\end{DoxyCompactItemize}

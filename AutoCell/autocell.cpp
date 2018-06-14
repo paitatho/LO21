@@ -28,7 +28,7 @@ void Autocell1D::cellSelected(int a,int b){
 void Autocell1D::runSim(){
     unsigned int c=0;
     bool sol=false;
-    AutomateManager& aM = AutomateManager::getInstance();
+    AutomateManager1D& aM = AutomateManager1D::getInstance();
     Etat1D e(largeur);
     for (int i= 0; i<largeur;i++){
         while(sol==false && c<nbEtat){
@@ -227,6 +227,7 @@ void Autocell2D::cellSelected(int a,int b){
 void Autocell2D::runSim(){
     unsigned int c=0;
     bool sol=false;
+    AutomateManager2D& aM = AutomateManager2D::getInstance();
     Etat2D e(largeur,hauteur);
     for (unsigned int i= 0; i<hauteur;i++){
         for(unsigned int j =0; j<largeur;j++){
@@ -241,8 +242,8 @@ void Autocell2D::runSim(){
             c=0;
         }
     }
-    Automate2D a(regle,nbEtat);
-    Simulateur<Automate2D,Etat2D> s(a,e);
+//    Automate2D a(regle,nbEtat);
+    Simulateur<Automate2D,Etat2D> s(aM.getAutomate(regle,nbEtat),e);
 
     do {
         s.next();

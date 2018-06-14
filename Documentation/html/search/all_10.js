@@ -15,7 +15,7 @@ var searchData=
   ['setetatcellulepourappliquer',['setEtatCellulePourAppliquer',['../class_regle2_d.html#adfdc1e1d68906882c9e96b900dc49086',1,'Regle2D']]],
   ['setetatdepart',['setEtatDepart',['../class_autocell1_d.html#af7a137f43564c602e7503b34a232c4e0',1,'Autocell1D::setEtatDepart()'],['../class_simulateur.html#a31296b4599796563a8a6ad1177b76ef4',1,'Simulateur::setEtatDepart()']]],
   ['setetats',['setEtats',['../class_autocell2_d.html#ab7fbe02d26468c6f65f6510fb3f7862a',1,'Autocell2D']]],
-  ['sethauteur',['setHauteur',['../class_autocell.html#a8644ce5042e0849ebe0b0f045eed18a0',1,'Autocell::setHauteur()'],['../class_etat2_d.html#a97b757ecf3f703f5e418c00e250c074c',1,'Etat2D::setHauteur()']]],
+  ['sethauteur',['setHauteur',['../class_autocell.html#a8644ce5042e0849ebe0b0f045eed18a0',1,'Autocell::setHauteur()'],['../class_etat.html#ae8c67cfbc0ba51fe35533791f97a7f7e',1,'Etat::setHauteur()']]],
   ['setinterval',['setInterval',['../class_regle2_d.html#a67d7b3803a63f2bb1b2b3073e01334ba',1,'Regle2D']]],
   ['setlargeur',['setLargeur',['../class_autocell.html#a73af052faee8acf25c6f91aba3493004',1,'Autocell::setLargeur()'],['../class_etat.html#a42eb8dc32d9865c25ff34f011d2c2706',1,'Etat::setLargeur()']]],
   ['setnbetat',['setNbEtat',['../class_autocell.html#a62154f66156d8abbde2dab84cc2b6b5d',1,'Autocell::setNbEtat()'],['../class_regle2_d.html#aa287cec81b0b71d3f87fea5357bec46b',1,'Regle2D::setNbEtat()'],['../class_automate.html#afcf89728c989465400a19174ef22dfa5',1,'Automate::setNbEtat()']]],

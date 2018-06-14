@@ -109,7 +109,9 @@ $(document).ready(function(){initNavTree('class_automate2_d.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Fonctions membres publiques</a> &#124;
-<a href="#pri-attribs">Attributs privés</a> &#124;
+<a href="#pro-methods">Fonctions membres protégées</a> &#124;
+<a href="#pro-attribs">Attributs protégés</a> &#124;
+<a href="#friends">Amis</a> &#124;
 <a href="class_automate2_d-members.html">Liste de tous les membres</a>  </div>
   <div class="headertitle">
 <div class="title">Référence de la classe Automate2D</div>  </div>
@@ -139,9 +141,6 @@ Graphe de collaboration de Automate2D:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
-<tr class="memitem:ae00c4fae1c73cbac83424d576cfbd23d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_automate2_d.html#ae00c4fae1c73cbac83424d576cfbd23d">Automate2D</a> (std::vector&lt; std::vector&lt; unsigned short int &gt; &gt; regle=std::vector&lt; std::vector&lt; unsigned short int &gt; &gt;(), unsigned short int nbEtat=2)</td></tr>
-<tr class="memdesc:ae00c4fae1c73cbac83424d576cfbd23d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur Privée.  <a href="#ae00c4fae1c73cbac83424d576cfbd23d">Plus de détails...</a><br /></td></tr>
-<tr class="separator:ae00c4fae1c73cbac83424d576cfbd23d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20624efccdb4ec55afe6259f51ce3dd2"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_automate2_d.html#a20624efccdb4ec55afe6259f51ce3dd2">~Automate2D</a> ()</td></tr>
 <tr class="memdesc:a20624efccdb4ec55afe6259f51ce3dd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur virtuel.  <a href="#a20624efccdb4ec55afe6259f51ce3dd2">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a20624efccdb4ec55afe6259f51ce3dd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -151,9 +150,9 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:a250f624adbe858ecbb17784730845248"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_automate2_d.html#a250f624adbe858ecbb17784730845248">setRegle</a> (std::vector&lt; std::vector&lt; unsigned short int &gt; &gt; const &amp;newRegle)</td></tr>
 <tr class="memdesc:a250f624adbe858ecbb17784730845248"><td class="mdescLeft">&#160;</td><td class="mdescRight">modifie la règle  <a href="#a250f624adbe858ecbb17784730845248">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a250f624adbe858ecbb17784730845248"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2cbea145a6e7eff58528bcab31316365"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_automate2_d.html#a2cbea145a6e7eff58528bcab31316365">appliquerTransition</a> (const <a class="el" href="class_etat2_d.html">Etat2D</a> &amp;dep, <a class="el" href="class_etat2_d.html">Etat2D</a> &amp;dest) const </td></tr>
-<tr class="memdesc:a2cbea145a6e7eff58528bcab31316365"><td class="mdescLeft">&#160;</td><td class="mdescRight">applique la transition entre 2 Etats en fonction de la règle  <a href="#a2cbea145a6e7eff58528bcab31316365">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a2cbea145a6e7eff58528bcab31316365"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cc86edfb8c2ec56a645247449b94c16"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_automate2_d.html#a2cc86edfb8c2ec56a645247449b94c16">appliquerTransition</a> (const <a class="el" href="class_etat2_d.html">Etat2D</a> &amp;dep, <a class="el" href="class_etat2_d.html">Etat2D</a> &amp;dest) const </td></tr>
+<tr class="memdesc:a2cc86edfb8c2ec56a645247449b94c16"><td class="mdescLeft">&#160;</td><td class="mdescRight">applique la transition entre 2 Etats en fonction de la règle  <a href="#a2cc86edfb8c2ec56a645247449b94c16">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a2cc86edfb8c2ec56a645247449b94c16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a067188a9e1b3afc554fc195e20cd60e8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_automate2_d.html#a067188a9e1b3afc554fc195e20cd60e8">nbCellule</a> (unsigned int i, unsigned int j, <a class="el" href="class_etat2_d.html">Etat2D</a> const &amp;etat, unsigned short int etatCel) const </td></tr>
 <tr class="memdesc:a067188a9e1b3afc554fc195e20cd60e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">compte le nombre de cellules alentours dans l'état etatCel  <a href="#a067188a9e1b3afc554fc195e20cd60e8">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a067188a9e1b3afc554fc195e20cd60e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -168,10 +167,21 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memdesc:a80d9f6cfc6786ac21b51c4ab7fcb072d inherit pub_methods_class_automate"><td class="mdescLeft">&#160;</td><td class="mdescRight">retourne le nombre d'état  <a href="#a80d9f6cfc6786ac21b51c4ab7fcb072d">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a80d9f6cfc6786ac21b51c4ab7fcb072d inherit pub_methods_class_automate"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
-Attributs privés</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Fonctions membres protégées</h2></td></tr>
+<tr class="memitem:ae00c4fae1c73cbac83424d576cfbd23d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_automate2_d.html#ae00c4fae1c73cbac83424d576cfbd23d">Automate2D</a> (std::vector&lt; std::vector&lt; unsigned short int &gt; &gt; regle=std::vector&lt; std::vector&lt; unsigned short int &gt; &gt;(), unsigned short int nbEtat=2)</td></tr>
+<tr class="memdesc:ae00c4fae1c73cbac83424d576cfbd23d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur Protected.  <a href="#ae00c4fae1c73cbac83424d576cfbd23d">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ae00c4fae1c73cbac83424d576cfbd23d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Attributs protégés</h2></td></tr>
 <tr class="memitem:ac894413963ffddd67dc899e64a41bca0"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; unsigned short int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_automate2_d.html#ac894413963ffddd67dc899e64a41bca0">m_regle</a></td></tr>
 <tr class="separator:ac894413963ffddd67dc899e64a41bca0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Amis</h2></td></tr>
+<tr class="memitem:ae4af0b43eae2d17cf68916ad9e636cd8"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_automate2_d.html#ae4af0b43eae2d17cf68916ad9e636cd8">AutomateManager2D</a></td></tr>
+<tr class="separator:ae4af0b43eae2d17cf68916ad9e636cd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>hérite de <a class="el" href="class_automate.html">Automate&lt;Etat2D&gt;</a>. La classe permet d'appliquer une transition sur les <a class="el" href="class_etat2_d.html" title="hérite de Etat. Permet de créer des états à 2 dimensions ">Etat2D</a> en suivant des règles </p>
@@ -203,12 +213,12 @@ Attributs privés</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Constructeur Privée. </p>
+<p>Constructeur Protected. </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">regle</td><td>: std::vector&lt; std::vector&lt;unsigned short int&gt; &gt; </td></tr>
@@ -245,7 +255,7 @@ Attributs privés</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Documentation des fonctions membres</h2>
-<a class="anchor" id="a2cbea145a6e7eff58528bcab31316365"></a>
+<a class="anchor" id="a2cc86edfb8c2ec56a645247449b94c16"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -253,7 +263,7 @@ Attributs privés</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Automate2D::appliquerTransition </td>
+          <td class="memname">bool Automate2D::appliquerTransition </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_etat2_d.html">Etat2D</a> &amp;&#160;</td>
           <td class="paramname"><em>dep</em>, </td>
@@ -285,8 +295,9 @@ Attributs privés</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Renvoie</dt><dd>bool : permet de savoir si il y a eu des modifications entre l'état de départ et celui d'arrivé </dd></dl>
 
-<p>Implémente <a class="el" href="class_automate.html#abfeaddcc8930b1f63a785cd5c6ff6dc5">Automate&lt; Etat2D &gt;</a>.</p>
+<p>Implémente <a class="el" href="class_automate.html#a123c24c274f8f02dd9e2635eedf54533">Automate&lt; Etat2D &gt;</a>.</p>
 
 </div>
 </div>
@@ -397,6 +408,27 @@ Attributs privés</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Documentation des fonctions amies et associées</h2>
+<a class="anchor" id="ae4af0b43eae2d17cf68916ad9e636cd8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="class_automate_manager2_d.html">AutomateManager2D</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Documentation des données membres</h2>
 <a class="anchor" id="ac894413963ffddd67dc899e64a41bca0"></a>
 <div class="memitem">
@@ -411,7 +443,7 @@ Attributs privés</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -420,8 +452,8 @@ Attributs privés</h2></td></tr>
 </div>
 </div>
 <hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
-<li>info/LO21/LO21/AutoCell/<a class="el" href="_automate2_d_8h_source.html">Automate2D.h</a></li>
-<li>info/LO21/LO21/AutoCell/<a class="el" href="_automate2_d_8cpp.html">Automate2D.cpp</a></li>
+<li>/home/thomaspaita/Bureau/info/LO21/LO21/AutoCell/<a class="el" href="_automate2_d_8h_source.html">Automate2D.h</a></li>
+<li>/home/thomaspaita/Bureau/info/LO21/LO21/AutoCell/<a class="el" href="_automate2_d_8cpp.html">Automate2D.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

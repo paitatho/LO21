@@ -11,8 +11,7 @@ Classe abstraite. La classe permet de généraliser un \hyperlink{class_etat}{Et
 
 
 
-Graphe d\textquotesingle{}héritage de Etat\+:
-\nopagebreak
+Graphe d\textquotesingle{}héritage de Etat\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -22,7 +21,7 @@ Graphe d\textquotesingle{}héritage de Etat\+:
 \subsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_etat_a78a5538e285af98cc010c0a197b14d50}{Etat} (unsigned int nb\+Cel, unsigned int nb\+Etat=2)
+\hyperlink{class_etat_a790dce1dd20f1e800ebe59dc2a99eb29}{Etat} (unsigned int l, unsigned int h, unsigned int nb\+Etat=2)
 \begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
 virtual \hyperlink{class_etat_a00bde3e769da5523e194a780ca95f7f7}{$\sim$\+Etat} ()
 \begin{DoxyCompactList}\small\item\em Destructeur. \end{DoxyCompactList}\item 
@@ -32,8 +31,10 @@ void \hyperlink{class_etat_a42eb8dc32d9865c25ff34f011d2c2706}{set\+Largeur} (uns
 \begin{DoxyCompactList}\small\item\em change la largeur \end{DoxyCompactList}\item 
 unsigned int \hyperlink{class_etat_a9d4366197c4c39da8dd77929c4ca9621}{get\+Nb\+Etat} () const 
 \begin{DoxyCompactList}\small\item\em Accesseur en lecture. \end{DoxyCompactList}\item 
-virtual unsigned int \hyperlink{class_etat_aa2eeed5ffbef3b53a149385f81bf2af0}{get\+Hauteur} () const =0
-\begin{DoxyCompactList}\small\item\em Accesseur en lecture méthode virtuelle pure. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{class_etat_a60872a39db23fae9400ca93aed63f6c2}{get\+Hauteur} () const 
+\begin{DoxyCompactList}\small\item\em Accesseur en lecture. \end{DoxyCompactList}\item 
+void \hyperlink{class_etat_ae8c67cfbc0ba51fe35533791f97a7f7e}{set\+Hauteur} (unsigned int h)
+\begin{DoxyCompactList}\small\item\em change la largeur \end{DoxyCompactList}\item 
 virtual void \hyperlink{class_etat_ac29c6d30fc8c982ff5f67eab6fc396de}{adjust\+Etat} ()=0
 \begin{DoxyCompactList}\small\item\em Ajuste la taille de l\textquotesingle{}état méthode virtuelle pure. \end{DoxyCompactList}\item 
 virtual void \hyperlink{class_etat_a796cef1d7607e3d185bec0a31eb7a819}{afficher} () const =0
@@ -42,6 +43,8 @@ virtual void \hyperlink{class_etat_a796cef1d7607e3d185bec0a31eb7a819}{afficher} 
 \begin{DoxyCompactItemize}
 \item 
 unsigned int \hyperlink{class_etat_af575fb141b3c300c9cbb61337094ba1b}{m\+\_\+largeur}
+\item 
+unsigned int \hyperlink{class_etat_a65a7ed3d0b46555af02677b2f37c8c9c}{m\+\_\+hauteur}
 \item 
 unsigned int \hyperlink{class_etat_a281d9e6224c108d5db463540bb2414f3}{m\+\_\+nb\+Etat}
 \end{DoxyCompactItemize}
@@ -53,19 +56,22 @@ Classe abstraite. La classe permet de généraliser un \hyperlink{class_etat}{Et
 \subsection{Documentation des constructeurs et destructeur}
 \index{Etat@{Etat}!Etat@{Etat}}
 \index{Etat@{Etat}!Etat@{Etat}}
-\subsubsection[{\texorpdfstring{Etat(unsigned int nb\+Cel, unsigned int nb\+Etat=2)}{Etat(unsigned int nbCel, unsigned int nbEtat=2)}}]{\setlength{\rightskip}{0pt plus 5cm}Etat\+::\+Etat (
+\subsubsection[{\texorpdfstring{Etat(unsigned int l, unsigned int h, unsigned int nb\+Etat=2)}{Etat(unsigned int l, unsigned int h, unsigned int nbEtat=2)}}]{\setlength{\rightskip}{0pt plus 5cm}Etat\+::\+Etat (
 \begin{DoxyParamCaption}
-\item[{unsigned int}]{nb\+Cel, }
+\item[{unsigned int}]{l, }
+\item[{unsigned int}]{h, }
 \item[{unsigned int}]{nb\+Etat = {\ttfamily 2}}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_etat_a78a5538e285af98cc010c0a197b14d50}{}\label{class_etat_a78a5538e285af98cc010c0a197b14d50}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_etat_a790dce1dd20f1e800ebe59dc2a99eb29}{}\label{class_etat_a790dce1dd20f1e800ebe59dc2a99eb29}
 
 
 Constructeur. 
 
 
 \begin{DoxyParams}{Paramètres}
-{\em nb\+Cel} & \+: largeur\+: unsigned int \\
+{\em l} & \+: largeur\+: unsigned int \\
+\hline
+{\em h} & \+: hauteur\+: unsigned int \\
 \hline
 {\em nb\+Etat} & \+: nombre d\textquotesingle{}état \+:unsigned int \\
 \hline
@@ -116,19 +122,18 @@ Implémenté dans \hyperlink{class_etat1_d_a11b2e64dc835aad04a5f138337ba7b99}{Et
 
 \index{Etat@{Etat}!get\+Hauteur@{get\+Hauteur}}
 \index{get\+Hauteur@{get\+Hauteur}!Etat@{Etat}}
-\subsubsection[{\texorpdfstring{get\+Hauteur() const =0}{getHauteur() const =0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned int Etat\+::get\+Hauteur (
+\subsubsection[{\texorpdfstring{get\+Hauteur() const }{getHauteur() const }}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Etat\+::get\+Hauteur (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_etat_aa2eeed5ffbef3b53a149385f81bf2af0}{}\label{class_etat_aa2eeed5ffbef3b53a149385f81bf2af0}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_etat_a60872a39db23fae9400ca93aed63f6c2}{}\label{class_etat_a60872a39db23fae9400ca93aed63f6c2}
 
 
-Accesseur en lecture méthode virtuelle pure. 
+Accesseur en lecture. 
 
-
-
-Implémenté dans \hyperlink{class_etat1_d_aed8c9082f8caefeef7687ba1f4590f40}{Etat1D}, et \hyperlink{class_etat2_d_aff82bb61adbe51f2702e34f0ea34a55d}{Etat2D}.
-
+\begin{DoxyReturn}{Renvoie}
+m\+\_\+hauteur \+: unsigned int 
+\end{DoxyReturn}
 \index{Etat@{Etat}!get\+Largeur@{get\+Largeur}}
 \index{get\+Largeur@{get\+Largeur}!Etat@{Etat}}
 \subsubsection[{\texorpdfstring{get\+Largeur() const }{getLargeur() const }}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Etat\+::get\+Largeur (
@@ -157,6 +162,22 @@ Accesseur en lecture.
 \begin{DoxyReturn}{Renvoie}
 m\+\_\+nb\+Etat \+: unsigned int 
 \end{DoxyReturn}
+\index{Etat@{Etat}!set\+Hauteur@{set\+Hauteur}}
+\index{set\+Hauteur@{set\+Hauteur}!Etat@{Etat}}
+\subsubsection[{\texorpdfstring{set\+Hauteur(unsigned int h)}{setHauteur(unsigned int h)}}]{\setlength{\rightskip}{0pt plus 5cm}void Etat\+::set\+Hauteur (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{h}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_etat_ae8c67cfbc0ba51fe35533791f97a7f7e}{}\label{class_etat_ae8c67cfbc0ba51fe35533791f97a7f7e}
+
+
+change la largeur 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em l} & \+: nouvelle largeur \+:unsigned int \\
+\hline
+\end{DoxyParams}
 \index{Etat@{Etat}!set\+Largeur@{set\+Largeur}}
 \index{set\+Largeur@{set\+Largeur}!Etat@{Etat}}
 \subsubsection[{\texorpdfstring{set\+Largeur(unsigned int l)}{setLargeur(unsigned int l)}}]{\setlength{\rightskip}{0pt plus 5cm}void Etat\+::set\+Largeur (
@@ -176,7 +197,10 @@ change la largeur
 
 
 \subsection{Documentation des données membres}
-\index{Etat@{Etat}!m\+\_\+largeur@{m\+\_\+largeur}}
+\index{Etat@{Etat}!m\+\_\+hauteur@{m\+\_\+hauteur}}
+\index{m\+\_\+hauteur@{m\+\_\+hauteur}!Etat@{Etat}}
+\subsubsection[{\texorpdfstring{m\+\_\+hauteur}{m_hauteur}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Etat\+::m\+\_\+hauteur\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_etat_a65a7ed3d0b46555af02677b2f37c8c9c}{}\label{class_etat_a65a7ed3d0b46555af02677b2f37c8c9c}
+largeur de l\textquotesingle{}état \index{Etat@{Etat}!m\+\_\+largeur@{m\+\_\+largeur}}
 \index{m\+\_\+largeur@{m\+\_\+largeur}!Etat@{Etat}}
 \subsubsection[{\texorpdfstring{m\+\_\+largeur}{m_largeur}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Etat\+::m\+\_\+largeur\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_etat_af575fb141b3c300c9cbb61337094ba1b}{}\label{class_etat_af575fb141b3c300c9cbb61337094ba1b}
 largeur de l\textquotesingle{}état \index{Etat@{Etat}!m\+\_\+nb\+Etat@{m\+\_\+nb\+Etat}}
@@ -186,4 +210,4 @@ nombre d\textquotesingle{}état d\textquotesingle{}une cellule
 
 La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
 \item 
-info/\+L\+O21/\+L\+O21/\+Auto\+Cell/\hyperlink{_etat_8h}{Etat.\+h}\end{DoxyCompactItemize}
+/home/thomaspaita/\+Bureau/info/\+L\+O21/\+L\+O21/\+Auto\+Cell/\hyperlink{_etat_8h}{Etat.\+h}\end{DoxyCompactItemize}

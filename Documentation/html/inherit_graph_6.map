@@ -1,5 +1,3 @@
 <map id="Graphe hiérarchique des classes" name="Graphe hiérarchique des classes">
-<area shape="rect" id="node1" href="$class_etat.html" title="Classe abstraite. La classe permet de généraliser un Etat. " alt="" coords="5,31,52,57"/>
-<area shape="rect" id="node2" href="$class_etat1_d.html" title="hérite de Etat. Permet de créer de état à 1Dimension " alt="" coords="100,5,163,32"/>
-<area shape="rect" id="node3" href="$class_etat2_d.html" title="hérite de Etat. Permet de créer des états à 2 dimensions " alt="" coords="100,56,163,83"/>
+<area shape="rect" id="node1" href="$class_automate_manager2_d.html" title="Singleton. La classe permet de gèrer la création d&#39;automates à 2 dimensions. " alt="" coords="5,5,151,32"/>
 </map>

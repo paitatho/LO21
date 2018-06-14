@@ -1,8 +1,8 @@
-<map id="info/LO21/LO21/AutoCell/autocell.h" name="info/LO21/LO21/AutoCell/autocell.h">
-<area shape="rect" id="node2" href="$autocell_8cpp.html" title="info/LO21/LO21/AutoCell\l/autocell.cpp" alt="" coords="5,102,172,143"/>
-<area shape="rect" id="node3" href="$main_8cpp.html" title="info/LO21/LO21/AutoCell\l/main.cpp" alt="" coords="55,206,221,247"/>
-<area shape="rect" id="node4" href="$mainwindow_8h.html" title="info/LO21/LO21/AutoCell\l/mainwindow.h" alt="" coords="248,102,415,143"/>
-<area shape="rect" id="node5" href="$mainwindow_8cpp.html" title="info/LO21/LO21/AutoCell\l/mainwindow.cpp" alt="" coords="441,206,608,247"/>
-<area shape="rect" id="node7" href="$moc__autocell_8cpp.html" title="info/LO21/LO21/build\l&#45;AutoCell&#45;Desktop&#45;Debug\l/moc_autocell.cpp" alt="" coords="490,95,661,151"/>
-<area shape="rect" id="node6" href="$moc__mainwindow_8cpp.html" title="info/LO21/LO21/build\l&#45;AutoCell&#45;Desktop&#45;Debug\l/moc_mainwindow.cpp" alt="" coords="246,199,417,255"/>
+<map id="/home/thomaspaita/Bureau/info/LO21/LO21/AutoCell/autocell.h" name="/home/thomaspaita/Bureau/info/LO21/LO21/AutoCell/autocell.h">
+<area shape="rect" id="node2" href="$autocell_8cpp.html" title="/home/thomaspaita/Bureau\l/info/LO21/LO21/AutoCell\l/autocell.cpp" alt="" coords="5,109,184,165"/>
+<area shape="rect" id="node3" href="$main_8cpp.html" title="/home/thomaspaita/Bureau\l/info/LO21/LO21/AutoCell\l/main.cpp" alt="" coords="20,213,199,269"/>
+<area shape="rect" id="node4" href="$mainwindow_8h.html" title="/home/thomaspaita/Bureau\l/info/LO21/LO21/AutoCell\l/mainwindow.h" alt="" coords="259,109,437,165"/>
+<area shape="rect" id="node5" href="$mainwindow_8cpp.html" title="/home/thomaspaita/Bureau\l/info/LO21/LO21/AutoCell\l/mainwindow.cpp" alt="" coords="497,213,676,269"/>
+<area shape="rect" id="node7" href="$moc__autocell_8cpp.html" title="/home/thomaspaita/Bureau\l/info/LO21/LO21/build&#45;AutoCell\l&#45;Desktop&#45;Debug/moc_autocell.cpp" alt="" coords="511,109,734,165"/>
+<area shape="rect" id="node6" href="$moc__mainwindow_8cpp.html" title="/home/thomaspaita/Bureau\l/info/LO21/LO21/build&#45;AutoCell\l&#45;Desktop&#45;Debug/moc_mainwindow.cpp" alt="" coords="223,213,473,269"/>
 </map>

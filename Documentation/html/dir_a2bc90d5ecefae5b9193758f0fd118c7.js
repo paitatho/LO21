@@ -15,13 +15,18 @@ var dir_a2bc90d5ecefae5b9193758f0fd118c7 =
     ] ],
     [ "Automate1D.cpp", "_automate1_d_8cpp.html", "_automate1_d_8cpp" ],
     [ "Automate1D.h", "_automate1_d_8h.html", "_automate1_d_8h" ],
-    [ "Automate2D.cpp", "_automate2_d_8cpp.html", null ],
+    [ "Automate2D.cpp", "_automate2_d_8cpp.html", "_automate2_d_8cpp" ],
     [ "Automate2D.h", "_automate2_d_8h.html", [
-      [ "Automate2D", "class_automate2_d.html", "class_automate2_d" ]
+      [ "Automate2D", "class_automate2_d.html", "class_automate2_d" ],
+      [ "AutomateManager2D", "class_automate_manager2_d.html", "class_automate_manager2_d" ]
     ] ],
     [ "Etat.cpp", "_etat_8cpp.html", null ],
     [ "Etat.h", "_etat_8h.html", [
       [ "Etat", "class_etat.html", "class_etat" ]
+    ] ],
+    [ "Etat1D.cpp", "_etat1_d_8cpp.html", "_etat1_d_8cpp" ],
+    [ "Etat1D.h", "_etat1_d_8h.html", [
+      [ "Etat1D", "class_etat1_d.html", "class_etat1_d" ]
     ] ],
     [ "Etat2D.cpp", "_etat2_d_8cpp.html", null ],
     [ "Etat2D.h", "_etat2_d_8h.html", [
