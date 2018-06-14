@@ -103,7 +103,7 @@ public:
 
   /*! \brief Méthode statique
      libère l'automate manager*/
-  static void freeIstance();
+  static void freeInstance();
 
   /*! \brief retourne un automate1D
    * \param num : numéro de la règle : short unsigned int

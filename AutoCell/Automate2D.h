@@ -100,7 +100,7 @@ public:
 
   /*! \brief Méthode statique
      libère l'automate manager*/
-  static void freeIstance();
+  static void freeInstance();
 
   /*! \brief retourne un Automate2D
    * \param regle : règle de transition : std::vector< std::vector<unsigned short int> >

@@ -6,5 +6,7 @@ var searchData=
   ['etat',['Etat',['../class_etat.html#a790dce1dd20f1e800ebe59dc2a99eb29',1,'Etat']]],
   ['etat1d',['Etat1D',['../class_etat1_d.html#ae9cabf1b4a858c1c0c458387b52a8ce4',1,'Etat1D::Etat1D(unsigned int taille=0, unsigned int nbEtat=2)'],['../class_etat1_d.html#a1294037bb4f90d1da9deb872caa2cbe9',1,'Etat1D::Etat1D(Etat1D const &amp;etat)']]],
   ['etat2d',['Etat2D',['../class_etat2_d.html#aae67a6ba3b3b3726a9533f647d34dd55',1,'Etat2D']]],
+  ['extensionclearauto1d',['extensionclearAuto1D',['../class_main_window.html#a51581d05a87d52c310c5232b4d05a2ea',1,'MainWindow']]],
+  ['extensionclearauto2d',['extensionclearAuto2D',['../class_main_window.html#a44411b6c7380592b08589b6edde6b5dc',1,'MainWindow']]],
   ['extensionopensim',['extensionOpenSim',['../class_main_window.html#aec09ccd11397e7c8f83852ede698cf9c',1,'MainWindow']]]
 ];

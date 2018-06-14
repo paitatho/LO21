@@ -25,7 +25,6 @@ var searchData=
   ['settaille',['setTaille',['../class_autocell.html#a8e1fab78b4369eceedad58ddee63ae78',1,'Autocell']]],
   ['sim',['sim',['../class_simulateur_1_1iterator.html#aefe7dba8b546a3b2baabe60dfbed43f8',1,'Simulateur::iterator::sim()'],['../class_simulateur_1_1const__iterator.html#af879bec3ae8b71f1c81826e0c1b24077',1,'Simulateur::const_iterator::sim()']]],
   ['simulateur',['Simulateur',['../class_simulateur.html',1,'Simulateur&lt; T1, T2 &gt;'],['../class_simulateur_1_1iterator.html#ae6c3966e699bf920c86e0bd006bd8183',1,'Simulateur::iterator::Simulateur()'],['../class_simulateur_1_1const__iterator.html#ae6c3966e699bf920c86e0bd006bd8183',1,'Simulateur::const_iterator::Simulateur()'],['../class_simulateur.html#a4d31da226a22b706e9f67311b517dad8',1,'Simulateur::Simulateur(const Simulateur &amp;)=delete'],['../class_simulateur.html#afbd90fb92cd6e29e7a2ffe222d0194f8',1,'Simulateur::Simulateur(const T1 &amp;a, unsigned int buffer=2)'],['../class_simulateur.html#a9c6136e1ffa9ff733ab6b6680a556535',1,'Simulateur::Simulateur(const T1 &amp;a, const T2 &amp;dep, unsigned int buffer=2)']]],
-  ['simulateur_2ecpp',['Simulateur.cpp',['../_simulateur_8cpp.html',1,'']]],
   ['simulateur_2eh',['Simulateur.h',['../_simulateur_8h.html',1,'']]],
   ['speed',['speed',['../class_autocell.html#a52291657adce98a0443559a5cd2e0c0b',1,'Autocell']]],
   ['speed2d',['speed2D',['../class_main_window.html#a062e8ba0040a577871dd29cadbade31b',1,'MainWindow']]],

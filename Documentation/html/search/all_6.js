@@ -11,7 +11,7 @@ var searchData=
   ['get_5finterval',['get_interval',['../class_regle2_d.html#a16721b0251aaedbac6b25dc840bc3aad',1,'Regle2D']]],
   ['get_5fnbetat',['get_nbEtat',['../class_regle2_d.html#abce7ef62aa852352d77ce8f88d5f05b6',1,'Regle2D']]],
   ['get_5fregle',['get_regle',['../class_regle2_d.html#a6165adcd23f35308667da783c210c911',1,'Regle2D']]],
-  ['get_5fregle2d',['get_regle2D',['../class_autocell2_d.html#a11c091d8075cdf351df8e567695f2093',1,'Autocell2D']]],
+  ['get_5fregle2d',['get_regle2D',['../class_autocell2_d.html#a11c091d8075cdf351df8e567695f2093',1,'Autocell2D::get_regle2D()'],['../class_autocell2_d.html#aaedf2f6ad98bfc023850ec0f1ce3e4bd',1,'Autocell2D::get_regle2D() const ']]],
   ['get_5freglebase',['get_regleBase',['../class_regle2_d.html#a25aba2d5c2d9acff7f433e35cb048504',1,'Regle2D']]],
   ['getautomate',['getAutomate',['../class_automate_manager1_d.html#ac94451d47738f2e03a24afba45f21d7e',1,'AutomateManager1D::getAutomate(short unsigned int num)'],['../class_automate_manager1_d.html#a5148171d092ab5f4d0b7f6b0db20425f',1,'AutomateManager1D::getAutomate(const std::string &amp;numbit)'],['../class_automate_manager2_d.html#a84dcf2a7e7e89afae9e4680a64445bfe',1,'AutomateManager2D::getAutomate()']]],
   ['getcellule',['getCellule',['../class_etat1_d.html#a4a969863ec0067872148b326cea0cf4e',1,'Etat1D::getCellule()'],['../class_etat2_d.html#adfe7448075788e3cd17c0b7df50b9438',1,'Etat2D::getCellule()']]],

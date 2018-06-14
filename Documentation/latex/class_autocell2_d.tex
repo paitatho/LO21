@@ -43,6 +43,8 @@ void \hyperlink{class_autocell2_d_acd5a8f9543affc825ddc82d840de7b42}{change\+Reg
 \item 
 \hyperlink{class_autocell2_d_a2e7a6a59840288dc34fef654e45f7122}{Autocell2D} (Q\+Widget $\ast$parent=nullptr)
 \begin{DoxyCompactList}\small\item\em Constructeur. \end{DoxyCompactList}\item 
+virtual \hyperlink{class_autocell2_d_a0e48b49cea05335ce1fb24d078d5b2c4}{$\sim$\+Autocell2D} ()
+\begin{DoxyCompactList}\small\item\em destructeur \end{DoxyCompactList}\item 
 void \hyperlink{class_autocell2_d_a66bf641f01edbcb5c09fb1d3c97d45c5}{set\+Continu} (bool a)
 \begin{DoxyCompactList}\small\item\em change le mode de lecture \end{DoxyCompactList}\item 
 bool \hyperlink{class_autocell2_d_a96ed8e1716be3afb516e849d974d9eaf}{get\+Continu} ()
@@ -60,7 +62,9 @@ virtual void \hyperlink{class_autocell2_d_acd5f269beafa7f81ff57d6f05013892e}{ini
 const Q\+Table\+Widget $\ast$ \hyperlink{class_autocell2_d_a1ee194d270b5ceff6085db31dbe9b3f4}{get\+\_\+etats} () const 
 \begin{DoxyCompactList}\small\item\em retourne l\textquotesingle{}attribut membre etats \end{DoxyCompactList}\item 
 \hyperlink{class_regle2_d}{Regle2D} $\ast$ \hyperlink{class_autocell2_d_a11c091d8075cdf351df8e567695f2093}{get\+\_\+regle2D} ()
-\begin{DoxyCompactList}\small\item\em retourne l\textquotesingle{}attribut membre regle \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em retourne l\textquotesingle{}attribut membre regle, permet les modifications \end{DoxyCompactList}\item 
+const \hyperlink{class_regle2_d}{Regle2D} $\ast$ \hyperlink{class_autocell2_d_aaedf2f6ad98bfc023850ec0f1ce3e4bd}{get\+\_\+regle2D} () const 
+\begin{DoxyCompactList}\small\item\em retourne l\textquotesingle{}attribut membre regle, ne permet pas la modification \end{DoxyCompactList}\item 
 void \hyperlink{class_autocell2_d_ab7fbe02d26468c6f65f6510fb3f7862a}{set\+Etats} (unsigned int i, unsigned int j, Q\+String color)
 \begin{DoxyCompactList}\small\item\em modifie la cellule (i,j) de la grille etats \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Fonctions membres protégées}
@@ -100,6 +104,17 @@ Hérite de \hyperlink{class_autocell}{Autocell}. La classe \hyperlink{class_auto
 
 
 Constructeur. 
+
+\index{Autocell2D@{Autocell2D}!````~Autocell2D@{$\sim$\+Autocell2D}}
+\index{````~Autocell2D@{$\sim$\+Autocell2D}!Autocell2D@{Autocell2D}}
+\subsubsection[{\texorpdfstring{$\sim$\+Autocell2\+D()}{~Autocell2D()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual Autocell2\+D\+::$\sim$\+Autocell2D (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{class_autocell2_d_a0e48b49cea05335ce1fb24d078d5b2c4}{}\label{class_autocell2_d_a0e48b49cea05335ce1fb24d078d5b2c4}
+
+
+destructeur 
 
 
 
@@ -191,10 +206,24 @@ etats\+: const Q\+Table\+Widget$\ast$
 )\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_autocell2_d_a11c091d8075cdf351df8e567695f2093}{}\label{class_autocell2_d_a11c091d8075cdf351df8e567695f2093}
 
 
-retourne l\textquotesingle{}attribut membre regle 
+retourne l\textquotesingle{}attribut membre regle, permet les modifications 
 
 \begin{DoxyReturn}{Renvoie}
 etats\+: Regle2\+D$\ast$ 
+\end{DoxyReturn}
+\index{Autocell2D@{Autocell2D}!get\+\_\+regle2D@{get\+\_\+regle2D}}
+\index{get\+\_\+regle2D@{get\+\_\+regle2D}!Autocell2D@{Autocell2D}}
+\subsubsection[{\texorpdfstring{get\+\_\+regle2\+D() const }{get_regle2D() const }}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Regle2D}$\ast$ Autocell2\+D\+::get\+\_\+regle2D (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_autocell2_d_aaedf2f6ad98bfc023850ec0f1ce3e4bd}{}\label{class_autocell2_d_aaedf2f6ad98bfc023850ec0f1ce3e4bd}
+
+
+retourne l\textquotesingle{}attribut membre regle, ne permet pas la modification 
+
+\begin{DoxyReturn}{Renvoie}
+etats\+: const Regle2\+D$\ast$ 
 \end{DoxyReturn}
 \index{Autocell2D@{Autocell2D}!get\+Continu@{get\+Continu}}
 \index{get\+Continu@{get\+Continu}!Autocell2D@{Autocell2D}}
@@ -356,7 +385,7 @@ I\+HM pour rentrer les règles \index{Autocell2D@{Autocell2D}!layout@{layout}}
 layout principal \index{Autocell2D@{Autocell2D}!nb\+Simu@{nb\+Simu}}
 \index{nb\+Simu@{nb\+Simu}!Autocell2D@{Autocell2D}}
 \subsubsection[{\texorpdfstring{nb\+Simu}{nbSimu}}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Label$\ast$ Autocell2\+D\+::nb\+Simu\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_autocell2_d_a77c628582ad0c795ec3d2e1733f2d53f}{}\label{class_autocell2_d_a77c628582ad0c795ec3d2e1733f2d53f}
-\index{Autocell2D@{Autocell2D}!regle@{regle}}
+compteur afficher sur l\textquotesingle{}autocell \index{Autocell2D@{Autocell2D}!regle@{regle}}
 \index{regle@{regle}!Autocell2D@{Autocell2D}}
 \subsubsection[{\texorpdfstring{regle}{regle}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$std\+::vector$<$unsigned short int$>$ $>$ Autocell2\+D\+::regle\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_autocell2_d_a238eef6674e510f6ce39d93427c6cad5}{}\label{class_autocell2_d_a238eef6674e510f6ce39d93427c6cad5}
 enregistre la règle qui sera donnée à l\textquotesingle{}automate2D 

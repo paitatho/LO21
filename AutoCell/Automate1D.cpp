@@ -82,7 +82,7 @@ AutomateManager1D& AutomateManager1D::getInstance(){
   else
     return *AutomateManager1D::m_AutomateManager1D;
 }
-void AutomateManager1D::freeIstance(){
+void AutomateManager1D::freeInstance(){
   delete AutomateManager1D::m_AutomateManager1D;
 }
 

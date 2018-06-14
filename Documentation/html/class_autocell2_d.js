@@ -1,12 +1,14 @@
 var class_autocell2_d =
 [
     [ "Autocell2D", "class_autocell2_d.html#a2e7a6a59840288dc34fef654e45f7122", null ],
+    [ "~Autocell2D", "class_autocell2_d.html#a0e48b49cea05335ce1fb24d078d5b2c4", null ],
     [ "adjustTaille", "class_autocell2_d.html#a76ab804bc939ebe1957dd2ba3ea93803", null ],
     [ "cellSelected", "class_autocell2_d.html#a08c17fc3e2ddf15173303d9e0d156e6e", null ],
     [ "changeRegle", "class_autocell2_d.html#acd5a8f9543affc825ddc82d840de7b42", null ],
     [ "clear", "class_autocell2_d.html#ad698bee76cfdc81977864cd3db37ec2d", null ],
     [ "get_etats", "class_autocell2_d.html#a1ee194d270b5ceff6085db31dbe9b3f4", null ],
     [ "get_regle2D", "class_autocell2_d.html#a11c091d8075cdf351df8e567695f2093", null ],
+    [ "get_regle2D", "class_autocell2_d.html#aaedf2f6ad98bfc023850ec0f1ce3e4bd", null ],
     [ "getContinu", "class_autocell2_d.html#a96ed8e1716be3afb516e849d974d9eaf", null ],
     [ "getRegle", "class_autocell2_d.html#a28140bde1d71db705c86ce1ace4cbea2", null ],
     [ "init", "class_autocell2_d.html#a9380918c9f11ff223223672685b2cdb7", null ],

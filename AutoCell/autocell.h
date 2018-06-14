@@ -5,6 +5,7 @@
 #include <typeinfo>
 #include <cstdlib>
 #include "Automate1D.h"
+#include "Automate2D.h"
 #include "Simulateur.h"
 class Regle2D;
 
@@ -37,6 +38,10 @@ public:
     Autocell(QWidget* parent = nullptr,unsigned int etat=2): QWidget(parent),nbEtat(etat){
         couleur.push_back("white"); couleur.push_back("white");
     }
+
+    /*! \brief Destructeur virtuel de la classe Autocell*/
+    virtual ~Autocell(){}
+
     /*! \brief change le nombre d'état que peut prendre une cellule
         \param e : nouveau nombre d'état: unsigned int*/
     void setNbEtat(unsigned int e){nbEtat = e;}
@@ -126,7 +131,6 @@ protected:
     QGridLayout* layout;    /*!< layout principal*/
     QTableWidget* depart;   /*!< grille de départ à 1D*/
     QTableWidget* etats = nullptr;  /*!< grille de simulation*/
-
     unsigned int regle=0;   /*!< numéro de la règle à appliquer*/
 
     /*! \brief initialise grille de départ
@@ -136,6 +140,10 @@ protected:
 public:
     /*! \brief constructeur*/
     explicit Autocell1D(QWidget* parent = nullptr);
+
+    /*! \brief destructeur*/
+    virtual ~Autocell1D(){}
+
     /*! \brief change la règle
      *  \param r :nouvelle règle : unsigned int*/
     void setRegle(unsigned int r){regle=r;}
@@ -197,15 +205,20 @@ protected:
     QTableWidget* etats = nullptr;  /*!< représente les cellules de l'automates*/
     Regle2D* fenetreRegle2D;        /*!< IHM pour rentrer les règles*/
     unsigned int compteur =0;       /*!< compte de nombre de simulation*/
-    QLabel* nbSimu;
+    QLabel* nbSimu;                 /*!< compteur afficher sur l'autocell*/
 
     /*! \brief initialise l'attribut membre etats
     *   \param h : hauteur: int
     *   \param l : largeur: int */
     void setEtat(int h,int l);
+
 public:
     /*! \brief Constructeur*/
     Autocell2D(QWidget* parent = nullptr);
+
+    /*! \brief destructeur*/
+    virtual ~Autocell2D(){}
+
     /*! \brief change le mode de lecture
     *   \param mode de lecture: bool */
     void setContinu(bool a){continu=a;}
@@ -237,9 +250,13 @@ public:
         \return etats: const QTableWidget* */
     const QTableWidget* get_etats() const {return etats;}
 
-    /*! \brief retourne l'attribut membre regle
+    /*! \brief retourne l'attribut membre regle, permet les modifications
         \return etats: Regle2D* */
     Regle2D* get_regle2D(){return fenetreRegle2D;}
+
+    /*! \brief retourne l'attribut membre regle, ne permet pas la modification
+        \return etats: const Regle2D* */
+    const Regle2D* get_regle2D() const{return fenetreRegle2D;}
 
     /*! \brief modifie la cellule (i,j) de la grille etats
         \param i : ligne: int
@@ -452,6 +469,7 @@ public:
  */
 class Autocell2DBis: public Autocell2D{
 public:
+
     /*! \brief Constructeur
                modification de la fenetreRegle2D et la remplaçant par un Regle2DBis*/
     Autocell2DBis(QWidget* parent = nullptr):Autocell2D(parent){

@@ -32,9 +32,9 @@ Graphe de collaboration de Main\+Window\+:\nopagebreak
 \item 
 void \hyperlink{class_main_window_a13e1e518cda3c3ef508f319e5230a425}{open\+Sim} ()
 \begin{DoxyCompactList}\small\item\em S\+L\+OT qui ouvre un automate choisit dans l\textquotesingle{}attribut membre choix\+Sim. \end{DoxyCompactList}\item 
-virtual void \hyperlink{class_main_window_a990d78b7f127395e17c2772d751052aa}{clear\+Auto1D} ()
+void \hyperlink{class_main_window_a97b2dcddfafe0559b8b0e631f2bcf375}{clear\+Auto1D} ()
 \begin{DoxyCompactList}\small\item\em S\+L\+OT qui nettoie le attribut et les options à la destruction de l\textquotesingle{}automate 1D méthode vituelle. \end{DoxyCompactList}\item 
-virtual void \hyperlink{class_main_window_a57bb2b74f849477d2033ea02c95d85fc}{clear\+Auto2D} ()
+void \hyperlink{class_main_window_a37e61e72d181b0a43900167b582caeb4}{clear\+Auto2D} ()
 \begin{DoxyCompactList}\small\item\em S\+L\+OT qui nettoie le attribut à la destruction de l\textquotesingle{}automate 1D méthode vituelle. \end{DoxyCompactList}\item 
 void \hyperlink{class_main_window_a709661eaabd6f570a8942f66f7c07738}{change\+Color} (Q\+String)
 \begin{DoxyCompactList}\small\item\em S\+L\+OT qui gère le changement de couleur de l\textquotesingle{}automate courant. \end{DoxyCompactList}\item 
@@ -82,7 +82,11 @@ virtual void \hyperlink{class_main_window_a94b693e3fa35f35ba200d2427b9cd419}{sav
 virtual void \hyperlink{class_main_window_ab1dbe77cfb9a4876733a540614afdec0}{restore\+App\+State} ()
 \item 
 virtual void \hyperlink{class_main_window_aec09ccd11397e7c8f83852ede698cf9c}{extension\+Open\+Sim} ()
-\begin{DoxyCompactList}\small\item\em méthode qui permet d\textquotesingle{}ajouter des automates dans le S\+L\+OT \hyperlink{class_main_window_a13e1e518cda3c3ef508f319e5230a425}{open\+Sim()} \mbox{[}Hook\mbox{]} méthode vituelle \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em méthode qui permet d\textquotesingle{}ajouter des automates dans le S\+L\+OT \hyperlink{class_main_window_a13e1e518cda3c3ef508f319e5230a425}{open\+Sim()} \mbox{[}Hook\mbox{]} méthode vituelle \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_main_window_a51581d05a87d52c310c5232b4d05a2ea}{extensionclear\+Auto1D} ()
+\begin{DoxyCompactList}\small\item\em méthode qui permet d\textquotesingle{}ajouter des actions lors du nettoyage des attributs dans le S\+L\+OT \hyperlink{class_main_window_a97b2dcddfafe0559b8b0e631f2bcf375}{clear\+Auto1\+D()} \mbox{[}Hook\mbox{]} méthode vituelle \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_main_window_a44411b6c7380592b08589b6edde6b5dc}{extensionclear\+Auto2D} ()
+\begin{DoxyCompactList}\small\item\em méthode qui permet d\textquotesingle{}ajouter des actions lors du nettoyage des attributs dans le S\+L\+OT \hyperlink{class_main_window_a37e61e72d181b0a43900167b582caeb4}{clear\+Auto2\+D()} \mbox{[}Hook\mbox{]} méthode vituelle \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Fonctions membres privées}
 \begin{DoxyCompactItemize}
 \item 
@@ -327,22 +331,22 @@ S\+L\+OT qui gère le nettoyage de l\textquotesingle{}automate courant.
 
 \index{Main\+Window@{Main\+Window}!clear\+Auto1D@{clear\+Auto1D}}
 \index{clear\+Auto1D@{clear\+Auto1D}!Main\+Window@{Main\+Window}}
-\subsubsection[{\texorpdfstring{clear\+Auto1D}{clearAuto1D}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Main\+Window\+::clear\+Auto1D (
+\subsubsection[{\texorpdfstring{clear\+Auto1D}{clearAuto1D}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::clear\+Auto1D (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [slot]}}\hypertarget{class_main_window_a990d78b7f127395e17c2772d751052aa}{}\label{class_main_window_a990d78b7f127395e17c2772d751052aa}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}\hypertarget{class_main_window_a97b2dcddfafe0559b8b0e631f2bcf375}{}\label{class_main_window_a97b2dcddfafe0559b8b0e631f2bcf375}
 
 
 S\+L\+OT qui nettoie le attribut et les options à la destruction de l\textquotesingle{}automate 1D méthode vituelle. 
 
 \index{Main\+Window@{Main\+Window}!clear\+Auto2D@{clear\+Auto2D}}
 \index{clear\+Auto2D@{clear\+Auto2D}!Main\+Window@{Main\+Window}}
-\subsubsection[{\texorpdfstring{clear\+Auto2D}{clearAuto2D}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Main\+Window\+::clear\+Auto2D (
+\subsubsection[{\texorpdfstring{clear\+Auto2D}{clearAuto2D}}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::clear\+Auto2D (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [slot]}}\hypertarget{class_main_window_a57bb2b74f849477d2033ea02c95d85fc}{}\label{class_main_window_a57bb2b74f849477d2033ea02c95d85fc}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}\hypertarget{class_main_window_a37e61e72d181b0a43900167b582caeb4}{}\label{class_main_window_a37e61e72d181b0a43900167b582caeb4}
 
 
 S\+L\+OT qui nettoie le attribut à la destruction de l\textquotesingle{}automate 1D méthode vituelle. 
@@ -425,6 +429,28 @@ S\+L\+OT qui gère l\textquotesingle{}affichage des options en fonction de l\tex
 {\em w} & \+: automate\+Courant \+: Q\+Mdi\+Sub\+Window $\ast$ \\
 \hline
 \end{DoxyParams}
+\index{Main\+Window@{Main\+Window}!extensionclear\+Auto1D@{extensionclear\+Auto1D}}
+\index{extensionclear\+Auto1D@{extensionclear\+Auto1D}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{extensionclear\+Auto1\+D()}{extensionclearAuto1D()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Main\+Window\+::extensionclear\+Auto1D (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{class_main_window_a51581d05a87d52c310c5232b4d05a2ea}{}\label{class_main_window_a51581d05a87d52c310c5232b4d05a2ea}
+
+
+méthode qui permet d\textquotesingle{}ajouter des actions lors du nettoyage des attributs dans le S\+L\+OT \hyperlink{class_main_window_a97b2dcddfafe0559b8b0e631f2bcf375}{clear\+Auto1\+D()} \mbox{[}Hook\mbox{]} méthode vituelle 
+
+\index{Main\+Window@{Main\+Window}!extensionclear\+Auto2D@{extensionclear\+Auto2D}}
+\index{extensionclear\+Auto2D@{extensionclear\+Auto2D}!Main\+Window@{Main\+Window}}
+\subsubsection[{\texorpdfstring{extensionclear\+Auto2\+D()}{extensionclearAuto2D()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Main\+Window\+::extensionclear\+Auto2D (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{class_main_window_a44411b6c7380592b08589b6edde6b5dc}{}\label{class_main_window_a44411b6c7380592b08589b6edde6b5dc}
+
+
+méthode qui permet d\textquotesingle{}ajouter des actions lors du nettoyage des attributs dans le S\+L\+OT \hyperlink{class_main_window_a37e61e72d181b0a43900167b582caeb4}{clear\+Auto2\+D()} \mbox{[}Hook\mbox{]} méthode vituelle 
+
 \index{Main\+Window@{Main\+Window}!extension\+Open\+Sim@{extension\+Open\+Sim}}
 \index{extension\+Open\+Sim@{extension\+Open\+Sim}!Main\+Window@{Main\+Window}}
 \subsubsection[{\texorpdfstring{extension\+Open\+Sim()}{extensionOpenSim()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Main\+Window\+::extension\+Open\+Sim (

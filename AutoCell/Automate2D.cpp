@@ -79,7 +79,7 @@ bool operator==(const std::vector< std::vector<unsigned short int> >& a,const st
 
 AutomateManager2D* AutomateManager2D::m_AutomateManager2D = nullptr;
 
-AutomateManager2D::AutomateManager2D(){}
+AutomateManager2D::AutomateManager2D():m_tabAutomate(std::vector<Automate2D*>()){}
 
 AutomateManager2D::~AutomateManager2D(){
   for (int i=0;i<m_tabAutomate.size();i++){
@@ -94,7 +94,7 @@ AutomateManager2D& AutomateManager2D::getInstance(){
   else
     return *AutomateManager2D::m_AutomateManager2D;
 }
-void AutomateManager2D::freeIstance(){
+void AutomateManager2D::freeInstance(){
   delete AutomateManager2D::m_AutomateManager2D;
 }
 
