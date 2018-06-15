@@ -649,78 +649,79 @@ void MainWindow::saveAutomate(){
 
 void MainWindow::loadAutomate(){
 
-    QString fileXmlName = QFileDialog::getOpenFileName(this, "Enregistrer sous", QDir::homePath(), "XML (*.xml)");
+    QString fileXmlName = QFileDialog::getOpenFileName(this, "Enregistrer sous", QDir::homePath()+QString("/Desktop"), "XML (*.xml)");
     QFile file(fileXmlName);
     QXmlStreamReader xml(&file);
     QString typeAutomate;
-    std::cout<<fileXmlName.toStdString();
 
     if(!file.open(QFile::ReadOnly)) { qDebug() << "Cannot read file" << file.errorString(); }
-    while(!xml.atEnd())
-    {
-        if(xml.isStartElement())
-        {
-            if(xml.name() == "Infos")
-            {
-                xml.readNext();
-                typeAutomate = xml.attributes().at(0).value().toString();
+    xml.readNextStartElement();
+    xml.readNextStartElement();
+    xml.readNextStartElement();
+    typeAutomate = xml.attributes().at(0).value().toString();
+    xml.readNextStartElement();
 
-                if(typeAutomate == "2D"){
-                    xml.readNext();
-                    larg2D->setValue(xml.attributes().at(0).value().toInt());
-                    xml.readNext();
-                    haut2D->setValue(xml.attributes().at(0).value().toInt());
-                    xml.readNext();
-                    speed2D->setValue(xml.attributes().at(0).value().toInt());
-                    xml.readNext();
-                    mode2D->setCurrentText(xml.attributes().at(0).value().toString());
-                    xml.readNext();
-                    openSim();
-                    Regle2D* fenetreRegle2D = auto2D->get_regle2D();
-                    fenetreRegle2D->setRegleBase(xml.attributes().at(0).value().toString());
-                    xml.readNext();
-                    fenetreRegle2D->setNbEtat(xml.attributes().at(0).value().toInt());
-                    xml.readNext();
-                    taille->setValue(xml.attributes().at(0).value().toInt());
-                    xml.readNext();
-
-                    for(unsigned int i=0; i<(fenetreRegle2D->get_nbEtat()->value()); ++i){
-                        fenetreRegle2D->setEtatCellulePourAppliquer(i, xml.attributes().at(0).value().toInt());
-                        xml.readNext();
-                        fenetreRegle2D->setCelluleACompter(i, xml.attributes().at(0).value().toInt());
-                        xml.readNext();
-                        fenetreRegle2D->setInterval(i, xml.attributes().at(0).value().toString());
-                        xml.readNext();
-                        fenetreRegle2D->setBorneInf(i, xml.attributes().at(0).value().toInt());
-                        xml.readNext();
-                        fenetreRegle2D->setBorneSup(i, xml.attributes().at(0).value().toInt());
-                        xml.readNext();
-                        fenetreRegle2D->setCouleur(i, xml.attributes().at(0).value().toString());
-                        xml.readNext();
-                    }
-                    fenetreRegle2D->sendRegle();
-                    xml.readNext();
-
-
-                }
-            }
-            if(xml.name() == "dernierEtat"){
-                if(typeAutomate == "2D"){
-                    if(xml.isStartElement())
-                    {
-                        if(xml.name() == "valCellule")
-                        {
-                            unsigned int i = xml.attributes().at(0).value().toInt();
-                            unsigned int j = xml.attributes().at(1).value().toInt();
-                            xml.readNext();
-                            const QString color = (xml.attributes().at(0).value().toString());
-                            auto2D->setEtats(i, j, color);
-                        }
-                        xml.readNext();
-                    }
-                }
-            }
-        }
+    if(typeAutomate == "2D"){
         xml.readNextStartElement();
+        larg2D->setValue(xml.attributes().at(0).value().toInt());
+        xml.readNextStartElement();
+        xml.readNextStartElement();
+        haut2D->setValue(xml.attributes().at(0).value().toInt());
+        xml.readNextStartElement();
+        xml.readNextStartElement();
+        speed2D->setValue(xml.attributes().at(0).value().toInt());
+        xml.readNextStartElement();
+        xml.readNextStartElement();
+        mode2D->setCurrentText(xml.attributes().at(0).value().toString());
+        xml.readNextStartElement();
+        xml.readNextStartElement();
+        openSim();
+        Regle2D* fenetreRegle2D = auto2D->get_regle2D();
+        fenetreRegle2D->setRegleBase(xml.attributes().at(0).value().toString());
+        xml.readNextStartElement();
+        xml.readNextStartElement();
+        fenetreRegle2D->setNbEtat(xml.attributes().at(0).value().toInt());
+        xml.readNextStartElement();
+        xml.readNextStartElement();
+        taille->setValue(xml.attributes().at(0).value().toInt());
+        xml.readNextStartElement();
+        xml.readNextStartElement();
+
+        for(unsigned int i=0; i<(fenetreRegle2D->get_nbEtat()->value()); ++i){
+            fenetreRegle2D->setEtatCellulePourAppliquer(i, xml.attributes().at(0).value().toInt());
+            xml.readNextStartElement();
+            xml.readNextStartElement();
+            fenetreRegle2D->setCelluleACompter(i, xml.attributes().at(0).value().toInt());
+            xml.readNextStartElement();
+            xml.readNextStartElement();
+            fenetreRegle2D->setInterval(i, xml.attributes().at(0).value().toString());
+            xml.readNextStartElement();
+            xml.readNextStartElement();
+            fenetreRegle2D->setBorneInf(i, xml.attributes().at(0).value().toInt());
+            xml.readNextStartElement();
+            xml.readNextStartElement();
+            fenetreRegle2D->setBorneSup(i, xml.attributes().at(0).value().toInt());
+            xml.readNextStartElement();
+            xml.readNextStartElement();
+            fenetreRegle2D->setCouleur(i, xml.attributes().at(0).value().toString());
+            xml.readNextStartElement();
+            xml.readNextStartElement();
+        }
+        fenetreRegle2D->sendRegle();
+        while(xml.name()!="dernierEtat"){xml.readNextStartElement();}
+        xml.readNextStartElement();
+
+        while(xml.name()!="dernierEtat"){
+            unsigned int i = xml.attributes().at(0).value().toInt();
+            unsigned int j = xml.attributes().at(1).value().toInt();
+            xml.readNextStartElement();
+            const QString color = (xml.attributes().at(0).value().toString());
+            auto2D->setEtats(i, j, color);
+            xml.readNextStartElement();
+            xml.readNextStartElement();
+            xml.readNextStartElement();
+        }
     }
 }
+
+
