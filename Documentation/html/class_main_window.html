@@ -197,8 +197,10 @@ Connecteurs publics</h2></td></tr>
 <tr class="memdesc:a611ef20ef8820089fe62ea686f321456"><td class="mdescLeft">&#160;</td><td class="mdescRight">SLOT qui gère la génération d'un état initial symétrique en fonction de l'automate courant.  <a href="#a611ef20ef8820089fe62ea686f321456">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a611ef20ef8820089fe62ea686f321456"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4106cf25ea9980d703e04bac7c9ecd31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a4106cf25ea9980d703e04bac7c9ecd31">saveAutomate</a> ()</td></tr>
+<tr class="memdesc:a4106cf25ea9980d703e04bac7c9ecd31"><td class="mdescLeft">&#160;</td><td class="mdescRight">SLOT permettant la sauvegarde d'un <a class="el" href="class_automate.html" title="Classe Template abstraite. La classe généralise un Automate et définie la méthodes virtuelle qui devr...">Automate</a> 1D ou 2D.  <a href="#a4106cf25ea9980d703e04bac7c9ecd31">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a4106cf25ea9980d703e04bac7c9ecd31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9bd4644e729ca73c06d51378aa05753"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ad9bd4644e729ca73c06d51378aa05753">loadAutomate</a> ()</td></tr>
+<tr class="memdesc:ad9bd4644e729ca73c06d51378aa05753"><td class="mdescLeft">&#160;</td><td class="mdescRight">SLOT permettant le chargement d'un <a class="el" href="class_automate.html" title="Classe Template abstraite. La classe généralise un Automate et définie la méthodes virtuelle qui devr...">Automate</a> 1D ou 2D.  <a href="#ad9bd4644e729ca73c06d51378aa05753">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ad9bd4644e729ca73c06d51378aa05753"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -207,10 +209,19 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memdesc:a996c5a2b6f77944776856f08ec30858d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur.  <a href="#a996c5a2b6f77944776856f08ec30858d">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a996c5a2b6f77944776856f08ec30858d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e20a4a065fbb0e4d3532a45a0a91425"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a4e20a4a065fbb0e4d3532a45a0a91425">closeEvent</a> (QCloseEvent *event)</td></tr>
+<tr class="memdesc:a4e20a4a065fbb0e4d3532a45a0a91425"><td class="mdescLeft">&#160;</td><td class="mdescRight">méthode permettant de contrôler le comportement de l'application lors de la fermeture méthode vituelle  <a href="#a4e20a4a065fbb0e4d3532a45a0a91425">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a4e20a4a065fbb0e4d3532a45a0a91425"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94b693e3fa35f35ba200d2427b9cd419"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a94b693e3fa35f35ba200d2427b9cd419">saveAppState</a> ()</td></tr>
+<tr class="memdesc:a94b693e3fa35f35ba200d2427b9cd419"><td class="mdescLeft">&#160;</td><td class="mdescRight">méthode permettant la sauvegarde des informations nécessaires à la réouverture en l'état de l'application méthode vituelle  <a href="#a94b693e3fa35f35ba200d2427b9cd419">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a94b693e3fa35f35ba200d2427b9cd419"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21fadb05c4f0a6686460bdd4b44896db"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a21fadb05c4f0a6686460bdd4b44896db">extensionSaveAppState</a> ()</td></tr>
+<tr class="memdesc:a21fadb05c4f0a6686460bdd4b44896db"><td class="mdescLeft">&#160;</td><td class="mdescRight">méthode qui permet d'ajouter des options à sauvegarder dans <a class="el" href="class_main_window.html#a94b693e3fa35f35ba200d2427b9cd419" title="méthode permettant la sauvegarde des informations nécessaires à la réouverture en l&#39;état de l&#39;applica...">saveAppState()</a> [Hook] méthode vituelle  <a href="#a21fadb05c4f0a6686460bdd4b44896db">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a21fadb05c4f0a6686460bdd4b44896db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c6d8bcd0b42176c57f22c166925b7d1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a7c6d8bcd0b42176c57f22c166925b7d1">extensionRestoreAppState</a> ()</td></tr>
+<tr class="memdesc:a7c6d8bcd0b42176c57f22c166925b7d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">méthode qui permet d'ajouter des options à sauvegarder dans <a class="el" href="class_main_window.html#a94b693e3fa35f35ba200d2427b9cd419" title="méthode permettant la sauvegarde des informations nécessaires à la réouverture en l&#39;état de l&#39;applica...">saveAppState()</a> [Hook] méthode vituelle  <a href="#a7c6d8bcd0b42176c57f22c166925b7d1">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a7c6d8bcd0b42176c57f22c166925b7d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1dbe77cfb9a4876733a540614afdec0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ab1dbe77cfb9a4876733a540614afdec0">restoreAppState</a> ()</td></tr>
+<tr class="memdesc:ab1dbe77cfb9a4876733a540614afdec0"><td class="mdescLeft">&#160;</td><td class="mdescRight">méthode appelée avant la méthode show() de la mainwindow afin de restaurer la dernière session méthode vituelle  <a href="#ab1dbe77cfb9a4876733a540614afdec0">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ab1dbe77cfb9a4876733a540614afdec0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec09ccd11397e7c8f83852ede698cf9c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aec09ccd11397e7c8f83852ede698cf9c">extensionOpenSim</a> ()</td></tr>
 <tr class="memdesc:aec09ccd11397e7c8f83852ede698cf9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">méthode qui permet d'ajouter des automates dans le SLOT <a class="el" href="class_main_window.html#a13e1e518cda3c3ef508f319e5230a425" title="SLOT qui ouvre un automate choisit dans l&#39;attribut membre choixSim. ">openSim()</a> [Hook] méthode vituelle  <a href="#aec09ccd11397e7c8f83852ede698cf9c">Plus de détails...</a><br /></td></tr>
@@ -694,6 +705,8 @@ Attributs privés statiques</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>méthode permettant de contrôler le comportement de l'application lors de la fermeture méthode vituelle </p>
+
 </div>
 </div>
 <a class="anchor" id="a57d11300ed1f37447626810acbcfd6c4"></a>
@@ -928,6 +941,56 @@ Attributs privés statiques</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a7c6d8bcd0b42176c57f22c166925b7d1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void MainWindow::extensionRestoreAppState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>méthode qui permet d'ajouter des options à sauvegarder dans <a class="el" href="class_main_window.html#a94b693e3fa35f35ba200d2427b9cd419" title="méthode permettant la sauvegarde des informations nécessaires à la réouverture en l&#39;état de l&#39;applica...">saveAppState()</a> [Hook] méthode vituelle </p>
+
+</div>
+</div>
+<a class="anchor" id="a21fadb05c4f0a6686460bdd4b44896db"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void MainWindow::extensionSaveAppState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>méthode qui permet d'ajouter des options à sauvegarder dans <a class="el" href="class_main_window.html#a94b693e3fa35f35ba200d2427b9cd419" title="méthode permettant la sauvegarde des informations nécessaires à la réouverture en l&#39;état de l&#39;applica...">saveAppState()</a> [Hook] méthode vituelle </p>
+
+</div>
+</div>
 <a class="anchor" id="a2ee1589220ee377441d94777ccef6c9f"></a>
 <div class="memitem">
 <div class="memproto">
@@ -998,6 +1061,8 @@ Attributs privés statiques</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>SLOT permettant le chargement d'un <a class="el" href="class_automate.html" title="Classe Template abstraite. La classe généralise un Automate et définie la méthodes virtuelle qui devr...">Automate</a> 1D ou 2D. </p>
 
 </div>
 </div>
@@ -1097,6 +1162,8 @@ Attributs privés statiques</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>méthode appelée avant la méthode show() de la mainwindow afin de restaurer la dernière session méthode vituelle </p>
+
 </div>
 </div>
 <a class="anchor" id="a94b693e3fa35f35ba200d2427b9cd419"></a>
@@ -1120,6 +1187,8 @@ Attributs privés statiques</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>méthode permettant la sauvegarde des informations nécessaires à la réouverture en l'état de l'application méthode vituelle </p>
+
 </div>
 </div>
 <a class="anchor" id="a4106cf25ea9980d703e04bac7c9ecd31"></a>
@@ -1142,6 +1211,8 @@ Attributs privés statiques</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>SLOT permettant la sauvegarde d'un <a class="el" href="class_automate.html" title="Classe Template abstraite. La classe généralise un Automate et définie la méthodes virtuelle qui devr...">Automate</a> 1D ou 2D. </p>
 
 </div>
 </div>

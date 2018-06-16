@@ -16,5 +16,7 @@ var searchData=
   ['etats',['etats',['../class_autocell1_d.html#aed4038c48d9cc0a841e6f565d4cd792c',1,'Autocell1D::etats()'],['../class_autocell2_d.html#a3a7359db79b875b93bcf89ab8377cf7e',1,'Autocell2D::etats()']]],
   ['extensionclearauto1d',['extensionclearAuto1D',['../class_main_window.html#a51581d05a87d52c310c5232b4d05a2ea',1,'MainWindow']]],
   ['extensionclearauto2d',['extensionclearAuto2D',['../class_main_window.html#a44411b6c7380592b08589b6edde6b5dc',1,'MainWindow']]],
-  ['extensionopensim',['extensionOpenSim',['../class_main_window.html#aec09ccd11397e7c8f83852ede698cf9c',1,'MainWindow']]]
+  ['extensionopensim',['extensionOpenSim',['../class_main_window.html#aec09ccd11397e7c8f83852ede698cf9c',1,'MainWindow']]],
+  ['extensionrestoreappstate',['extensionRestoreAppState',['../class_main_window.html#a7c6d8bcd0b42176c57f22c166925b7d1',1,'MainWindow']]],
+  ['extensionsaveappstate',['extensionSaveAppState',['../class_main_window.html#a21fadb05c4f0a6686460bdd4b44896db',1,'MainWindow']]]
 ];

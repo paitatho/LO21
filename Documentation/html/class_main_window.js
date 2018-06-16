@@ -23,6 +23,8 @@ var class_main_window =
     [ "extensionclearAuto1D", "class_main_window.html#a51581d05a87d52c310c5232b4d05a2ea", null ],
     [ "extensionclearAuto2D", "class_main_window.html#a44411b6c7380592b08589b6edde6b5dc", null ],
     [ "extensionOpenSim", "class_main_window.html#aec09ccd11397e7c8f83852ede698cf9c", null ],
+    [ "extensionRestoreAppState", "class_main_window.html#a7c6d8bcd0b42176c57f22c166925b7d1", null ],
+    [ "extensionSaveAppState", "class_main_window.html#a21fadb05c4f0a6686460bdd4b44896db", null ],
     [ "initialiseur", "class_main_window.html#a2ee1589220ee377441d94777ccef6c9f", null ],
     [ "initialiseurSym", "class_main_window.html#a611ef20ef8820089fe62ea686f321456", null ],
     [ "loadAutomate", "class_main_window.html#ad9bd4644e729ca73c06d51378aa05753", null ],
