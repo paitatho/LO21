@@ -57,6 +57,7 @@ public:
      *          méthode virtuelle pure*/
     virtual void adjustEtat() =0;
 
+
     /*! \brief affiche un état dans la sortier standard
      *          méthode virtuelle pure*/
     virtual void afficher() const =0;
