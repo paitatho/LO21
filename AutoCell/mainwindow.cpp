@@ -422,6 +422,7 @@ void MainWindow::saveAppState(){
         writer.writeEndElement();
         writer.writeEndDocument();
     }
+    extensionSaveAppState();
 }
 
 void MainWindow::closeEvent(QCloseEvent* event){
@@ -505,6 +506,7 @@ void MainWindow::restoreAppState(){
             xml.readNextStartElement();
         }
     }
+    extensionRestoreAppState();
 }
 
 
