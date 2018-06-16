@@ -84,8 +84,25 @@ private:
 public:
     /*! \brief Constructeur*/
     MainWindow(QWidget* parent = nullptr);
+
+    /*! \brief méthode permettant de contrôler le comportement de l'application lors de la fermeture
+                méthode vituelle*/
     virtual void closeEvent(QCloseEvent *event);
+
+    /*! \brief méthode permettant la sauvegarde des informations nécessaires à la réouverture en l'état de l'application
+                méthode vituelle*/
     virtual void saveAppState();
+
+    /*! \brief méthode qui permet d'ajouter des options à sauvegarder dans saveAppState() [Hook]
+                méthode vituelle*/
+    virtual void extensionSaveAppState(){}
+
+    /*! \brief méthode qui permet d'ajouter des options à sauvegarder dans saveAppState() [Hook]
+                méthode vituelle*/
+    virtual void extensionRestoreAppState(){}
+
+    /*! \brief méthode appelée avant la méthode show() de la mainwindow afin de restaurer la dernière session
+                méthode vituelle*/
     virtual void restoreAppState();
 
     /*! \brief méthode qui permet d'ajouter des automates dans le SLOT openSim() [Hook]
@@ -165,7 +182,10 @@ public slots:
     /*! \brief SLOT qui gère la génération d'un état initial symétrique en fonction de l'automate courant*/
     void initialiseurSym();
 
+    /*! \brief SLOT permettant la sauvegarde d'un Automate 1D ou 2D*/
     void saveAutomate();
+
+    /*! \brief SLOT permettant le chargement d'un Automate 1D ou 2D*/
     void loadAutomate();
 };
 

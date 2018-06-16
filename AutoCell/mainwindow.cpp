@@ -333,7 +333,12 @@ void MainWindow::saveAppState(){
     QSettings settings("Reyhan&Thomas", "AutoCell");
     settings.clear();
     settings.setValue("typeAutomate", choixSim->currentText());
-    if(choixSim->currentText()=="1D"){
+    if(auto1D==nullptr && auto2D==nullptr){
+        settings.setValue("nothing", 1);
+    }else{
+        settings.setValue("nothing", 0);
+    }
+    if(auto1D!=nullptr){
         settings.setValue("larg1D", larg1D->value());
         settings.setValue("nbSim1D", nbSim1D->value());
         settings.setValue("regle1D", regle1D->value());
@@ -368,7 +373,7 @@ void MainWindow::saveAppState(){
         writer.writeEndDocument();
 
     }
-    if(choixSim->currentText()=="2D"){
+    if(auto2D!=nullptr){
         settings.setValue("larg2D", larg2D->value());
         settings.setValue("haut2D", haut2D->value());
         settings.setValue("speed2D", speed2D->value());
@@ -417,6 +422,7 @@ void MainWindow::saveAppState(){
         writer.writeEndElement();
         writer.writeEndDocument();
     }
+    extensionSaveAppState();
 }
 
 void MainWindow::closeEvent(QCloseEvent* event){
@@ -426,6 +432,7 @@ void MainWindow::closeEvent(QCloseEvent* event){
 
 void MainWindow::restoreAppState(){
     QSettings settings("Reyhan&Thomas", "AutoCell");
+    if(settings.value("nothing")==1) return;
     if(settings.value("typeAutomate") == "1D"){
         choixSim->setCurrentText(settings.value("typeAutomate").toString());
         larg1D->setValue(settings.value("larg1D").toInt());
@@ -499,6 +506,7 @@ void MainWindow::restoreAppState(){
             xml.readNextStartElement();
         }
     }
+    extensionRestoreAppState();
 }
 
 
@@ -530,7 +538,7 @@ void MainWindow::initialiseurSym(){
 }
 
 void MainWindow::saveAutomate(){
-    QString path = QFileDialog::getSaveFileName(this, "Enregistrer sous", QDir::homePath(), "XML (*.xml)");
+    QString path = QFileDialog::getSaveFileName(this, "Enregistrer sous", QDir::homePath()+QString("/Desktop"), "XML (*.xml)");
     if(choixSim->currentText()=="1D"){
         QFile fileXml(path);
 
@@ -552,7 +560,7 @@ void MainWindow::saveAutomate(){
         writer.writeAttribute("value", choixSim->currentText());
         writer.writeEmptyElement("larg1D");
         writer.writeAttribute("value", QString::fromStdString(std::to_string(larg1D->value())));
-        writer.writeEmptyElement("larg1D");
+        writer.writeEmptyElement("nbSim");
         writer.writeAttribute("value", QString::fromStdString(std::to_string(nbSim1D->value())));
         writer.writeEmptyElement("regle1D");
         writer.writeAttribute("value", QString::fromStdString(std::to_string(regle1D->value())));
@@ -650,6 +658,7 @@ void MainWindow::saveAutomate(){
 void MainWindow::loadAutomate(){
 
     QString fileXmlName = QFileDialog::getOpenFileName(this, "Enregistrer sous", QDir::homePath()+QString("/Desktop"), "XML (*.xml)");
+    if(fileXmlName=="") return;
     QFile file(fileXmlName);
     QXmlStreamReader xml(&file);
     QString typeAutomate;
@@ -662,6 +671,7 @@ void MainWindow::loadAutomate(){
     xml.readNextStartElement();
 
     if(typeAutomate == "2D"){
+        choixSim->setCurrentText("2D");
         xml.readNextStartElement();
         larg2D->setValue(xml.attributes().at(0).value().toInt());
         xml.readNextStartElement();
@@ -721,6 +731,41 @@ void MainWindow::loadAutomate(){
             xml.readNextStartElement();
             xml.readNextStartElement();
         }
+    }
+    if(typeAutomate=="1D"){
+        choixSim->setCurrentText("1D");
+        xml.readNextStartElement();
+        larg1D->setValue(xml.attributes().at(0).value().toInt());
+        xml.readNextStartElement();
+        xml.readNextStartElement();
+        nbSim1D->setValue(xml.attributes().at(0).value().toInt());
+        xml.readNextStartElement();
+        xml.readNextStartElement();
+        regle1D->setValue(xml.attributes().at(0).value().toInt());
+        xml.readNextStartElement();
+        xml.readNextStartElement();
+        taille->setValue(xml.attributes().at(0).value().toInt());
+        xml.readNextStartElement();
+        xml.readNextStartElement();
+        couleur->setCurrentText(xml.attributes().at(0).value().toString());
+
+        openSim();
+
+        while(xml.name()!="dernierEtat"){
+            xml.readNextStartElement();
+        }
+        xml.readNextStartElement();
+        while(xml.name()!="dernierEtat"){
+            unsigned int i = xml.attributes().at(0).value().toInt();
+            xml.readNextStartElement();
+            const QString color = xml.attributes().at(0).value().toString();
+            auto1D->setDepart(i, color);
+            xml.readNextStartElement();
+            xml.readNextStartElement();
+            xml.readNextStartElement();
+        }
+        auto1D->setRegle(regle1D->value());
+        play();
     }
 }
 
